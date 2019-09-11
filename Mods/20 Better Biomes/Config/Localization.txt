@@ -1,0 +1,3 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+resourceStick,items,Resources,kgNone,Stick,,,,,
+resourceStickDesc,items,Resources,kgNone,Sticks can be picked up and scrapped for wood.,,,,,

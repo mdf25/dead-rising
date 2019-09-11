@@ -1,0 +1,42 @@
+<root>
+	<append xpath="/blocks">
+		<block name="halDisplayCase">			
+			<property name="CustomIcon" value="playerSignWood1x1"/>
+			<property name="Extends" value="woodNoUpgradeMaster"/>
+			<property name="DescriptionKey" value="displayCaseGroupDesc"/>			
+			<property name="Class" value="Hook, Mods"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="LootList" value="198"/>
+			<property name="Model" value="Entities/Crafting/sign_wood_1x1_Prefab"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="ImposterExchange" value="imposterDontBlockSheet" param1="43"/>
+			<property name="StabilitySupport" value="false"/>
+			<!-- build restriction -->
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Group" value="Decor/Miscellaneous"/>
+		</block>
+		<block name="halDisplayCaseExtraX">
+			<property name="RotateX" value="90"/>
+			<property name="DescriptionKey" value="displayCaseExtraGroupDesc"/>			
+			<property name="Extends" value="halDisplayCase"/>
+		</block>
+		<block name="halDisplayCaseExtraY">
+			<property name="Extends" value="halDisplayCase"/>
+			<property name="DescriptionKey" value="displayCaseExtraGroupDesc"/>			
+			<property name="RotateY" value="90"/>
+		</block>
+		<block name="halDisplayCaseExtraZ">
+			<property name="Extends" value="halDisplayCase"/>
+			<property name="DescriptionKey" value="displayCaseExtraGroupDesc"/>			
+			<property name="RotateZ" value="90"/>
+		</block>
+		<block name="halDisplayCaseExtraXY">
+			<property name="Extends" value="halDisplayCase"/>
+			<property name="DescriptionKey" value="displayCaseExtraGroupDesc"/>			
+			<property name="RotateX" value="90"/>
+			<property name="RotateY" value="90"/>
+		</block>
+	</append>
+</root>

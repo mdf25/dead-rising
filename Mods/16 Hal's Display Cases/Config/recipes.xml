@@ -1,0 +1,19 @@
+<configs>
+<append xpath="/recipes">
+	<recipe name="halDisplayCase" count="1" scrapable="False">
+		<ingredient name="resourceWood" count="5" />
+	</recipe>
+	<recipe name="halDisplayCaseExtraX" count="1" scrapable="False">
+		<ingredient name="resourceWood" count="5" />
+	</recipe>
+	<recipe name="halDisplayCaseExtraY" count="1" scrapable="False">
+		<ingredient name="resourceWood" count="5" />
+	</recipe>
+	<recipe name="halDisplayCaseExtraZ" count="1" scrapable="False">
+		<ingredient name="resourceWood" count="5" />
+	</recipe>
+	<recipe name="halDisplayCaseExtraXY" count="1" scrapable="False">
+		<ingredient name="resourceWood" count="5" />
+	</recipe>
+</append>
+</configs>

@@ -1,0 +1,102 @@
+<Drconfused_MotorTools_Upgrade>
+<insertAfter xpath="/lootcontainers/lootgroup[@name='questChallenge']">
+	<lootgroup name="modMotorToolStuff" count="1">
+		<item name="modReserveGasTank1"/>
+		<item name="modGasTank1"/>
+		<item name="modBetterHandles"/>	
+		<item name="modEngineTurbo1"/>		
+		<item name="modDiamondTip1"/>
+		<item name="modChainsawTemperedFrame1"/>			
+		<item name="modEngineTurbo2"/>
+		<item name="modGasTank2"/>		
+		<item name="modReserveGasTank2"/>		
+		<item name="modMotorToolExtension1"/>
+		<item name="modMotorToolExtension2"/>		
+		<item name="modDiamondTip2"/>	
+		<item name="modMotorToolSilencer"/>
+		<item name="modChainsawTemperedFrame2"/>		
+		<item name="modEngineTurbo3"/>
+		<item name="modGasTank3"/>
+		<item name="modReserveGasTank3"/>
+		<item name="modMotorToolExtension3"/>
+		<item name="modDiamondTip3"/>
+		<item name="modChainsawTemperedFrame3"/>
+		<item name="toolQuickerFixerUpper"/>
+	</lootgroup>
+</insertAfter>
+
+<append xpath="/lootcontainers/lootgroup[@name='rareBooks']">
+		<item name="modEngineTurbo1Schematic"/>
+		<item name="modEngineTurbo2Schematic"/>
+		<item name="modEngineTurbo3Schematic"/>
+		<item name="modGasTank1Schematic"/>
+		<item name="modGasTank2Schematic"/>
+		<item name="modGasTank3Schematic"/>	
+		<item name="modReserveGasTank1Schematic"/>
+		<item name="modReserveGasTank2Schematic"/>		
+		<item name="modReserveGasTank3Schematic"/>
+		<item name="modMotorToolExtension1Schematic"/>
+		<item name="modMotorToolExtension2Schematic"/>
+		<item name="modMotorToolExtension3Schematic"/>
+		<item name="modDiamondTip1Schematic"/>
+		<item name="modDiamondTip2Schematic"/>	
+		<item name="modDiamondTip3Schematic"/>
+		<item name="modBetterHandlesSchematic"/>		
+		<item name="modMotorToolSilencerSchematic"/>
+		<item name="modChainsawTemperedFrame1Schematic"/>
+		<item name="modChainsawTemperedFrame2Schematic"/>
+		<item name="modChainsawTemperedFrame3Schematic"/>
+		<item name="toolQuickerFixerUpperSchematic"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT1']">
+
+		<item name="modReserveGasTank1"/>
+		<item name="modGasTank1"/>
+		<item name="modBetterHandles"/>	
+		<item name="modEngineTurbo1"/>		
+		<item name="modDiamondTip1"/>
+		<item name="modChainsawTemperedFrame1"/>
+</append>	
+
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT2']">	
+		<item name="modEngineTurbo2"/>
+		<item name="modGasTank2"/>		
+		<item name="modReserveGasTank2"/>		
+		<item name="modMotorToolExtension1"/>
+		<item name="modMotorToolExtension2"/>		
+		<item name="modDiamondTip2"/>	
+		<item name="modMotorToolSilencer"/>
+		<item name="modChainsawTemperedFrame2"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT3']">
+
+		<item name="modEngineTurbo3"/>
+		<item name="modGasTank3"/>
+		<item name="modReserveGasTank3"/>
+		<item name="modMotorToolExtension3"/>
+		<item name="modDiamondTip3"/>
+		<item name="modChainsawTemperedFrame3"/>
+</append>
+
+
+<!-- garage stuff, tools, etc -->
+
+<append xpath="/lootcontainers/lootcontainer[@id='22']">
+	<item group="modMotorToolStuff" count="1" prob="0.005"/>
+</append> 
+		
+<!-- construction supplies shipping crate -->	
+<!--  THIS MIGHT BE TOSSING AN ERROR?
+<append xpath="/lootcontainers/lootcontainer[@id='88']">
+	<item group="modMotorToolStuff" count="1" prob="0.01"/>
+</append>	
+-->
+<!-- cntCollapsedWorkbench -->
+<append xpath="/lootcontainers/lootcontainer[@id='92']">
+	<item group="modMotorToolStuff" count="1" prob="0.01"/>
+</append>	
+
+	
+</Drconfused_MotorTools_Upgrade>

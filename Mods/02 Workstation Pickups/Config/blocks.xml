@@ -1,0 +1,34 @@
+<configs>
+	
+	<!-- Intact workstations gives 5 parts when destroyed -->
+	<append xpath="/blocks/block[@name='workbench']">
+		<drop event="Harvest" name="resourceWorkbenchParts" count="5" tool_category="Disassemble"/>
+	</append>
+
+	<append xpath="/blocks/block[@name='chemistryStation']">
+		<drop event="Harvest" name="resourceChemistryStationParts" count="5" tool_category="Disassemble" />
+	</append>
+	
+	<append xpath="/blocks/block[@name='cementMixer']">
+		<drop event="Harvest" name="resourceCementMixerParts" count="5" tool_category="Disassemble" />
+	</append>
+	
+	<append xpath="/blocks/block[@name='tableSaw']">
+		<drop event="Harvest" name="resourceTableSawParts" count="5" tool_category="Disassemble" />
+	</append>
+	
+	
+	<!-- Destroyed Workstations gives 2 parts -->
+	<append xpath="/blocks/block[@name='cntCollapsedWorkbench']">
+		<drop event="Harvest" name="resourceWorkbenchParts" count="2" tool_category="Disassemble"/>
+	</append>
+
+	<append xpath="/blocks/block[@name='cntCollapsedChemistryStation']">
+		<drop event="Harvest" name="resourceChemistryStationParts" count="2" tool_category="Disassemble"/>
+	</append>
+	
+	<append xpath="/blocks/block[@name='cntCollapsedCementMixer']">
+		<drop event="Harvest" name="resourceCementMixerParts" count="2" tool_category="Disassemble"/>
+	</append>
+	
+</configs>

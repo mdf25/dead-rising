@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Clothing Carry Capacity" />
+		<Description value="Adds carry capacity bonus to some clothing items like coats, shirts and pants." />
+		<Author value="MaxFox Gaming" />
+		<Version value="1.0" />
+		<Website value="" />
+	</ModInfo>
+</xml>

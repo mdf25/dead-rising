@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Drconfused_MotorTools_Upgrade" />
+		<Description value="Adds attachments to the Auger and Chainsaw tool to increase speed, gas tank size, degredation value, and damage." />
+		<Author value="Drconfused others see Readme" />
+		<Version value="0.10 for Alpha 17.2 " />
+		<Website value="https://github.com/Drconfused/Motor-Tool-Attachments" />
+	</ModInfo>
+</xml>

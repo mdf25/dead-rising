@@ -1,0 +1,6 @@
+<configs>
+	<!-- SET BIOME SPAWNS OF ALL ZOMBIES TO [X] PER CHUNK -->
+	<set xpath="/spawning/biome/spawn[contains(@entitygroup, 'ombie')]/@maxcount">3</set>
+	<!-- SET RESPAWN DELAY OF ALL ZOMBIES TO [X] DAYS PER CHUNK -->
+	<set xpath="/spawning/biome/spawn[contains(@entitygroup, 'ombie')]/@respawndelay">0.5</set>
+</configs>

@@ -1,0 +1,28 @@
+<Drconfused_MotorTools_Upgrade>
+<!-- adds in the following
+		modBetterHandles
+		modEngineTurbo	1,2,3
+		modGasTank 1,2,3
+		modMotorToolExtension 1,2,3
+		modDiamondTip 1,2,3
+		modMotorToolSilencer		
+-->
+<!--  Science Progression  -->
+	<append xpath="/progression/perks/perk[@name='perkYeahScience']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5"
+			tags="modBetterHandles,modDiamondTip1,modMotorToolExtension1,modGasTank1"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5"
+			tags="modDiamondTip2,modMotorToolExtension2,modGasTank2,modReserveGasTank1,modEngineTurbo1,modChainsawTemperedFrame1"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5"
+			tags="modEngineTurbo2,modReserveGasTank2,modChainsawTemperedFrame2"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5"
+			tags="modMotorToolSilencer,modDiamondTip3,modMotorToolExtension3,modGasTank3,modEngineTurbo3,modReserveGasTank3,modChainsawTemperedFrame3,Quicker Fixer Upper"/>
+	</append>
+	
+<!-- Engineering Progression	-->
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5"
+			tags="Impact Wrench"/>
+	</append>
+
+</Drconfused_MotorTools_Upgrade>

@@ -1,0 +1,38 @@
+<configs>
+
+<!-- Adds the Workstation Parts items -->
+<append xpath="/items">
+	<item name="resourceWorkstationPartsMaster">
+		<property name="CustomIconTint" value="AA3333" />
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+		<property name="Material" value="MresourceScrapIron"/>
+		<property name="Weight" value="1"/>
+		<property name="Stacknumber" value="100"/> <!-- STK resource -->
+		<property name="EconomicValue" value="10"/>
+		<property name="EconomicBundleSize" value="1"/>
+		<property name="Group" value="Resources"/>
+		<property name="RepairTime" value="0.5"/>
+		<property name="RepairAmount" value="20"/>
+		<property name="CraftingIngredientTime" value="0.2"/>
+	</item>
+	
+	<item name="resourceWorkbenchParts">
+		<property name="Extends" value="resourceWorkstationPartsMaster" />
+		<property name="CustomIcon" value="workbench" />
+	</item>
+	<item name="resourceChemistryStationParts">
+		<property name="Extends" value="resourceWorkstationPartsMaster" />
+		<property name="CustomIcon" value="chemistryStation" />
+	</item>
+	<item name="resourceTableSawParts">
+		<property name="Extends" value="resourceWorkstationPartsMaster" />
+		<property name="CustomIcon" value="tableSaw" />
+	</item>
+	<item name="resourceCementMixerParts">
+		<property name="Extends" value="resourceWorkstationPartsMaster" />
+		<property name="CustomIcon" value="cementMixer" />
+	</item>
+</append>
+</configs>

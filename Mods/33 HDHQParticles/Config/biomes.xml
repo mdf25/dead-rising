@@ -1,0 +1,16 @@
+<configs>
+  <!-- Pine Forest Effect -->
+  <append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather">
+    <ParticleEffect prefab="#@modfolder:Resources/HDHQParticles.unity3d?HDHQpineforest" ChunkMargin="5"/>
+  </append>
+  
+  <!-- Wasteland Effect -->
+  <append xpath="/worldgeneration/biomes/biome[@name='wasteland']/weather">
+    <ParticleEffect prefab="#@modfolder:Resources/HDHQParticles.unity3d?HDHQwasteland" ChunkMargin="5"/>
+  </append>
+  
+  <!-- Burnt Forest Effect -->
+  <set xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather/ParticleEffect/@prefab">#@modfolder:Resources/HDHQParticles.unity3d?HDHQburntforest</set>
+  <set xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather/ParticleEffect/@ChunkMargin">5</set>
+  
+</configs>

@@ -1,0 +1,128 @@
+<configs>
+
+<!-- Lowers the probability of resource boulders in the world in all biomes -->
+<set xpath="//decoration[contains(@blockname, 'rockResource')]/@prob">0.005</set>
+
+<!-- Adding the small resource rocks with specific ores into the world in all biomes -->
+<append xpath="//decoration[contains(@blockname, 'rockResource')]/..">
+	<!-- Basic Rocks, gives stone only when mined -->
+	<decoration type="block" blockname="jaggedRock01" prob ="0.01" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock02" prob ="0.01" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock03" prob ="0.01" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock04" prob ="0.001" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock05" prob ="0.01" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock06" prob ="0.001" checkresource="true" rotatemax="3"/>
+	
+	<!-- Iron -->
+	<decoration type="block" blockname="jaggedRock01Iron" prob ="0.008" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock02Iron" prob ="0.008" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock03Iron" prob ="0.008" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock04Iron" prob ="0.0008" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock05Iron" prob ="0.008" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock06Iron" prob ="0.0008" checkresource="true" rotatemax="3"/>
+	
+	<!-- Nitrate -->
+	<decoration type="block" blockname="jaggedRock01Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock02Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock03Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock04Nitrate" prob ="0.0004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock05Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock06Nitrate" prob ="0.0004" checkresource="true" rotatemax="3"/>
+	
+	<!-- Lead -->
+	<decoration type="block" blockname="jaggedRock01Lead" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock02Lead" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock03Lead" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock04Lead" prob ="0.0004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock05Lead" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock06Lead" prob ="0.0004" checkresource="true" rotatemax="3"/>
+	
+	<!-- Nitrate -->
+	<decoration type="block" blockname="jaggedRock01Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock02Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock03Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock04Nitrate" prob ="0.0004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock05Nitrate" prob ="0.004" checkresource="true" rotatemax="3"/>
+	<decoration type="block" blockname="jaggedRock06Nitrate" prob ="0.0004" checkresource="true" rotatemax="3"/>
+</append>
+
+<!-- Adds the Wolfie Tree to the snow biome -->
+<append xpath="//biome[@name='snow']//decoration[starts-with(@blockname, 'tree')]/..">
+	<decoration type="block" blockname="treeWolfie" prob="0.00002" rotatemax="7"/>
+</append>
+
+<!-- Adds the Forest Flowers to the forest biome where you find cotton and goldenrod. Add small chance of mushrooms too -->
+<append xpath="//biome[@name='pine_forest']/subbiome//decoration[@blockname='plantedChrysanthemum3Harvest']/..">
+	<decoration type="block" blockname="plantForestFlower01" prob="0.05" rotatemax="7" />
+	<decoration type="block" blockname="plantForestFlower02" prob="0.05" rotatemax="7" />
+</append>
+
+<append xpath="//biome[@name='pine_forest']//decoration/..">
+	<!-- Sticks -->
+	<decoration type="block" blockname="propStick01" prob="0.013" rotatemax="7" />
+	<decoration type="block" blockname="propStick02" prob="0.013" rotatemax="7" />
+	<decoration type="block" blockname="propStick03" prob="0.013" rotatemax="7" />
+	<decoration type="block" blockname="propStick04" prob="0.013" rotatemax="7" />
+	<decoration type="block" blockname="propStick05" prob="0.013" rotatemax="7" />
+	<decoration type="block" blockname="propStick06" prob="0.013" rotatemax="7" />
+	<decoration type="block" blockname="propStick07" prob="0.013" rotatemax="7" />
+	<decoration type="block" blockname="propStick08" prob="0.013" rotatemax="7" />
+	<!-- Mushrooms -->
+	<decoration type="block" blockname="plantedMushroom3Harvest" prob="0.0001" rotatemax="3" />
+</append>
+
+<append xpath="//biome[@name='snow']//decoration/..">
+	<decoration type="block" blockname="propStick01" prob="0.004" rotatemax="7" />
+	<decoration type="block" blockname="propStick02" prob="0.004" rotatemax="7" />
+	<decoration type="block" blockname="propStick03" prob="0.004" rotatemax="7" />
+	<decoration type="block" blockname="propStick04" prob="0.004" rotatemax="7" />
+</append>
+
+<append xpath="//biome[@name='burnt_forest']//decoration/..">
+	<decoration type="block" blockname="propStick01" prob="0.012" rotatemax="7" />
+	<decoration type="block" blockname="propStick02" prob="0.012" rotatemax="7" />
+	<decoration type="block" blockname="propStick03" prob="0.012" rotatemax="7" />
+	<decoration type="block" blockname="propStick04" prob="0.012" rotatemax="7" />
+</append>
+
+<append xpath="//biome[@name='desert']//decoration/..">
+	<decoration type="block" blockname="propStick01" prob="0.005" rotatemax="7" />
+	<decoration type="block" blockname="propStick02" prob="0.005" rotatemax="7" />
+	<decoration type="block" blockname="propStick03" prob="0.005" rotatemax="7" />
+	<decoration type="block" blockname="propStick04" prob="0.005" rotatemax="7" />
+</append>
+
+<!-- Reduce the probability of grass spawning everywhere in the forest and desert biome -->
+<set xpath="//biome[@name='pine_forest']//decoration[@blockname='treeTallGrassDiagonal']/@prob">0.05</set>
+<set xpath="//biome[@name='desert']//decoration[@blockname='treeBrownGrassDiagonal']/@prob">0.00005</set>
+
+<!-- Reduce yucca and cactus amount in deserts -->
+<set xpath="//biome[@name='desert']//decoration[@blockname='treeCactus01']/@prob">0.001</set>
+<set xpath="//biome[@name='desert']//decoration[@blockname='treeCactus02']/@prob">0.001</set>
+<set xpath="//biome[@name='desert']//decoration[@blockname='treeCactus03']/@prob">0.001</set>
+<set xpath="//biome[@name='desert']//decoration[@blockname='treeCactus04']/@prob">0.001</set>
+<set xpath="//biome[@name='desert']//decoration[@blockname='plantedYucca3Harvest']/@prob">0.0005</set>
+
+<!-- Adds the maple trees to the pine_forest biome -->
+<!--
+<append xpath="//biome[@name='pine_forest']//decoration[starts-with(@blockname, 'tree')]/..">
+	<decoration type="block" blockname="treeMaple01" prob="0.006" rotatemax="7"/>
+	<decoration type="block" blockname="treeMaple02" prob="0.006" rotatemax="7"/>
+	<decoration type="block" blockname="treeMaple03" prob="0.006" rotatemax="7"/>
+	<decoration type="block" blockname="treeMaple04" prob="0.006" rotatemax="7"/>
+	<decoration type="block" blockname="treeMaple01Tall" prob="0.003" rotatemax="7"/>
+	<decoration type="block" blockname="treeMaple02Tall" prob="0.003" rotatemax="7"/>
+	<decoration type="block" blockname="treeMaple03Tall" prob="0.003" rotatemax="7"/>
+	<decoration type="block" blockname="treeMaple04Tall" prob="0.003" rotatemax="7"/>
+</append>
+-->
+
+
+
+
+
+
+
+
+
+</configs>

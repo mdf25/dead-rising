@@ -1,0 +1,13 @@
+<configs>
+	<!-- Removes unneeded areas from weapon workbench in Melee mod. -->
+	<remove xpath="//crafting_category_list[@display_type='Weapon Anvil']/crafting_category[@name='Novelty']" />
+	<remove xpath="//crafting_category_list[@display_type='Weapon Anvil']/crafting_category[@name='High Class']" />
+	<remove xpath="//crafting_category_list[@display_type='Weapon Anvil']/crafting_category[@name='Lightsabers']" />
+	<remove xpath="//crafting_category_list[@display_type='Weapon Anvil']/crafting_category[@name='Fun']" />
+	<remove xpath="//crafting_category_list[@display_type='Weapon Anvil']/crafting_category[@name='WorkbenchCustom']" />
+	
+	<!-- Adds the ALL category for the weapon anvil -->
+	<insertBefore xpath="//crafting_category_list[@display_type='Weapon Anvil']/crafting_category[1]">
+		<crafting_category name="" icon="ui_game_symbol_hammer" display_name="lblAll" />
+	</insertBefore>
+</configs>

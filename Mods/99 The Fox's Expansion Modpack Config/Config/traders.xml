@@ -1,0 +1,112 @@
+<configs>
+
+<!-- Remove all mod schematics in trader inventory. Mod crafting is now loot only. -->
+<remove xpath="//trader_item_group[contains(@name, 'Books')]/item[contains(@name, 'Schematic')]" />
+
+<!-- Remove all Gunny Guides that are no longer used -->
+<remove xpath="//item[contains(@name, 'Guide: Pistols')]" />
+<remove xpath="//item[contains(@name, 'Guide: Hunting Rifles')]" />
+<remove xpath="//item[contains(@name, 'Guide: Shotguns')]" />
+<remove xpath="//item[contains(@name, 'Guide: 44 Magnum')]" />
+<remove xpath="//item[contains(@name, 'Guide: AK-47')]" />
+<remove xpath="//item[contains(@name, 'Guide: SMG')]" />
+<remove xpath="//item[contains(@name, 'MR-10')]" />
+<remove xpath="//item[contains(@name, 'Rocket Launcher')]" />
+
+<!-- add the new Gunny, Toolmaking and Fox Guides to the trader inventory -->
+<append xpath="//trader_item_group[@name='commonBooks']">
+    <item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+	<item name="Fox's Guide: Cooking Appliances" />
+	<item name="Fox's Guide: Fences and Railings" />
+	<item name="Fox's Guide: Lighting Your Home" />
+	<item name="Fox's Guide: Kitchen Upgrades" />
+	<item name="Fox's Guide: Wireless Power Systems" />
+	<item name="Toolmaking Today: Small Hand Tools" />
+	<item name="Toolmaking Today: Looting Tools" />
+	<item name="Toolmaking Today: Weapons of the Dark Ages" />
+	<item name="Toolmaking Today: Defensive Shields" />
+</append>
+
+<!-- This one is set by JSS -->
+<append xpath="//trader_item_group[@name='perkMagazines']">
+	<item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+	<item name="Fox's Guide: Cooking Appliances" />
+	<item name="Fox's Guide: Fences and Railings" />
+	<item name="Fox's Guide: Lighting Your Home" />
+	<item name="Fox's Guide: Kitchen Upgrades" />
+	<item name="Fox's Guide: Wireless Power Systems" />
+	<item name="Toolmaking Today: Small Hand Tools" />
+	<item name="Toolmaking Today: Looting Tools" />
+	<item name="Toolmaking Today: Weapons of the Dark Ages" />
+	<item name="Toolmaking Today: Defensive Shields" />
+</append>
+
+<!-- Add the Melee weapon mods and Power Tools mods into the trader inventory so they can actually be purchased. -->
+<append xpath="//trader_item_group[@name='modMeleeT1']">
+	<item name="Spike Mod" />
+	<item name="Smoke Blade" />
+	<item name="Fire Blade" />
+	<item name="Fire" />
+	<item name="Water" />
+	<item name="Smoke" />
+	<item name="Tempered Casement" />
+	<item name="modReserveGasTank1"/>
+	<item name="modGasTank1"/>
+	<item name="modBetterHandles"/>	
+	<item name="modEngineTurbo1"/>		
+	<item name="modDiamondTip1"/>
+	<item name="modChainsawTemperedFrame1"/>			
+</append>
+
+<append xpath="//trader_item_group[@name='modMeleeT2']">
+	<item name="Saw Mod" />
+	<item name="Electric Blade" />
+	<item name="Blood Drip" />
+	<item name="Lava Drip" />
+	<item name="Ice" />
+	<item name="Poison" />
+	<item name="Electric" />
+	<item name="Poison Casement" />
+	<item name="Electric Casement" />
+	<item name="modEngineTurbo2"/>
+	<item name="modGasTank2"/>		
+	<item name="modReserveGasTank2"/>		
+	<item name="modMotorToolExtension1"/>
+	<item name="modMotorToolExtension2"/>		
+	<item name="modDiamondTip2"/>	
+	<item name="modMotorToolSilencer"/>
+	<item name="modChainsawTemperedFrame2"/>		
+</append>
+
+<append xpath="//trader_item_group[@name='modMeleeT3']">
+	<item name="Shuriken Mod" />
+	<item name="Death Blade" />
+	<item name="Soul Ripper" />
+	<item name="Holy Blade" />
+	<item name="Star" />
+	<item name="Death" />
+	<item name="Hellfire" />
+	<item name="Golden Casement" />
+	<item name="Magma Casement" />
+	<item name="modEngineTurbo3"/>
+	<item name="modGasTank3"/>
+	<item name="modReserveGasTank3"/>
+	<item name="modMotorToolExtension3"/>
+	<item name="modDiamondTip3"/>
+	<item name="modChainsawTemperedFrame3"/>
+</append>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</configs>

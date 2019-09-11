@@ -1,0 +1,31 @@
+<configs>
+<append xpath="/Sounds">
+	
+<SoundDataNode name="lightsaberswing"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" range="7" volume="80" time="2" muffled_when_crouched="0.5"/>
+		<AudioClip ClipName="#@modfolder:Resources/LightsaberAudio.unity3d?lightsaberswing"/>
+		<AudioClip ClipName="#@modfolder:Resources/LightsaberAudio.unity3d?lightsaberswing2"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+	
+	
+<SoundDataNode name="lightsaberswoosh"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+	<Noise ID="3" range="7" volume="80" time="2" muffled_when_crouched="0.5"/>
+		<AudioClip ClipName="#@modfolder:Resources/LightsaberAudio.unity3d?lightsaberswoosh"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+	
+	
+<SoundDataNode name="lightsaberstrike"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="5" range="11" volume="80" time="2" muffled_when_crouched="0.5"/>
+		<AudioClip ClipName="#@modfolder:Resources/LightsaberAudio.unity3d?lightsaberstrike"/>
+		<AudioClip ClipName="#@modfolder:Resources/LightsaberAudio.unity3d?lightsaberstrike2"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+	
+	
+<SoundDataNode name="grandslam"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="5" range="11" volume="80" time="3" muffled_when_crouched="0.5"/>
+		<AudioClip ClipName="#@modfolder:Resources/Baseball.unity3d?baseballpower"/>
+		<VolumeScale value="5"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+	
+	</append>
+	</configs>

@@ -1,0 +1,651 @@
+<configs>
+	<append xpath="/item_modifiers" >
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										Physical mods 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<item_modifier name="Shuriken Mod" installable_tags="physicalmod" blocking_tags="noelm" modifier_tags="damage" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="7shurikenmod"/>
+			<property name="Group" value="Weapon Mods,Physical Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="65"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBloodyMess"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="EntityDamage" operation="base_add" value="15"/>
+				<passive_effect name="StaminaLoss" operation="base_add" value="5"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".3"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?ShurikenModPrefab" parent_transform="Mod/Physical"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Saw Mod" installable_tags="physicalmod" blocking_tags="noelm" modifier_tags="damage" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="7sawmod"/>
+			<property name="Group" value="Weapon Mods,Physical Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBloodyMess"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="wood"/>
+				<passive_effect name="StaminaLoss" operation="base_add" value="5"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".3"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?SawModPrefab" parent_transform="Mod/Physical"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Spike Mod" installable_tags="physicalmod" blocking_tags="noelm" modifier_tags="damage" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="7spikemod"/>
+			<property name="Group" value="Weapon Mods,Physical Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="80"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBloodyMess"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="metal"/>
+				<passive_effect name="StaminaLoss" operation="base_add" value="5"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".3"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?SpikesModPrefab" parent_transform="Mod/Physical"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										Bladed mods 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<item_modifier name="Soul Ripper" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="soulripper"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRipper"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffRipper"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?SoulRipperPrefab" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Holy Blade" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="holyblade"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="self" buff="buffHolyLord"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffHolySmite"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?HolyBlade" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Blood Drip" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="blooddrip"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffInjuryBleeding"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?BloodDropMod" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Lava Drip" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="lavadrip"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBurning"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="fire" />
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?LavaBlunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Electric Blade" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="electricblade"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffShocked"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="4" buff="buffShocked"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffShocked"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="electrical" />
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?ElectricBlade" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Death Blade" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="deathblade"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffDeathCustom"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?DeathBlade" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Fire Blade" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="fireblade"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBurning"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="4" buff="buffBurningMolotov"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="MaxRange" operation="base_set" value="5" tags="secondary"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="35" tags="secondary"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="heat" />
+				<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffBurning,buffIsOnFire,buffBurningMolotov"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="15"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-15"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?FireBlade" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Smoke Blade" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="smokeblade"/>
+			<property name="Group" value="Weapon Mods,Blade Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffSmokeout"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="NoiseMultiplier" operation="base_subtract" value="100"/>
+				<passive_effect name="CrouchSpeed" operation="perc_add" value="1"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?SmokeBlade" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										Blunt mods 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<item_modifier name="Fire" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="firemod"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffBurning"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="4" buff="buffBurningMolotov"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="MaxRange" operation="base_set" value="5" tags="secondary"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="35" tags="secondary"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="heat" />
+				<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffIsOnFire,buffBurning,buffBurningMolotov"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="15"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-15"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?FireBlunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Ice" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="icemod"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffFrozenSolid"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="4" buff="buffFrozenSolid"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="HypothermalResist" operation="base_add" value="-15"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="15"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?SnowBunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Star" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="starmod"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<passive_effect name="HarvestCount" operation="base_add" value=".25"/>
+				<passive_effect name="CraftingTime" operation="perc_add" value="-.3"/>
+				<passive_effect name="CarryCapacity" operation="base_subtract" value="9" />
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".25" />
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?StarModPrefab" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Water" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="7water"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffWaterSplash"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="4" buff="buffWaterSplash"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyStats" stat="water" operation="add" value="1"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfSwimStart" action="AddBuff" target="self" buff="buffSwimCustom"/>
+				<triggered_effect trigger="onSelfSwimStop" action="RemoveBuff" target="self" buff="buffSwimCustom"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?WaterBlunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Electric" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="electricmod"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffShocked"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="4" buff="buffShocked"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffShocked"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="electrical" />
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?ElectricBlunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Death" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="deathmod"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffDeathCustom"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?DeathBlunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Poison" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="poisonmod"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffPoisoned"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" target="self" buff="buffPoisoned"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?PoisonBlunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Hellfire" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="hellfire"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<item_property_overrides name="*">
+				<property name="LightValue" value="0.45"/>
+				<property name="LightSource" value="lightSource"/>
+				<property name="ActivateObject" value="lightSource"/>
+				<property name="AlwaysActive" value="true"/>
+			</item_property_overrides>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffHellFire"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="4" buff="buffHellFire"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="MaxRange" operation="base_set" value="5" tags="secondary"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="35" tags="secondary"/>
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="heat" />
+				<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffHellFire,buffIsOnFire,buffBurningMolotov"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?HellfireBlunt" parent_transform="Mod/Effect"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AnimatorSetBool" target="self" property="swing" value="true"/>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AnimatorSetBool" target="self" property="swing" value="false"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Smoke" installable_tags="elemental" blocking_tags="noelm" modifier_tags="shaft" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="smokeblunt"/>
+			<property name="Group" value="Weapon Mods,Blunt Mods"/>
+			<effect_group tiered="false">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffSmokeout"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="NoiseMultiplier" operation="perc_subtract" value="1"/>
+				<passive_effect name="CrouchSpeed" operation="perc_add" value=".6"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/Mods.unity3d?SmokeBlunt" parent_transform="Mod/Effect"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										Texture Mods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<item_modifier name="Golden Casement" installable_tags="skin" blocking_tags="noelm" modifier_tags="potato" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="gold1"/>
+			<property name="Group" value="Weapon Mods,Casing Mods"/>
+			<item_property_overrides name="Worn Bayonet">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?BayonetPrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Dagger">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?DaggerPrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Worn Handaxe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?HandAxePrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sharp Skinner">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SkinningPrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Soul Harvest">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SoulHarvestPrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Thors Hammer">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?ThorsHammerPrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Katana">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?zKatanaPrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Battle Spear">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SpearGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Gutter">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?GutterPrefabGold"/>
+			</item_property_overrides>
+			<item_property_overrides name="Golden Axe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?Golden2HAxePrefabDark"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sword of Valor">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SwordOfVictoryPrefabGold"/>
+			</item_property_overrides>
+			
+			<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value="0.2,0.5" level="1,6" tags="skin"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Poison Casement" installable_tags="skin" blocking_tags="noelm" modifier_tags="potato" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="green1"/>
+			<property name="Group" value="Weapon Mods,Casing Mods"/>
+			<item_property_overrides name="Worn Bayonet">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?BayonetPrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Dagger">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?DaggerPrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Worn Handaxe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?HandAxePrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sharp Skinner">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SkinningPrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Soul Harvest">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SoulHarvestPrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Thors Hammer">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?ThorsHammerPrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Katana">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?zKatanaPrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Battle Spear">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SpearGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Gutter">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?GutterPrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Golden Axe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?Golden2HAxePrefabGreen"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sword of Valor">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SwordOfVictoryPrefabGreen"/>
+			</item_property_overrides>
+			
+			<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value="0.2,0.5" level="1,6" tags="skin"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Electric Casement" installable_tags="skin" blocking_tags="noelm" modifier_tags="potato" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="ele1"/>
+			<property name="Group" value="Weapon Mods,Casing Mods"/>
+			<item_property_overrides name="Worn Bayonet">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?BayonetPrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Dagger">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?DaggerPrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Worn Handaxe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?HandAxePrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sharp Skinner">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SkinningPrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Soul Harvest">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SoulHarvestPrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Thors Hammer">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?ThorsHammerPrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Katana">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?zKatanaPrefabElectrical"/>
+			</item_property_overrides>
+			<item_property_overrides name="Battle Spear">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SpearBlue"/>
+			</item_property_overrides>
+			<item_property_overrides name="Gutter">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?GutterPrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Golden Axe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?Golden2HAxePrefabElectric"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sword of Valor">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SwordOfVictoryPrefabElectric"/>
+			</item_property_overrides>
+			
+			<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value="0.2,0.5" level="1,6" tags="skin"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Tempered Casement" installable_tags="skin" blocking_tags="noelm" modifier_tags="potato" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="rainbow1"/>
+			<property name="Group" value="Weapon Mods,Casing Mods"/>
+			<item_property_overrides name="Worn Bayonet">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?BayonetPrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Dagger">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?DaggerPrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Worn Handaxe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?HandAxePrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sharp Skinner">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SkinningPrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Soul Harvest">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SoulHarvestPrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Thors Hammer">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?ThorsHammerPrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Katana">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?zKatanaPrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Battle Spear">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SpearRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Gutter">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?GutterPrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Battle Spear">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SpearRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Golden Axe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?Golden2HAxePrefabRainbow"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sword of Valor">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SwordOfVictoryPrefabRainbow"/>
+			</item_property_overrides>
+			
+			<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value="0.2,0.5" level="1,6" tags="skin"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		<item_modifier name="Magma Casement" installable_tags="skin" blocking_tags="noelm" modifier_tags="potato" type="attachment" rarity="0.5">
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="fire1"/>
+			<property name="Group" value="Weapon Mods,Casing Mods"/>
+			<item_property_overrides name="Worn Bayonet">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?BayonetPrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Dagger">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?DaggerPrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Worn Handaxe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?HandAxePrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sharp Skinner">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SkinningPrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Soul Harvest">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SoulHarvestPrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Thors Hammer">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?ThorsHammerPrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Rusty Katana">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?zKatanaPrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Battle Spear">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SpearFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Gutter">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?GutterPrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Golden Axe">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?Golden2HAxePrefabFire"/>
+			</item_property_overrides>
+			<item_property_overrides name="Sword of Valor">
+				<property name="Meshfile" value="#@modfolder:Resources/Color.unity3d?SwordOfVictoryPrefabFire"/>
+			</item_property_overrides>
+			
+			<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value="0.2,0.5" level="1,6" tags="skin"/>
+			</effect_group>
+		</item_modifier>
+	</append>
+</configs>

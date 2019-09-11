@@ -1,0 +1,45 @@
+<homedepot>
+<!--================================
+	OTHER INCLUSIONS AND FIXES FOR RECIPES - (of course 'fix' is subjective)
+	================================ -->
+
+	<!-- Include Snowberry Seeds Recipe (Locked behind LivingOffTheLand 3) -->
+	<append xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="plantedSnowberry1"/>
+	</append>
+
+	<!-- Include BloodDrawKit Recipe (Locked behind Physician 3) -->
+	<append xpath="/progression/perks/perk[@name='perkPhysician']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="medicalBloodDrawKit"/>
+	</append>
+
+	<!-- Change Vehicles to actually require GreaseMonkey (not just the vehicle parts) -->
+	<!--
+	<append xpath="/progression/perks/perk[@name='perkGreaseMonkey']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="vehicleBicyclePlaceable"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="vehicleMinibikePlaceable"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="vehicleMotorcyclePlaceable"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="vehicle4x4TruckPlaceable"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="vehicleGyrocopterPlaceable"/>
+	</append>
+    -->
+	
+	<!-- Include Home Woodstove & All Home Grill Recipes (Locked behind HammerForge 1) -->
+	<append xpath="/progression/perks/perk[@name='perkHammerForge']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="Home Woodstove,Home Gas Grill Open,Home Gas Grill Closed,Home Charcoal Grill Open,Home Charcoal Grill Closed"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="roadRailing,roadRailingPole,roadRailingEnd,roadRailingEnd2,chainLink,chainLinkFenceBottomPole,chainLinkFenceTop,chainLinkFenceTopPole,chainLinkPole,chainLinkCornerTop,chainLinkCornerBottom,chainLinkFenceTopPole2"/>
+	</append>
+
+	<!-- Include Home Appliances, Sinks, and Lighting Recipes, and Wireless Electrical Recipes (Locked behind AdvancedEngineering 1,2,& 3) -->
+	<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="Home Ceiling Light, Home Ceiling Light 2,Home Ceiling Light 2 Brass,Home Ceiling Light 4,Home Ceiling Light 5,Home Ceiling Light 5 Brass,Home Ceiling Light 7,Home Wall Light,Home Sconce Light,Home Porch Light,Home Porch Light 4,Home Porch Light 4 Brass,Home Desk Lamp,Home Table Lamp,Home End Table w/ Lamp,Home Industrial Light"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="Home Electric Oven,Home Utility Sink,Home Wall Sink,Home Cabinet Sink,Home Granite Sink,Home Fountain,Home Ceiling Fan Light,Home Street Light,Home Street Light Classic,Home Industrial Light 2,Home Industrial Light 2 Red,Home Open Sign,Home Exit Sign"/>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="Home Microwave Oven,Home Work Light,Home Wireless Relay Block,Home Wireless Switch Fusebox,Home Wireless Switch Electrical Box,Home Electrical Pole Top Relay"/>
+	</append>
+
+	<!-- Include Home Filtered Water Cooler Recipes (Locked behind YeahScience 3) -->
+	<append xpath="/progression/perks/perk[@name='perkYeahScience']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="Home Filtered Water Cooler"/>
+	</append>
+
+</homedepot>

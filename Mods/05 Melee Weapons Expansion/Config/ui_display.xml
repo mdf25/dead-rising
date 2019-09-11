@@ -1,0 +1,23 @@
+<configs>
+	<append xpath="/ui_display_info/crafting_category_display" >
+	
+		<crafting_category_list display_type="Weapon Anvil">
+			<crafting_category name="Advanced Tools" icon="ui_game_symbol_tool" display_name="Advanced Tools" icon_color="0,153,0"/>
+			<crafting_category name="Novelty" icon="ui_game_symbol_club" display_name="Novelty and Low Tier Weaponry" icon_color="0,153,0"/>
+			<crafting_category name="Advanced" icon="ui_game_symbol_knife" display_name="Advanced Weaponry" icon_color="0,153,0"/>
+			<crafting_category name="High Class" icon="ui_game_symbol_deep_cuts" display_name="High Class Weaponry" icon_color="0,153,0"/>
+			<crafting_category name="Defensive" icon="ui_game_symbol_defense" display_name="Defensive Weapons" icon_color="0,153,0"/>
+			<crafting_category name="Lightsabers" icon="ui_game_symbol_treasure" display_name="Lightsabers!" icon_color="0,153,0"/>
+			<crafting_category name="Fun" icon="ui_game_symbol_loot_sack" display_name="Fun Weapons!" icon_color="0,153,0"/>
+			<crafting_category name="WorkbenchCustom" icon="ui_game_symbol_workbench" display_name="Weapon Mod Workbench" icon_color="0,153,0"/>
+		</crafting_category_list>
+		
+		<crafting_category_list display_type="Weapon Mod Workbench">
+			<crafting_category name="Weapon Mods" icon="ui_game_symbol_perk" display_name="All Mods" icon_color="0,153,0"/>
+			<crafting_category name="Blunt Mods" icon="ui_game_symbol_sledge" display_name="Blunt Mods" icon_color="0,153,0"/>
+			<crafting_category name="Blade Mods" icon="ui_game_symbol_knife" display_name="Blade Mods" icon_color="0,153,0"/>
+			<crafting_category name="Physical Mods" icon="ui_game_symbol_muscle" display_name="Physical Mods" icon_color="0,153,0"/>
+			<crafting_category name="Casing Mods" icon="ui_game_symbol_paint_brush" display_name="Casing Mods" icon_color="0,153,0"/>
+		</crafting_category_list>
+	</append>
+</configs>

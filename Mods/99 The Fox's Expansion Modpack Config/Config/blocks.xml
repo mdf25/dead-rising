@@ -1,0 +1,9 @@
+<configs>
+
+<!-- Sets the HDHQ seed custom icons to be the better ones -->
+<set xpath="//block[@name='HDHQ_AlpineSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedWinterPine1m</set>
+<set xpath="//block[@name='HDHQ_DesertSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedOak1m</set>
+<set xpath="//block[@name='HDHQ_JungleSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedMountainPine1m</set>
+<set xpath="//block[@name='HDHQ_PalmSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedMountainPine1m</set>
+
+</configs>

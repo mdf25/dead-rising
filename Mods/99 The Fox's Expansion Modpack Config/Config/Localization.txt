@@ -1,0 +1,5 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+HDHQ_AlpineSeedPrefab,blocks,Block,New,Winter Pine Seed,,,,,
+HDHQ_DesertSeedPrefab,blocks,Block,New,Desert Tree Seed,,,,,
+HDHQ_JungleSeedPrefab,blocks,Block,New,Pine Tree Seed,,,,,
+HDHQ_PalmSeedPrefab,blocks,Block,New,Oak Tree Seed,,,,,

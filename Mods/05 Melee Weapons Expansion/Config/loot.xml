@@ -1,0 +1,484 @@
+<configs>
+<!--							Authored by: Stasis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+									Weapon Lootgroups with Ammo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<!--
+<item group="sharpIcePick" count="1" prob="0.6"/>
+<item group="wornHandaxe" count="1" prob="0.6"/>
+<item group="salvagedAxe" count="1" prob="0.6"/>
+<item group="sturdyCrowbar" count="1" prob="0.6"/>
+<item group="dullSword" count="1" prob="0.35"/>
+<item group="dullAxe" count="1" prob="0.35"/>
+<item group="rustyIron" count="1" prob="0.35"/>
+<item group="khopesh" count="1" prob="0.35"/>
+<item group="wornBayonet" count="1" prob="0.025"/>
+<item group="rustyDagger" count="1" prob="0.025"/>
+<item group="battleSword" count="1" prob="0.025"/>
+<item group="oldWoodenBat" count="1" prob="0.025"/>
+<item group="boneClub" count="1" prob="0.025"/>
+<item group="heavySpikedMace" count="1" prob="0.025"/>
+<item group="oldWarhammer" count="1" prob="0.025"/>
+<item group="gutter" count="1" prob="0.005"/>
+<item group="rustyKatana" count="1" prob="0.005"/>
+<item group="battleSpear" count="1" prob="0.005"/>
+<item group="soulHarvest" count="1" prob="0.005"/>
+<item group="goldenAxe" count="1" prob="0.005"/>
+<item group="wornFlail" count="1" prob="0.005"/>
+<item group="thorsHammer" count="1" prob="0.005"/>
+<item group="riotShield" count="1" prob="0.005"/>
+<item group="purpleLightsaber" count="1" prob="0.005"/>
+<item group="greenLightsaber" count="1" prob="0.005"/>
+<item group="blueLightsaber" count="1" prob="0.005"/>
+<item group="redLightsaber" count="1" prob="0.005"/>
+<item group="pinkLightsaber" count="1" prob="0.005"/>
+<item group="blackLightsaber" count="1" prob="0.005"/>
+<item group="orangeLightsaber" count="1" prob="0.005"/>
+
+ -->
+
+<insertBefore xpath="/lootcontainers/lootgroup[@name='questChallenge']">
+
+  <!-- TOOLS -->
+	<lootgroup name="sharpIcePick" count="all">
+		<item name="Sharp Ice Pick" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="wornHandaxe" count="all">
+		<item name="Worn Handaxe" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="salvagedAxe" count="all">
+		<item name="Salvaged Axe" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="sturdyCrowbar" count="all">
+		<item name="Sturdy Crowbar" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="sharpSkinner" count="all">
+		<item name="Sharp Skinner" count="1"/>
+	</lootgroup>
+
+  <!-- Novelty/Trash -->
+	<lootgroup name="dullSword" count="all">
+		<item name="Dull Sword" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="dullAxe" count="all">
+		<item name="Dull Axe" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="rustyIron" count="all">
+		<item name="Rusty Iron" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="khopesh" count="all">
+		<item name="Khopesh" count="1"/>
+	</lootgroup>
+
+	<!-- Advanced -->
+	<lootgroup name="wornBayonet" count="all">
+		<item name="Worn Bayonet" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="rustyDagger" count="all">
+		<item name="Rusty Dagger" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="battleSword" count="all">
+		<item name="Battle Sword" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="oldWoodenBat" count="all">
+		<item name="Old Wooden Bat" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="boneClub" count="all">
+		<item name="Bone Club" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="heavySpikedMace" count="all">
+		<item name="Heavy Spiked Mace" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="oldWarhammer" count="all">
+		<item name="Old Warhammer" count="1"/>
+	</lootgroup>
+
+	<!-- High Class -->
+	<lootgroup name="gutter" count="all">
+		<item name="Gutter" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="rustyKatana" count="all">
+		<item name="Rusty Katana" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="battleSpear" count="all">
+		<item name="Battle Spear" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="soulHarvest" count="all">
+		<item name="Soul Harvest" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="goldenAxe" count="all">
+		<item name="Golden Axe" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="wornFlail" count="all">
+		<item name="Worn Flail" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="thorsHammer" count="all">
+		<item name="Thors Hammer" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="riotShield" count="all">
+		<item name="Riot Shield" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="purpleLightsaber" count="all">
+		<item name="Purple Lightsaber" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="greenLightsaber" count="all">
+		<item name="Green Lightsaber" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="blueLightsaber" count="all">
+		<item name="Blue Lightsaber" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="redLightsaber" count="all">
+		<item name="Red Lightsaber" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="pinkLightsaber" count="all">
+		<item name="Pink Lightsaber" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="blackLightsaber" count="all">
+		<item name="Black Lightsaber" count="1"/>
+	</lootgroup>
+
+	<lootgroup name="orangeLightsaber" count="all">
+		<item name="Orange Lightsaber" count="1"/>
+	</lootgroup>
+
+
+</insertBefore>
+
+<!-- Nightstand/Dresser -->
+<append xpath="/lootcontainers/lootcontainer[@id='6']">
+
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+</append>
+
+<!-- Safes/weapon caches/rare good loot -->
+<append xpath="/lootcontainers/lootcontainer[@id='11']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+</append>
+
+<!-- Metal desk -->
+<append xpath="/lootcontainers/lootcontainer[@id='24']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+</append>
+
+<!-- Supply drop General -->
+<append xpath="/lootcontainers/lootcontainer[@id='34']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+</append>
+
+<!-- Suitcase -->
+<append xpath="/lootcontainers/lootcontainer[@id='36']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+</append>
+
+<!-- Gun Safe -->
+<append xpath="/lootcontainers/lootcontainer[@id='42']">
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+</append>
+
+<!-- Purse -->
+<append xpath="/lootcontainers/lootcontainer[@id='48']">
+	<item group="gutter" count="1" prob="0.6"/>
+	<item group="rustyIron" count="1" prob="0.6"/>
+	<item group="boneClub" count="1" prob="0.6"/>
+</append>
+
+<!-- Fancy chest -->
+<append xpath="/lootcontainers/lootcontainer[@id='41']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+</append>
+
+<!-- Shotgun Messiah -->
+<append xpath="/lootcontainers/lootcontainer[@id='50']">
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+</append>
+
+<!-- Treasure Chest -->
+<append xpath="/lootcontainers/lootcontainer[@id='61']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+	<item group="purpleLightsaber" count="1" prob="0.005"/>
+	<item group="greenLightsaber" count="1" prob="0.005"/>
+	<item group="blueLightsaber" count="1" prob="0.005"/>
+	<item group="redLightsaber" count="1" prob="0.005"/>
+	<item group="pinkLightsaber" count="1" prob="0.005"/>
+	<item group="blackLightsaber" count="1" prob="0.005"/>
+	<item group="orangeLightsaber" count="1" prob="0.005"/>
+</append>
+
+<!--  Zombie Loot 1 -->
+<append xpath="/lootcontainers/lootcontainer[@id='70']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+</append>
+
+<!-- Zombie Loot 2 -->
+<append xpath="/lootcontainers/lootcontainer[@id='71']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+</append>
+
+
+<!-- Weapons Bag Small -->
+<append xpath="/lootcontainers/lootcontainer[@id='100']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+</append>
+
+
+<!-- Weapons Bag Large -->
+<append xpath="/lootcontainers/lootcontainer[@id='101']">
+	<item group="sharpIcePick" count="1" prob="0.6"/>
+	<item group="wornHandaxe" count="1" prob="0.6"/>
+	<item group="salvagedAxe" count="1" prob="0.6"/>
+	<item group="sturdyCrowbar" count="1" prob="0.6"/>
+	<item group="dullSword" count="1" prob="0.35"/>
+	<item group="dullAxe" count="1" prob="0.35"/>
+	<item group="rustyIron" count="1" prob="0.35"/>
+	<item group="khopesh" count="1" prob="0.35"/>
+	<item group="wornBayonet" count="1" prob="0.025"/>
+	<item group="rustyDagger" count="1" prob="0.025"/>
+	<item group="battleSword" count="1" prob="0.025"/>
+	<item group="oldWoodenBat" count="1" prob="0.025"/>
+	<item group="boneClub" count="1" prob="0.025"/>
+	<item group="heavySpikedMace" count="1" prob="0.025"/>
+	<item group="oldWarhammer" count="1" prob="0.025"/>
+	<item group="gutter" count="1" prob="0.005"/>
+	<item group="rustyKatana" count="1" prob="0.005"/>
+	<item group="battleSpear" count="1" prob="0.005"/>
+	<item group="soulHarvest" count="1" prob="0.005"/>
+	<item group="goldenAxe" count="1" prob="0.005"/>
+	<item group="wornFlail" count="1" prob="0.005"/>
+	<item group="thorsHammer" count="1" prob="0.005"/>
+	<item group="riotShield" count="1" prob="0.005"/>
+</append>
+
+</configs>

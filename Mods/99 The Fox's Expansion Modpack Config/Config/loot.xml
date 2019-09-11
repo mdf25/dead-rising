@@ -1,0 +1,247 @@
+<configs>
+
+<!-- Remove all mod schematics in loot containers. Mod crafting is now loot only. -->
+<remove xpath="/lootcontainers/lootgroup[contains(@name, 'Books')]/item[contains(@name, 'Schematic')]" />
+
+<!-- Remove rare books specifically so that the schematics don't spawn in randomly -->
+<remove xpath="/lootcontainers/lootgroup[@name='rareBooks']" />
+<insertAfter xpath="/lootcontainers/lootgroup[@name='commonBooks']">
+	<lootgroup name="rareBooks" count="1">
+		<item name="resourcePaper" count="5,15" prob="20"/>
+		<item group="questChallenge" count="1"/>
+	</lootgroup>
+</insertAfter>
+
+
+<!-- Remove all the Gunny Guides that are no longer needed in game. -->
+<remove xpath="//item[contains(@name, 'Guide: Pistols')]" />
+<remove xpath="//item[contains(@name, 'Guide: Hunting Rifles')]" />
+<remove xpath="//item[contains(@name, 'Guide: Shotguns')]" />
+<remove xpath="//item[contains(@name, 'Guide: 44 Magnum')]" />
+<remove xpath="//item[contains(@name, 'Guide: AK-47')]" />
+<remove xpath="//item[contains(@name, 'Guide: SMG')]" />
+<remove xpath="//item[contains(@name, 'MR-10')]" />
+<remove xpath="//item[contains(@name, 'Rocket Launcher')]" />
+
+
+<!-- Remove Melee weapons in loot containers that may clutter up other loot, like guns in gun safes. -->
+
+<!-- LootContainer 11: Safes -->
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='salvagedAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='sturdyCrowbar']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='soulHarvest']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='goldenAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='wornFlail']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='thorsHammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='riotShield']" />
+
+<!-- LootContainer 24: Metal Desks -->
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='wornFlail']" />
+
+<!-- LootContainer 36: Suitcase -->
+<remove xpath="/lootcontainers/lootcontainer[@id='36']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='36']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='36']/item[@group='khopesh']" />
+
+<!-- LootContainer 41: Fancy Chest -->
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='salvagedAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='sturdyCrowbar']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='rustyKatana']" />
+
+<!-- LootContainer 42: Gun Safe -->
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='soulHarvest']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='goldenAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='wornFlail']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='thorsHammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='riotShield']" />
+
+<!-- LootContainer 48: Purse -->
+<remove xpath="/lootcontainers/lootcontainer[@id='48']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='48']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='48']/item[@group='boneClub']" />
+
+<!-- LootContainer 50: Shotgun Messiah Crates -->
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='goldenAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='wornFlail']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='thorsHammer']" />
+
+
+
+<!-- LootContainer 61: Treasure Chest -->
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='salvagedAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='sturdyCrowbar']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='wornFlail']" />
+
+
+
+<!-- Adding loot -->
+<insertBefore xpath="/lootcontainers/lootgroup[@name='questTier2SkillRewards']">
+
+<!-- Add the lootgroup for Fox Guides -->
+<lootgroup name="FoxsGuides">
+    <item name="Fox's Guide: Cooking Appliances" />
+	<item name="Fox's Guide: Fences and Railings" />
+	<item name="Fox's Guide: Lighting Your Home" />
+	<item name="Fox's Guide: Kitchen Upgrades" />
+	<item name="Fox's Guide: Wireless Power Systems" />
+</lootgroup>
+
+</insertBefore>
+
+
+<!-- Add the new Gunny Guide for ammunition -->
+<append xpath="/lootcontainers/lootgroup[@name='WeaponsBooksLootGroupLevel3']">
+	<item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='questTier3SkillRewards']">
+	<item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+</append>
+
+<!-- Add the Fox Guides -->
+<append xpath="/lootcontainers/lootgroup[@name='questTier2SkillRewards']">
+	<item group="FoxsGuides" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='books']" >
+	<item group="FoxsGuides" prob=".05" /> 
+</append>
+
+<append xpath="/lootcontainers/lootcontainer[@id='11']" >
+    <item group="FoxsGuides" prob="0.03" />
+</append>
+
+<!-- Add the Melee books for Toolmaking Today -->
+<append xpath="/lootcontainers/lootgroup[@name='ToolmakingToday']" >
+	<item name="Toolmaking Today: Small Hand Tools" />
+	<item name="Toolmaking Today: Looting Tools" />
+	<item name="Toolmaking Today: Weapons of the Dark Ages" />
+	<item name="Toolmaking Today: Defensive Shields" />
+</append>
+
+<!-- Add all the Melee weapon mods into loot so they can be found in their respective areas. -->
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT1']" >
+	<item name="Spike Mod" />
+	<item name="Smoke Blade" />
+	<item name="Fire Blade" />
+	<item name="Fire" />
+	<item name="Water" />
+	<item name="Smoke" />
+	<item name="Tempered Casement" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT2']" >
+	<item name="Saw Mod" />
+	<item name="Electric Blade" />
+	<item name="Blood Drip" />
+	<item name="Lava Drip" />
+	<item name="Ice" />
+	<item name="Poison" />
+	<item name="Electric" />
+	<item name="Poison Casement" />
+	<item name="Electric Casement" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT3']" >
+	<item name="Shuriken Mod" />
+	<item name="Death Blade" />
+	<item name="Soul Ripper" />
+	<item name="Holy Blade" />
+	<item name="Star" />
+	<item name="Death" />
+	<item name="Hellfire" />
+	<item name="Golden Casement" />
+	<item name="Magma Casement" />
+</append>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</configs>
