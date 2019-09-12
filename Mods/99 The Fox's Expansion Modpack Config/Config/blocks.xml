@@ -14,4 +14,11 @@
 	<drop event="Harvest" name="resourceFeather" count="12" prob="0.4" tag="oreWoodHarvest" />
 </append>
 
+<!-- Sets all burnt trees to drop coal when harvesting -->
+<append xpath="//block[contains(@name, 'treeBurntMaple') or contains(@name, 'HDHQ_Burnt')]">
+	<drop event="Harvest" name="resourceCoal" count="15" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceCoal" count="10" prob="0.6" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceCoal" count="10" prob="0.3" tag="oreWoodHarvest" />
+</append>
+
 </configs>

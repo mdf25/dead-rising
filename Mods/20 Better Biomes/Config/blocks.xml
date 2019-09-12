@@ -637,7 +637,12 @@
 </append>
 
 
-
+<!-- Adds coal drops to burnt trees in the burnt forest biome -->
+<append xpath="//block[contains(@name, 'treeBurntMaple')]">
+	<drop event="Harvest" name="resourceCoal" count="15" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceCoal" count="10" prob="0.6" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceCoal" count="10" prob="0.3" tag="oreWoodHarvest" />
+</append>
 
 
 </config>
