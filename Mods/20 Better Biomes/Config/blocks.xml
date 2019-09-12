@@ -620,13 +620,22 @@
 
 
 
-
-
 <!-- Adds stick and feather drops to trees -->
 <append xpath="//property[@name='Extends' and @value='treeMaster']/..">
-	<drop event="Harvest" name="resourceStick" count="50" prob="0.1" tag="oreWoodHarvest"/>
-	<drop event="Harvest" name="resourceFeather" count="12" prob="0.1" tag="oreWoodHarvest"/>
+	<drop event="Harvest" name="resourceStick" count="30" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceStick" count="20" prob="0.5" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceStick" count="10" prob="0.2" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceFeather" count="12" prob="0.4" tag="oreWoodHarvest" />
 </append>
+
+
+<!-- Adds stick drops to bird nests when harvesting -->
+<append xpath="/blocks/block[@name='cntBirdnest']">
+	<drop event="Harvest" name="resourceStick" count="12" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceStick" count="8" prob="0.5" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceStick" count="5" prob="0.2" tag="oreWoodHarvest" />
+</append>
+
 
 
 

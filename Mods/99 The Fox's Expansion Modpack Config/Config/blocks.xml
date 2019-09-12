@@ -6,4 +6,12 @@
 <set xpath="//block[@name='HDHQ_JungleSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedMountainPine1m</set>
 <set xpath="//block[@name='HDHQ_PalmSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedMountainPine1m</set>
 
+<!-- Sets all trees to drop sticks. -->
+<append xpath="//property[@name='Extends' and @value='treeMaster']/..">
+	<drop event="Harvest" name="resourceStick" count="30" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceStick" count="20" prob="0.5" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceStick" count="10" prob="0.2" tag="oreWoodHarvest" />
+	<drop event="Harvest" name="resourceFeather" count="12" prob="0.4" tag="oreWoodHarvest" />
+</append>
+
 </configs>
