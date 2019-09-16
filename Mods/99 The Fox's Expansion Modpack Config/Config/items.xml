@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configs>
 
+<!-- Alters the boiled meat so that it gives more health back. -->
+<set xpath="//property[@name='Extends' and @value='BoiledMeatBase']/..//triggered_effect[@cvar='foodHealthAmount']/@value">7</set>
+
+
 
 <!-- Stack size adjustments for ammo and resource items, to be in line with Advanced Firearms -->
 <set xpath="/items/item[starts-with(@name, 'ammo')]/property[@name='Stacknumber']/@value">5000</set>
 <set xpath="/items/item[starts-with(@name, 'resource')]/property[@name='Stacknumber']/@value">5000</set>
-
 
 
 <!-- Weapon damage balancing -->

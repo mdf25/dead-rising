@@ -10,12 +10,17 @@
 <set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyWolf']/drop[@name='foodRawMeat']/@name">Wolf Meat</set>
 
 <!-- Increases the health of baby bears from Khelldons mod. -->
-<set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyBear']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax']/@value">500</set>
+<set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyBear']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @operation='base_set']/@value">500</set>
 
 <!-- Adjust the size of baby bears so they are slightly larger than in Khelldons mod. -->
 <set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyBear']/property[@name='SizeScale']/@value">0.6</set>
 
 <!-- Adjust the size of baby wolves so they are slightly larger than in Khelldons mod. -->
 <set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyWolf']/property[@name='SizeScale']/@value">0.7</set>
+
+<!-- Sets the HandItem for all UMA zombies from Bad Company (should reduce block damage by a lot) -->
+<append xpath="/entity_classes/entity_class[@name='badZombieUMA']">
+	<property name="HandItem" value="meleeHandZombie01" />
+</append>
 
 </configs>
