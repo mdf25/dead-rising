@@ -1,0 +1,52 @@
+<potato>
+
+<append xpath="/Sounds">
+	
+
+					<SoundDataNode name="beartrapsound">
+		<AudioSource name="Sounds/AudioSource_WeaponFire"/>
+		<Noise ID="1" range="4" volume="0.1" time="1" muffled_when_crouched="1" />
+		<AudioClip ClipName="#@modfolder:Resources/trap.unity3d?trapgore"/>
+		<LocalCrouchVolumeScale value="1" />
+		<CrouchNoiseScale value="1" />
+		<NoiseScale value="1" />
+		<MaxVoices value="10" />
+		<MaxRepeatRate value="0.01" />
+	</SoundDataNode>
+
+						<SoundDataNode name="beartrapresetsound">
+		<AudioSource name="Sounds/AudioSource_WeaponFire"/>
+		<Noise ID="1" range="4" volume="0.1" time="1" muffled_when_crouched="1" />
+		<AudioClip ClipName="#@modfolder:Resources/trap.unity3d?beartrapset"/>
+		<LocalCrouchVolumeScale value="1" />
+		<CrouchNoiseScale value="1" />
+		<NoiseScale value="1" />
+		<MaxVoices value="10" />
+		<MaxRepeatRate value="0.01" />
+	</SoundDataNode>
+		
+						<SoundDataNode name="spiketrapsound">
+		<AudioSource name="Sounds/AudioSource_WeaponFire"/>
+		<Noise ID="1" range="4" volume="0.1" time="1" muffled_when_crouched="1" />
+		<AudioClip ClipName="#@modfolder:Resources/trap.unity3d?spikesound"/>
+		<LocalCrouchVolumeScale value="1" />
+		<CrouchNoiseScale value="1" />
+		<NoiseScale value="1" />
+		<MaxVoices value="10" />
+		<MaxRepeatRate value="0.01" />
+	</SoundDataNode>
+			
+						<SoundDataNode name="piercetrapsound">
+		<AudioSource name="Sounds/AudioSource_WeaponFire"/>
+		<Noise ID="1" range="4" volume="0.1" time="1" muffled_when_crouched="1" />
+		<AudioClip ClipName="#@modfolder:Resources/trap.unity3d?piercesound"/>
+		<LocalCrouchVolumeScale value="1" />
+		<CrouchNoiseScale value="1" />
+		<NoiseScale value="1" />
+		<MaxVoices value="10" />
+		<MaxRepeatRate value="0.01" />
+	</SoundDataNode>
+	
+	
+	</append>
+</potato>

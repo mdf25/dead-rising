@@ -352,6 +352,30 @@
 	</effect_group>		
 </item>
 
+<item name="Fox's Guide: How To Trap A Zombie">
+	<property name="Extends" value="magazineToolsBase"/>
+	<property name="EconomicValue"    value="600"/>
+	<property class="Action0">
+		<requirement name="CVarCompare" cvar="Fire Trap" operation="Equals" value="0"/>		
+		<property name="Consume" value="true"/>
+		<property name="Delay"                    value="1.0"/>
+		<property name="Use_time"                 value="..."/>
+		<property name="ActionExpBonusMultiplier" value="1"/>     	
+	</property>
+	<effect_group tiered="false">				
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveSkillExp" target="self" skill="attIntellect" experience="4400"/>
+		
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Fire Trap" 	operation="set" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Acid Trap" 	operation="set" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Spike Trap" 	operation="set" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Pierce Trap" 	operation="set" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Bear Trap" 	operation="set" value="1"/>
+		
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" target="self" message="Recipes Unlocked: Fire, Acid, Spike Traps"/> 
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" target="self" message="Recipes Unlocked: Pierce, Bear Traps"/> 
+	</effect_group>		
+</item>
+
 <!-- New guide for crafting elevators and components -->
 <!-- [Currently Causes a Crash]
 <item name="Fox's Guide: Elevators" >

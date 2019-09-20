@@ -155,6 +155,14 @@
 	<setattribute xpath="/recipes/recipe[@name='gunToolNailgun']" name="craft_area">CustomMelee</setattribute>
 	
 	
+	<!-- Makes the traps from Traps modlet learnable -->
+	<setattribute xpath="/recipes/recipe[@name='Bear Trap']" 	name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='Fire Trap']" 	name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='Pierce Trap']" 	name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='Spike Trap']" 	name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='Acid Trap']" 	name="tags">learnable</setattribute>
+	
+	
 	<!-- Adds vanilla ammo for use as scrap ammo from Advanced Firearms -->
 	<append xpath="/recipes">
 	    <recipe name="ScrapAmmo" count="1">

@@ -162,6 +162,7 @@
 	<item name="Fox's Guide: Lighting Your Home" />
 	<item name="Fox's Guide: Kitchen Upgrades" />
 	<item name="Fox's Guide: Wireless Power Systems" />
+	<item name="Fox's Guide: How To Trap A Zombie" />
 </lootgroup>
 
 </insertBefore>
@@ -191,11 +192,21 @@
 
 <!-- Add the Melee books for Toolmaking Today -->
 <append xpath="/lootcontainers/lootgroup[@name='ToolmakingToday']" >
-	<item name="Toolmaking Today: Small Hand Tools" />
-	<item name="Toolmaking Today: Looting Tools" />
-	<item name="Toolmaking Today: Weapons of the Dark Ages" />
-	<item name="Toolmaking Today: Defensive Shields" />
+	<item name="Toolmaking Today: Small Hand Tools" 		prob="0.5" />
+	<item name="Toolmaking Today: Looting Tools" 			prob="0.3" />
+	<item name="Toolmaking Today: Weapons of the Dark Ages" prob="0.2" />
+	<item name="Toolmaking Today: Defensive Shields" 		prob="0.2" />
 </append>
+
+<!-- Decrease probability of Toolmaking Today books from appearing in Working Stiff boxes - we want more tools, not books! -->
+<setattribute xpath="//lootcontainer[@id='53']/item[@group='ToolmakingToday']" name="prob">0.35</setattribute>
+
+<!-- Decrease probability of Medical Journals in Pop'n'Pills containers - we want more meds instead! -->
+<setattribute xpath="//lootcontainer[@id='51']/item[@group='medicalJournals']" name="prob">0.2</setattribute>
+
+<!-- Increase probability of finding the forge book within the Toolmaking Today guides -->
+<set xpath="//lootgroup[@name='ToolmakingToday']/item[@name='Toolmaking Today: Forges']/@prob">0.18</set>
+
 
 <!-- Add all the Melee weapon mods into loot so they can be found in their respective areas. -->
 <append xpath="/lootcontainers/lootgroup[@name='modMeleeT1']" >

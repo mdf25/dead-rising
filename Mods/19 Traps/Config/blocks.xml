@@ -1,0 +1,647 @@
+<configs>
+	
+		<append xpath="/blocks">		
+
+
+
+<!-- //BEAR TRAP -->
+<block name="Bear Trap">
+	<property name="Material" value="Mbeartrap"/>
+	<property name="EconomicValue" value="30"/>
+	<property name="CustomIcon" value="3beartrap"/>
+	<property name="Class" value="TrapDoor"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="BuffsWhenWalkedOn" value="buffBearTrap"/>
+     <property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property>
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Beartrapoff"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.1"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="FilterTags" value="ftraps"/>
+	<property name="DowngradeBlock" value="beartrapon"/>
+	<property name="CanPickup" value="true" param1="Bear Trap"/>
+	<drop event="Fall" name="Bear Trap" count="1" prob="1" stick_chance="1"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+
+<block name="beartrapon">
+	<property name="Class" value="TrunkTip"/>
+	<property name="Damage" value="5"/>
+	<property name="Damage_received" value="33"/>
+	<property name="Material" value="MtrapSpikesIron"/>
+	<property name="DisplayType" value="blockHardened" />
+	<property name="BuffsWhenWalkedOn" value="buffBearTrapUpdate"/>
+	<property name="MaxDamage" value="350" />
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Beartrap"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Path" value="solid"/>
+
+		<property class="RepairItems"> <property name="resourceScrapIron" value="3"/> </property>
+	<property class="UpgradeBlock">
+		<property name="ToBlock" value="Bear Trap"/>
+		<property name="Item" value="resourceScrapIron"/>
+		<property name="ItemCount" value="3"/>
+		<property name="UpgradeHitCount" value="1"/>
+	</property>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+	<drop event="Fall" count="0"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="DescriptionKey" value="trapSpikesGroupDesc"/>
+	<property name="EconomicValue" value="30"/>
+	<property name="EconomicBundleSize" value="20"/>
+	<property name="FilterTags" value="fdecor,ftraps"/>
+	<property name="SortOrder1" value="70g0"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+<!-- //BOULDER TRAP -->
+<!-- <block name="canontrap"> -->
+
+	<!-- <property name="Material" value="Mmetal_thin"/> -->
+	<!-- <property name="Class" value="TrapDoor"/> -->
+	<!-- <property name="StabilitySupport" value="false"/> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="BuffsWhenWalkedOn" value="buffCanontrap"/> -->
+
+	<!-- <property name="MultiBlockDim" value="1,1,1"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Canontrapoff"/> -->
+	<!-- <property name="CustomIcon" value="burntWoodBlock1"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="ActivationDistance" value="0.1"/> -->
+	<!-- <property name="Collide" value="melee,movement"/> -->
+	<!-- <property name="Group" value="Tools/Traps,Science"/> -->
+	<!-- <property name="FilterTags" value="ftraps"/> -->
+	<!-- <property name="DowngradeBlock" value="canontrapon"/> -->
+	<!-- <property name="CanPickup" value="true" param1="canontrap"/> -->
+	<!-- <drop event="Fall" count="0" prob="0"/> -->
+<!-- </block> -->
+
+
+<!-- <block name="canontrapon"> -->
+	<!-- <property name="Class" value="TrunkTip"/> -->
+	<!-- <property name="Damage" value="5"/> -->
+	<!-- <property name="Damage_received" value="33"/> -->
+	<!-- <property name="Material" value="MtrapSpikesIron"/> -->
+	<!-- <property name="DisplayType" value="blockHardened" /> -->
+	<!-- <property name="BuffsWhenWalkedOn" value="buffCanontrapUpdate"/> -->
+	<!-- <property name="MaxDamage" value="300" /> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Canontrap"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="ImposterExclude" value="true"/> -->
+	<!-- <property name="Collide" value="melee,movement"/> -->
+	<!-- <property name="Path" value="solid"/> -->
+
+		<!-- <property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property> -->
+	<!-- <property class="UpgradeBlock"> -->
+		<!-- <property name="ToBlock" value="beartrap"/> -->
+		<!-- <property name="Item" value="resourceScrapIron"/> -->
+		<!-- <property name="ItemCount" value="1"/> -->
+		<!-- <property name="UpgradeHitCount" value="1"/> -->
+	<!-- </property> -->
+	<!-- <property name="CustomUpgradeSound" value="beartrapresetsound"/> -->
+	<!-- <drop event="Destroy" name="resourceScrapIron" count="10,20"/> -->
+	<!-- <drop event="Fall" count="0"/> -->
+	<!-- <property name="Group" value="Tools/Traps,Science"/> -->
+	<!-- <property name="DescriptionKey" value="trapSpikesGroupDesc"/> -->
+	<!-- <property name="EconomicValue" value="30"/> -->
+	<!-- <property name="EconomicBundleSize" value="20"/> -->
+	<!-- <property name="FilterTags" value="fdecor,ftraps"/> -->
+	<!-- <property name="SortOrder1" value="70g0"/> -->
+<!-- </block> -->
+
+
+<!-- //PIERCETRAP -->
+<block name="Pierce Trap">
+	<property name="Material" value="Mpierce"/>
+	<property name="Class" value="TrapDoor"/>
+	<property name="CustomIcon" value="3piercetrap"/>
+		<property name="Damage" value="5"/>
+	<property name="Damage_received" value="5"/>
+	<property name="MaxDamage" value="5"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="5,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Piercetrapoff"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.1"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="FilterTags" value="ftraps"/>
+	<property name="CanPickup" value="true" param1="Pierce Trap"/>
+	<property class="RepairItems"> <property name="resourceWood" value="2"/></property>
+	<property name="DowngradeBlock" value="piercetrapof2"/>
+	<drop event="Fall" count="0" prob="0"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+<block name="piercetrapof2">
+	<property name="Material" value="Mpierce"/>
+	<property name="Class" value="TrapDoor"/>
+		<property name="Damage" value="5"/>
+	<property name="Damage_received" value="5"/>
+	<property name="MaxDamage" value="5"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="BuffsWhenWalkedOn" value="buffcdragdoll2"/>
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Piercetrapoff"/>
+	<property name="CustomIcon" value="burntWoodBlock1"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.1"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="FilterTags" value="ftraps"/>
+	<property class="RepairItems"> <property name="resourceWood" value="2"/></property>
+	<property name="CanPickup" value="true" param1="Pierce Trap"/>
+	<property name="DowngradeBlock" value="piercetrapon"/>
+	<drop event="Fall" count="0" prob="0"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+
+<block name="piercetrapon">
+	<property name="Class" value="TrunkTip"/>
+	<property name="Damage" value="5"/>
+	<property name="Damage_received" value="5"/>
+	<property name="Material" value="Mpierce"/>
+	<property name="DisplayType" value="blockHardened" />
+	<property name="BuffsWhenWalkedOn" value="buffpiercetrapUpdate"/>
+	<property name="MaxDamage" value="10" />
+	<property name="Shape" value="ModelEntity"/>
+	<property name="MultiBlockDim" value="5,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Piercetrap"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Path" value="solid"/>
+	<!-- <property name="BuffsWhenWalkedOn" value="trapDamageZombie"/> -->
+		<property class="RepairItems"> <property name="resourceWood" value="2"/> </property>
+	<property class="UpgradeBlock">
+		<property name="ToBlock" value="Pierce Trap"/>
+		<property name="Item" value="resourceForgedIron"/>
+		<property name="ItemCount" value="3"/>
+		<property name="UpgradeHitCount" value="3"/>
+	</property>
+	<property name="DowngradeBlock" value="piercetrapbroken"/>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+	<drop event="Fall" count="0"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="DescriptionKey" value="trapSpikesGroupDesc"/>
+	<property name="EconomicValue" value="30"/>
+	<property name="EconomicBundleSize" value="20"/>
+	<property name="FilterTags" value="fdecor,ftraps"/>
+	<property name="SortOrder1" value="70g0"/>
+</block>
+
+<block name="piercetrapbroken">
+	<!-- <property name="Extends" value="woodWeakNoUpgradeMaster"/> -->
+	<property name="Material" value="Mpierce"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="5,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Piercetrapoff"/>
+	<property name="CustomIcon" value="burntWoodBlock1"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.1"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="FilterTags" value="ftraps"/>
+			<property class="RepairItems"> <property name="resourceWood" value="2"/> </property>
+
+		<property class="UpgradeBlock">
+		<property name="ToBlock" value="Pierce Trap"/>
+		<property name="Item" value="resourceForgedIron"/>
+		<property name="ItemCount" value="3"/>
+		<property name="UpgradeHitCount" value="3"/>
+	</property>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+	<drop event="Fall" count="0" prob="0"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+
+
+<!-- //SPIKE TRAP -->
+<block name="Spike Trap">
+	<!-- <property name="Extends" value="woodWeakNoUpgradeMaster"/> -->
+	<property name="Material" value="Mtrapoff"/>
+	<property name="Class" value="TrapDoor"/>
+	<property name="CustomIcon" value="3spiketrap"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="OnlySimpleRotations" value="true"/>
+	<property name="BuffsWhenWalkedOn" value="buffspikyprep"/>
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Spiketrapoff"/>
+	<property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property>
+	<property name="CanPickup" value="true" param1="Spike Trap"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.5"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="FilterTags" value="ftraps"/>
+	<property name="DowngradeBlock" value="spikytrap"/>
+	<drop event="Fall" count="0" prob="0"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+<block name="spikytrap">
+	<property name="Class" value="TrunkTip"/>
+	<property name="Damage" value="25"/>
+	<property name="Damage_received" value="25"/>
+	<property name="Material" value="Mspiketrap"/>
+	<property name="DisplayType" value="blockHardened" />
+	<property name="BuffsWhenWalkedOn" value="buffspikyupdate"/>
+	<property name="MaxDamage" value="150" />
+	<property name="Shape" value="ModelEntity"/>
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Spiketrap"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Path" value="solid"/>
+		<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>
+	<property class="UpgradeBlock">
+		<property name="ToBlock" value="Spike Trap"/>
+		<property name="Item" value="resourceForgedIron"/>
+		<property name="ItemCount" value="1"/>
+		<property name="UpgradeHitCount" value="1"/>
+	</property>
+	<property name="DowngradeBlock" value="spiketrapbroken"/>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+	<drop event="Destroy" name="resourceScrapIron" count="10,20"/>
+	<drop event="Fall" count="0"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="DescriptionKey" value="trapSpikesGroupDesc"/>
+	<property name="EconomicValue" value="30"/>
+	<property name="EconomicBundleSize" value="20"/>
+	<property name="FilterTags" value="fdecor,ftraps"/>
+	<property name="SortOrder1" value="70g0"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+
+<block name="spiketrapbroken">
+	<property name="Material" value="Mtrapoff"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="OnlySimpleRotations" value="true"/>
+	<!-- <property name="BuffsWhenWalkedOn" value="buffspikyprep"/> -->
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Spiketrapbroken"/>
+	<property name="CustomIcon" value="burntWoodBlock1"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.5"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+		<property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property>
+
+		<property class="UpgradeBlock">
+		<property name="ToBlock" value="Spike Trap"/>
+		<property name="Item" value="resourceForgedIron"/>
+		<property name="ItemCount" value="2"/>
+		<property name="UpgradeHitCount" value="3"/>
+	</property>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+     <drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+	<drop event="Fall" count="0" prob="0"/>
+</block>
+
+<!-- //FIRE TRAP -->
+<block name="Fire Trap">
+	<property name="Material" value="Mtrapoff"/>
+	<property name="Class" value="TrapDoor"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="CustomIcon" value="3firetrap"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="OnlySimpleRotations" value="true"/>
+	<!-- <property name="BuffsWhenWalkedOn" value="buffspikyprep"/> -->
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="3,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Firetrapoff"/>
+	<property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="5"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="FilterTags" value="ftraps"/>
+	<property name="DowngradeBlock" value="Firetrapon"/>
+	<property name="CanPickup" value="true" param1="Fire Trap"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+
+<block name="Firetrapon">
+<property name="Material" value="Mtrapoff"/>
+	<property name="MultiBlockDim" value="3,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Firetrap"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="BuffsWhenWalkedOn" value="buffBurningMolotov"/>
+<property name="Class" value="PlantGrowing"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+<property name="PlantGrowing.Next" value="firetrapburn"/>
+<property name="PlantGrowing.GrowthRate" value="0.3"/>
+<property name="PlantGrowing.FertileLevel" value="0"/>
+<property name="PlantGrowing.IsRandom" value="false"/>
+<property name="PlantGrowing.LightLevelGrow" value="0"/>
+<property name="PlantGrowing.LightLevelStay" value="0"/>
+<property name="PlantGrowing.IsGrowOnTopEnabled" value="false"/>
+<drop event="Destroy" count="0"/>
+<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+<block name="firetrapburn">
+	<property name="Material" value="Mtrapoff"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="OnlySimpleRotations" value="true"/>
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="3,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?Firetrapburned"/>
+	<property name="CustomIcon" value="burntWoodBlock1"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.5"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+		<property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property>
+
+	
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="Fire Trap"/>
+			<property name="Item" value="thrownAmmoMolotovCocktail"/>
+			<property name="ItemCount" value="1"/>
+			<property name="UpgradeHitCount" value="2"/>
+	</property>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+      <drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+	<drop event="Fall" count="0" prob="0"/>
+</block>
+
+<block name="Acid Trap">
+	<property name="Material" value="Mwood_weak"/>
+	<property name="Class" value="TrapDoor"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="CustomIcon" value="3acidtrap"/>
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?AcidTrap"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.1"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="FilterTags" value="ftraps"/>
+	<property name="DowngradeBlock" value="acidtrapon"/>
+	<property name="CanPickup" value="true" param1="Acid Trap"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+</block>
+
+
+<block name="acidtrapon">
+	<property name="Class" value="TrunkTip"/>
+	<property name="Damage" value="66"/>
+	<property name="Damage_received" value="33"/>
+	<property name="Material" value="Macidtrap"/>
+	<property name="DisplayType" value="blockHardened" />
+		<property name="BuffsWhenWalkedOn" value="buffAcidTrapUpdate"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?AcidTrapoff"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Path" value="solid"/>
+		<property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property>
+	<property class="UpgradeBlock">
+		<property name="ToBlock" value="Acid Trap"/>
+		<property name="Item" value="resourceAcid"/>
+		<property name="ItemCount" value="3"/>
+		<property name="UpgradeHitCount" value="1"/>
+	</property>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+	<property name="DowngradeBlock" value="acidtrapempty"/>
+	<drop event="Destroy" name="resourceScrapIron" count="5,10"/>
+	<drop event="Fall" count="0"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+	<property name="DescriptionKey" value="trapSpikesGroupDesc"/>
+	<property name="EconomicValue" value="30"/>
+	<property name="EconomicBundleSize" value="20"/>
+	<property name="FilterTags" value="fdecor,ftraps"/>
+	<property name="SortOrder1" value="70g0"/>
+</block>
+
+<block name="acidtrapempty">
+	<property name="Material" value="Mtrapoff"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="OnlySimpleRotations" value="true"/>
+	<property name="DisplayType" value="blockMulti" />
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Mesh" value="models"/>
+	<property name="Model" value="#@modfolder:Resources/trap.unity3d?AcidTrapempty"/>
+	<property name="CustomIcon" value="burntWoodBlock1"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ActivationDistance" value="0.5"/>
+	<property name="Collide" value="melee,movement"/>
+	<property name="Group" value="Tools/Traps,Science"/>
+		<property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property>
+
+	
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value="Acid Trap"/>
+			<property name="Item" value="resourceAcid"/>
+			<property name="ItemCount" value="5"/>
+			<property name="UpgradeHitCount" value="2"/>
+	</property>
+	<property name="CustomUpgradeSound" value="beartrapresetsound"/>
+      <drop event="Destroy" name="resourceScrapIron" count="1,3"/>
+	<drop event="Fall" count="0" prob="0"/>
+</block>
+
+
+<!-- //WATER TRAP -->
+<!-- <block name="watertrapof"> -->
+	<!-- <property name="Material" value="Mtrapoff"/> -->
+	<!-- <property name="Class" value="TrapDoor"/> -->
+	<!-- <property name="StabilitySupport" value="false"/> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="MultiBlockDim" value="1,1,1"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Watertrapoff"/> -->
+	<!-- <property name="CustomIcon" value="burntWoodBlock1"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="ActivationDistance" value="0.1"/> -->
+	<!-- <property name="Collide" value="melee,movement"/> -->
+	<!-- <property name="Group" value="Tools/Traps,Science"/> -->
+	<!-- <property name="FilterTags" value="ftraps"/> -->
+	<!-- <property name="DowngradeBlock" value="watertrapon"/> -->
+	<!-- <property name="CanPickup" value="true" param1="beartrap"/> -->
+<!-- </block> -->
+
+
+<!-- <block name="watertrapon"> -->
+	<!-- <property name="Class" value="TrunkTip"/> -->
+	<!-- <property name="Damage" value="0"/> -->
+	<!-- <property name="Damage_received" value="33"/> -->
+	<!-- <property name="Material" value="Mtrapoff"/> -->
+	<!-- <property name="DisplayType" value="blockHardened" /> -->
+	<!-- <property name="BuffsWhenWalkedOn" value="buffInjuryKnockdown1"/> -->
+	<!-- <property name="MaxDamage" value="300" /> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Watertrap"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="ImposterExclude" value="true"/> -->
+	<!-- <property name="Collide" value="melee,movement"/> -->
+	<!-- <property name="Path" value="solid"/> -->
+		<!-- <property class="RepairItems"> <property name="resourceScrapIron" value="2"/> </property> -->
+	<!-- <property class="UpgradeBlock"> -->
+		<!-- <property name="ToBlock" value="beartrap"/> -->
+		<!-- <property name="Item" value="resourceScrapIron"/> -->
+		<!-- <property name="ItemCount" value="1"/> -->
+		<!-- <property name="UpgradeHitCount" value="1"/> -->
+	<!-- </property> -->
+	<!-- <property name="CustomUpgradeSound" value="beartrapresetsound"/> -->
+	<!-- <drop event="Destroy" name="resourceScrapIron" count="10,20"/> -->
+	<!-- <drop event="Fall" count="0"/> -->
+	<!-- <property name="Group" value="Tools/Traps,Science"/> -->
+	<!-- <property name="DescriptionKey" value="trapSpikesGroupDesc"/> -->
+	<!-- <property name="EconomicValue" value="30"/> -->
+	<!-- <property name="EconomicBundleSize" value="20"/> -->
+	<!-- <property name="FilterTags" value="fdecor,ftraps"/> -->
+	<!-- <property name="SortOrder1" value="70g0"/> -->
+<!-- </block> -->
+
+<!-- //MINE TRAP -->
+<!-- <block name="minetrapof"> -->
+	<!-- <property name="Material" value="Mtrapoff"/> -->
+	<!-- <property name="Class" value="TrapDoor"/> -->
+	<!-- <property name="StabilitySupport" value="false"/> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="MultiBlockDim" value="1,1,1"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Landmineoff"/> -->
+	<!-- <property name="CustomIcon" value="burntWoodBlock1"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="ActivationDistance" value="0.1"/> -->
+	<!-- <property name="Collide" value="melee,movement"/> -->
+	<!-- <property name="Group" value="Tools/Traps,Science"/> -->
+	<!-- <property name="FilterTags" value="ftraps"/> -->
+	<!-- <property name="DowngradeBlock" value="minetrapon"/> -->
+	<!-- <property name="CanPickup" value="true" param1="beartrap"/> -->
+	<!-- <drop event="Fall" name="beartrap" count="1" prob="1" stick_chance="1"/> -->
+<!-- </block> -->
+
+<!-- <block name="minetrapon"> -->
+<!-- <property name="Material" value="Mtrapoff"/> -->
+	<!-- <property name="MultiBlockDim" value="1,1,1"/> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Landmine"/> -->
+<!-- <property name="Class" value="PlantGrowing"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="Collide" value="melee,movement"/> -->
+	<!-- <property name="Group" value="Tools/Traps,Science"/> -->
+<!-- <property name="PlantGrowing.Next" value="minade"/> -->
+<!-- <property name="PlantGrowing.GrowthRate" value="0.03"/> -->
+<!-- <property name="PlantGrowing.FertileLevel" value="0"/> -->
+<!-- <property name="PlantGrowing.IsRandom" value="false"/> -->
+<!-- <property name="PlantGrowing.LightLevelGrow" value="0"/> -->
+<!-- <property name="PlantGrowing.LightLevelStay" value="0"/> -->
+<!-- <property name="PlantGrowing.IsGrowOnTopEnabled" value="false"/> -->
+<!-- <drop event="Destroy" count="0"/> -->
+<!-- </block> -->
+
+<!-- <block name="minade"> -->
+	<!-- <property name="Class" value="Mine"/> -->
+	<!-- <property name="Material" value="MLandMine"/> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Landmineoff"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="MultiBlockDim" value="5,2,5"/> -->
+	<!-- <property name="Collide" value="movement,melee,bullet,arrow,rocket"/> -->
+	<!-- <property name="Stacknumber" value="40"/> -->
+	<!-- <property name="MaxDamage" value="4"/> -->
+	<!-- <property name="Explosion.ParticleIndex" value="1"/> -->
+	<!-- <property name="Explosion.RadiusBlocks" value="2"/> -->
+	<!-- <property name="Explosion.RadiusEntities" value="4"/> -->
+	<!-- <property name="Explosion.BlockDamage" value="10"/> -->
+	<!-- <property name="Explosion.EntityDamage" value="276"/>  -->
+	<!-- <property name="Explosion.DamageBonus.stone" value="0.1"/> -->
+	<!-- <property name="Explosion.DamageBonus.metal" value="0.1"/> -->
+	<!-- <property name="Explosion.DamageBonus.earth" value="0"/> -->
+	<!-- <property name="Explosion.DamageBonus.wood" value="0"/> -->
+	<!-- <property name="Explosion.DamageBonus.water" value="0"/> -->
+	<!-- <property name="CanPickup" value="false"/> -->
+	<!-- <drop event="Destroy" count="0"/> -->
+	<!-- <property name="Group" value="Science"/> -->
+	<!-- <property name="EconomicValue" value="97"/> -->
+	<!-- <property name="FilterTags" value="fdecor,ftraps"/> -->
+	<!-- <property name="SortOrder1" value="70g0"/> -->
+<!-- </block> -->
+
+
+<!-- <block name="barbedWirestronk"> -->
+	<!-- <property name="Class" value="PressurePlate"/> -->
+	<!-- <property name="Damage" value="33"/> -->
+	<!-- <property name="Damage_received" value="33"/> -->
+	<!-- <property name="Material" value="MtrapSpikesIron"/> -->
+	<!-- <property name="DisplayType" value="blockHardened" /> -->
+	<!-- <property name="MultiBlockDim" value="3,1,1"/> -->
+	<!-- <property name="MaxDamage" value="200" /> -->
+	<!-- <property name="Shape" value="ModelEntity"/> -->
+	<!-- <property name="Mesh" value="models"/> -->
+	<!-- <property name="Model" value="#@modfolder:Resources/trap.unity3d?Wiredfence"/> -->
+	<!-- <property name="IsTerrainDecoration" value="true"/> -->
+	<!-- <property name="ImposterExclude" value="true"/> -->
+	<!-- <property name="Collide" value="movement,melee"/> -->
+	<!-- <property name="LightOpacity" value="6"/> -->
+	<!-- <property name="Path" value="solid"/> -->
+	<!-- <property class="RepairItems"> <property name="resourceForgedIron" value="2"/> </property> -->
+	<!-- <property name="CustomUpgradeSound" value="place_block_metal"/> -->
+	<!-- <drop event="Destroy" name="resourceScrapIron" count="10,20"/> -->
+	<!-- <drop event="Fall" count="0"/> -->
+	<!-- <property name="Group" value="Tools/Traps,Science"/> -->
+	<!-- <property name="DescriptionKey" value="trapSpikesGroupDesc"/> -->
+	<!-- <property name="EconomicValue" value="30"/> -->
+	<!-- <property name="EconomicBundleSize" value="20"/> -->
+	<!-- <property name="FilterTags" value="fdecor,ftraps"/> -->
+	<!-- <property name="SortOrder1" value="70g0"/> -->
+<!-- </block> -->
+
+
+
+		</append>
+</configs>
