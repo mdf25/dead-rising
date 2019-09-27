@@ -409,4 +409,27 @@
 
 </append>
 
+
+<!-- Sets the Melee Mod's weapons and tools to use vanilla groups (could be causing trader bug) -->
+<set xpath="//property[@name='Group' and @value='Advanced Tools']/@value">Tools/Traps</set>
+<set xpath="//property[@name='Group' and @value='Novelty']/@value">Ammo/Weapons</set>
+<set xpath="//property[@name='Group' and @value='Advanced']/@value">Ammo/Weapons</set>
+<set xpath="//property[@name='Group' and @value='High Class']/@value">Ammo/Weapons</set>
+<set xpath="//property[@name='Group' and @value='Defensive']/@value">Ammo/Weapons</set>
+<set xpath="//property[@name='Group' and @value='Lightsabers']/@value">Ammo/Weapons</set>
+<set xpath="//property[@name='Group' and @value='Fun']/@value">Ammo/Weapons</set>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </configs>

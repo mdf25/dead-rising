@@ -92,7 +92,7 @@
 <append xpath="/blocks/block[contains(@name, '3HarvestPlayer') and not(contains(@name, 'Mushroom'))]">
 	<property name="Class" value="PlantGrowing"/>
 	<property name="PlantGrowing.Next" value="plantDeadCrop"/>
-	<property name="PlantGrowing.GrowthRate" value="100.0"/> 
+	<property name="PlantGrowing.GrowthRate" value="400.0"/> 
 	<property name="PlantGrowing.FertileLevel" value="15"/>
 	<property name="PlantGrowing.IsRandom" value="false"/>
 </append>
