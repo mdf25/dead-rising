@@ -1,0 +1,30 @@
+<configs>
+
+	<!-- Adds the new admin remover item -->
+	<append xpath="/items">
+		<item name="resourceAdminBlockRemover">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_Prefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="6000"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="12"/>
+			<property name="EconomicBundleSize" value="50" />
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+	</append>
+	
+	<!-- Allow the admin wrench to use this item -->
+	<append xpath="//item[@name='meleeToolWrenchAdmin']">
+		<property class="Action1"> <!-- UseAction -->
+			<property name="Class" value="Repair"/>
+			<property name="Delay" value="1"/> <!-- Repair actions still need the delay amount -->
+			<property name="Repair_amount" value="350"/>
+			<property name="Upgrade_hit_offset" value="-2"/>
+			<property name="Sound_start" value="repair_block"/>
+			<property name="Allowed_upgrade_items" value="resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceAdminBlockRemover"/>
+		</property>
+	</append>
+</configs>
