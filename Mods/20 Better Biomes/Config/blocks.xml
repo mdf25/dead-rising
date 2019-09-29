@@ -616,6 +616,35 @@
 		<property name="Model" value="#@modfolder:Resources/Rocks.unity3d?JaggedRock06Nitrate"/>
 		<property name="DowngradeBlock" value="jaggedRock03Nitrate" />
 	</block>
+	
+	
+	<!-- Statues -->
+	<block name="statueWolf">
+		<property name="CreativeMode" 			value="Player"/>
+		<property name="Material" 				value="Mstone"/>
+		<property name="Shape" 					value="ModelEntity"/>
+		<property name="IsTerrainDecoration" 	value="true"/>
+		<property name="BigDecorationRadius" 	value="1"/>
+		<property name="IsDistantDecoration" 	value="false"/>
+		<property name="Model" 					value="#@modfolder:Resources/Statues.unity3d?WolfStatue"/>
+		<property name="ModelOffset" 			value="0,0,0"/>
+		<property name="DisplayType" 			value="blockHardenedMulti" />
+		<property name="OnlySimpleRotations" 	value="true"/>
+		<property name="ImposterDontBlock" 		value="true"/>
+		<property name="Collide" 				value="movement,melee,bullet,arrow,rocket"/>
+		<property name="PassThroughDamage" 		value="true"/>
+		<property name="FilterTags" 			value="foutdoor"/>
+		<drop event="Harvest" 					name="resourceRockSmall" count="42" tag="oreWoodHarvest"/>
+		<drop event="Destroy" 					count="0"/>
+	</block>
+
+	<block name="statueWolfNoStone">
+		<property name="Extends"				value="statueWolf" />
+		<property name="DescriptionKey"			value="statueWolfDesc" />
+		<property name="Model"					value="#@modfolder:Resources/Statues.unity3d?WolfStatueNoStone" />
+	</block>
+	
+	
 </append>
 
 
@@ -643,6 +672,5 @@
 	<drop event="Harvest" name="resourceCoal" count="10" prob="0.6" tag="oreWoodHarvest" />
 	<drop event="Harvest" name="resourceCoal" count="10" prob="0.3" tag="oreWoodHarvest" />
 </append>
-
 
 </config>

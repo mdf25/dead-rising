@@ -1,547 +1,780 @@
 <configs>
 
-<!-- Adds new unbreakable blocks -->
+	<!-- Adds new unbreakable blocks -->
+	<append xpath="/blocks">
+		
+		<!-- Master block that all admin blocks can extend from -->
+		<block name="adminArenaBlockMaster">
+			<property name="Group" 				value="Building" />
+			<property name="CustomIcon"			value="adminArenaBlock" />
+			<property name="CustomIconTint"		value="ff0000" />
+			<property name="DescriptionKey"		value="adminArenaBlocksDesc" />
+			<property name="Material" 			value="Mbedrock" />
+			<property name="Texture" 			value="241" />
+			<property name="CreativeMode" 		value="None" />
+			<property name="FilterTags" 		value="fbuilding,fadmin" />
+			<property name="SortOrder1" 		value="4020" />
+			<property name="SortOrder2" 		value="0002" />
+			<property name="PassThroughDamage" 	value="true" />
+			<drop event="Destroy"	 			count="0"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		
+		
+		<!-- Admin Blocks -->
+		<block name="adminArenaBlock">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteBlock"/>
+			<property name="Path" 				value="solid"/>
+			<property name="SortOrder2" 		value="0050"/> 
+		</block>
 
-<append xpath="/blocks">
-	
-	<!-- Master block that all admin blocks can extend from -->
-	<block name="adminArenaBlockMaster">
-		<property name="Group" 				value="Building" />
-		<property name="CustomIcon"			value="adminArenaBlock" />
-		<property name="CustomIconTint"		value="ff0000" />
-		<property name="DescriptionKey"		value="adminArenaBlocksDesc" />
-		<property name="Material" 			value="Mbedrock" />
-		<property name="Texture" 			value="241" />
-		<property name="CreativeMode" 		value="None" />
-		<property name="FilterTags" 		value="fbuilding,fadmin" />
-		<property name="SortOrder1" 		value="4020" />
-		<property name="SortOrder2" 		value="0002" />
-		<property name="PassThroughDamage" 	value="true" />
-		<drop event="Destroy"	 			count="0"/>
-		<property class="UpgradeBlock">
-			<property name="ToBlock" 		 	value="woodFrameBlock" />
-			<property name="Item" 			 	value="resourceAdminBlockRemover" />
-			<property name="ItemCount" 		 	value="1" />
-			<property name="UpgradeHitCount"	value="1" />
-		</property>
-	</block>
-	
-	
-	
-	<!-- Admin Blocks -->
-	<block name="adminArenaBlock">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteBlock"/>
-		<property name="Path" 				value="solid"/>
-		<property name="SortOrder2" 		value="0050"/> 
-	</block>
+		<block name="adminArenaPillar100">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcretePillar100"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="Pole1m"/>
+			<property name="SortOrder2" 		value="0732"/> 
+			<property name="UseGlobalUV" 		value="Local"/>
+			<property name="ImposterExchange" 	param1="2" 	value="imposterBlock"/>
+		</block>
 
-	<block name="adminArenaPillar100">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcretePillar100"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="Pole1m"/>
-		<property name="SortOrder2" 		value="0732"/> 
-		<property name="UseGlobalUV" 		value="Local"/>
-		<property name="ImposterExchange" 	param1="2" 	value="imposterBlock"/>
-	</block>
+		<block name="adminArenaPillar50">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcretePillar50"/>
+			<property name="Shape"				value="New"/>
+			<property name="LightOpacity" 		value="0"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="Pole0.5m"/>
+			<property name="SortOrder2" 		value="0740"/> 
+			<property name="UseGlobalUV" 		value="Local"/>
+			<property name="ImposterDontBlock" 	value="true"/>
+			<property name="ImposterExchange" 	param1="2" 	value="imposterDontBlockCTRQuarter"/>
+		</block>
 
-	<block name="adminArenaPillar50">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcretePillar50"/>
-		<property name="Shape"				value="New"/>
-		<property name="LightOpacity" 		value="0"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="Pole0.5m"/>
-		<property name="SortOrder2" 		value="0740"/> 
-		<property name="UseGlobalUV" 		value="Local"/>
-		<property name="ImposterDontBlock" 	value="true"/>
-		<property name="ImposterExchange" 	param1="2" 	value="imposterDontBlockCTRQuarter"/>
-	</block>
+		<block name="adminArenaCNRRound">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteCNRRound"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="corner_round1m"/>
+			<property name="SortOrder2" 		value="0480"/> 
+			<property name="ImposterExchange" 	param1="2" 	value="imposterBlock"/>
+		</block>
 
-	<block name="adminArenaCNRRound">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteCNRRound"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="corner_round1m"/>
-		<property name="SortOrder2" 		value="0480"/> 
-		<property name="ImposterExchange" 	param1="2" 	value="imposterBlock"/>
-	</block>
+		<block name="adminArenaWedgeIncline">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteWedgeIncline"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge60_incline"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0440"/> 
+		</block>
 
-	<block name="adminArenaWedgeIncline">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteWedgeIncline"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge60_incline"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0440"/> 
-	</block>
+		<block name="adminArenaCTRPlate">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"		 	value="rConcreteCTRPlate"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="plate_centered"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0160"/> 
+		</block>
 
-	<block name="adminArenaCTRPlate">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"		 	value="rConcreteCTRPlate"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="plate_centered"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0160"/> 
-	</block>
+		<block name="adminArenaWedgeTipCNRFullTop">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteWedgeTipCNRFullTop"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge60_corner"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0310"/> 
+		</block>
 
-	<block name="adminArenaWedgeTipCNRFullTop">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteWedgeTipCNRFullTop"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge60_corner"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0310"/> 
-	</block>
+		<block name="adminArenaEighth">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteEighth"/>
+			<property name="LightOpacity" 		value="0"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="cube_eighth"/>
+			<property name="SortOrder2" 		value="0140"/> 
+		</block>
 
-	<block name="adminArenaEighth">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteEighth"/>
-		<property name="LightOpacity" 		value="0"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="cube_eighth"/>
-		<property name="SortOrder2" 		value="0140"/> 
-	</block>
+		<block name="adminArenaQuarter">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteQuarter"/>
+			<property name="Shape" 				value="New"/>
+			<property name="LightOpacity" 		value="0"/>
+			<property name="Model" 				value="cube_quarter"/>
+			<property name="Collide"	 		value="movement,melee,bullet,arrow,rocket"/>
+			<property name="SortOrder2" 		value="0070"/> 
+		</block>
 
-	<block name="adminArenaQuarter">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteQuarter"/>
-		<property name="Shape" 				value="New"/>
-		<property name="LightOpacity" 		value="0"/>
-		<property name="Model" 				value="cube_quarter"/>
-		<property name="Collide"	 		value="movement,melee,bullet,arrow,rocket"/>
-		<property name="SortOrder2" 		value="0070"/> 
-	</block>
+		<block name="adminArenaHalf">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteHalf"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model"		 		value="cube_half"/>
+			<property name="SortOrder2" 		value="0060"/> 
+		</block>
 
-	<block name="adminArenaHalf">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteHalf"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model"		 		value="cube_half"/>
-		<property name="SortOrder2" 		value="0060"/> 
-	</block>
+		<block name="adminArenaCNRRamp">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteCNRRamp"/>
+			<property name="Shape" 				value="New"/>
+			<property name="LightOpacity" 		value="6"/>
+			<property name="Model" 				value="ramp_corner"/>
+			<property name="SortOrder2" 		value="0230"/> 
+		</block>
 
-	<block name="adminArenaCNRRamp">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteCNRRamp"/>
-		<property name="Shape" 				value="New"/>
-		<property name="LightOpacity" 		value="6"/>
-		<property name="Model" 				value="ramp_corner"/>
-		<property name="SortOrder2" 		value="0230"/> 
-	</block>
+		<block name="adminArenaPyramid">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcretePyramid"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="pyramid"/>
+			<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
+			<property name="SortOrder2" 		value="0260"/> 
+		</block>
 
-	<block name="adminArenaPyramid">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcretePyramid"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="pyramid"/>
-		<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
-		<property name="SortOrder2" 		value="0260"/> 
-	</block>
+		<block name="adminArenaCNRFull">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteCNRFull"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="ramp_outside_corner"/>
+			<property name="SortOrder2" 		value="0210"/> 
+		</block>
 
-	<block name="adminArenaCNRFull">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteCNRFull"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="ramp_outside_corner"/>
-		<property name="SortOrder2" 		value="0210"/> 
-	</block>
+		<block name="adminArenaPole">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcretePole"/>
+			<property name="Shape" 				value="New"/>
+			<property name="LightOpacity" 		value="0"/>
+			<property name="Model" 				value="pole_square"/>
+			<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
+			<property name="SortOrder2" 		value="0780"/> 
+			<property name="ImposterExclude" 	value="true"/>
+			<property name="UseGlobalUV" 		value="Local"/>
+		</block>
 
-	<block name="adminArenaPole">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcretePole"/>
-		<property name="Shape" 				value="New"/>
-		<property name="LightOpacity" 		value="0"/>
-		<property name="Model" 				value="pole_square"/>
-		<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
-		<property name="SortOrder2" 		value="0780"/> 
-		<property name="ImposterExclude" 	value="true"/>
-		<property name="UseGlobalUV" 		value="Local"/>
-	</block>
+		<block name="adminArenaPlate">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcretePlate"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="Plate"/>
+			<property name="SortOrder2" 		value="0150"/> 
+		</block>
 
-	<block name="adminArenaPlate">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcretePlate"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="Plate"/>
-		<property name="SortOrder2" 		value="0150"/> 
-	</block>
+		<block name="adminArenaWedgeTipCNRFullBottom">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteWedgeTipCNRFullBottom"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge60_tip_corner"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0300"/> 
+		</block>
 
-	<block name="adminArenaWedgeTipCNRFullBottom">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteWedgeTipCNRFullBottom"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge60_tip_corner"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0300"/> 
-	</block>
+		<block name="adminArenaWedgeCNRInsideBottom">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"		 	value="rConcreteWedgeCNRInsideBottom"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge60_inside_corner"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0340"/> 
+		</block>
 
-	<block name="adminArenaWedgeCNRInsideBottom">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"		 	value="rConcreteWedgeCNRInsideBottom"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge60_inside_corner"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0340"/> 
-	</block>
+		<block name="adminArenaWedgeCNRInsideTop">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteWedgeCNRInsideTop"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="wedge60_inside_corner_2"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2"		 	value="0350"/> 
+		</block>
 
-	<block name="adminArenaWedgeCNRInsideTop">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteWedgeCNRInsideTop"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="wedge60_inside_corner_2"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2"		 	value="0350"/> 
-	</block>
+		<block name="adminArenaArrowSlitHalf">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteArrowSlitHalf"/>
+			<property name="Shape" 				value="New"/>
+			<property name="LightOpacity" 		value="6"/>
+			<property name="Model" 				value="arrow_slit_half"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0910"/> 
+			<property name="ImposterExchange" 	param1="2" 	value="imposterBlock"/>
+		</block>
 
-	<block name="adminArenaArrowSlitHalf">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteArrowSlitHalf"/>
-		<property name="Shape" 				value="New"/>
-		<property name="LightOpacity" 		value="6"/>
-		<property name="Model" 				value="arrow_slit_half"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0910"/> 
-		<property name="ImposterExchange" 	param1="2" 	value="imposterBlock"/>
-	</block>
+		<block name="adminArenaStairsFilledRailingLeft">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteStairsFilledRailingLeft" />
+			<property name="DisplayType" 		value="blockMulti"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="Stairs_filled_railing_left"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0540"/> 
+			<property name="UseGlobalUV" 		value="L,D,D,D,L,D"/> 
+			<property name="MultiBlockDim" 		value="1,2,1"/>
+			<property name="Stairs" /> 
+			<property name="ImposterExchange" 	param1="2" 	value="imposterRamp"/>
+			<property name="MirrorSibling" 		value="adminArenaStairsFilledRailingRight"/>
+		</block>
 
-	<block name="adminArenaStairsFilledRailingLeft">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteStairsFilledRailingLeft" />
-		<property name="DisplayType" 		value="blockMulti"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="Stairs_filled_railing_left"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0540"/> 
-		<property name="UseGlobalUV" 		value="L,D,D,D,L,D"/> 
-		<property name="MultiBlockDim" 		value="1,2,1"/>
-		<property name="Stairs" /> 
-		<property name="ImposterExchange" 	param1="2" 	value="imposterRamp"/>
-		<property name="MirrorSibling" 		value="adminArenaStairsFilledRailingRight"/>
-	</block>
+		<block name="adminArenaStairsFilledRailingRight">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteStairsFilledRailingRight" />
+			<property name="DisplayType" 		value="blockMulti"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="Stairs_filled_railing_right"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0550"/> 
+			<property name="UseGlobalUV" 		value="L,D,D,D,L,D"/> 
+			<property name="MultiBlockDim" 		value="1,2,1"/>
+			<property name="Stairs" />
+			<property name="ImposterExchange" 	param1="2" 	value="imposterRamp"/>
+			<property name="MirrorSibling" 		value="adminArenaStairsFilledRailingLeft"/>
+		</block>
 
-	<block name="adminArenaStairsFilledRailingRight">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteStairsFilledRailingRight" />
-		<property name="DisplayType" 		value="blockMulti"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="Stairs_filled_railing_right"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0550"/> 
-		<property name="UseGlobalUV" 		value="L,D,D,D,L,D"/> 
-		<property name="MultiBlockDim" 		value="1,2,1"/>
-		<property name="Stairs" />
-		<property name="ImposterExchange" 	param1="2" 	value="imposterRamp"/>
-		<property name="MirrorSibling" 		value="adminArenaStairsFilledRailingLeft"/>
-	</block>
+		<block name="adminArenaGableInvertedSteep">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CustomIcon"			value="rConcreteGableInvertedSteep" />
+			<property name="CreativeMode"		value="Player" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="gable_inverted_steep"/>
+			<property name="SortOrder2" 		value="0420"/> 
+		</block>
 
-	<block name="adminArenaGableInvertedSteep">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CustomIcon"			value="rConcreteGableInvertedSteep" />
-		<property name="CreativeMode"		value="Player" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="gable_inverted_steep"/>
-		<property name="SortOrder2" 		value="0420"/> 
-	</block>
+		<block name="adminArenaStairs25CornerCNR">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteStairs25CornerCNR"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="stairs_filled_corner"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0560"/> 
+			<property name="ImposterExchange" 	param1="2" 	value="imposterCNRFull"/>
+		</block>
 
-	<block name="adminArenaStairs25CornerCNR">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteStairs25CornerCNR"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="stairs_filled_corner"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0560"/> 
-		<property name="ImposterExchange" 	param1="2" 	value="imposterCNRFull"/>
-	</block>
+		<block name="adminArenaWedgeStairs">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteWedgeStairs" />
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="wedge_stairs"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0580"/> 
+		</block>
 
-	<block name="adminArenaWedgeStairs">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteWedgeStairs" />
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="wedge_stairs"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0580"/> 
-	</block>
+		<block name="adminArenaStairs25">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteStairs25"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model"	 			value="StairsFilledVerticalUV"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0530"/> 
+			<property name="UseGlobalUV" 		value="Global"/>
+			<property name="Stairs" />
+			<property name="ImposterExchange" 	param1="2" 	value="imposterRamp"/>
+		</block>
 
-	<block name="adminArenaStairs25">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteStairs25"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model"	 			value="StairsFilledVerticalUV"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0530"/> 
-		<property name="UseGlobalUV" 		value="Global"/>
-		<property name="Stairs" />
-		<property name="ImposterExchange" 	param1="2" 	value="imposterRamp"/>
-	</block>
+		<block name="adminArenaQuarterCNR">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteQuarterCNR" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="quarter_inside_corner"/>
+			<property name="SortOrder2" 		value="0080"/> 
+		</block>
 
-	<block name="adminArenaQuarterCNR">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteQuarterCNR" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="quarter_inside_corner"/>
-		<property name="SortOrder2" 		value="0080"/> 
-	</block>
+		<block name="adminArenaArch">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteArch"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="Arch"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0500"/> 
+		</block>
 
-	<block name="adminArenaArch">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteArch"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="Arch"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0500"/> 
-	</block>
+		<block name="adminArenaWedge">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteWedge"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge60"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0290"/> 
+		</block>
 
-	<block name="adminArenaWedge">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteWedge"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge60"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0290"/> 
-	</block>
+		<block name="adminArenaCNRRampFiller">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteCNRRampFiller"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="ramp_corner_filler"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0240"/> 
+			<property name="UseGlobalUV" 		value="Global"/>
+		</block>
 
-	<block name="adminArenaCNRRampFiller">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteCNRRampFiller"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="ramp_corner_filler"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0240"/> 
-		<property name="UseGlobalUV" 		value="Global"/>
-	</block>
+		<block name="adminArenaWedgeTip">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteWedgeTip"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge60_tip"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0280"/> 
+		</block>
 
-	<block name="adminArenaWedgeTip">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteWedgeTip"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge60_tip"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0280"/> 
-	</block>
+		<block name="adminArenaWedgeCNRInsideSteepTop">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteWedgeCNRInsideSteepTop" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge_inside_corner_base"/>
+			<property name="SortOrder2" 		value="0370"/> 
+		</block>
 
-	<block name="adminArenaWedgeCNRInsideSteepTop">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteWedgeCNRInsideSteepTop" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge_inside_corner_base"/>
-		<property name="SortOrder2" 		value="0370"/> 
-	</block>
+		<block name="adminArenaWedgeTipStairs">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteWedgeTipStairs" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge_tip_stairs"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0570"/> 
+		</block>
 
-	<block name="adminArenaWedgeTipStairs">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteWedgeTipStairs" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge_tip_stairs"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0570"/> 
-	</block>
+		<block name="adminArenaWedgeCNRSteepTop">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteWedgeCNRSteepTop" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge60_tip_corner_top"/>
+			<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
+			<property name="SortOrder2" 		value="0330"/> 
+		</block>
 
-	<block name="adminArenaWedgeCNRSteepTop">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteWedgeCNRSteepTop" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge60_tip_corner_top"/>
-		<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
-		<property name="SortOrder2" 		value="0330"/> 
-	</block>
+		<block name="adminArenaQuarterTeeSCtr">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteQuarterTeeSCtr" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="quarter_t_centered"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0110"/> 
+		</block>
 
-	<block name="adminArenaQuarterTeeSCtr">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteQuarterTeeSCtr" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="quarter_t_centered"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0110"/> 
-	</block>
+		<block name="adminArenaWedgeCNRSteepBase">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteWedgeCNRSteepBase" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model"				value="wedge60_tip_corner_base"/>
+			<property name="SortOrder2" 		value="0320"/> 
+		</block>
 
-	<block name="adminArenaWedgeCNRSteepBase">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteWedgeCNRSteepBase" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model"				value="wedge60_tip_corner_base"/>
-		<property name="SortOrder2" 		value="0320"/> 
-	</block>
+		<block name="adminArenaQuarterSCtr">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteQuarterSCtr" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="quarter_centered_wall"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
+			<property name="SortOrder2" 		value="0110"/> 
+			<property name="UseGlobalUV" 		value="Global"/>
+		</block>
 
-	<block name="adminArenaQuarterSCtr">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteQuarterSCtr" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="quarter_centered_wall"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="Collide" 			value="movement,melee,bullet,arrow,rocket"/>
-		<property name="SortOrder2" 		value="0110"/> 
-		<property name="UseGlobalUV" 		value="Global"/>
-	</block>
+		<block name="adminArenaPillar100Cap">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcretePillar100Cap" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="Pole1m_cap"/>
+			<property name="ImposterExchange" 	param1="2" 	value="imposterPyramid"/>
+			<property name="SortOrder2" 		value="0737"/> 
+		</block>
 
-	<block name="adminArenaPillar100Cap">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcretePillar100Cap" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="Pole1m_cap"/>
-		<property name="ImposterExchange" 	param1="2" 	value="imposterPyramid"/>
-		<property name="SortOrder2" 		value="0737"/> 
-	</block>
+		<block name="adminArenaWedgeCNRInsideSteepBase">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteWedgeCNRInsideSteepBase" />
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="wedge_inside_corner_top"/>
+			<property name="SortOrder2" 		value="0360"/> 
+		</block>
 
-	<block name="adminArenaWedgeCNRInsideSteepBase">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteWedgeCNRInsideSteepBase" />
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="wedge_inside_corner_top"/>
-		<property name="SortOrder2" 		value="0360"/> 
-	</block>
+		<block name="adminArenaCTRpole"> 
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteCTRpole"/>
+			<property name="Shape" 				value="New"/>
+			<property name="LightOpacity" 		value="0"/>
+			<property name="Model" 				value="pole_square_centered"/>
+			<property name="SortOrder2" 		value="0790"/> 
+			<property name="AllowAllRotations" 	value="true"/>
+			<property name="ImposterExclude" 	value="true"/>
+			<property name="UseGlobalUV" 		value="Local"/>
+		</block>
 
-	<block name="adminArenaCTRpole"> 
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteCTRpole"/>
-		<property name="Shape" 				value="New"/>
-		<property name="LightOpacity" 		value="0"/>
-		<property name="Model" 				value="pole_square_centered"/>
-		<property name="SortOrder2" 		value="0790"/> 
-		<property name="AllowAllRotations" 	value="true"/>
-		<property name="ImposterExclude" 	value="true"/>
-		<property name="UseGlobalUV" 		value="Local"/>
-	</block>
+		<block name="adminArenaGableQuarter">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteGableQuarter" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="wedge_tip_quarter"/>
+			<property name="Collide"		 	value="movement,melee,bullet,arrow,rocket"/>
+			<property name="SortOrder2" 		value="0390"/> 
+		</block>
 
-	<block name="adminArenaGableQuarter">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteGableQuarter" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="wedge_tip_quarter"/>
-		<property name="Collide"		 	value="movement,melee,bullet,arrow,rocket"/>
-		<property name="SortOrder2" 		value="0390"/> 
-	</block>
+		<block name="adminArenaGableInvertedQuarter">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteGableInvertedQuarter" />
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="gable_inverted_quarter"/>
+			<property name="SortOrder2" 		value="0400"/> 
+		</block>
 
-	<block name="adminArenaGableInvertedQuarter">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteGableInvertedQuarter" />
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="gable_inverted_quarter"/>
-		<property name="SortOrder2" 		value="0400"/> 
-	</block>
+		<block name="adminArenaGableInvertedHalf">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteGableInvertedHalf" />
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="gable_inverted_half"/>
+			<property name="SortOrder2" 		value="0255"/> 
+		</block>
 
-	<block name="adminArenaGableInvertedHalf">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteGableInvertedHalf" />
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="gable_inverted_half"/>
-		<property name="SortOrder2" 		value="0255"/> 
-	</block>
+		<block name="adminArenaQuarterCNR3Way">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcreteQuarterCNR3Way" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="quarter_inside_corner_3way"/>
+			<property name="SortOrder2" 		value="0090"/> 
+		</block>
 
-	<block name="adminArenaQuarterCNR3Way">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcreteQuarterCNR3Way" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="quarter_inside_corner_3way"/>
-		<property name="SortOrder2" 		value="0090"/> 
-	</block>
+		<block name="adminArenaPlateOffset">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon"			value="rConcretePlateOffset" />
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="tube_center_straight"/>
+			<property name="SortOrder2" 		value="0171"/> 
+		</block>
 
-	<block name="adminArenaPlateOffset">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon"			value="rConcretePlateOffset" />
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="tube_center_straight"/>
-		<property name="SortOrder2" 		value="0171"/> 
-	</block>
+		<block name="adminArenaBlockTileBroken01">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteBlock"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="cube_tile_broken"/>
+			<property name="UseGlobalUV" 		value="L,D,D,D,D,D"/>
+			<property name="SortOrder2" 		value="0051"/> 
+		</block>
 
-	<block name="adminArenaBlockTileBroken01">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteBlock"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="cube_tile_broken"/>
-		<property name="UseGlobalUV" 		value="L,D,D,D,D,D"/>
-		<property name="SortOrder2" 		value="0051"/> 
-	</block>
+		<block name="adminArenaRamp">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteRamp"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="ramp"/> 
+			<property name="Place" 				value="TowardsPlacerInverted"/>
+			<property name="SortOrder2" 		value="0200"/> 
+		</block>
 
-	<block name="adminArenaRamp">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteRamp"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Model" 				value="ramp"/> 
-		<property name="Place" 				value="TowardsPlacerInverted"/>
-		<property name="SortOrder2" 		value="0200"/> 
-	</block>
+		<block name="adminArenaSupport">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteSupport"/>
+			<property name="Shape" 				value="New"/>
+			<property name="LightOpacity" 		value="0"/>
+			<property name="Model" 				value="Branch_legacy"/>
+			<property name="SortOrder2" 		value="0850"/> 
+			<property name="UseGlobalUV" 		value="Local"/>
+			<property name="ImposterExclude" 	value="true"/>
+			<property name="ImposterDontBlock" 	value="true"/>
+		</block>
 
-	<block name="adminArenaSupport">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteSupport"/>
-		<property name="Shape" 				value="New"/>
-		<property name="LightOpacity" 		value="0"/>
-		<property name="Model" 				value="Branch_legacy"/>
-		<property name="SortOrder2" 		value="0850"/> 
-		<property name="UseGlobalUV" 		value="Local"/>
-		<property name="ImposterExclude" 	value="true"/>
-		<property name="ImposterDontBlock" 	value="true"/>
-	</block>
-
-	<block name="adminArenaCNRInside">
-		<property name="Extends" 			value="adminArenaBlockMaster"/>
-		<property name="CreativeMode"		value="Player" />
-		<property name="CustomIcon" 		value="rConcreteCNRInside"/>
-		<property name="Shape" 				value="New"/>
-		<property name="Path" 				value="solid"/>
-		<property name="Model" 				value="ramp_inside_corner"/>
-		<property name="SortOrder2" 		value="0220"/> 
-	</block>
-
-
-</append>
+		<block name="adminArenaCNRInside">
+			<property name="Extends" 			value="adminArenaBlockMaster"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="rConcreteCNRInside"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Path" 				value="solid"/>
+			<property name="Model" 				value="ramp_inside_corner"/>
+			<property name="SortOrder2" 		value="0220"/> 
+		</block>
 
 
+		
+		<!-- Indestructible glass -->
+		<block name="adminArenaGlass">
+			<property name="Extends"			value="adminArenaBlock" />
+			<property name="CustomIcon"			value="glassBulletproofMaster" />
+			<property name="CustomIconTint"		value="ff0000" />
+			<property name="Shape" 				value="New"/>
+			<property name="LightOpacity" 		value="2"/>
+			<property name="Model" 				value="cube_glass"/>
+			<property name="Mesh" 				value="transparent"/>
+			<property name="Texture"		 	value="333"/>
+		</block>
+
+		
+		
+		<!-- Indestructible doors, hatches, garage doors -->
+		<block name="adminArenaVaultDoor">
+			<property name="Extends"			value="vaultDoor01" />
+			<property name="CustomIcon"			value="vaultDoor01" />
+			<property name="CustomIconTint"		value="ff0000" />
+			<property name="DescriptionKey"		value="adminArenaBlocksDesc" />
+			<drop event="Destroy"	 			count="0" />
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		<block name="adminArenaGarageDoor">
+			<property name="Extends"			value="garageDoorMetal_v1" />
+			<property name="CustomIcon"			value="garageDoorMetal_v1" />
+			<property name="CustomIconTint"		value="ff0000" />
+			<property name="DescriptionKey"		value="adminArenaBlocksDesc" />
+			<drop event="Destroy"	 			count="0" />
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		<block name="adminArenaVaultHatch">
+			<property name="Extends"			value="vaultHatch_v1" />
+			<property name="CustomIcon"			value="vaultHatch_v1" />
+			<property name="CustomIconTint"		value="ff0000" />
+			<property name="DescriptionKey"		value="adminArenaBlocksDesc" />
+			<drop event="Destroy"	 			count="0" />
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		
+
+		<!-- Invisible wall blocks and frames -->
+		<block name="adminArenaInvisibleFrame">
+			<property name="Group" 				value="Building" />
+			<property name="CustomIcon"			value="rConcreteBlock" />
+			<property name="CustomIconTint"		value="0000ff" />
+			<property name="DescriptionKey"		value="adminArenaBlocksDesc" />
+			<property name="Material" 			value="Mbedrock" />
+			<property name="Texture" 			value="50" />
+			<property name="CreativeMode" 		value="Player" />
+			<property name="FilterTags" 		value="fbuilding,fadmin" />
+			<property name="SortOrder1" 		value="4020" />
+			<property name="SortOrder2" 		value="0002" />
+			<property name="PassThroughDamage" 	value="true" />
+			<property name="CanPickup"			value="true" />
+			<drop event="Destroy"	 			count="0"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="adminArenaInvisibleBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		<block name="adminArenaInvisibleBlock">
+			<property name="Group" 				value="Building" />
+			<property name="CustomIcon"			value="rConcreteBlock" />
+			<property name="CustomIconTint"		value="0000ff" />
+			<property name="Shape" 				value="ModelEntity"/>
+			<property name="Model" 				value="#@modfolder:Resources/Blocks.unity3d?InvisibleBlock"/>
+			<property name="ModelOffset"		value="0,0.5,0" />
+			<property name="Material" 			value="Mbedrock" />
+			<property name="Collide"			value="movement,melee" />
+			<property name="FilterTags" 		value="fbuilding,fadmin" />
+			<property name="SortOrder1" 		value="4020" />
+			<property name="SortOrder2" 		value="0002" />
+			<property name="PassThroughDamage" 	value="true" />
+			<drop event="Destroy"	 			count="0"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		
+		
+		<!-- Floating wall blocks and frames -->
+		<block name="adminArenaFloatFrame">
+			<property name="Group" 				value="Building" />
+			<property name="CustomIcon"			value="rConcreteBlock" />
+			<property name="CustomIconTint"		value="00ff00" />
+			<property name="DescriptionKey"		value="adminArenaBlocksDesc" />
+			<property name="Material" 			value="Mbedrock" />
+			<property name="Texture" 			value="51" />
+			<property name="CreativeMode" 		value="Player" />
+			<property name="FilterTags" 		value="fbuilding,fadmin" />
+			<property name="SortOrder1" 		value="4020" />
+			<property name="SortOrder2" 		value="0002" />
+			<property name="PassThroughDamage" 	value="true" />
+			<property name="CanPickup"			value="true" />
+			<drop event="Destroy"	 			count="0"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="adminArenaFloatBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		<block name="adminArenaFloatBlock">
+			<property name="Material" 			value="Mair" />
+			<property name="CustomIcon"			value="rConcreteBlock" />
+			<property name="CustomIconTint"		value="00ff00" />
+			<property name="Shape" 				value="Invisible" />
+			<property name="Texture"			value="250" />
+			<property name="FilterTags" 		value="fterrain" />
+			<property name="Collide"			value="movement" />
+			<property name="SortOrder1" 		value="d0j0" />
+			<property name="SortOrder2" 		value="0050" />
+		</block>
+		
+		
+		
+		<!-- Respawning loot crate blocks -->
+		<!-- This crate will be for the inside of the arena -->
+		<block name="adminArenaRespawnCrate1Air">
+			<property name="Material" 			value="Mair" />
+			<property name="Class" 				value="PlantGrowing" />
+			<property name="PlantGrowing.FertileLevel" value="0" />
+			<property name="PlantGrowing.Next" 	value="adminArenaRespawnCrate1" />
+			<property name="PlantGrowing.GrowthRate" value="0.1" />
+			<property name="PlantGrowing.IsRandom" value="false" />
+			<property name="PlantGrowing.LightLevelStay" value="0" />
+			<property name="Shape" 				value="Invisible" />
+			<property name="Texture"			value="250" />
+			<property name="FilterTags" 		value="fbuilding,fconcrete"/>
+			<property name="SortOrder1" 		value="40m0"/>
+			<property name="SortOrder2" 		value="0002"/>
+			<drop event="Destroy" 				count="0"/>
+		</block>
+		
+		<block name="adminArenaRespawnCrate1">
+			<property name="CreativeMode" 		value="Player"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="cube"/>
+			<property name="Class" 				value="Loot"/>
+			<property name="LootList" 			value="151"/>
+			<property name="Material" 			value="Mbedrock"/>
+			<property name="Texture" 			value="572"/>
+			<property name="UseGlobalUV" 		value="L,L,L,L,L,L"/>
+			<property name="DowngradeBlock" 	value="adminArenaRespawnCrate1Air"/>
+			<property name="Group" 				value="Building"/>
+			<property name="FilterTags" 		value="floot"/>
+			<drop event="Destroy" 				count="0"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		
+		
+		
+		<!-- Non respawning loot crate blocks -->
+		<!-- This crate will contain a random melee weapon for the players -->
+		<!--
+		<block name="adminArenaCrate1Air">
+			<property name="Material" 			value="Mair" />
+			<property name="Class" 				value="UpgradeRated"/>
+			<property name="UpgradeRated.ToBlock" value="adminArenaCrate1"/>
+			<property name="UpgradeRated.Rate" 	value="0.1"/>
+			<property name="FilterTags" 		value="fbuilding,fconcrete"/>
+			<property name="SortOrder1" 		value="40m0"/>
+			<property name="SortOrder2" 		value="0002"/>
+			<drop event="Destroy" 				count="0"/>
+		</block>
+		
+		<block name="adminArenaCrate1">
+			<property name="CreativeMode" 		value="Player"/>
+			<property name="Shape" 				value="New"/>
+			<property name="Model" 				value="cube"/>
+			<property name="Class" 				value="Loot"/>
+			<property name="LootList" 			value="152"/>
+			<property name="Material" 			value="Mbedrock"/>
+			<property name="Texture" 			value="572"/>
+			<property name="UseGlobalUV" 		value="L,L,L,L,L,L"/>
+			<property name="Group" 				value="Building"/>
+			<property name="FilterTags" 		value="floot"/>
+			<drop event="Destroy" 				count="0"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
+		-->
+		
+		<!-- This crate will contain a random ranged weapon and associated ammo for the players -->
+		<!--
+		<block name="adminArenaCrate2Air">
+			<property name="Extends"			value="adminArenaRespawnCrate1Air" />
+			<property name="UpgradeRated.ToBlock" value="adminArenaCrate2"/>
+		</block>
+		
+		<block name="adminArenaCrate2">
+			<property name="Extends"				value="adminArenaCrate1" />
+			<property name="LootList"				value="163" />
+		</block>
+		-->
+		
+		
+		
+		
+	</append>
 </configs>
