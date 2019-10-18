@@ -1,0 +1,292 @@
+<configs>
+	<append xpath="/blocks">
+		<block name="S420_BustedBus">
+			<!--Busted Bus(https://sketchfab.com/models/4360e82cb3a542619b62ed74762f852b) by Renafox is licensed under CC Attribution-NonCommercial(http://creativecommons.org/licenses/by-nc/4.0/)-->
+			<property name="Extends" value="cntBusSchool" />
+			<property name="CustomIcon" value="cntBusSchool" />
+			<property name="Material" value="Mmetal"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_BustedBus.unity3d?BustedBusPrefab" />
+			<property name="MultiBlockDim" value="3,3,9" />
+			<property name="BigDecorationRadius" value="9" />
+			<property name="ActivationDistance" value="10"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="smallEngine" count="1" prob="0.25" tag="salvageHarvest"/>
+			<drop event="Harvest" name="carBattery" count="1" prob="0.2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceRadiator" count="1" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceOil" count="1,3" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceCloth" count="3,7" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="10,35" tag="salvageHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,120" tag="allHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,130" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="12" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" prob="0.1" tag="salvageHarvest"/>
+		</block>
+		<block name="S420_CombatJeep01">
+			<!--Free Unity store asset by Yoon's 3D GameART-->
+			<property name="Extends" value="cntBusSchool" />
+			<property name="Material" value="Mmetal"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_CombatJeep.unity3d?CombatJeep01" />
+			<property name="MultiBlockDim" value="3,3,7" />
+			<property name="BigDecorationRadius" value="7" />
+			<property name="ActivationDistance" value="8"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="smallEngine" count="1" prob="0.25" tag="salvageHarvest"/>
+			<drop event="Harvest" name="carBattery" count="1" prob="0.2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceRadiator" count="1" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceOil" count="1,3" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceCloth" count="3,7" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="10,35" tag="salvageHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,120" tag="allHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,130" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="12" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" prob="0.1" tag="salvageHarvest"/>
+			<property name="LootList" value="50"/>
+		</block>
+		<block name="S420_CombatJeep02">
+			<!--Free Unity store asset by Yoon's 3D GameART-->
+			<property name="Extends" value="S420_CombatJeep01" />
+			<property name="CustomIcon" value="S420_CombatJeep01" />
+			<property name="Model" value="#@modfolder:Resources/S420_CombatJeep.unity3d?CombatJeep02" />
+		</block>
+		<block name="S420_CombatJeep03">
+			<!--Free Unity store asset by Yoon's 3D GameART-->
+			<property name="Extends" value="S420_CombatJeep01" />
+			<property name="CustomIcon" value="S420_CombatJeep01" />
+			<property name="Model" value="#@modfolder:Resources/S420_CombatJeep.unity3d?CombatJeep03" />
+		</block>
+		<block name="S420_CombatJeep04">
+			<!--Free Unity store asset by Yoon's 3D GameART-->
+			<property name="Extends" value="S420_CombatJeep01" />
+			<property name="CustomIcon" value="S420_CombatJeep01" />
+			<property name="Model" value="#@modfolder:Resources/S420_CombatJeep.unity3d?CombatJeep04" />
+		</block>
+		<block name="S420_CombatJeep05">
+			<!--Free Unity store asset by Yoon's 3D GameART-->
+			<property name="Extends" value="S420_CombatJeep01" />
+			<property name="CustomIcon" value="S420_CombatJeep01" />
+			<property name="Model" value="#@modfolder:Resources/S420_CombatJeep.unity3d?CombatJeep05" />
+		</block>
+		<block name="S420_damagedCarD0">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage0" />
+			<property name="CustomIcon" value="cntCar03SedanDamage0" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_damagedCar.unity3d?damagedCarD0" />
+			<property name="DowngradeBlock" value="S420_damagedCarD1" />
+			<property name="MultiBlockDim" value="3,2,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_damagedCarD1">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage1" />
+			<property name="CustomIcon" value="cntCar03SedanDamage1" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_damagedCar.unity3d?damagedCarD1" />
+			<property name="DowngradeBlock" value="S420_damagedCarD2" />
+			<property name="MultiBlockDim" value="3,2,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_damagedCarD2">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage2" />
+			<property name="CustomIcon" value="cntCar03SedanDamage2" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_damagedCar.unity3d?damagedCarD2" />
+			<property name="MultiBlockDim" value="3,2,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_damagedVanD0">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage0" />
+			<property name="CustomIcon" value="cntCar03SedanDamage0" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_damagedVan.unity3d?damagedVanD0" />
+			<property name="DowngradeBlock" value="S420_damagedVanD1" />
+			<property name="MultiBlockDim" value="3,2,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_damagedVanD1">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage1" />
+			<property name="CustomIcon" value="cntCar03SedanDamage1" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_damagedVan.unity3d?damagedVanD1" />
+			<property name="DowngradeBlock" value="S420_damagedVanD2" />
+			<property name="MultiBlockDim" value="3,2,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_damagedVanD2">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage2" />
+			<property name="CustomIcon" value="cntCar03SedanDamage2" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_damagedVan.unity3d?damagedVanD2" />
+			<property name="MultiBlockDim" value="3,2,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_FireTruck">
+			<!--Free Unity store asset by Yoon's 3D GameART-->
+			<property name="Extends" value="cntBusSchool" />
+			<property name="Material" value="Mmetal"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_FireTruck.unity3d?FireTruckPrefab" />
+			<property name="MultiBlockDim" value="3,3,9" />
+			<property name="BigDecorationRadius" value="9" />
+			<property name="ActivationDistance" value="10"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="smallEngine" count="1" prob="0.25" tag="salvageHarvest"/>
+			<drop event="Harvest" name="carBattery" count="1" prob="0.2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceRadiator" count="1" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceOil" count="1,3" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceCloth" count="3,7" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="10,35" tag="salvageHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,120" tag="allHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,130" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="12" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" prob="0.1" tag="salvageHarvest"/>
+			<property name="LootList" value="51"/>
+		</block>
+		<block name="S420_SemiTruck01">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntBusSchool" />
+			<property name="CustomIcon" value="cntBusSchool" />
+			<property name="Material" value="Mmetal"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck01" />
+			<property name="MultiBlockDim" value="3,3,6" />
+			<property name="BigDecorationRadius" value="6" />
+			<property name="ActivationDistance" value="8"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="smallEngine" count="1" prob="0.25" tag="salvageHarvest"/>
+			<drop event="Harvest" name="carBattery" count="1" prob="0.2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceRadiator" count="1" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceOil" count="1,3" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceCloth" count="3,7" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="10,35" tag="salvageHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,120" tag="allHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="20,130" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="12" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0,2" prob="0.1" tag="salvageHarvest"/>
+		</block>
+		<block name="S420_SemiTruck01r">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck01" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck01r" />
+		</block>
+		<block name="S420_SemiTruck01w">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck01" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck01w" />
+		</block>
+		<block name="S420_SemiTruck02">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck01" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck02" />
+			<property name="MultiBlockDim" value="3,4,14" />
+			<property name="BigDecorationRadius" value="14" />
+			<property name="ActivationDistance" value="10"/>
+		</block>
+		<block name="S420_SemiTruck02r">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck02" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck02r" />
+		</block>
+		<block name="S420_SemiTruck02w">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck02" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck02w" />
+		</block>
+		<block name="S420_SemiTruck03">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck02" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck03" />
+			<property name="MultiBlockDim" value="6,4,13" />
+		</block>
+		<block name="S420_SemiTruck03r">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck03" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck03r" />
+		</block>
+		<block name="S420_SemiTruck03w">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="S420_SemiTruck03" />
+			<property name="Model" value="#@modfolder:Resources/S420_SemiTruck.unity3d?SemiTruck03w" />
+		</block>
+		<block name="S420_TransportTankerD0">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage0" />
+			<property name="CustomIcon" value="cntCar03SedanDamage0" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_TransportTanker.unity3d?transporter02D0" />
+			<property name="DowngradeBlock" value="S420_TransportTankerD1" />
+			<property name="MultiBlockDim" value="3,3,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_TransportTankerD1">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage1" />
+			<property name="CustomIcon" value="cntCar03SedanDamage1" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_TransportTanker.unity3d?transporter02D1" />
+			<property name="DowngradeBlock" value="S420_TransportTankerD2" />
+			<property name="MultiBlockDim" value="3,3,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_TransportTankerD2">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage2" />
+			<property name="CustomIcon" value="cntCar03SedanDamage2" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_TransportTanker.unity3d?transporter02D2" />
+			<property name="MultiBlockDim" value="3,3,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_TransportTruckD0">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage0" />
+			<property name="CustomIcon" value="cntCar03SedanDamage0" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_TransportTruck.unity3d?transporter01D0" />
+			<property name="DowngradeBlock" value="S420_TransportTruckD1" />
+			<property name="MultiBlockDim" value="3,3,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_TransportTruckD1">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage1" />
+			<property name="CustomIcon" value="cntCar03SedanDamage1" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_TransportTruck.unity3d?transporter01D1" />
+			<property name="DowngradeBlock" value="S420_TransportTruckD2" />
+			<property name="MultiBlockDim" value="3,3,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+		<block name="S420_TransportTruckD2">
+			<!--Free Unity store asset by VIS Games-->
+			<property name="Extends" value="cntCar03SedanDamage2" />
+			<property name="CustomIcon" value="cntCar03SedanDamage2" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/S420_TransportTruck.unity3d?transporter01D2" />
+			<property name="MultiBlockDim" value="3,3,6" />
+			<property name="BigDecorationRadius" value="6" />
+		</block>
+	</append>
+</configs>

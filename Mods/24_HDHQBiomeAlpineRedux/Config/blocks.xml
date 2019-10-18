@@ -1,0 +1,170 @@
+<configs>
+    <set xpath="/blocks/block[@name='treeWinterPine28m']/property[@name='Model']/@value">#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinter1Prefab</set>
+		<set xpath="/blocks/block[@name='treeWinterPine19m']/property[@name='Model']/@value">#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinter2Prefab</set>
+    <set xpath="/blocks/block[@name='treeWinterPine13m']/property[@name='Model']/@value">#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineDead1Prefab</set>
+    <set xpath="/blocks/block[@name='treeWinterEverGreen']/property[@name='Model']/@value">#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinter1Prefab</set>
+    <set xpath="/blocks/block[@name='treeOakMed01']/property[@name='Model']/@value">#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineDead2Prefab</set><!-- Shared Tree All Biomes -->
+    <append xpath="/blocks">	
+      <block name="HDHQ_AlpineWinter1Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodFull"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinter1Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="2"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_AlpineWinter2Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodFull"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinter2Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="2"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_AlpineWinterMed1Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinterMed1Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="2"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_AlpineWinterSm1Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodSmall"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinterSm1Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="10" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="2"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_AlpineDead1Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineDead1Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="treePlantedMountainPine1m" count="0"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_AlpineDead2Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineDead2Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="treePlantedMountainPine1m" count="0"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <!-- Planted Alpine Winter Trees -->
+      <block name="HDHQ_AlpineWinterSeedPrefab">
+        <property name="Extends" value="treeMasterGrowing" param1="DescriptionKey"/><!-- CustomIcon,DescriptionKey-->
+        <property name="CreativeMode" value="Player"/>
+        <property name="CustomIcon" value="HDHQWinterSeed"/>
+        <property name="MaxDamage" value="10"/>
+        <property name="Material" value="Mplants"/>
+        <property name="StabilitySupport" value="false"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinterSeedPrefab"/>
+        <property name="ModelOffset" value="0,-0.2,0"/>
+        <property name="IsDistantDecoration" value="false"/>
+        <property name="Collide" value="melee"/>
+        <property name="FallOver" value="false"/>
+        <property name="BigDecorationRadius" value="4"/>
+        <property name="OnlySimpleRotations" value="true"/>
+        <property name="PlantGrowing.Next" value="HDHQ_PlantedAlpineWinterSm1Prefab"/>
+        <property name="PlantGrowing.GrowthRate" value="63"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="1"/>
+        <property name="EconomicValue" value="12"/>
+        <property name="EconomicBundleSize" value="5"/>
+        <property name="SellableToTrader" value="false"/>
+        <property name="Group" value="Resources"/>
+        <property name="ParticleOnDeath" value="treeGib_sapling"/>
+        <property name="SortOrder2" value="0142"/> <!-- SortTree -->
+        <property name="ActivationDistance" value="4"/>
+      </block>
+      <block name="HDHQ_PlantedAlpineWinterSm1Prefab">
+        <property name="Extends" value="treeMasterGrowing"/>
+        <property name="CreativeMode" value="Player"/>
+        <property name="CustomIcon" value="treeOakSml01"/>
+        <property name="Material" value="MtreeWoodSmall"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinterSm1Prefab"/>
+        <property name="ModelOffset" value="0,-0.3,0"/>
+        <property name="MultiBlockDim" value="1,7,1"/>
+        <property name="BigDecorationRadius" value="4"/>
+        <property name="PlantGrowing.Next" value="HDHQ_PlantedAlpineWinterMed1Prefab"/>
+        <property name="PlantGrowing.GrowthRate" value="63"/>
+        <drop event="Harvest" name="resourceWood" count="10" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="1"/>
+        <property name="SortOrder2" value="0144"/> <!-- SortTree -->
+      </block>
+      <block name="HDHQ_PlantedAlpineWinterMed1Prefab">
+        <property name="Extends" value="treeMasterGrowing"/>
+        <property name="CreativeMode" value="Player"/>
+        <property name="CustomIcon" value="treeOakMed01"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinterMed1Prefab"/>
+        <property name="ModelOffset" value="0,-0.3,0"/>
+        <property name="MultiBlockDim" value="1,15,1"/>
+        <property name="BigDecorationRadius" value="4"/>
+        <property name="PlantGrowing.Next" value="HDHQ_PlantedAlpineWinter2Prefab"/>
+        <property name="PlantGrowing.GrowthRate" value="63"/>
+        <property name="PlantGrowing.FertileLevel" value="3"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="2"/>
+        <property name="SortOrder2" value="0146"/> <!-- SortTree -->
+      </block>
+      <block name="HDHQ_PlantedAlpineWinter2Prefab">
+        <property name="Extends" value="HDHQ_AlpineWinter2Prefab"/>
+        <property name="CreativeMode" value="Player"/>
+        <property name="Material" value="MtreeWoodFull"/>
+        <property name="CustomIcon" value="treeOakLrg01"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQAlpineRedux.unity3d?HDHQAlpineWinter2Prefab"/>
+        <property name="ModelOffset" value="0,-0.3,0"/>
+        <property name="MultiBlockDim" value="1,40,1"/>
+        <property name="PlantGrowing.FertileLevel" value="5"/>
+        <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_AlpineWinterSeedPrefab" count="2"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+        <property name="SortOrder2" value="0370"/> <!-- SortTree -->
+      </block>
+		</append>
+</configs>

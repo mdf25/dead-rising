@@ -1,0 +1,18 @@
+<configs>
+
+<append xpath="/recipes">
+	<recipe name="modArmorDoubleStoragePocket" count="1" craft_time="30">
+		<ingredient name="modArmorStoragePocket" count="2" />
+		<ingredient name="resourceLeather" count="5" />
+		<ingredient name="resourceCloth" count="5" />
+	</recipe>
+	
+	<recipe name="modArmorTripleStoragePocket" count="1" craft_time="30">
+		<ingredient name="modArmorDoubleStoragePocket" count="1" />
+		<ingredient name="modArmorStoragePocket" count="1" />
+		<ingredient name="resourceLeather" count="5" />
+		<ingredient name="resourceCloth" count="5" />
+	</recipe>
+</append>
+
+</configs>

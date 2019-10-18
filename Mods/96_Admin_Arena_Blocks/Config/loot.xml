@@ -1,0 +1,572 @@
+<configs>
+	
+	<insertBefore xpath="/lootcontainers/lootgroup[1]">
+		
+		<!-- Arena: Guns and Ammo -->
+		<lootgroup name="arenaCompoundBowAmmo"		count="all">
+			<item name="gunCompoundBow"					count="1" />
+			<item name="ammoArrowStone"					count="80" />
+		</lootgroup>
+		
+		<lootgroup name="arenaCrossbowAmmo"			count="all">
+			<item name="gunCrossbow"					count="1" />
+			<item name="ammoCrossbowBoltStone"			count="50" />
+		</lootgroup>
+		
+		<lootgroup name="arenaPistolAmmo" 			count="all">
+			<item name="gunPistol" 						count="1" />
+			<item name="ammo9mmBullet"					count="90" />
+		</lootgroup>
+		
+		<lootgroup name="arenaSmgAmmo"				count="all">
+			<item name="gunSMG5"						count="1" />
+			<item name="ammo9mmBullet"					count="180" />
+		</lootgroup>
+		
+		<lootgroup name="arenaShotgunAmmo"			count="all">
+			<item name="gunPumpShotgun"					count="1" />
+			<item name="ammoShotgunShell"				count="48" />
+		</lootgroup>
+		
+		<lootgroup name="arenaHuntingRifleAmmo"		count="all">
+			<item name="gunHuntingRifle"				count="1" />
+			<item name="ammo762mmBulletFMJ"				count="20" />
+		</lootgroup>
+		
+		<lootgroup name="arenaMR10Ammo"				count="all">
+			<item name="gunMR10"						count="1" />
+			<item name="ammo762mmBulletFMJ"				count="35" />
+		</lootgroup>
+		
+		<lootgroup name="arenaAK47Ammo"				count="all">
+			<item name="gunAK47"						count="1" />
+			<item name="ammo762mmBulletFMJ"				count="120" />
+		</lootgroup>
+		
+		<!-- Arena: Non-vanilla guns and ammo here -->
+		
+		
+		
+		<!-- Ammo Group -->
+		<lootgroup name="arenaAmmo"					count="1">
+			<item name="ammoArrowStone"					count="50,100"		prob="0.25" />
+			<item name="ammoArrowIron"					count="30,60" 		prob="0.15" />
+			<item name="ammoArrowSteelAP"				count="25,50" 		prob="0.1" />
+			<item name="ammoCrossbowBoltStone"			count="40,80" 		prob="0.25" />
+			<item name="ammoCrossbowBoltIron"			count="20,40" 		prob="0.15" />
+			<item name="ammoCrossbowBoltSteelAP"		count="10,20" 		prob="0.1" />
+			<item name="ammo9mmBullet"					count="50,100" 		prob="3" />
+			<item name="ammo44MagnumBullet"				count="30,60" 		prob="0.5" />
+			<item name="ammoShotgunShell"				count="40,80" 		prob="1.5" />
+			<item name="ammoShotgunSlug"				count="24,40" 		prob="0.3" />
+			<item name="ammo762mmBulletFMJ"				count="30,60" 		prob="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- Arena: Guns and Ammo master loot group -->
+		<lootgroup name="arenaGunsAmmo" 			count="1">
+			<item group="arenaAmmo"						count="2,3"		prob="9" />
+			<item group="arenaCompoundBowAmmo"			count="1" 		prob="2" />
+			<item group="arenaCrossbowAmmo"				count="1"		prob="2" />
+			<item group="arenaPistolAmmo"				count="1"		prob="1.5" />
+			<item group="arenaSmgAmmo"					count="1"		prob="0.5" />
+			<item group="arenaShotgunAmmo"				count="1"		prob="1" />
+			<item group="arenaHuntingRifleAmmo"			count="1"		prob="1" />
+			<item group="arenaMR10Ammo"					count="1"		prob="0.5" />
+			<item group="arenaAK47Ammo"					count="1"		prob="0.5" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- End Arena: Guns and Ammo -->
+		
+		
+		
+		<!-- Arena: Armor -->
+		<lootgroup name="arenaArmorPadded"			count="2,5">
+			<item name="armorClothHat"					count="1" />
+			<item name="armorClothJacket"				count="1" />
+			<item name="armorClothGloves"				count="1" />
+			<item name="armorClothPants"				count="1" />
+			<item name="armorClothBoots"				count="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaArmorLeather"			count="1,4">
+			<item name="armorLeatherHood"				count="1" />
+			<item name="armorLeatherChest"				count="1" />
+			<item name="armorLeatherGloves"				count="1" />
+			<item name="armorLeatherPants"				count="1" />
+			<item name="armorLeatherBoots"				count="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaArmorMilitary"		count="1,2">
+			<item name="armorMilitaryHelmet"			count="1" />
+			<item name="armorMilitaryVest"				count="1" />
+			<item name="armorMilitaryGloves"			count="1" />
+			<item name="armorMilitaryLegs"				count="1" />
+			<item name="armorMilitaryBoots"				count="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaArmorScrap"			count="2,5">
+			<item name="armorScrapHelmet"				count="1" />
+			<item name="armorScrapChest"				count="1" />
+			<item name="armorScrapGloves"				count="1" />
+			<item name="armorScrapLegs"					count="1" />
+			<item name="armorScrapBoots"				count="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaArmorIron"			count="1,4">
+			<item name="armorIronHelmet"				count="1" />
+			<item name="armorIronChest"					count="1" />
+			<item name="armorIronGloves"				count="1" />
+			<item name="armorIronLegs"					count="1" />
+			<item name="armorIronBoots"					count="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaArmorSteel"			count="1,2">
+			<item name="armorSteelHelmet"				count="1" />
+			<item name="armorSteelChest"				count="1" />
+			<item name="armorSteelGloves"				count="1" />
+			<item name="armorSteelLegs"					count="1" />
+			<item name="armorSteelBoots"				count="1" />
+		</lootgroup>
+		
+		
+		<!-- Arena: Non-vanilla armors here -->
+		
+		
+		<!-- Arena: Armor master loot group -->
+		<lootgroup name="arenaArmor"				count="1">
+			<item group="arenaArmorPadded"				count="1"		prob="2" />
+			<item group="arenaArmorLeather"				count="1"		prob="1" />
+			<item group="arenaArmorMilitary"			count="1"		prob="0.5" />
+			<item group="arenaArmorScrap"				count="1"		prob="1.5" />
+			<item group="arenaArmorIron"				count="1"		prob="0.75" />
+			<item group="arenaArmorSteel"				count="1"		prob="0.25" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- End Arena: Armor -->
+		
+		
+		
+		<!-- Arena: Melee Weapons -->
+		<lootgroup name="arenaBluntWeapons"			count="1">
+			<item name="meleeClubWood"					count="1"		prob="2" />
+			<item name="meleeClubIron"					count="1"		prob="1.5" />
+			<item name="meleeToolClawHammer"			count="1"		prob="1" />
+			<item name="meleeToolSledgehammer"			count="1"		prob="0.5" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<lootgroup name="arenaBladeWeapons"			count="1">
+			<item name="meleeBoneShiv"					count="1"		prob="2" />
+			<item name="meleeToolHuntingKnife"			count="1"		prob="1" />
+			<item name="meleeToolMachete"				count="1"		prob="0.5" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<lootgroup name="arenaTools"				count="1">
+			<item name="meleeToolPickaxeIron"			count="1"		prob="1" />
+			<item name="meleeToolPickaxeSteel"			count="1"		prob="0.5" />
+			<item name="meleeToolShovelIron"			count="1"		prob="1" />
+			<item name="meleeToolShovelSteel"			count="1"		prob="0.5" />
+			<item name="meleeToolFireaxeIron"			count="1"		prob="1" />
+			<item name="meleeToolFireaxeSteel"			count="1"		prob="0.5" />
+			<!-- NV -->
+		</lootgroup>
+		
+		
+		<!-- Arena: Non-vanilla weapon groups here -->
+		
+		
+		<!-- Arena: Melee master group -->
+		<lootgroup name="arenaMeleeWeapons"			count="1">
+			<item group="arenaBluntWeapons"				count="1"		prob="2" />
+			<item group="arenaBladeWeapons"				count="1"		prob="2" />
+			<item group="arenaTools"					count="1"		prob="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- End Arena: Melee Weapons -->
+		
+		
+		
+		<!-- Arena: Food and Drink -->
+		
+		<!-- Foods -->
+		<lootgroup name="arenaFood"					count="1">
+			<item name="foodBaconAndEggs"				count="2,4"		prob="2" />
+			<item name="foodBlueberryPie"				count="2,4"		prob="1.5" />
+			<item name="foodSteakAndPotato"				count="2,4"		prob="1.5" />
+			<item name="foodVegetableStew"				count="1,2"		prob="1" />
+			<item name="foodMeatStew"					count="1,2"		prob="1" />
+			<item name="foodHoboStew"					count="1,2"		prob="1" />
+			<item name="foodShamChowder"				count="1"		prob="0.5" />
+			<item name="foodFishTacos"					count="1"		prob="0.5" />
+			<item name="foodChiliDog"					count="1"		prob="0.25" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<lootgroup name="arenaDrink"				count="1">
+			<item name="drinkJarGoldenRodTea"			count="3,6"		prob="2" />
+			<item name="drinkJarRedTea"					count="3,6"		prob="2" />
+			<item name="drinkJarYuccaJuice"				count="2,4"		prob="1.5" />
+			<item name="drinkJarCoffee"					count="2,3"		prob="1" />
+			<item name="drinkJarSnowberryJuice"			count="2,3"		prob="1" />
+			<item name="drinkYuccaJuiceSmoothie"		count="1,2"		prob="0.5" />
+			<item name="drinkCanMegaCrush"				count="1,2"		prob="0.5" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- Arena: Non-vanilla food and drink groups here -->
+		
+		
+		<!-- Arena: Food and Drink Master Group -->
+		<lootgroup name="arenaFoodDrink"			count="1">
+			<item group="arenaFood"						count="1" 		prob="2" />
+			<item group="arenaDrink"					count="1"		prob="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- End Arena: Food and Drink -->
+		
+		
+		
+		<!-- Arena: Medical Supplies -->
+		
+		<!-- Bandages -->
+		<lootgroup name="arenaMedicalBandages"		count="1">
+			<item name="medicalBandage"					count="10"		prob="2" />
+			<item name="medicalAloeCream"				count="5"		prob="1" />
+			<item name="medicalFirstAidBandage"			count="5"		prob="0.5" />
+			<item name="medicalFirstAidKit"				count="3"		prob="0.25" />
+		</lootgroup>
+		
+		<lootgroup name="arenaMedicalSplintsCasts"	count="1">
+			<item name="medicalSplint"					count="2"		prob="1" />
+			<item name="medicalPlasterCast"				count="2"		prob="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaMedicalDrugs"			count="1">
+			<item name="drugPainkillers"				count="4"		prob="4" />
+			<item name="drugVitamins"					count="2"		prob="1" />
+			<item name="drugSteroids"					count="1"		prob="0.5" />
+			<item name="drugRecog"						count="1"		prob="0.5" />
+			<item name="drugFortBites"					count="1"		prob="0.5" />
+		</lootgroup>
+		
+		<!-- Arena: Non-vanilla medical items here -->
+		
+		
+		<!-- Arena: Medical items master group -->
+		<lootgroup name="arenaMedical"				count="1">
+			<item group="arenaMedicalBandages"			count="1"		prob="3" />
+			<item group="arenaMedicalDrugs"				count="1"		prob="2" />
+			<item group="arenaMedicalSplintsCasts"		count="1"		prob="1" />
+			<!-- NV -->
+		</lootgroup>
+	
+		
+		<!-- End Arena: Medical Supplies -->
+		
+		
+		<!-- Arena: Weapon Attachments -->
+		<lootgroup name="arenaBowCrossbowAttachments" count="1">
+			<item name="modGunBowPolymerString"			count="1" />
+			<item name="modGunBowArrowRest"				count="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaGunAttachments"		count="1">
+			<item name="modGunBarrelExtender"			count="1" />
+			<item name="modGunMuzzleBrake"				count="1" />
+			<item name="modGunLaserSight"				count="1" />
+			<item name="modGunScopeSmall"				count="1" />
+			<item name="modGunScopeMedium"				count="1" />
+			<item name="modGunScopeMedium"				count="1" />
+			<item name="modGunReflexSight"				count="1" />
+			<item name="modGunTriggerGroupAutomatic"	count="1" />
+			<item name="modGunRodAndSpring"				count="1" />
+			<item name="modGunBipod"					count="1" />
+			<item name="modGunForegrip"					count="1" />
+			<item name="modGunRetractingStock"			count="1" />
+			<item name="modGunDuckbill"					count="1" />
+			<item name="modGunChoke"					count="1" />
+			<item name="modGunMagazineExtender"			count="1" />
+			<item name="modShotgunSawedOffBarrel"		count="1" />
+			<item name="modGunCrippleEm"				count="1" />
+			<item name="modGunMeleeTheHunter"			count="1" />
+			<item name="modGunMeleeRadRemover"			count="1" />
+		</lootgroup>
+		
+		<!-- Arena: Non-vanilla weapon attachments here -->
+		
+		
+		<!-- Arena - weapon attachments master group -->
+		<lootgroup name="arenaWeaponAttachments"	count="1">
+			<item group="arenaBowCrossbowAttachments"	count="1" />
+			<item group="arenaGunAttachments"			count="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- End Arena: Weapon Attachments -->
+		
+		
+		<!-- Arena: Melee Attachments -->
+		<lootgroup name="arenaMeleeBladeAttachments" count="1">
+			<item name="modMeleeTemperedBlade" 			count="1" />
+			<item name="modMeleeSerratedBlade" 			count="1"/>
+			<!-- NV -->
+		</lootgroup>
+			
+		<lootgroup name="arenaMeleeBluntAttachments" count="1">
+			<item name="modMeleeWeightedHead" 			count="1"/>
+			<item name="modMeleeStructuralBrace" 		count="1"/>
+			<item name="modMeleeErgonomicGrip" 			count="1"/>
+			<item name="modMeleeFortifyingGrip" 		count="1"/>
+			<item name="modMeleeClubBarbedWire" 		count="1"/>
+			<item name="modMeleeClubMetalSpikes" 		count="1"/>
+			<item name="modMeleeClubBurningShaft" 		count="1"/>
+			<!-- NV -->
+		</lootgroup>
+			
+		<!-- Arena: Non-vanilla melee attachment groups here -->
+		
+		
+		<!-- Arena: Melee Attachments master group -->
+		<lootgroup name="arenaMeleeAttchments"		count="1">
+			<item group="arenaMeleeBladeAttachments"	count="1" />
+			<item group="arenaMeleeBluntAttachments"	count="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- End Arena: Melee Attachments -->
+		
+		
+		<!-- Arena: Armor Attachments -->
+		<lootgroup name="arenaArmorFittings"		count="1">
+			<item name="modArmorImprovedFittings" 		count="1"/>
+			<item name="modArmorCustomizedFittings" 	count="1"/>
+			<item name="modArmorMuffledConnectors" 		count="1"/>
+			<item name="modArmorAdvancedMuffledConnectors" count="1"/>
+		</lootgroup>
+		
+		<lootgroup name="arenaArmorMisc"			count="1">
+			<item name="modArmorBandolier" 				count="1"/>
+			<item name="modArmorSpikedKnuckles" 		count="1"/>
+			<item name="modArmorImpactBracing" 			count="1"/>
+			<item name="modArmorHelmetLight" 			count="1"/>
+		</lootgroup>
+			
+			
+		<!-- Arena: Non-vanilla armor attachments here -->
+		
+		
+		<!-- Arena: Armor Attachments master group -->
+		<lootgroup name="arenaArmorAttachments"		count="1">
+			<item group="arenaArmorFittings"			count="1" />
+			<item group="arenaArmorMisc"				count="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<!-- End Arena: Armor Attachments -->
+		
+		<!-- Arena: Crates -->
+		<lootgroup name="arenaCrateLootUnlucky"		count="1">
+			<item group="arenaGunsAmmo"					count="1"		prob="0.2" />
+			<item group="arenaArmor"					count="1"		prob="0.2" />
+			<item group="arenaMeleeWeapons"				count="1"		prob="1" />
+			<item group="arenaFoodDrink"				count="1"		prob="2" />
+			<item group="arenaMedical"					count="1"		prob="0.6" />
+		</lootgroup>
+		
+		<lootgroup name="arenaCrateLootNormal"		count="1,2">
+			<item group="arenaGunsAmmo"					count="1"		prob="1" />
+			<item group="arenaArmor"					count="1"		prob="1" />
+			<item group="arenaMeleeWeapons"				count="1"		prob="1" />
+			<item group="arenaFoodDrink"				count="1"		prob="1" />
+			<item group="arenaMedical"					count="1"		prob="1" />
+			<item group="arenaMeleeAttchments"			count="1,2"		prob="0.1" />
+			<item group="arenaWeaponAttachments"		count="1,2"		prob="0.3" />
+			<item group="arenaArmorAttachments"			count="1,2"		prob="0.1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaCrateLootLucky"		count="3,4">
+			<item group="arenaGunsAmmo"					count="1"		prob="3" />
+			<item group="arenaArmor"					count="1"		prob="1" />
+			<item group="arenaMeleeWeapons"				count="1"		prob="1.5" />
+			<item group="arenaFoodDrink"				count="1"		prob="0.5" />
+			<item group="arenaMedical"					count="1"		prob="1.5" />
+			<item group="arenaMeleeAttchments"			count="2,3"		prob="0.2" />
+			<item group="arenaWeaponAttachments"		count="2,3"		prob="0.2" />
+			<item group="arenaArmorAttachments"			count="2,3"		prob="0.2" />
+		</lootgroup>
+		
+		<lootgroup name="arenaCrateLootTreasure1"	count="all">
+			<item group="arenaGunsAmmo"					count="1" />
+			<item group="arenaAmmo"						count="2,4" />
+			<item group="arenaWeaponAttachments"		count="1,2" />
+		</lootgroup>
+		
+		<lootgroup name="arenaCrateLootTreasure2"	count="all">
+			<item group="arenaMeleeWeapons"				count="1" />
+			<item group="arenaMeleeAttchments"			count="2,4" />
+		</lootgroup>
+		
+		<lootgroup name="arenaCrateLootTreasure3"	count="all">
+			<item group="arenaFood"						count="3" />
+			<item group="arenaDrink"					count="3" />
+			<item group="arenaMedicalBandages"			count="2,5" />
+			<item group="arenaMedicalDrugs"				count="2,3" />
+		</lootgroup>
+		
+		
+		<lootgroup name="arenaCrateLoot"			count="1">
+			<item group="arenaCrateLootUnlucky"			count="1"		prob="0.2" />
+			<item group="arenaCrateLootNormal"			count="1"		prob="1.6" />
+			<item group="arenaCrateLootLucky"			count="1"		prob="0.2" />
+		</lootgroup>
+		
+		<lootgroup name="arenaCrateLootTreasure"	count="2,5">
+			<item group="arenaCrateLootTreasure1"		count="1" />
+			<item group="arenaCrateLootTreasure2"		count="1" />
+			<item group="arenaCrateLootTreasure3"		count="1" />
+		</lootgroup>
+		
+		<!-- End Arena: Crates -->
+	
+	
+		<!-- Arena: Zombie Drops -->
+		<lootgroup name="arenaZombieDropsAmmo"		count="1">
+			<item group="arenaAmmo"						count="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<lootgroup name="arenaZombieDropsMedical"	count="1">
+			<item name="medicalBandage"					count="3" />
+			<item name="drugPainkillers"				count="2" />
+			<item name="medicalFirstAidBandage"			count="2" />
+			<item name="medicalFirstAidKit"				count="1" />
+			<!-- NV -->
+		</lootgroup>
+		
+		<lootgroup name="arenaZombieDropsCoins1"	count="1">
+			<item name="casinoCoin"						count="10" />
+			<item name="oldCash"						count="15" />
+		</lootgroup>
+		
+		<lootgroup name="arenaZombieDropsCoins2"	count="1">
+			<item name="casinoCoin"						count="30" />
+			<item name="oldCash"						count="45" />
+		</lootgroup>
+		
+		<lootgroup name="arenaZombieDropsCoins3"	count="1">
+			<item name="casinoCoin"						count="50" />
+			<item name="oldCash"						count="75" />
+		</lootgroup>
+		
+		
+		<!-- Zombie Strength Drops -->
+		<lootgroup name="arenaZombieDropsWeak"		count="1">
+			<item group="arenaZombieDropsCoins1"		count="1,15"	prob="15" />
+			<item group="arenaZombieDropsCoins2"		count="1,15"	prob="11" />
+			<item group="arenaZombieDropsAmmo"			count="1,2"		prob="2" />
+			<item group="arenaZombieDropsMedical"		count="1"		prob="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaZombieDropsMed"		count="1">
+			<item group="arenaZombieDropsCoins1"		count="1,15"	prob="11" />
+			<item group="arenaZombieDropsCoins2"		count="1,15"	prob="14" />
+			<item group="arenaZombieDropsCoins3"		count="1,15"	prob="11" />
+			<item group="arenaZombieDropsAmmo"			count="1,2"		prob="2" />
+			<item group="arenaZombieDropsMedical"		count="1"		prob="1" />
+		</lootgroup>
+		
+		<lootgroup name="arenaZombieDropsStrong"	count="1">
+			<item group="arenaZombieDropsCoins2"		count="5,25"	prob="11" />
+			<item group="arenaZombieDropsCoins3"		count="5,25"	prob="13" />
+			<item group="arenaZombieDropsAmmo"			count="1,2"		prob="3" />
+			<item group="arenaZombieDropsMedical"		count="1"		prob="2" />
+		</lootgroup>
+		
+		<!-- End Arena: Zombie Drops -->
+	
+	</insertBefore>
+	
+	
+	<insertAfter xpath="/lootcontainers/lootcontainer[last()]">
+		
+		<!-- Main arena crate loot that will spawn -->
+		<lootcontainer id="151" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaCrateLoot"				count="1" />
+		</lootcontainer>
+		
+		<!-- Arena Treasure Chests -->
+		<lootcontainer id="152" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaCrateLootTreasure"				count="1" />
+		</lootcontainer>
+		
+		<!-- Arena Ammo piles small, med, large -->
+		<lootcontainer id="153" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaAmmo"				count="1" 	prob="3" />
+			<item group="arenaAmmo"				count="2"	prob="1" />
+		</lootcontainer>
+		
+		<lootcontainer id="154" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaAmmo"				count="2" 	prob="3" />
+			<item group="arenaAmmo"				count="3"	prob="1" />
+		</lootcontainer>
+		
+		<lootcontainer id="155" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaAmmo"				count="3" 	prob="3" />
+			<item group="arenaAmmo"				count="4"	prob="1" />
+		</lootcontainer>
+		
+		<!-- Small and large medical piles -->
+		<lootcontainer id="156" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaMedical"			count="3" 	prob="3" />
+		</lootcontainer>
+		
+		<lootcontainer id="157" count="2" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaMedical"			count="2" 	prob="3" />
+			<item group="arenaMedicalBandages"	count="2"	prob="1" />
+		</lootcontainer>
+		
+		<!-- Admin Shotgun Messiah crate -->
+		<lootcontainer id="158" count="0,2" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaGunsAmmo"			count="1" 	prob="2" />
+			<item group="arenaMeleeWeapons"		count="1"	prob="1" />
+			<item group="arenaGunAttachments"	count="1"	prob="0.5" />
+			<item group="arenaMeleeAttchments"  count="1"   prob="0.5" />
+		</lootcontainer>
+		
+		<!-- Admin Shamway crate -->
+		<lootcontainer id="159" count="0,2" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaFoodDrink"		count="1" 	prob="2" />
+		</lootcontainer>
+		
+		<!-- Admin Pop'n'Pills crate -->
+		<lootcontainer id="160" count="0,2" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaMedical"			count="1" 	prob="2" />
+		</lootcontainer>
+		
+		
+		<!-- Weak zombies -->
+		<lootcontainer id="161" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaZombieDropsWeak"			count="1" />
+		</lootcontainer>
+		
+		<!-- Medium zombies -->
+		<lootcontainer id="162" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaZombieDropsMed"			count="1" />
+		</lootcontainer>
+		
+		<!-- Strong zombies -->
+		<lootcontainer id="163" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaZombieDropsStrong"		count="1" />
+		</lootcontainer>
+		
+		
+	</insertAfter>
+	
+	
+</configs>

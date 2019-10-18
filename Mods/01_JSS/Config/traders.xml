@@ -1,0 +1,182 @@
+<configs>
+
+<!-- remove perk magazines from trader inventory -->
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='books']"/>
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='perkMagazines']"/>
+<!-- remove the generic meat food items from trader inventory -->
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='preparedFood']/item[@name='foodBoiledMeat']"/>
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='preparedFood']/item[@name='foodGrilledMeat']"/>
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='foodSupplies']/item[@name='foodRawMeat']"/>
+
+<!-- increase trader stock levels -->
+<set xpath="/traders/trader_info[@id='1']/@min_inventory">75</set>
+<set xpath="/traders/trader_info[@id='1']/@max_inventory">100</set>
+
+<!--
+<append xpath="/traders/trader_info[@id='1']">
+			<item group="traderAlways" count="10,40" />
+</append>
+-->
+
+<!-- add the new meat food items to the trader inventory -->
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='preparedFood']">
+			<item name="Grilled Pork"     	/>
+			<item name="Grilled Chicken"  	/>
+			<item name="Grilled Rabbit"   	/>
+			<item name="Grilled Snake"    	/>
+			<item name="Grilled Bear"     	/>
+			<item name="Grilled Wolf"     	/>
+			<item name="Grilled Venison"  	/>
+			<item name="Stewed Pork"      	/>
+			<item name="Stewed Chicken"   	/>
+			<item name="Stewed Rabbit"    	/>
+			<item name="Stewed Snake"     	/>
+			<item name="Stewed Bear"      	/>
+			<item name="Stewed Wolf"      	/>
+			<item name="Stewed Venison"   	/>
+			<item name="Fried Pork"       	/>
+			<item name="Fried Chicken"    	/>
+			<item name="Fried Rabbit"     	/>
+			<item name="Fried Snake"      	/>
+			<item name="Fried Bear"       	/>
+			<item name="Fried Wolf"       	/>
+			<item name="Fried Venison"    	/>
+			<item name="Chicken Noodle Soup"	/>
+			<item name="Tuna Noodle Casserole"	/>
+			<item name="Chicken Surprise"      	/>
+			<item name="Hasenpfeffer"           />
+			<item name="Bear Roast"             />
+			<item name="Drunken Dog"             />
+</append>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='commonBooks']">
+    <item name="Medical Journal: First Aid Bandage"/>
+	<item name="Cookbook: Tea and Coffee"      />
+	<item name="Cookbook: Noodles"             />
+	<item name="Cookbook: Bacon and Eggs"      />
+	<item name="Cookbook: Enchiladas"          />
+	<item name="Cookbook: All About Seeds"     />
+	<item name="Gunny's Guide: Compound Bows"  />
+	<item name="Gunny's Guide: Crossbows"      />
+	<item name="Gunny's Guide: Pistols"        />
+	<item name="Gunny's Guide: Shotguns"       />
+	<item name="Gunny's Guide: Iron Clubs"     />
+	<item name="Gunny's Guide: Hunting Knives" />
+	<item name="Gunny's Guide: Machetes"       />
+	<item name="Toolmaking Today: Iron Tools"  />
+	<item name="Toolmaking Today: Hammers"     />
+	<item name="Toolmaking Today: Wrench"      />
+	<item name="The Armorer: Leather"          />
+	<item name="The Armorer: Iron"             />
+	<item name="The Armorer: Steel"            />
+	<item name="Eugene Explains: Mining Helmet"/>
+	<item name="Eugene Explains: Bicycles"     />
+</append>
+
+<insertBefore xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']">
+
+	<trader_item_group name="bicycleParts">
+		<item name="vehicleBicycleChassis"/>
+		<item name="vehicleBicycleHandlebars"/>
+		<item name="vehicleWheels"/>
+	</trader_item_group>
+
+<!-- i am calling this group perkMagazines instead of something logical like lootRecipes because perkMagazines is referred to in lots of different places and i just want to replace those -->
+<trader_item_group name="perkMagazines">
+	<item name="Cookbook: Fried Meat"          />
+	<item name="Cookbook: Cornbread"           />
+	<item name="Cookbook: Tea and Coffee"      />
+	<item name="Cookbook: Juice Smoothies"     />
+	<item name="Cookbook: Blueberry Pie"       />
+	<item name="Cookbook: Steak And Potato"    />
+	<item name="Cookbook: Meat Stew"           />
+	<item name="Cookbook: Vegetable Stew"      />
+	<item name="Cookbook: Chili Dog"           />
+	<item name="Cookbook: Chili"               />
+	<item name="Cookbook: Steak And Potato"    />
+	<item name="Cookbook: Blueberry Pie"       />
+	<item name="Cookbook: Meat Stew"           />
+	<item name="Cookbook: Vegetable Stew"      />
+	<item name="Cookbook: Drunken Dog"      />
+	<item name="Gunny's Guide: Iron Clubs"     />
+	<item name="Gunny's Guide: Hunting Knives" />
+	<item name="Gunny's Guide: Machetes"       />
+	<item name="Gunny's Guide: Compound Bows"  />
+	<item name="Gunny's Guide: Crossbows"      />
+	<item name="Gunny's Guide: Pistols"        />
+	<item name="Gunny's Guide: Shotguns"       />	
+	<item name="Gunny's Guide: Blunderbuss"    />
+	<item name="Toolmaking Today: Iron Tools"  />
+	<item name="Toolmaking Today: Hammers"     />
+	<item name="Toolmaking Today: Steel Tools" />
+	<item name="Toolmaking Today: Chainsaws"   />
+	<item name="Toolmaking Today: Augers"      />
+	<item name="Toolmaking Today: Workbench"   />
+	<item name="Toolmaking Today: Cement Mixer"/>
+	<item name="Toolmaking Today: Tablesaw"    />
+	<item name="Toolmaking Today: Forges"      />
+</trader_item_group>
+
+<trader_item_group name="books" >
+		<item group="questChallenge" prob="0.2"/>
+		<item group="rareBooks"      prob="0.3"/>
+		<item group="commonBooks"/>
+		<item group="perkMagazines"/>		
+</trader_item_group>
+</insertBefore>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']">
+	<item group="books" />
+	<item name="toolCookingGrill"/>
+	<item name="toolCookingPot"/>
+</append>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='rareBooks']">
+    <item name="Medical Journal: First Aid Kit"    />
+	<item name="Medical Journal: Antibiotics"      />
+	<item name="Medical Journal: Steroids"         />
+	<item name="Medical Journal: Recog"            />
+	<item name="Medical Journal: FortBites"        />
+	<item name="Cookbook: Sham Chowder"            />
+	<item name="Cookbook: Hobo Stew"               />
+	<item name="Cookbook: Grandpas Moonshine"  />
+	<item name="Cookbook: Grandpas Awesome Sauce"/>
+	<item name="Cookbook: Grandpas Learning Elixir"/>
+	<item name="Gunny's Guide: 44 Magnum"          />
+	<item name="Gunny's Guide: AK-47"              />
+	<item name="Gunny's Guide: SMG"                />
+	<item name="Gunny's Guide: MR-10"              />
+	<item name="Gunny's Guide: Rocket Launcher"    />
+	<item name="Gunny's Guide: Shotgun Turret"    />
+	<item name="Gunny's Guide: Auto Turret"    />
+	<item name="Gunny's Guide: Dart Trap"    />
+	<item name="Toolmaking Today: Chainsaws"       />
+	<item name="Toolmaking Today: Augers"          />
+	<item name="Toolmaking Today: Crucible"        />
+	<item name="Medical Journal: Zombie Cream"     />
+	<item name="The Armorer: Military"             />
+	<item name="Eugene Explains: Chemistry Stations"   />
+	<item name="Eugene Explains: Gas Cans"             />
+	<item name="Eugene Explains: Generator Bank"       />
+	<item name="Eugene Explains: Advanced Electricity" />
+	<item name="Eugene Explains: Blade Traps"          />
+	<item name="Eugene Explains: Minibikes"            />
+	<item name="Eugene Explains: Motorcycles"          />
+	<item name="Eugene Explains: Trucks"               />
+	<item name="Eugene Explains: Gyrocopters"          />
+
+</append>
+
+<!-- MODTAG Add bicycle parts to traders secret stash beginning at level 0 -->
+<append xpath="/traders/trader_info[@id='1']/tier_items[@level='1,499']">
+			<item group="bicycleParts" />
+</append>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='seeds']">
+	<item name="Wheat Seeds"/>
+</append>
+
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='traderGeneral']/item[@group='preparedFood']"/>
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='traderGeneral']/item[@group='preparedDrink']"/>
+
+</configs>

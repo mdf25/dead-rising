@@ -1,0 +1,135 @@
+<configs>
+<append xpath="/materials">	
+
+<material id="Mbeartrap">
+	<property name="damage_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="0.4"/>
+	<property name="MaxDamage" value="150"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="Mpierce">
+	<property name="damage_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="0.6"/>
+	<property name="MaxDamage" value="150"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="Mtrapoff">
+	<property name="damage_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="1"/>
+	<property name="MaxDamage" value="150"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="Mexplosion">
+	<property name="damage_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="1"/>
+	<property name="MaxDamage" value="15000"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="MMine">
+	<property name="damage_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="1"/>
+	<property name="MaxDamage" value="1"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="Mspiketrap">
+	<property name="damage_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="0.5"/>
+	<property name="MaxDamage" value="150"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="Mmud">
+	<property name="damage_category" value="earth"/>
+	<property name="surface_category" value="earth"/>
+		<property name="particle_category" value="earth"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="earth"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="0.3"/>
+	<property name="MaxDamage" value="100"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="Msatchel">
+	<property name="damage_category" value="water"/>
+	<property name="surface_category" value="earth"/>
+		<property name="particle_category" value="earth"/>
+	<property name="stepsound" value="earth"/>
+	<property name="MaxDamage" value="1"/>
+	<property name="Experience" value="2"/>
+</material>
+
+<material id="Macidtrap">
+	<property name="damage_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="fertile_level" value="1"/>
+	<property name="stability_glue" value="0"/>
+	<property name="Mass" type="int" value="1"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="movement_factor" value="0.4"/>
+	<property name="MaxDamage" value="350"/>
+	<property name="Experience" value="2"/>
+</material>
+
+
+
+<material id="MBoum">
+	<property name="damage_category" value="glass"/>
+	<property name="surface_category" value="metal"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="metal"/>
+	<property name="stability_glue" value="40"/>
+	<property name="Mass" type="int" value="10"/>
+	<property name="MaxDamage" value="1"/>
+	<property name="explosionresistance" value="0.02"/>
+	<property name="Experience" value="0"/>
+</material>
+
+
+		</append>
+</configs>

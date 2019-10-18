@@ -1,0 +1,79 @@
+<configs>
+    <append xpath="/blocks">	
+      <block name="HDHQ_Waste1Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQWasteRedux.unity3d?HDHQWaste1Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="treePlantedMountainPine1m" count="0"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_Waste2Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQWasteRedux.unity3d?HDHQWaste2Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="treePlantedMountainPine1m" count="0"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_Waste3Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQWasteRedux.unity3d?HDHQWaste3Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="treePlantedMountainPine1m" count="0"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_Waste4Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQWasteRedux.unity3d?HDHQWaste4Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="treePlantedMountainPine1m" count="0"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_Waste5Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQWasteRedux.unity3d?HDHQWaste5Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="treePlantedMountainPine1m" count="0"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+		</append>
+</configs>

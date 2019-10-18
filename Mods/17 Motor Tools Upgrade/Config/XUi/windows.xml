@@ -1,6 +1,0 @@
-<Drconfused_MotorTools_Upgrade>
-
-<set xpath="/windows/window[@name='windowAssemble']/panel[@name='content']/rect[@depth='1']/rect[@depth='1']/grid[@name='parts']/@rows">8</set>
-
-
-</Drconfused_MotorTools_Upgrade>

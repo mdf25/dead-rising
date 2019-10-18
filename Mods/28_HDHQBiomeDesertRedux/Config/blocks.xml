@@ -1,0 +1,59 @@
+<configs>
+    <set xpath="/blocks/block[@name='treeOakSml01']/property[@name='Model']/@value">#@modfolder:Resources/HDHQDesertRedux.unity3d?HDHQDesertAcacia1Prefab</set>
+    <append xpath="/blocks">	
+      <block name="HDHQ_DesertAcacia1Prefab">
+        <property name="CustomIcon" value="treePlantedMountainPine1m"/>
+        <property name="Extends" value="treeMaster"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="Shape" value="DistantDecoTree"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQDesertRedux.unity3d?HDHQDesertAcacia1Prefab"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="BigDecorationRadius" value="3"/>
+        <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_DesertSeedPrefab" count="2"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+        <property name="SortOrder2" value="0300"/> 
+      </block>
+      <block name="HDHQ_DesertSeedPrefab">
+        <property name="Extends" value="treeMasterGrowing" param1="DescriptionKey"/><!-- CustomIcon,DescriptionKey -->
+        <property name="CreativeMode" value="Player"/>
+        <property name="CustomIcon" value="HDHQDesertSeed"/>
+        <property name="MaxDamage" value="10"/>
+        <property name="Material" value="Mplants"/>
+        <property name="StabilitySupport" value="false"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQDesertRedux.unity3d?HDHQDesertSeedPrefab"/>
+        <property name="ModelOffset" value="0,-0.2,0"/>
+        <property name="IsDistantDecoration" value="false"/>
+        <property name="Collide" value="melee"/>
+        <property name="FallOver" value="false"/>
+        <property name="BigDecorationRadius" value="4"/>
+        <property name="OnlySimpleRotations" value="true"/>
+        <property name="PlantGrowing.Next" value="HDHQ_PlantedDesertAcacia1Prefab"/>
+        <property name="PlantGrowing.GrowthRate" value="63"/>
+        <drop event="Destroy" name="HDHQ_DesertSeedPrefab" count="1"/>
+        <property name="EconomicValue" value="12"/>
+        <property name="EconomicBundleSize" value="5"/>
+        <property name="SellableToTrader" value="false"/>
+        <property name="Group" value="Resources"/>
+        <property name="ParticleOnDeath" value="treeGib_sapling"/>
+        <property name="SortOrder2" value="0142"/> <!-- SortTree -->
+        <property name="ActivationDistance" value="4"/>
+      </block>
+      <block name="HDHQ_PlantedDesertAcacia1Prefab">
+        <property name="Extends" value="HDHQ_DesertAcacia1Prefab"/>
+        <property name="CreativeMode" value="Player"/>
+        <property name="Material" value="MtreeWoodMedium"/>
+        <property name="CustomIcon" value="treeOakLrg01"/>
+        <property name="Model" value="#@modfolder:Resources/HDHQDesertRedux.unity3d?HDHQDesertAcacia1Prefab"/>
+        <property name="ModelOffset" value="0,-0.3,0"/>
+        <property name="MultiBlockDim" value="3,10,3"/>
+        <property name="PlantGrowing.FertileLevel" value="3"/>
+        <drop event="Harvest" name="resourceWood" count="80" tag="oreWoodHarvest"/>
+        <drop event="Destroy" name="HDHQ_DesertSeedPrefab" count="2"/>
+        <property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+        <property name="SortOrder2" value="0370"/> <!-- SortTree -->
+      </block>
+		</append>
+</configs>

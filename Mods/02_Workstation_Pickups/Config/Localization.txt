@@ -1,0 +1,11 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+resourceForgeParts,items,Resources,KgNone,Forge Parts,,,,,
+resourceForgePartsDesc,items,Resources,KgNone,"Acquire parts by destroying any forge you find in the world. Use these to assemble a new forge without needing a perk.",,,,,
+resourceWorkbenchParts,items,Resources,KgNone,Workbench Parts,,,,,
+resourceWorkbenchPartsDesc,items,Resources,KgNone,Acquire parts by destroying any workbench you find in the world. Use these to assemble a new workbench without needing a perk.,,,,,
+resourceChemistryStationParts,items,Resources,KgNone,Chemistry Station Parts,,,,,
+resourceChemistryStationPartsDesc,items,Resources,KgNone,Acquire parts by destroying any chemistry station you find in the world. Use these to assemble a new chemistry station without needing a perk.
+resourceCementMixerParts,items,Resources,KgNone,Cement Mixer Parts,,,,,
+resourceCementMixerPartsDesc,items,Resources,KgNone,Acquire parts by destroying any cement mixer you find in the world. Use these to assemble a new cement mixer without needing a perk.
+resourceTableSawParts,items,Resources,KgNone,Table Saw Parts,,,,
+resourceTableSawPartsDesc,items,Resources,KgNone,Acquire parts by destroying any table saw you find in the world. Use these to assemble a new table saw without needing a perk.

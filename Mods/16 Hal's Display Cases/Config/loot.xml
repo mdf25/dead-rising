@@ -1,6 +1,0 @@
-<root>
-	<append xpath="/lootcontainers">
-		<lootcontainer id="198" count="0" size="1,1" destroy_on_close="false" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="baseTemplate">
-		</lootcontainer>
-	</append>
-</root>

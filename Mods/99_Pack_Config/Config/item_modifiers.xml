@@ -1,0 +1,5 @@
+<configs>
+	<append xpath="/item_modifiers/item_modifier">
+		<property name="EconomicValue" value="1000" />
+	</append>
+</configs>

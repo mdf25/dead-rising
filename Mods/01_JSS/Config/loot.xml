@@ -1,0 +1,457 @@
+<configs>
+
+
+<!-- replace dumb perk magazines with something less dumb -->
+<remove xpath="/lootcontainers/lootgroup[@name='books']"/>
+<remove xpath="/lootcontainers/lootgroup[@name='perkMagazines']"/>
+<remove xpath="/lootcontainers/lootgroup[@name='coldfood']"/>
+<remove xpath="/lootcontainers/lootgroup[@name='shamwaySafeFiller']"/>
+
+<!-- MODTAG increase chance of finding seeds in cupboards -->
+<set xpath="/lootcontainers/lootgroup[@name='cupboard']/item[@group='seeds']/@prob">0.2</set>
+
+<append xpath="/lootcontainers/lootgroup[@name='seeds']">
+	<item name="Strawberry Seeds"/>
+	<item name="Wheat Seeds"/>
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='junk']">
+	<item group="chessPieces" prob=".3" />
+</append>
+
+<!-- you have to put loot groups after the items or groups that they contain -->
+<insertBefore xpath="/lootcontainers/lootgroup[@name='junk']">
+
+<lootgroup name="ToolmakingToday">
+	<item name="Toolmaking Today: Iron Tools"   prob=".30" />
+	<item name="Toolmaking Today: Hammers"      prob=".19" />
+	<item name="Toolmaking Today: Wrench"       prob=".18" />
+	<item name="Toolmaking Today: Steel Tools"  prob=".10" />
+	<item name="Toolmaking Today: Chainsaws"    prob=".08" />
+	<item name="Toolmaking Today: Forges"       prob=".06" />
+	<item name="Toolmaking Today: Crucible"     prob=".03" />
+	<item name="Toolmaking Today: Augers"       prob=".02" />	
+	<item name="Toolmaking Today: Nail Gun"     prob=".02" />
+	<item name="Toolmaking Today: Tablesaw"     prob=".02" />
+	<item name="Toolmaking Today: Workbench"    prob=".03" />
+	<item name="Toolmaking Today: Cement Mixer" prob=".02" />
+</lootgroup>
+
+<lootgroup name="EugeneExplainsScienceBooks">
+	<item name="Eugene Explains: Mining Helmet"        prob= ".50" />
+	<item name="Eugene Explains: Bicycles"             prob= ".20" />
+	<item name="Eugene Explains: Chemistry Stations"   prob= ".05" />
+	<item name="Eugene Explains: Gas Cans"             prob= ".055"/>
+	<item name="Eugene Explains: Generator Bank"       prob= ".02" />
+	<item name="Eugene Explains: Advanced Electricity" prob= ".01" />
+	<item name="Eugene Explains: Blade Traps"          prob= ".02" />
+	<item name="Eugene Explains: Minibikes"            prob= ".04" />
+	<item name="Eugene Explains: Motorcycles"          prob= ".01" />
+	<item name="Eugene Explains: Trucks"               prob= ".01" />
+	<item name="Eugene Explains: Gyrocopters"          prob= ".005"/>
+</lootgroup>
+
+<lootgroup name="WeaponsBooksLootGroupLevel1">
+	<item name="Gunny's Guide: Iron Clubs"      />
+	<item name="Gunny's Guide: Hunting Knives"  />
+	<item name="Gunny's Guide: Compound Bows"   />
+</lootgroup>
+
+<lootgroup name="WeaponsBooksLootGroupLevel2">
+	<item name="Gunny's Guide: Machetes"        />
+	<item name="Gunny's Guide: Crossbows"       />
+	<item name="Gunny's Guide: Pistols"         />
+	<item name="Gunny's Guide: Hunting Rifles"  />
+</lootgroup>
+
+<lootgroup name="WeaponsBooksLootGroupLevel3">
+	<item name="Gunny's Guide: Blunderbuss"     />
+	<item name="Gunny's Guide: Shotguns"        />
+	<item name="Gunny's Guide: 44 Magnum"       />
+	<item name="Gunny's Guide: AK-47"           />
+	<item name="Gunny's Guide: SMG"             />
+</lootgroup>
+
+<lootgroup name="WeaponsBooksLootGroupLevel4">
+	<item name="Gunny's Guide: MR-10"            />
+	<item name="Gunny's Guide: Rocket Launcher"  />
+	<item name="Gunny's Guide: Shotgun Turret" />
+	<item name="Gunny's Guide: Auto Turret" />
+	<item name="Gunny's Guide: Dart Trap" />
+</lootgroup>
+
+<lootgroup name="GunnysGuides">
+    <item group="WeaponsBooksLootGroupLevel1"        prob=".52"/>
+    <item group="WeaponsBooksLootGroupLevel2"        prob=".33"/>
+    <item group="WeaponsBooksLootGroupLevel3"        prob=".13"/>
+    <item group="WeaponsBooksLootGroupLevel4"        prob=".02"/>
+</lootgroup>
+
+<lootgroup name="Armorer">
+	<item name="The Armorer: Leather"  prob=".70" />
+	<item name="The Armorer: Iron"     prob=".25" />
+	<item name="The Armorer: Steel"    prob=".04"  />
+	<item name="The Armorer: Military" prob=".01"  />
+</lootgroup>
+
+<lootgroup name="coldfood">
+	<item name="foodEgg"          count="1,2"/>
+	<item name="foodBlueberryPie"/>
+	<item name="foodMeatStew"/>
+	<item name="Raw Pork"         count="5,10"/>
+	<item name="Bear Meat"        count="5,10"/>
+	<item name="Raw Chicken"      count="5,10"/>
+	<item name="Wolf Meat"        count="5,10"/>
+	<item name="Raw Venison"      count="5,10"/>
+	<item name="Snake Meat"       count="5,10"/>
+	<item name="foodCropCorn"/>
+	<item name="foodCropPotato"/>
+</lootgroup>
+
+<!-- ======================================================================= -->
+<!-- Food recipes, separated into tiers so that rare recipes are ... rarer   -->
+<!-- ======================================================================= -->
+<lootgroup name="magazineCookingLevel1Recipes">
+	<item name="Cookbook: Bacon and Eggs"/>
+	<item name="Cookbook: Cornbread"/>
+	<item name="Cookbook: Tea and Coffee"/>
+	<item name="Cookbook: All About Seeds"/>
+	<item name="Cookbook: Enchiladas"/>
+</lootgroup>
+
+<lootgroup name="magazineCookingLevel2Recipes">
+	<item name="Cookbook: Steak And Potato"/>
+	<item name="Cookbook: Blueberry Pie"/>
+	<item name="Cookbook: Strawberry Shortcake"/>
+	<item name="Cookbook: Vegetable Stew"/>
+	<item name="Cookbook: Chili"/>
+	<item name="Cookbook: Noodles"/>
+	<item name="Cookbook: Fried Meat"/>
+</lootgroup>
+
+<lootgroup name="magazineCookingLevel3Recipes">
+	<item name="Cookbook: Sham Chowder"    />
+	<item name="Cookbook: Hobo Stew"       />
+	<item name="Cookbook: Chicken Surprise"/>
+	<item name="Cookbook: Hasenpfeffer"    />
+	<item name="Cookbook: Bear Roast"      />
+	<item name="Cookbook: Meat Stew"       />
+	<item name="Cookbook: Drunken Dog"     />
+</lootgroup>
+
+<lootgroup name="magazineCookingLevel4Recipes">
+	<item name="Cookbook: Juice Smoothies"/>
+	<item name="Cookbook: Chili Dog"/>
+</lootgroup>
+
+<lootgroup name="magazineCookingLevel5Recipes">
+	<item name="Cookbook: Grandpas Moonshine"/>
+	<item name="Cookbook: Grandpas Awesome Sauce"/>
+	<item name="Cookbook: Grandpas Learning Elixir"/>
+</lootgroup>
+
+<lootgroup name="MedicalJournalsLevel1">
+	<item name="Medical Journal: First Aid Bandage"   prob = "30" />
+	<item name="Medical Journal: Plaster Cast"        prob = "20" />
+	<item name="Medical Journal: First Aid Kit"       prob = "15" />
+	<item name="Medical Journal: Snowberry Extract"   prob = "10" />
+</lootgroup>
+
+<lootgroup name="medicalJournals">
+	<item group="MedicalJournalsLevel1"               prob = "75" />
+	<item name="Medical Journal: Antibiotics"         prob = "10" />
+	<item name="Medical Journal: Herbal Antibiotics"  prob = "10" />
+	<item name="Medical Journal: Steroids"            prob = "1" />
+	<item name="Medical Journal: Recog"               prob = "1" />
+	<item name="Medical Journal: FortBites"           prob = "1" />
+	<item name="Medical Journal: Zombie Cream"        prob = "1" />
+</lootgroup>
+
+<!-- trader quest reward groups -->
+<lootgroup name="questTier1SkillRewards">
+	<item group="MedicalJournalsLevel1"             max_count="1" />
+	<item name="The Armorer: Leather"               max_count="1" prob=".5"/>
+	<item group="WeaponsBooksLootGroupLevel1"       max_count="1" />
+	<item group="magazineCookingLevel1Recipes"      max_count="1" />
+	<item group="EugeneExplainsScienceBooks"        max_count="1" />
+	<item group="ToolmakingToday"                   max_count="1" />
+</lootgroup>
+
+<lootgroup name="questTier2SkillRewards">
+	<item name="Medical Journal: First Aid Kit"  max_count="1" />
+	<item name="The Armorer: Iron"               max_count="1" />
+	<item group="WeaponsBooksLootGroupLevel2"    max_count="1" />
+	<item group="magazineCookingLevel2Recipes"   max_count="1" />
+	<item group="EugeneExplainsScienceBooks"        max_count="1" />
+	<item group="ToolmakingToday"                   max_count="1" />
+</lootgroup>
+
+<lootgroup name="questTier3SkillRewards">
+	<item name="Medical Journal: Steroids"      max_count="1" />
+	<item name="The Armorer: Steel"             max_count="1" />
+	<item group="WeaponsBooksLootGroupLevel3"   max_count="1" />
+	<item group="magazineCookingLevel3Recipes"  max_count="1"  />
+	<item group="EugeneExplainsScienceBooks"        max_count="1" />
+	<item group="ToolmakingToday"                   max_count="1" />
+</lootgroup>
+
+<lootgroup name="questTier4SkillRewards">
+	<item name="Medical Journal: FortBites"     max_count="1" />
+	<item name="The Armorer: Military"          max_count="1" />
+	<item group="WeaponsBooksLootGroupLevel4"   max_count="1" />
+	<item group="magazineCookingLevel4Recipes"  max_count="1"  />
+	<item group="EugeneExplainsScienceBooks"        max_count="1" />
+	<item group="ToolmakingToday"                   max_count="1" />
+</lootgroup>
+
+
+<!-- ======================================================================= -->
+<!-- Novels don't "do" anything, but they are valuable to traders 
+     so they are worthwhile to collect.  There are different types but books 
+	 of the same type will stack (unlike perk magazines) so you can carry 
+	 more of them to the trader, too.                                        
+	 (The only reason to have different types is so they can have different 
+	 trade values)                                                           -->	 
+<!-- ======================================================================= -->
+
+<lootgroup name="bookNovelsGroup">
+	<item name="Business Book"               prob=".30" /> 
+	<item name="Romance Novel"               prob=".25" />
+	<item name="Sci-Fi Book"                 prob=".25" />
+	<item name="Horror Book"                 prob=".19" />
+	<item name="Adventure Book"              prob=".01" /> 
+</lootgroup>
+
+<lootgroup name="cookingMagazines" count="1">
+	<item group="magazineCookingLevel1Recipes" prob=".60" />
+	<item group="magazineCookingLevel2Recipes" prob=".30" />
+	<item group="magazineCookingLevel3Recipes" prob=".07" />
+	<item group="magazineCookingLevel4Recipes" prob=".02" />
+	<item group="magazineCookingLevel5Recipes" prob=".01" />	
+</lootgroup>
+
+<lootgroup name="encyclopedias">
+	<item name="Encyclopedia Volume A"/>	
+	<item name="Encyclopedia Volume B"/>	
+	<item name="Encyclopedia Volume C"/>	
+	<item name="Encyclopedia Volume D"/>	
+	<item name="Encyclopedia Volume E"/>	
+	<item name="Encyclopedia Volume F"/>	
+	<item name="Encyclopedia Volume G"/>	
+	<item name="Encyclopedia Volume H"/>	
+	<item name="Encyclopedia Volume I"/>	
+	<item name="Encyclopedia Volume J"/>	
+	<item name="Encyclopedia Volume K"/>	
+	<item name="Encyclopedia Volume L"/>	
+	<item name="Encyclopedia Volume M"/>	
+	<item name="Encyclopedia Volume N"/>	
+	<item name="Encyclopedia Volume O"/>	
+	<item name="Encyclopedia Volume P"/>	
+	<item name="Encyclopedia Volume Q"/>	
+	<item name="Encyclopedia Volume R"/>	
+	<item name="Encyclopedia Volume S"/>	
+	<item name="Encyclopedia Volume T"/>	
+	<item name="Encyclopedia Volume U"/>	
+	<item name="Encyclopedia Volume V"/>	
+	<item name="Encyclopedia Volume W"/>	
+	<item name="Encyclopedia Volume X"/>	
+	<item name="Encyclopedia Volume Y"/>	
+	<item name="Encyclopedia Volume Z"/> 
+</lootgroup>
+
+<lootgroup name="chessPiecesPewter" count="1">
+		<item name="Pewter Chess Piece - Pawn"   prob=".44"  /> 
+		<item name="Pewter Chess Piece - Rook"   prob=".11"  /> 
+		<item name="Pewter Chess Piece - Queen"  prob=".055" /> 
+		<item name="Pewter Chess Piece - King"   prob=".055" /> 
+		<item name="Pewter Chess Piece - Knight" prob=".11"  /> 
+		<item name="Pewter Chess Piece - Bishop" prob=".11"  /> 
+</lootgroup>
+
+<lootgroup name="chessPiecesBrass" count="1">
+		<item name="Brass Chess Piece - Pawn"    prob=".44"  /> 
+		<item name="Brass Chess Piece - Rook"    prob=".11"  /> 
+		<item name="Brass Chess Piece - Queen"   prob=".055" /> 
+		<item name="Brass Chess Piece - King"    prob=".055" /> 
+		<item name="Brass Chess Piece - Knight"  prob=".11"  /> 
+		<item name="Brass Chess Piece - Bishop"  prob=".11"  /> 
+</lootgroup>
+
+<lootgroup name="chessPieces">
+	<item group="chessPiecesBrass"/>
+	<item group="chessPiecesPewter"/>
+</lootgroup>
+
+<lootgroup name="books">
+		<item group="bookNovelsGroup"            prob=".22" />
+      	<item group="encyclopedias"              prob=".16" />
+		<item group="cookingMagazines"           prob=".15" />
+		<item group="ToolmakingToday"            prob=".14" />
+		<item group="medicalJournals"            prob=".12" />
+		<item group="GunnysGuides"               prob=".10" />
+		<item group="EugeneExplainsScienceBooks" prob=".10" />
+		<item group="Armorer"                    prob=".08" />
+		<item group="commonBooks"                prob=".02" /> <!-- these are schematics -->
+		<item group="rareBooks"                  prob=".01" /> <!-- these are also schematics -->
+</lootgroup>
+</insertBefore>
+
+<insertBefore xpath="/lootcontainers/lootgroup[@name='shamwaySafe']">
+	<!-- MODTAG more stuff in shamway safes -->
+	<lootgroup name="shamwaySafeFiller" count="1,3">	
+		<item name="oldCash" count="50,200"/>
+		<item group="cannedfood" />
+		<item group="books"      />
+		<item name ="cigar"      />
+		<item group="medicine"   />
+	</lootgroup>
+</insertBefore>
+
+<!-- decrease probability of canned food in supply crates -->
+<set xpath="/lootcontainers/lootcontainer[@id='34']/item[@group='cannedfood']/@prob">0.9</set>
+
+<!-- MODTAG Increase probability of finding honey in shamway boxes -->
+<set xpath="/lootcontainers/lootcontainer[@id='59']/item[@name='foodHoney']/@prob">0.3</set>
+
+<!-- MODTAG increase number of items that can be found in bookstore crates -->
+<set xpath="/lootcontainers/lootcontainer[@id='89']/@count">0,6</set>
+
+<remove xpath="/lootcontainers/lootcontainer[@id='11']"/> <!-- MODTAG safes contain more and better stuff to make it worth breaking into them -->
+<remove xpath="/lootcontainers/lootcontainer[@id='19']"/> <!-- MODTAG cars contain more stuff but less ammo -->
+<remove xpath="/lootcontainers/lootcontainer[@id='22']"/> <!-- MODTAG garage storage loot has more variety and a chance of better stuff -->
+<remove xpath="/lootcontainers/lootcontainer[@id='48']"/> <!-- MODTAG purse, contains more items and wider variety  of junk-->
+<remove xpath="/lootcontainers/lootcontainer[@id='49']"/> <!-- MODTAG bookcase contains more stuff -->
+
+<!-- kitchen sink, cupboards (lower), cleaning chemicals, plates, silverware, pots and pans -->
+<append xpath="/lootcontainers/lootcontainer[@id='8']">
+	<item group="cannedfood" prob=".5"/>
+</append>
+
+<!-- MODTAG increase chance for bicycle parts to the car parts store loot box -->
+<append xpath="/lootcontainers/lootcontainer[@id='90']">
+	<item group="bicycleParts"/>
+</append>
+
+<!-- MODTAG add medical journals to pop-n-pills cases -->
+<append xpath="/lootcontainers/lootcontainer[@id='51']">
+	<item group="medicalJournals"/>
+</append>
+
+<!-- MODTAG add Gunny's Guides to shotgun messiah crates -->
+<append xpath="/lootcontainers/lootcontainer[@id='50']">
+	<item group="GunnysGuides"/>
+    <item group="Armorer"/>
+</append>
+
+<!-- MODTAG add toolmaking today books to working stiffs crates -->
+<append xpath="/lootcontainers/lootcontainer[@id='53']">
+	<item group="ToolmakingToday"/>
+</append>
+
+<!-- MODTAG added books to supply crates -->
+<append xpath="/lootcontainers/lootcontainer[@id='34']">
+	<item group="books"/>
+</append>
+
+<!-- MODTAG add science books to locked gun safes -->
+<append xpath="/lootcontainers/lootcontainer[@id='42']">
+     <item group="EugeneExplainsScienceBooks" prob=".1"/>
+</append>
+
+<!-- MODTAG add canned food to shamway boxes -->
+<append xpath="/lootcontainers/lootcontainer[@id='59']">
+	<item group="cannedfood"/>
+</append>
+
+<append xpath="/lootcontainers">
+	<!-- safes, weapon caches rare good loot -->
+	<lootcontainer id="11" count="1,5" size="5,4" sound_open="UseActions/open_safe" sound_close="UseActions/close_safe" open_time="1" loot_quality_template="baseTemplate">
+		<item group="ammo"                       prob="0.20" />
+		<item group="ammoSteel"                  prob="0.20" />
+		<item group="weaponsBasicGuns+ammo"      prob="0.10" />
+		<item group="ToolmakingToday"            prob="0.10" />
+		<item group="EugeneExplainsScienceBooks" prob="0.10" />
+		<item name="oldCash" count="10,100"      prob="0.10" />
+		<item group="rareOres"                   prob="0.05" />
+		<item group="modAllT1"                   prob="0.05" />
+		<item group="modAllT2"                   prob="0.05" />
+		<item group="modAllT3"                   prob="0.04" />
+		<item name="oldCash" count="100,1000"    prob="0.01" />
+	</lootcontainer>
+
+	<!-- cars -->
+	<lootcontainer id="19" count="1,3" size="7,4" sound_open="UseActions/open_vehicle" sound_close="UseActions/close_vehicle" open_time="4" loot_quality_template="baseTemplate">
+		<item group="junk"                  prob="0.50"/>
+		<item group="automotive"            prob="0.20"/>
+		<item group="ammo"                  prob="0.14"/>
+		<item group="tools"                 prob="0.10"/>
+		<item name="armorMiningHelmet"      prob="0.01"/>
+		<item group="vehicleParts"          prob="0.05"/>
+	</lootcontainer>
+
+	<!-- garage stuff, tools, etc -->
+	<lootcontainer id="22" count="0,4" size="5,4" sound_open="UseActions/open_cardboard" open_time="1" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate">
+		<item group="automotive"                       prob=".130"/>
+		<item name="resourcePaint"    count="5,40"     prob=".120"/>
+		<item name="resourcePaper"    count="4,25"     prob=".120"/>	<!-- probably old tax returns your gonna want to keep these for at least 10 years after the apocalypse -->
+		<item group="ammo"                             prob=".100"/>
+		<item group="books"                            prob=".100"/>	
+		<item name="resourceCloth"    count="1,20"     prob= ".07"/>
+		<item name="resourceGlue"     count="1,4"      prob= ".05"/>
+		<item name="resourceScrapPolymers" count="1,2" prob= ".05"/>
+		<item group="clothes"                          prob= ".05"/>
+		<item group="trophyGroup"                      prob= ".05"/>
+		<item name="resourceDuctTape" count="1,4"      prob= ".05"/>
+		<item group="chessPieces"                      prob= ".05"/>
+		<item group="dyes"                             prob= ".01"/>
+		<item name="resourceAcid"      count="1,4"     prob= ".01"/>
+		<item name="meleeToolPaintTool"                prob= ".01"/>
+		<item name="vehicleBicycleChassis"             prob= ".01"/>
+		<item name="vehicleBicycleHandlebars"          prob= ".01"/>
+		<item group="electricalDevices"                prob= ".01"/>
+	</lootcontainer>
+
+	<!-- purses -->
+	<lootcontainer id="48" count="1,5" size="4,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1.5" loot_quality_template="baseTemplate">
+		<item name="resourcePaper" count="2,8"   prob="0.15" />
+		<item name="oldCash"       count="5,60"  prob="0.15" />
+		<item group="bookNovelsGroup"            prob="0.15" />
+		<item group="weaponsPistol+ammo"         prob="0.10" />
+		<item name="drinkJarBoiledWater"         prob="0.10" />
+		<item group="medicine"                   prob="0.10" />
+		<item name="meleeToolFlashlight02"       prob="0.10" />		
+		<item group="cannedfood"                 prob="0.05" />
+     	<item name="casinoCoin"    count="5,25"  prob="0.05" />
+		<item group="ammo"                       prob="0.05" />
+	</lootcontainer>
+
+	<!-- bookcase -->
+	<lootcontainer id="49" count="0,8" size="4,3" sound_open="UseActions/open_drawer" sound_close="UseActions/close_drawer" loot_quality_template="baseTemplate">
+		<item name="resourcePaper" count="2,8" prob="0.2"/>
+		<item group="books"/>	
+		<item group="chessPieces" prob=".2"/>
+	</lootcontainer>
+
+</append>
+
+<!-- add to canned food loot list -->
+<append xpath="/lootcontainers/lootgroup[@name='cannedfood']">
+	<item name="Chocolate Pudding"/>	
+	<item name="Canned Beans"     />	
+	<item name="Peanut Butter"    />		
+	<item name="Dried Noodles"    />
+	<item name="Tortillas"  count="1,4" />
+	<item name="Flour" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='brassResource']">
+	<lootgroup name="chessPiecesBrass"/>
+</append>
+
+<!-- add to trophy loot list -->
+<append xpath="/lootcontainers/lootgroup[@name='trophyGroup']">
+	<item name="Golf Trophy"    />		
+	<item name="Baseball Trophy"/>
+</append>
+
+</configs>

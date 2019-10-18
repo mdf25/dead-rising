@@ -1,0 +1,24 @@
+<config>
+	<append xpath="/buffs">
+	<buff name="buffBlockKnockdown1">
+		<damage_type value="knockdown"/>
+		<stack_type value="ignore"/>
+		<duration value="4"/>
+		<requirements compare_type="or">
+			<requirement name="NotHasBuff" buff="buffInjuryKnockdown1Cooldown"/>
+		</requirements>
+
+		<effect_group>
+<requirement name="EntityTagCompare" tags="zombie"/>
+<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="65" action="LogMessage"/>
+			<passive_effect name="RunSpeed" operation="perc_set" value="0" />
+			<passive_effect name="WalkSpeed" operation="perc_set" value="0" />
+			<passive_effect name="CrouchSpeed" operation="perc_set" value="0" />
+			<passive_effect name="JumpStrength" operation="perc_set" value="0" />
+			<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="3.5"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffInjuryKnockdown1Cooldown"/>
+		</effect_group>
+	</buff>
+	
+	</append>	
+</config>

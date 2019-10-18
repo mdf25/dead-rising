@@ -1,5 +1,0 @@
-Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
-heatedbarbedWireSheet,blocks,Trap,New,Heated Barbed Wire Trap,,,,,
-heatedbarbedWireSheetDesc,blocks,Trap,New,Zombies that run into this may get caught on fire.,,,,,
-greasedWireSheet,blocks,Trap,New,Greased Wire Trap,,,,,
-greasedWireSheetDesc,blocks,Trap,New,Zombies that walk over this may fall on their face!,,,,,

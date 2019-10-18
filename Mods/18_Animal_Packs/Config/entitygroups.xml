@@ -1,0 +1,24 @@
+<configs>
+
+<!-- Add in bear group -->
+<!-- If Khelldons Baby Bears and Wolves, add group -->
+
+<append xpath="//entity[@name='khelldonAnimalBabyBear']/..">
+	<entity name="invisibleBearGroupSpawner" prob="0.5"/>
+</append>
+
+<append xpath="//entity[@name='khelldonAnimalBabyWolf']/..">
+	<entity name="invisibleWolfGroupSpawner" prob="0.5"/>
+</append>
+
+<!-- If Khelldons Get Piggy mod is installed, add group -->
+<append xpath="//entity[@name='animalPig']/..">
+	<entity name="invisibleBoarGroupSpawner" prob="0.2" />
+</append>
+
+<!-- Vanilla -->
+<append xpath="//entity[@name='animalStag']/..">
+	<entity name="invisibleStagDoeGroupSpawner" prob="0.2" />
+</append>
+
+</configs>

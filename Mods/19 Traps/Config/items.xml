@@ -1,4 +1,0 @@
-<configs>
-	<!-- Allow all construction tools to upgrade the traps -->
-	<append xpath="/items/item[@name='meleeToolStoneAxe' or @name='meleeToolClawHammer' or @name='meleeToolWrench' or @name='gunToolNailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceAcid,thrownAmmoMolotovCocktail</append>
-</configs>

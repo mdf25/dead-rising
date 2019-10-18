@@ -1,0 +1,58 @@
+<configs>
+    <!-- Removes the advanced firearms perk, moved to books instead -->
+    <remove xpath="/progression/perks/perk[@name='perkAdvancedFirearms']"/>
+	
+	<!-- Removes the Yeah Science perk, as it actually does nothing in this pack with JSS enabled -->
+	<remove xpath="/progression/perks/perk[@name='perkYeahScience']" />
+	
+	<!-- Removes all Melee skills and perks, recipes are moved to books instead -->
+	<remove xpath="/progression/attributes/attribute[@name='Melee Mod']" />
+	
+	
+	
+	<!-- Adds better chance to recover arrows when investing into archery perks -->
+	<append xpath="//perk[@name='perkArchery']/effect_group[last()]">
+		<passive_effect name="ProjectileStickChance" operation="perc_add" value="0.2,0.4" level="1,5"/>
+	</append>
+	
+	<!-- Makes the last level of Miner69er better by allowing block destroy events to grant 50 stamina. -->
+	<append xpath="//perk[@name='perkMiner69er']/effect_group">
+		<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyStats" stat="Stamina" operation="add" value="50">
+			<requirement name="ProgressionLevel" progression_name="perkMiner69er" operation="GTE" value="5"/>
+		</triggered_effect>
+	</append>
+	
+	
+	<!-- Move over the Salvage Operations perk to Intellect Craftsmanship tier -->
+	<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/@parent">skillCraftsmanship</set>
+	<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/level_requirements[@level='1']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/level_requirements[@level='2']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/level_requirements[@level='3']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/level_requirements[@level='4']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSalvageOperations']/level_requirements[@level='5']/requirement/@progression_name">attIntellect</set>
+	
+	<!-- Move Living Off the Land to Intellect Craftsmanship tier -->
+	<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/@parent">skillCraftsmanship</set>
+	<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/level_requirements[@level='1']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/level_requirements[@level='2']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/level_requirements[@level='3']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/level_requirements[@level='4']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkLivingOffTheLand']/level_requirements[@level='5']/requirement/@progression_name">attIntellect</set>
+	
+	<!-- Move The Huntsman to Intellect Craftsmanship tier. -->
+	<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/@parent">skillCraftsmanship</set>
+	<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/level_requirements[@level='1']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/level_requirements[@level='2']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/level_requirements[@level='3']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/level_requirements[@level='4']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkTheHuntsman']/level_requirements[@level='5']/requirement/@progression_name">attIntellect</set>
+	
+	<!-- Move the Self Medicated perk to Intellect Craftsmanship tier -->
+	<!-- TODO: Find the mod fix for this to enable it -->
+	<set xpath="/progression/perks/perk[@name='perkSelfMedicated']/@parent">skillCraftsmanship</set>
+	<set xpath="/progression/perks/perk[@name='perkSelfMedicated']/level_requirements[@level='1']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSelfMedicated']/level_requirements[@level='2']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSelfMedicated']/level_requirements[@level='3']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSelfMedicated']/level_requirements[@level='4']/requirement/@progression_name">attIntellect</set>
+	<set xpath="/progression/perks/perk[@name='perkSelfMedicated']/level_requirements[@level='5']/requirement/@progression_name">attIntellect</set>
+</configs>

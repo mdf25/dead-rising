@@ -1,0 +1,222 @@
+<configs>
+	<append xpath="/buffs">
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										CC Buffs 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<buff name="buffFrozenSolid" name_key="Frozen" description_key="Frozen to the ground!" tooltip_key="Frozen solid">
+			<damage_type value="stun"/>
+			<stack_type value="ignore"/>
+			<duration value="10"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?IceCubePrefab" local_offset="0,-0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" parent_transform="Hips" prefab="#@modfolder:Resources/Attach.unity3d?IceCubePrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" parent_transform="Hips" prefab="#@modfolder:Resources/Attach.unity3d?IceCubePrefab"/>
+				<triggered_effect trigger="onOtherKilledSelf" action="RemovePrefabFromEntity" parent_transform="Hips" prefab="#@modfolder:Resources/Attach.unity3d?IceCubePrefab"/>
+				<passive_effect name="RunSpeed" operation="perc_set" value="0,.01,.1" duration="0,5,10"/>
+				<passive_effect name="WalkSpeed" operation="perc_set" value="0,.01,.1" duration="0,5,10"/>
+				<passive_effect name="CrouchSpeed" operation="perc_set" value="0" />
+				<passive_effect name="JumpStrength" operation="perc_set" value="0" />
+				<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" target="self" buff="buffFrozenSolid"/>
+			</effect_group>
+		</buff>
+		<buff name="buffHellFire" name_key="Water" description_key="Water" tooltip_key="Water" icon="ui_game_symbol_book" icon_color="255,255,0" tags="drug">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="5.5"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,4.5,5.5" value="0,0,5000"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?BOOM!" local_offset="0,0.3,0" parent_transform="Hips"/>
+			</effect_group>
+		</buff>
+		<buff name="buffExplosion" name_key="Smokeout" description_key="Smokeout" tooltip_key="Smokeout">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<update_rate value=".25"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?TntPrefab" local_offset="0,0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?TntPrefab" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?TntPrefab" parent_transform="Hips"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="2" value="5"/>
+			</effect_group>
+		</buff>
+		<buff name="buffRipper" name_key="SoulRipper" description_key="SoulRipper" tooltip_key="SoulRipper">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?RipperPrefab" local_offset="0,0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?RipperPrefab" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?RipperPrefab" parent_transform="Hips"/>
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".5"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5"/>
+			</effect_group>
+		</buff>
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										Health/Aid Buffs 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<!-- Defense -->
+		<buff name="buffHolyLord" name_key="Holy" description_key="Blessed by the Lord" tooltip_key="Holy" icon="ui_game_symbol_book" icon_color="255,255,0" tags="drug">
+			<stack_type value="replace"/>
+			<duration value="15"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_add" duration="1,10" value="1,2"/>
+				<passive_effect name="HealthMaxModifierOT" operation="base_add" duration="1,10" value="1,2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="80"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllPneumonia0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllPneumonia1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffWaterCustom" name_key="Water" description_key="Water" tooltip_key="Water" icon="ui_game_symbol_water" icon_color="22,204,198" tags="drug">
+			<stack_type value="ignore"/>
+			<duration value="10"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyStats" stat="water" operation="add" value="1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffSwimCustom" name_key="Swimming" description_key="Move faster while swimming, more resistant to cold." tooltip_key="Swimming" icon="ui_game_symbol_oxygen" icon_color="22,204,198" tags="drug">
+			<stack_type value="replace"/>
+			<duration value="500"/>
+			<effect_group>
+				<passive_effect name="RunSpeed" operation="perc_add" value="1" />
+				<passive_effect name="WalkSpeed" operation="perc_add" value="1" />
+				<passive_effect name="StaminaLoss" operation="perc_subtract" value=".5" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="50" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-50" />
+			</effect_group>
+		</buff>
+		<!-- Attack -->
+		<buff name="buffWaterSplash" name_key="Splash" description_key="Splash" tooltip_key="Splash">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?WaterSplashPrefab" local_offset="0,-0.6,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?WaterSplashPrefab" local_offset="0,-0.6,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?WaterSplashPrefab" local_offset="0,-0.6,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration=".5"/>
+				<passive_effect name="RunSpeed" operation="perc_set" value=".1,.4,.8" duration="0,3,8"/>
+				<passive_effect name="WalkSpeed" operation="perc_set" value=".1,.4,.8" duration="0,3,8"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffWaterSplash"/>
+			</effect_group>
+		</buff>
+		<buff name="buffHolySmite" name_key="Holy Smite" description_key="Holy Smite" tooltip_key="Holy Smite">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?HolyPrefab" local_offset="0,0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?HolyPrefab" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?HolyPrefab" parent_transform="Hips"/>
+			</effect_group>
+		</buff>
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										Death/Exteme Mods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<buff name="buffDeathCustom" name_key="Death" description_key="Here comes the reaper" tooltip_key="Death">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="17"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?DeathPrefab" local_offset="0,0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?DeathPrefab" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?DeathPrefab" parent_transform="Hips"/>
+				<passive_effect name="RunSpeed" operation="perc_set" value=".5" />
+				<passive_effect name="WalkSpeed" operation="perc_set" value=".5" />
+				<passive_effect name="CrouchSpeed" operation="perc_set" value=".5" />
+				<passive_effect name="JumpStrength" operation="perc_set" value=".5" />
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,16.5,17" value="0,0,5000"/>
+			</effect_group>
+		</buff>
+		<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+										Stealth/Dot Mods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+		<buff name="buffSmokeout" name_key="Smokeout" description_key="Smokeout" tooltip_key="Smokeout">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?SmokeoutPrefab" local_offset="0,0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?SmokeoutPrefab" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?SmokeoutPrefab" parent_transform="Hips"/>
+				<passive_effect name="DistractionRadius" operation="base_set" value="25"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="5"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".7"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7"/>
+			</effect_group>
+		</buff>
+		<buff name="buffPoisoned" name_key="Poisoned" description_key="Poison your enemies" tooltip_key="Poison">
+			<damage_type value="radiation"/>
+			<stack_type value="replace"/>
+			<duration value="15"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?PoisonPrefab" local_offset="0,0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" parent_transform="Hips" prefab="#@modfolder:Resources/Attach.unity3d?PoisonPrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" parent_transform="Hips" prefab="#@modfolder:Resources/Attach.unity3d?PoisonPrefab"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,15" value="10,10"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="otherAOE" range="1" buff="buffPoisoned">
+					<requirement name="RandomRoll" seed_type="Random" target="other" min_max="0,100" operation="LTE" value="30"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffBloodyMess" name_key="Bloody Mess" description_key="Bloody Mess" tooltip_key="Bloody Mess">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?BloodyPrefab" local_offset="0,0.65,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?BloodyPrefab" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?BloodyPrefab" parent_transform="Hips"/>
+			</effect_group>
+		</buff>
+		<buff name="buffRipper" name_key="SoulRipper" description_key="SoulRipper" tooltip_key="SoulRipper">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Attach.unity3d?RipperPrefab" local_offset="0,0.3,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?RipperPrefab" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" prefab="#@modfolder:Resources/Attach.unity3d?RipperPrefab" parent_transform="Hips"/>
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".5"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5"/>
+			</effect_group>
+		</buff>
+	</append>
+</configs>

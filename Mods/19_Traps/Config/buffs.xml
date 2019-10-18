@@ -1,0 +1,263 @@
+<configs>
+<append xpath="/buffs/buff[@name='buffStatusCheck']">
+<effect_group>
+<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffVehiclecheck"/>
+
+</effect_group>
+ </append>
+
+	
+		<append xpath="/buffs">	
+		
+		<!-- //ACID TRAP -->
+					<buff name="buffAcidTrapUpdate">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+		<duration value="1"/>
+		<effect_group>
+		<passive_effect name="HealthChangeOT" operation="base_add" value="-5"/>
+			<!-- <passive_effect name="JumpStrength" operation="perc_set" value="0" /> -->
+			<passive_effect name="JumpStrength" operation="perc_set" value="0.08" />
+			<passive_effect name="AttacksPerMinute" operation="perc_set" value="0.5, 1" duration="0,3" />
+			</effect_group>
+	</buff>
+	
+						<buff name="bufftimer">
+		<stack_type value="replace"/>
+		<duration value="2"/>
+	</buff>
+	
+				<!-- //BEAR TRAP -->
+		<buff name="buffBearTrap">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+		<effect_group>
+		<requirement name="NotHasBuff" buff="buffBearTrapUpdate"/>
+		<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBearTrap"/>
+		<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBearTrapSoundTrigger"/>
+		</effect_group>
+		<duration value="60"/>
+	</buff>
+	
+			<buff name="buffBearTrapUpdate">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+			<update_rate value=".1"/>
+		<duration value="1"/>
+		<effect_group>
+		<requirement name="HasBuff" buff="buffBearTrap"/>
+		<passive_effect name="HealthChangeOT" operation="base_add" value="-10"/>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="2,0" duration="0,3"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="2,0" duration="0,3"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9,0" duration="0,3"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.9,0" duration="0,3"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_set" value="0.5, 1" duration="0,3" />
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.25,0"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.25,0"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffStart" action="AnimatorSetInt" property="WalkType" value="5"/>
+			</effect_group>
+					<effect_group>
+		<requirement name="HasBuff" buff="buffBearTrapSoundTrigger"/>
+		<requirement name="HasBuff" buff="buffBearTrap"/>
+		<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" target="self" sound="beartrapsound" />
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBearTrapSoundTrigger"/>
+		</effect_group>
+	</buff>
+	
+		<buff name="buffBearTrapSoundTrigger">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+		<duration value="60"/>
+	</buff>
+				<!-- //CANON TRAP -->
+			<buff name="buffCanontrap">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+		<effect_group>
+		<requirement name="NotHasBuff" buff="buffCanontrapUpdate"/>
+		<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCanontrap"/>
+		<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffCanonTrapSoundTrigger"/>
+		</effect_group>
+		<duration value="60"/>
+	</buff>
+	
+			<buff name="buffCanontrapUpdate">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+			<update_rate value=".1"/>
+		<duration value="1"/>
+		<effect_group>
+		<requirement name="HasBuff" buff="buffCanontrap"/>
+		<passive_effect name="HealthChangeOT" operation="base_add" value="-10"/>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="2,0" duration="0,3"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="2,0" duration="0,3"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9,0" duration="0,3"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.9,0" duration="0,3"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_set" value="0.5, 1" duration="0,3" />
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.25,0"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.25,0"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffStart" action="AnimatorSetInt" property="WalkType" value="5"/>
+			</effect_group>
+					<effect_group>
+		<requirement name="HasBuff" buff="buffCanonTrapSoundTrigger"/>
+		<requirement name="HasBuff" buff="buffCanontrap"/>
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffcdragdoll" />
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1" buff="buffcdragdoll"/>
+		<!-- buffInjuryKnockdown1 -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCanonTrapSoundTrigger"/>
+		</effect_group>
+	</buff>
+	
+		<buff name="buffCanonTrapSoundTrigger">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+		<duration value="60"/>
+	</buff>
+	
+		
+		<buff name="buffcdragdoll">
+		<stack_type value="replace"/>
+		<duration value="0.2"/>
+							<effect_group>
+		<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffInjuryKnockdown1" />
+		</effect_group>
+	</buff>
+	
+				<!-- //PIERCE TRAP -->
+				<buff name="buffpiercetrapUpdate">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+			<update_rate value=".1"/>
+		<duration value=".1"/>
+					<effect_group>
+		<requirement name="HasBuff" buff="buffcdragdoll2"/>
+					<passive_effect name="RunSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="WalkSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="CrouchSpeed" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="JumpStrength" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_set" value="0.5, 1" duration="0,2" />
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffpiercetrapon" />
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1" buff="buffpiercetrapon"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffcdragdoll2"/>
+		</effect_group>
+	</buff>
+			
+		<buff name="buffcdragdoll2">
+		<stack_type value="replace"/>
+		<update_rate value=".1"/>
+		<duration value="10"/>
+							<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="WalkSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="CrouchSpeed" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="JumpStrength" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_set" value="0.5, 1" duration="0,2" />
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffpiercetrapUpdate"/>
+			
+		</effect_group>
+	</buff>
+	
+			<buff name="buffpiercetrapon">
+		<stack_type value="replace"/>
+		<duration value="0.1"/>
+		<effect_group>
+		<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="piercetrapsound" />
+		</effect_group>
+							<effect_group>
+							<requirement name="HasBuff" buff="buffpiercetrapUpdate"/>
+							
+							<passive_effect name="HealthChangeOT" operation="base_add" value="-10"/>
+		<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffInjuryKnockdown1" />
+		<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="bufftriggerpiercedmg" />
+		</effect_group>
+	</buff>
+
+			<buff name="bufftriggerpiercedmg">
+		<stack_type value="replace"/>
+		<duration value="2"/>
+							<effect_group>
+					<passive_effect name="HealthChangeOT" operation="base_add" value="-200"/>
+					
+								<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.35,0"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.35,0"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+		</effect_group>
+	</buff>
+	
+	<!-- //SPIKE TRAP -->
+			<buff name="buffspikyprep">
+		<stack_type value="replace"/>
+		<update_rate value=".1"/>
+		<duration value="10"/>
+							<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="WalkSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="CrouchSpeed" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="JumpStrength" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_set" value="0.5, 1" duration="0,2" />
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffspikyupdate"/>
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="spiketrapsound" />
+		</effect_group>
+	</buff>
+	
+				<buff name="buffspikytrapon">
+		<stack_type value="replace"/>
+		<duration value="0.1"/>
+							<effect_group>
+							<requirement name="HasBuff" buff="buffspikyupdate"/>
+							<passive_effect name="HealthChangeOT" operation="base_add" value="-10"/>
+		<!-- <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffInjuryKnockdown1" /> -->
+		<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="bufftriggerspikydmg" />
+		</effect_group>
+	</buff>
+
+	
+					<buff name="buffspikyupdate">
+		<damage_type value="electrical"/>
+		<stack_type value="replace"/>
+			<update_rate value=".1"/>
+		<duration value=".1"/>
+					<effect_group>
+		<requirement name="HasBuff" buff="buffspikyprep"/>
+					<passive_effect name="RunSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="WalkSpeed" operation="perc_set" value="0.2" duration="0,2"/>
+			<passive_effect name="CrouchSpeed" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="JumpStrength" operation="perc_set" value="0" duration="0,2"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_set" value="0.5, 1" duration="0,2" />
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffspikytrapon" />
+		<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1" buff="buffspikytrapon"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffspikyprep"/>
+		</effect_group>
+	</buff>
+	
+				<buff name="bufftriggerspikydmg">
+		<stack_type value="replace"/>
+		<duration value="2"/>
+							<effect_group>
+					<passive_effect name="HealthChangeOT" operation="base_add" value="-50"/>
+								<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.35,0"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_blood_impact" local_offset="0,0.35,0"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="p_blood_impact" />
+		</effect_group>
+	</buff>
+			
+	
+
+	
+	
+		</append>
+</configs>

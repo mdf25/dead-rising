@@ -1,0 +1,15 @@
+<configs>
+    <!-- Wasteland Decorations -->
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeBurntMaple01']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeBurntMaple02']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeBurntMaple03']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeMountainPineDry21m']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeDeadShrub']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeDeadTree02']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeDeadPineLeaf']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[@blockname='treeDeadPineLeaf']"/>
+    
+    <append xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations">
+        <decoration type="block" blockname="HDHQ_WasteW1Prefab" prob ="0.01" rotatemax="3"/>
+    </append>
+</configs>

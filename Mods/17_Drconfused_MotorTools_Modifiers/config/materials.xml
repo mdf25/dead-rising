@@ -1,0 +1,11 @@
+<Drconfused_MotorTools_Upgrade>
+
+<append xpath="/materials">
+	<material id="MresourceRefinedSilicon">
+		<property name="damage_category" value="wood"/>
+		<property name="surface_category" value="cloth"/>
+		<property name="forge_category" value="resourceScrapPolymers"/>
+		<property name="Experience" value="2"/>
+	</material>
+</append>
+</Drconfused_MotorTools_Upgrade>

@@ -1,0 +1,30 @@
+<configs>
+
+	<!-- Sets the HDHQ seed custom icons to be the better ones -->
+	<set xpath="//block[@name='HDHQ_AlpineSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedWinterPine1m</set>
+	<set xpath="//block[@name='HDHQ_DesertSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedOak1m</set>
+	<set xpath="//block[@name='HDHQ_JungleSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedMountainPine1m</set>
+	<set xpath="//block[@name='HDHQ_PalmSeedPrefab']/property[@name='CustomIcon']/@value">treePlantedMountainPine1m</set>
+
+	<!-- Sets all trees to drop sticks. -->
+	<append xpath="//property[@name='Extends' and @value='treeMaster']/..">
+		<drop event="Harvest" name="resourceStick" count="30" tag="oreWoodHarvest" />
+		<drop event="Harvest" name="resourceStick" count="20" prob="0.5" tag="oreWoodHarvest" />
+		<drop event="Harvest" name="resourceStick" count="10" prob="0.2" tag="oreWoodHarvest" />
+		<drop event="Harvest" name="resourceFeather" count="12" prob="0.4" tag="oreWoodHarvest" />
+	</append>
+
+	<!-- Sets all burnt trees to drop coal when harvesting -->
+	<append xpath="//block[contains(@name, 'treeBurntMaple') or contains(@name, 'HDHQ_Burnt')]">
+		<drop event="Harvest" name="resourceCoal" count="15" tag="oreWoodHarvest" />
+		<drop event="Harvest" name="resourceCoal" count="10" prob="0.6" tag="oreWoodHarvest" />
+		<drop event="Harvest" name="resourceCoal" count="10" prob="0.3" tag="oreWoodHarvest" />
+	</append>
+
+	<!-- JSS wheat drops from grass replaced to Fennec Food wheat -->
+	<set xpath="//drop[@name='Wheat']/@name">foodCropWheatFM</set>
+	
+	<!-- JSS lootable boxes give new loot list -->
+	<setattribute xpath="/blocks/block[@name='palletBrownBoxesBase']/property[@name='LootList']" name="value">122</setattribute>
+	
+</configs>

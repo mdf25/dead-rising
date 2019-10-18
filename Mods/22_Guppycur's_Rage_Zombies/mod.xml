@@ -1,0 +1,10 @@
+<mod>
+	<info>
+		<author>Guppycur</author>
+		<name>22 Rage Zombies</name>
+		<description>Adds a rage effect to zombies when health drops below 50%.</description>
+		<mod_version>1.0</mod_version>
+		<game_version>17.4</game_version>
+		<launcher_version>0.7.3</launcher_version>
+	</info>
+</mod>

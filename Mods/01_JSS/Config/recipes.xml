@@ -1,0 +1,783 @@
+<configs>
+
+<!-- RECIPE CHANGES -->
+
+<!-- ========================================================================
+     MODTAG Don't have to learn how to make a baked potato or corn on the cob 
+	 seriously just put them on the fire amiright 
+	 ======================================================================== -->
+	<remove xpath="/recipes/recipe[@name='foodBakedPotato']" />
+	<remove xpath="/recipes/recipe[@name='foodCornOnTheCob']" />
+	<append xpath="/recipes">
+		<recipe name="foodBakedPotato" count="1" craft_area="campfire" >
+			<ingredient name="foodCropPotato" count="1"/>
+		</recipe>
+		<recipe name="foodCornOnTheCob" count="1" craft_area="campfire" craft_tool="toolCookingPot" >
+			<ingredient name="foodCropCorn" count="1"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<!-- paper recipes from books -->
+		<recipe name="resourcePaper" count="20" ><ingredient name="Romance Novel" count="1"/></recipe>			
+		<recipe name="resourcePaper" count="20" ><ingredient name="Sci-Fi Book" count="1"/></recipe>		
+		<recipe name="resourcePaper" count="20" ><ingredient name="Adventure Book" count="1"/></recipe>	
+		<recipe name="resourcePaper" count="20" ><ingredient name="Horror Book" count="1"/></recipe>
+		<recipe name="resourcePaper" count="30" ><ingredient name="Business Book" count="1"/></recipe>
+	</append>
+
+<!-- MODTAG change bacon and eggs to use pork -->
+<set xpath="/recipes/recipe[@name='foodBaconAndEggs']/ingredient[@name='foodRawMeat']/@name">Raw Pork</set>
+
+<!-- MODTAG change steak and potatoes to use venison -->
+<set xpath="/recipes/recipe[@name='foodSteakAndPotato']/ingredient[@name='foodRawMeat']/@name">Raw Venison</set>
+
+<!-- MODTAG change chili dog to use wolf meat (haha dog get it?) -->
+<set xpath="/recipes/recipe[@name='foodChiliDog']/ingredient[@name='foodRawMeat']/@name">Wolf Meat</set>
+
+<!-- MODTAG corn meal requires five corns and a cloth to make a sack -->
+<set xpath="/recipes/recipe[@name='foodCornMeal']/ingredient[@name='foodCropCorn']/@count">5</set>
+<append xpath="/recipes/recipe[@name='foodCornMeal']">
+	<ingredient name="resourceCloth" count="1"/>
+</append>
+
+<!-- blueberry pie requires 10 blueberries instead of 5 -->	
+<set xpath="/recipes/recipe[@name='foodBlueberryPie']/ingredient[@name='foodCropBlueberries']/@count">10</set>
+
+<!-- decrease wood needed to make spikes from 20 to 15 -->
+<!-- <set xpath="/recipes/recipe[@name='trapSpikesWoodDmg0']/ingredient[@name='resourceWood']/@count">15</set> -->
+
+<!-- MODTAG New fruit smoothie recipes -->
+<remove xpath="/recipes/recipe[@name='drinkJarYuccaJuice']"/>
+<remove xpath="/recipes/recipe[@name='window03Wood']"/>
+<remove xpath="/recipes/recipe[@name='drinkYuccaJuiceSmoothie']"/>
+<remove xpath="/recipes/recipe[@name='foodFishTacos']"/>
+
+<insertAfter xpath="/recipes/recipe[@name='drinkJarEmpty']">
+
+	<!-- MODTAG: crafting windows requires a window pane -->
+	<recipe name="window03Wood" count="1">	
+		<ingredient name="resourceWood" count="4"/>
+		<ingredient name="glassCTRSheet" count="1"/>
+	</recipe>
+
+	<recipe name="Tar" count="1" craft_area="chemistryStation">
+    	<ingredient name="Pine Resin" count="5"/>
+		<ingredient name="drinkJarEmpty" count="1" />
+    </recipe>
+
+	<recipe name="Tar" count="1" craft_area="campfire" craft_tool="toolBeaker">
+		<ingredient name="Pine Resin" count="8"/>
+		<ingredient name="drinkJarEmpty" count="1" />
+	</recipe>
+	
+	<recipe name="resourceDuctTape" count="1">
+    	<ingredient name="Tar" count="1"/>
+    	<ingredient name="resourceCloth" count="1"/>
+    </recipe>
+
+    <recipe name="meleeToolTorch" count="1">
+    	<ingredient name="Tar" count="2"/>
+    	<ingredient name="resourceCloth" count="2"/>
+    	<ingredient name="resourceWood" count="1"/>
+    </recipe>	
+
+    <!-- === -->
+	<!-- MODTAG more intermediate recipes for other meat types (comparable benefit to bacon and eggs) -->
+	<recipe name="Chicken Surprise" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="foodCornMeal" count="1"/>
+		<ingredient name="Moss"         count="1"/>
+		<ingredient name="Raw Chicken"  count="7"/>
+	</recipe>
+
+	<recipe name="Tastes Like Chicken Surprise" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="foodCornMeal" count="1"/>
+		<ingredient name="Moss"         count="1"/>
+		<ingredient name="Snake Meat"   count="7"/>
+	</recipe>
+	
+	<recipe name="Hasenpfeffer" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Herbs"          count="2"/>
+		<ingredient name="foodCropPotato" count="3"/>
+		<ingredient name="Rabbit Meat"    count="7"/>
+	</recipe>
+
+	<recipe name="Drunken Dog" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Herbs"             count="2"/>
+		<ingredient name="foodCropMushrooms" count="3" />
+		<ingredient name="drinkJarBeer"      count="1" />
+		<ingredient name="Wolf Meat"         count="7"/>
+	</recipe>
+
+	<recipe name="Bear Roast" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Herbs"             count="4"/>
+		<ingredient name="foodCropMushrooms" count="3" />
+		<ingredient name="Bear Meat"         count="7"/>
+	</recipe>
+	
+	<recipe name="Chili" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Venison"         count="5"/>
+		<ingredient name="Canned Beans"        count="1"/>
+		<ingredient name="foodCornMeal"        count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+
+	<recipe name="Chili" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Rabbit Meat"         count="5"/>
+		<ingredient name="Canned Beans"        count="1"/>
+		<ingredient name="foodCornMeal"        count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+
+	<recipe name="Chili" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Snake Meat"           count="5"/>
+		<ingredient name="Canned Beans"         count="1"/>
+		<ingredient name="foodCornMeal"         count="1"/>
+		<ingredient name="drinkJarBoiledWater"  count="1"/>
+	</recipe>
+	
+	<recipe name="Chili" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Bear Meat"           count="5"/>
+		<ingredient name="Canned Beans"        count="1"/>
+		<ingredient name="foodCornMeal"        count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	
+	<recipe name="Chili" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Wolf Meat"           count="5"/>
+		<ingredient name="Canned Beans"        count="1"/>
+		<ingredient name="foodCornMeal"        count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	
+	<recipe name="Dried Noodles" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Flour"               count="1"/> <!-- 5 wheats -->
+		<ingredient name="foodEgg"             count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+
+	<recipe name="Noodles" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Dried Noodles"         count="1"/>
+		<ingredient name="drinkJarBoiledWater"   count="1"/>
+	</recipe>
+
+	<recipe name="Chicken Noodle Soup" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Chicken"           count="7"/>
+		<ingredient name="Dried Noodles"         count="1"/>
+		<ingredient name="Herbs"                 count="2"/>
+		<ingredient name="drinkJarBoiledWater"   count="1"/>
+	</recipe>
+
+	<recipe name="Tuna Noodle Casserole" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="foodCanTuna"           count="1"/>
+		<ingredient name="foodCanPeas"           count="1"/>		
+		<ingredient name="Dried Noodles"         count="1"/>
+		<ingredient name="foodCornMeal"          count="1"/>
+		<ingredient name="drinkJarBoiledWater"   count="1"/>
+	</recipe>
+
+	<recipe name="Tortillas" count="2" craft_area="campfire" craft_tool="toolCookingPot">
+		<ingredient name="foodCornMeal" count="2"/> <!-- 10 corn plants = 2 tortillas -->
+		<ingredient name="drinkJarBoiledWater"   count="1"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+	</recipe>
+
+	<recipe name="Tortillas" count="2" craft_area="campfire" craft_tool="toolCookingPot">
+		<ingredient name="Flour" count="2"/> <!-- 10 wheat plants = 2 tortillas -->
+		<ingredient name="drinkJarBoiledWater"   count="1"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+	</recipe>
+	
+	<!-- MODTAG fish tacos changed to use tortillas -->
+	<recipe name="foodFishTacos" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="learnable">
+		<ingredient name="foodCanSalmon" count="1"/>
+		<ingredient name="Tortillas" count="1"/>
+	</recipe>
+	
+	<!-- MODTAG bean and meat enchilada recipes -->
+	<recipe name="Enchilada de Frijoles" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/> 
+		<ingredient name="Canned Beans"   count="1"/> 
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="Enchilada de Carne" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/>
+		<ingredient name="Grilled Chicken"   count="1"/>
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="Enchilada de Carne" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/>
+		<ingredient name="Grilled Pork"   count="1"/>
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="Enchilada de Carne" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/>
+		<ingredient name="Grilled Wolf"   count="1"/>
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="Enchilada de Carne" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/>
+		<ingredient name="Grilled Snake"   count="1"/>
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="Enchilada de Carne" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/>
+		<ingredient name="Grilled Venison"   count="1"/>
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="Enchilada de Carne" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/>
+		<ingredient name="Grilled Rabbit"   count="1"/>
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="Enchilada de Carne" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Tortillas" count="1"/>
+		<ingredient name="Grilled Bear"   count="1"/>
+		<ingredient name="Herbs" count="1"/>
+	</recipe>
+	
+	<recipe name="drinkJarYuccaJuice" count="1">
+		<ingredient name="foodCropYuccaFruit" count="4"/> <!-- twice the yucca in original yucca juice -->
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+
+	<recipe name="drinkYuccaJuiceSmoothie" count="1" tags="learnable">
+		<ingredient name="foodCropYuccaFruit"  count="6"/>
+		<ingredient name="foodHoney"           count="1"/>
+		<ingredient name="resourceSnowBall"    count="2"/>
+		<ingredient name="drinkJarEmpty"       count="1"/>
+	</recipe>
+
+	<recipe name="Blueberry Smoothie" count="1" tags="learnable">
+		<ingredient name="foodCropBlueberries" count="4"/>
+		<ingredient name="foodHoney"           count="1"/>
+		<ingredient name="resourceSnowBall"    count="2"/>
+		<ingredient name="drinkJarEmpty"       count="1"/>
+	</recipe>
+
+	<recipe name="Strawberry Smoothie" count="1" tags="learnable">
+		<ingredient name="Strawberries"        count="4"/>
+		<ingredient name="foodHoney"           count="1"/>
+		<ingredient name="resourceSnowBall"    count="2"/>
+		<ingredient name="drinkJarEmpty"       count="1"/>
+	</recipe>
+
+	<recipe name="Mixed Fruit Smoothie" count="1" tags="learnable">
+		<ingredient name="foodCropYuccaFruit"  count="4"/>
+		<ingredient name="foodCropBlueberries" count="4"/>
+		<ingredient name="Strawberries"        count="4"/>
+		<ingredient name="foodHoney"           count="1"/>
+		<ingredient name="resourceSnowBall"    count="2"/>
+		<ingredient name="drinkJarEmpty"       count="1"/>
+	</recipe>
+
+	<recipe name="Herbal Smoothie" count="1" tags="learnable">
+		<ingredient name="Moss"               count="4"/>
+		<ingredient name="Herbs"              count="4"/>
+		<ingredient name="foodHoney"          count="1"/>
+		<ingredient name="resourceSnowBall"   count="2"/>
+		<ingredient name="drinkJarEmpty"      count="1"/>
+	</recipe>
+
+	<recipe name="Rekt's Apocolyptic Sundae" count="1">
+		<ingredient name="Peanut Butter"      count="1"/>
+		<ingredient name="Chocolate Pudding"  count="1"/>
+		<ingredient name="resourceSnowBall"   count="2"/>
+		<ingredient name="drinkJarEmpty"      count="1"/>
+	</recipe>
+	
+</insertAfter>
+
+<!-- MODTAG new herbal antibiotics recipes -->
+<!-- MODTAG make Antibiotics and Snowberry Extract learnable recipes -->
+<remove xpath="/recipes/recipe[@name='drugAntibiotics'][@craft_area='campfire']"/>
+<remove xpath="/recipes/recipe[@name='drugAntibiotics'][@craft_area='chemistryStation']"/>
+<remove xpath="/recipes/recipe[@name='drugHerbalAntibiotics'][@craft_area='campfire']"/>
+<remove xpath="/recipes/recipe[@name='drugHerbalAntibiotics'][@craft_area='chemistryStation']"/>
+
+<remove xpath="/recipes/recipe[@name='medicalSnowberryExtract']"/>
+<!-- <remove xpath="/recipes/recipe[@name='medicalAloeCream']"/> -->
+<remove xpath="/recipes/recipe[@name='medicalBandage']"/>
+<remove xpath="/recipes/recipe[@name='medicalFirstAidBandage']"/>
+<remove xpath="/recipes/recipe[@name='medicalFirstAidKit']"/>
+<remove xpath="/recipes/recipe[@name='medicalPlasterCast']"/>
+<remove xpath="/recipes/recipe[@name='medicalSplint']"/>
+
+<insertBefore xpath="/recipes/recipe[@name='meleeBoneShiv']">
+
+	<recipe name="medicalBandage" count="1" craft_exp_gain="20" >
+		<ingredient name="resourceCloth" count="2"/>
+	</recipe>
+
+	<recipe name="medicalFirstAidBandage" count="1" tags="learnable" craft_exp_gain="20"  > 
+		<ingredient name="medicalAloeCream" count="1"/>
+		<ingredient name="resourceCloth" count="2"/>
+	</recipe>
+
+	<recipe name="medicalFirstAidKit" count="1" craft_area="chemistryStation" tags="learnable" craft_exp_gain="100">
+		<ingredient name="medicalBloodBag" count="1"/>
+		<ingredient name="drinkJarGrainAlcohol" count="1"/>
+		<ingredient name="medicalBandage" count="1"/>
+		<ingredient name="resourceDuctTape" count="1"/>
+	</recipe>
+
+	<recipe name="medicalPlasterCast" count="1" craft_area="chemistryStation" tags="learnable" craft_exp_gain="100">
+		<ingredient name="resourceCloth" count="2"/>
+		<ingredient name="foodCornMeal" count="2"/>
+		<ingredient name="resourceCrushedSand" count="2"/>
+		<ingredient name="drinkJarRiverWater" count="1"/>
+	</recipe>
+
+	<recipe name="medicalSnowberryExtract" count="1" craft_area="chemistryStation" craft_exp_gain="20">
+		<ingredient name="resourceCropSnowberryPlant" count="1"/>
+		<ingredient name="foodCornMeal" count="1"/>
+	</recipe>
+
+	<recipe name="medicalSplint" count="1" craft_exp_gain="20">
+		<ingredient name="resourceCloth" count="2"/>
+		<ingredient name="resourceWood" count="2"/>
+		<ingredient name="resourceDuctTape" count="1"/>
+	</recipe>
+	
+	<recipe name="toolBeaker" count="1" craft_area="forge" material_based="true">
+    	<ingredient name="unit_glass" count="100" />
+    	<ingredient name="unit_clay" count="10" />
+    </recipe>
+	
+	<recipe name="drugAntibiotics" count="1" craft_area="campfire" craft_tool="toolBeaker" tags="learnable">
+		<ingredient name="foodMoldyBread"                 count="4"/>
+		<ingredient name="resourcePotassiumNitratePowder" count="3"/>
+		<ingredient name="drinkJarBoiledWater"            count="1"/>
+	</recipe>
+	
+	<recipe name="drugAntibiotics" count="1" craft_area="chemistryStation" tags="learnable">
+		<ingredient name="foodMoldyBread"                 count="1"/>
+		<ingredient name="resourcePotassiumNitratePowder" count="1"/>
+		<ingredient name="drinkJarRiverWater"             count="1"/>
+	</recipe>
+	
+	<recipe name="drugHerbalAntibiotics" count="1" craft_area="campfire" craft_tool="toolBeaker" tags="learnable">
+		<ingredient name="foodHoney"                      count="2"/>
+		<ingredient name="resourceCropChrysanthemumPlant" count="5"/>
+		<ingredient name="resourcePotassiumNitratePowder" count="3"/>
+		<ingredient name="Herbs"                          count="4"/>
+		<ingredient name="drinkJarBoiledWater"            count="1"/>
+	</recipe>
+
+	<recipe name="drugHerbalAntibiotics" count="1" craft_area="chemistryStation" tags="learnable">
+		<ingredient name="foodHoney"                      count="1"/>
+		<ingredient name="resourceCropChrysanthemumPlant" count="3"/>
+		<ingredient name="resourcePotassiumNitratePowder" count="2"/>
+		<ingredient name="Herbs"                          count="2"/>
+		<ingredient name="drinkJarRiverWater"             count="1"/>
+	</recipe>
+	
+	<!-- MODTAG zombie cream makes it hard for zombies to detect you -->
+	<recipe name="Zombie Cream" count="1" tags="learnable" craft_area="campfire" craft_tool="toolBeaker">
+		<ingredient name="foodRottingFlesh"  count="10"/>
+		<ingredient name="resourceAnimalFat" count="2"/>
+		<ingredient name="medicalAloeCream"  count="5"/>
+		<ingredient name="resourceAcid"      count="1"/>
+		<ingredient name="resourcePaint"     count="1"/>
+	</recipe>
+
+	<recipe name="Zombie Cream" count="1" tags="learnable" craft_area="chemistryStation">
+		<ingredient name="foodRottingFlesh"  count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="medicalAloeCream"  count="2"/>
+		<ingredient name="resourceAcid"      count="1"/>
+		<ingredient name="resourcePaint"      count="1"/>
+	</recipe>
+</insertBefore>
+
+<!-- ================================================================
+     MODTAG new cornbread recipe
+	 other cornbread greatness in items.xml 
+	 cornbread: 1 corn meals, an egg, water.  
+	 ================================================================ -->
+	<set xpath="/recipes/recipe[@name='foodCornBread']/ingredient[@name='foodCornMeal']/@count">1</set>
+	<append xpath="/recipes/recipe[@name='foodCornBread']">
+		<ingredient name="foodEgg" count="1"/>
+	</append>
+
+	<!-- MODTAG add botanical ingredients to recipes for recog and steroids -->
+	<append xpath="/recipes/recipe[@name='drugRecog']">
+		<ingredient name="resourceCropChrysanthemumPlant" count="10"/>
+	</append>
+
+	<append xpath="/recipes/recipe[@name='drugSteroids']">
+		<ingredient name="resourceCropGoldenrodPlant" count="10"/>
+	</append>
+
+<!-- remove previous meat recipes that used generic meat and replace with new meat varieties -->
+<remove xpath="/recipes/recipe[@name='foodGrilledMeat']"/>
+<remove xpath="/recipes/recipe[@name='foodBoiledMeat']"/>
+<remove xpath="/recipes/recipe[@name='foodMeatStew']"/>
+
+<append xpath="/recipes/recipe[@name='plantedCorn1']">
+	<ingredient name="resourcePaper" count="1"/>
+</append>
+
+<append xpath="/recipes/recipe[@name='plantedPotato1']">
+	<ingredient name="resourcePaper" count="1"/>
+</append>
+
+<!-- MODTAG any base meat can be made into identical "charred meat" -->
+<set xpath="/recipes/recipe[@name='foodCharredMeat']/ingredient[@name='foodRawMeat']/@name">Raw Pork</set>
+<insertAfter xpath="/recipes/recipe[@name='flagstoneWedgeTipStairs']">
+
+<recipe name="foodBlueberryPie" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+	<ingredient name="foodCropBlueberries" count="10"/>
+	<ingredient name="foodEgg" count="1"/>
+	<ingredient name="Flour" count="1"/>
+	<ingredient name="resourceAnimalFat" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<recipe name="medicalPlasterCast" count="1" craft_area="chemistryStation" tags="learnable">
+	<ingredient name="resourceCloth" count="2"/>
+	<ingredient name="Flour" count="4"/>
+	<ingredient name="resourceCrushedSand" count="2"/>
+	<ingredient name="drinkJarRiverWater" count="1"/>
+</recipe>
+
+<!-- MODTAG Herbal Tea -->
+<recipe name="Herbal Tea" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+	<ingredient name="Herbs" count="5"/>
+	<ingredient name="foodHoney" count="1"/>
+	<ingredient name="drinkJarBoiledWater" count="1"/>
+</recipe>
+
+<!-- MODTAG strawberry seeds -->
+<recipe name="Strawberry Seeds" count="1" craft_time="1" tags="learnable">
+	<ingredient name="Strawberries" count="4"/>
+	<ingredient name="resourcePaper" count="1"/>
+</recipe>
+
+<recipe name="Wheat Seeds" count="1" craft_time="1" tags="learnable">
+	<ingredient name="Wheat" count="4"/>
+	<ingredient name="resourcePaper" count="1"/>
+</recipe>
+
+<recipe name="Flour" count="1" craft_time="3">
+	<ingredient name="Wheat" count="5"/>
+	<ingredient name="resourceCloth" count="1"/>
+</recipe>
+
+	<recipe name="Strawberry Preserves" count="1" craft_area="campfire" craft_tool="toolCookingPot" > 
+		<ingredient name="Strawberries"   count="10"/>
+		<ingredient name="drinkJarEmpty"  count="1"/>
+	</recipe>
+	<recipe name="Blueberry Preserves" count="1" craft_area="campfire" craft_tool="toolCookingPot" > 
+		<ingredient name="foodCropBlueberries"   count="10"/>
+		<ingredient name="drinkJarEmpty"  count="1"/>
+	</recipe>
+	
+<!-- MODTAG strawberry shortcake -->
+	<recipe name="Strawberry Shortcake" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Strawberries"        count="10"/>
+		<ingredient name="foodEgg"             count="1"/>
+		<ingredient name="Flour"               count="1"/>
+		<ingredient name="resourceAnimalFat"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+
+	<recipe name="foodCharredMeat" count="1" craft_area="campfire"><ingredient name="Raw Chicken" count="5"/></recipe>
+	<recipe name="foodCharredMeat" count="1" craft_area="campfire"><ingredient name="Snake Meat" count="5"/></recipe>
+	<recipe name="foodCharredMeat" count="1" craft_area="campfire"><ingredient name="Rabbit Meat" count="5"/></recipe>
+	<recipe name="foodCharredMeat" count="1" craft_area="campfire"><ingredient name="Raw Venison" count="5"/></recipe>
+	<recipe name="foodCharredMeat" count="1" craft_area="campfire"><ingredient name="Bear Meat" count="5"/></recipe>
+	<recipe name="foodCharredMeat" count="1" craft_area="campfire"><ingredient name="Wolf Meat" count="5"/></recipe>
+
+	<!-- ================================== -->
+    <!-- MODTAG 7 new grilled meat recipes  -->
+	<!-- ================================== -->
+	<recipe name="Grilled Pork" count="1" craft_area="campfire" craft_tool="toolCookingGrill"> <!-- tags="learnable"> -->
+		<ingredient name="Raw Pork" count="5"/>
+	</recipe>
+	<recipe name="Grilled Chicken" count="1" craft_area="campfire" craft_tool="toolCookingGrill"> <!-- ="learnable">-->
+		<ingredient name="Raw Chicken" count="5"/>
+	</recipe>	
+	<recipe name="Grilled Rabbit" count="1" craft_area="campfire" craft_tool="toolCookingGrill"> <!-- ="learnable"> -->
+		<ingredient name="Rabbit Meat" count="5"/>
+	</recipe>	
+	<recipe name="Grilled Bear" count="1" craft_area="campfire" craft_tool="toolCookingGrill"> <!-- ="learnable"> -->
+		<ingredient name="Bear Meat" count="5"/>
+	</recipe>
+	<recipe name="Grilled Snake" count="1" craft_area="campfire" craft_tool="toolCookingGrill"> <!-- ="learnable"> -->
+		<ingredient name="Snake Meat" count="5"/>
+	</recipe>
+	<recipe name="Grilled Venison" count="1" craft_area="campfire" craft_tool="toolCookingGrill"> <!-- ="learnable"> -->
+		<ingredient name="Raw Venison" count="5"/>
+	</recipe>
+	<recipe name="Grilled Wolf" count="1" craft_area="campfire" craft_tool="toolCookingGrill"> <!-- ="learnable"> -->
+		<ingredient name="Wolf Meat" count="5"/>
+	</recipe>
+
+	<!-- ================================= -->
+    <!-- MODTAG 7 new boiled meat recipes  -->
+	<!-- ================================= -->
+	<recipe name="Stewed Pork" count="1" craft_area="campfire" craft_tool="toolCookingPot" > <!-- tags="learnable"> -->
+		<ingredient name="Raw Pork"            count="5"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="Stewed Chicken" count="1" craft_area="campfire" craft_tool="toolCookingPot" > <!-- tags="learnable"> -->
+		<ingredient name="Raw Chicken"         count="5"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="Stewed Rabbit" count="1" craft_area="campfire" craft_tool="toolCookingPot" > <!-- tags="learnable"> -->
+		<ingredient name="Rabbit Meat"         count="5"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="Stewed Bear" count="1" craft_area="campfire" craft_tool="toolCookingPot" > <!-- tags="learnable"> -->
+		<ingredient name="Bear Meat"           count="5"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="Stewed Snake" count="1" craft_area="campfire" craft_tool="toolCookingPot" > <!-- tags="learnable"> -->
+		<ingredient name="Snake Meat"          count="5"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="Stewed Venison" count="1" craft_area="campfire" craft_tool="toolCookingPot" > <!-- tags="learnable"> -->
+		<ingredient name="Raw Venison"         count="5"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="Stewed Wolf" count="1" craft_area="campfire" craft_tool="toolCookingPot" > <!-- tags="learnable"> -->
+		<ingredient name="Wolf Meat"           count="5"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	
+	<!-- ================================ -->
+    <!-- MODTAG 7 new fried meat recipes  -->
+	<!-- ================================ -->
+	<recipe name="Fried Pork" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Pork"          count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="foodCornMeal"      count="1"/>
+		<ingredient name="foodEgg"           count="1"/>
+	</recipe>
+	<recipe name="Fried Chicken" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Chicken"       count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="foodCornMeal"      count="1"/>
+		<ingredient name="foodEgg"           count="1"/>
+	</recipe>
+	<recipe name="Fried Rabbit" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Rabbit Meat"       count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="foodCornMeal"      count="1"/>
+		<ingredient name="foodEgg"           count="1"/>
+	</recipe>
+	<recipe name="Fried Bear" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Bear Meat"         count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="foodCornMeal"      count="1"/>
+		<ingredient name="foodEgg"           count="1"/>
+	</recipe>
+	<recipe name="Fried Snake" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Snake Meat"        count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="foodCornMeal"      count="1"/>
+		<ingredient name="foodEgg"           count="1"/>
+	</recipe>
+	<recipe name="Fried Venison" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Venison"       count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="foodCornMeal"      count="1"/>
+		<ingredient name="foodEgg"           count="1"/>
+	</recipe>
+	<recipe name="Fried Wolf" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Wolf Meat"         count="5"/>
+		<ingredient name="resourceAnimalFat" count="1"/>
+		<ingredient name="foodCornMeal"      count="1"/>
+		<ingredient name="foodEgg"           count="1"/>
+	</recipe>
+	
+	<!-- ========================================================================= -->
+    <!-- MODTAG 7 new meat stews recipes (all meats make the same meat stew item)  -->
+	<!-- ========================================================================= -->
+	<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Pork"            count="8"/>
+		<ingredient name="foodCropPotato"      count="2"/>
+		<ingredient name="foodCropCorn"        count="2"/>
+		<ingredient name="Herbs"               count="1"/>
+		<ingredient name="foodCropMushrooms"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Chicken"         count="8"/>
+		<ingredient name="foodCropPotato"      count="2"/>
+		<ingredient name="foodCropCorn"        count="2"/>
+		<ingredient name="Herbs"               count="1"/>
+		<ingredient name="foodCropMushrooms"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Rabbit Meat"         count="8"/>
+		<ingredient name="foodCropPotato"      count="2"/>
+		<ingredient name="foodCropCorn"        count="2"/>
+		<ingredient name="Herbs"               count="1"/>
+		<ingredient name="foodCropMushrooms"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Bear Meat"           count="8"/>
+		<ingredient name="foodCropPotato"      count="2"/>
+		<ingredient name="foodCropCorn"        count="2"/>
+		<ingredient name="Herbs"               count="1"/>
+		<ingredient name="foodCropMushrooms"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Snake Meat"          count="8"/>
+		<ingredient name="foodCropPotato"      count="2"/>
+		<ingredient name="foodCropCorn"        count="2"/>
+		<ingredient name="Herbs"               count="1"/>
+		<ingredient name="foodCropMushrooms"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Raw Venison"         count="8"/>
+		<ingredient name="foodCropPotato"      count="2"/>
+		<ingredient name="foodCropCorn"        count="2"/>
+		<ingredient name="Herbs"               count="1"/>
+		<ingredient name="foodCropMushrooms"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+	<recipe name="foodMeatStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
+		<ingredient name="Wolf Meat"           count="8"/>
+		<ingredient name="foodCropPotato"      count="2"/>
+		<ingredient name="foodCropCorn"        count="2"/>
+		<ingredient name="Herbs"               count="1"/>
+		<ingredient name="foodCropMushrooms"   count="1"/>
+		<ingredient name="drinkJarBoiledWater" count="1"/>
+	</recipe>
+
+</insertAfter>
+
+<!-- create starter class satchel recipes -->
+<append xpath="/recipes">
+	<recipe name="Chef Suitcase">               <ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="Farmer Suitcase">             <ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="Survivalist Suitcase">        <ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="Medic Suitcase">              <ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="CEO Suitcase">                <ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="Schoolteacher Suitcase">      <ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="Construction Worker Suitcase"><ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="Drug Dealer Suitcase">        <ingredient name="Starter Class Paper" count="1"/></recipe>
+	<recipe name="Bicycle Messenger Suitcase">  <ingredient name="Starter Class Paper" count="1"/></recipe> 
+</append>
+
+<!-- make some additional weapons items learnable -->
+<!-- these have to be removed and re-added because you can't set tags=learnable if there is no tags attr to begin with (too bad they didnt use tags=intrinsic) -->
+<remove xpath="/recipes/recipe[@name='ammoCrossbowBoltIron']"/>
+<remove xpath="/recipes/recipe[@name='ammoCrossbowBoltSteelAP']"/>                                      
+<remove xpath="/recipes/recipe[@name='ammoCrossbowBoltStone']"/>
+<remove xpath="/recipes/recipe[@name='meleeClubIron']"/>
+<remove xpath="/recipes/recipe[@name='gunBlunderbuss']"/>
+<remove xpath="/recipes/recipe[@name='ammoBlunderbuss']"/>
+<remove xpath="/recipes/recipe[@name='resourceForgedIron']"/>
+<remove xpath="/recipes/recipe[@name='resourceArrowHeadIron']"/>
+
+<append xpath="/recipes">	
+	<recipe name="resourceForgedIron" count="1" craft_area="forge" material_based="true" tags="learnable"> <!-- (toolmaking today: forge) -->
+		<ingredient name="unit_iron" count="10"/>
+		<ingredient name="unit_clay" count="5"/>
+	</recipe>
+		
+	<recipe name="resourceArrowHeadIron" count="1" craft_area="forge" craft_tool="toolAnvil" material_based="true" tags="learnable"> <!-- (toolmaking today: forge) -->
+		<ingredient name="unit_iron" count="2"/>
+		<ingredient name="unit_clay" count="1"/>
+	</recipe>
+
+	<recipe name="ammoCrossbowBoltSteelAP" count="1" tags="learnable"> <!-- (toolmaking today: cruicible) -->
+		<ingredient name="resourceArrowHeadSteelAP" count="1"/>
+		<ingredient name="resourceWood" count="1"/>
+		<ingredient name="resourceFeather" count="1"/>
+	</recipe>
+
+	<recipe name="meleeClubIron" count="1" tags="learnable"> <!-- (gunny's guide: clubs) -->
+		<ingredient name="resourceScrapIron" count="100"/>
+		<ingredient name="resourceWood" count="10"/>
+	</recipe>
+
+	<recipe name="ammoBlunderbuss" count="1" tags="learnable"> <!-- (gunny's guide: blunderbuss) -->
+		<ingredient name="resourceRockSmall" count="1"/>
+		<ingredient name="resourceGunPowder" count="1"/>
+		<ingredient name="resourcePaper" count="1"/>
+	</recipe>
+
+	<recipe name="ammoCrossbowBoltIron" count="1" tags="learnable"> <!-- (gunny's guide: crossbow) -->
+		<ingredient name="resourceArrowHeadIron" count="1"/>
+		<ingredient name="resourceWood" count="1"/>
+		<ingredient name="resourceFeather" count="1"/>
+	</recipe>
+
+	<recipe name="ammoCrossbowBoltStone" count="1" tags="learnable"> <!-- (gunny's guide: crossbow) -->
+		<ingredient name="resourceRockSmall" count="1"/>
+		<ingredient name="resourceWood" count="1"/>
+		<ingredient name="resourceFeather" count="1"/>
+	</recipe>
+	
+	<recipe name="gunBlunderbuss" count="1" tags="learnable">
+		<ingredient name="resourceMetalPipe" count="4"/>
+		<ingredient name="resourceGlue" count="2"/>
+		<ingredient name="resourceWood" count="6"/>
+	</recipe>
+
+
+	<recipe name="Encyclopedia Set" count="1" craft_time="5" >
+		<ingredient name="Encyclopedia Volume A" count="1"/>
+		<ingredient name="Encyclopedia Volume B" count="1"/>
+		<ingredient name="Encyclopedia Volume C" count="1"/>
+		<ingredient name="Encyclopedia Volume D" count="1"/>
+		<ingredient name="Encyclopedia Volume E" count="1"/>
+		<ingredient name="Encyclopedia Volume F" count="1"/>
+		<ingredient name="Encyclopedia Volume G" count="1"/>
+		<ingredient name="Encyclopedia Volume H" count="1"/>
+		<ingredient name="Encyclopedia Volume I" count="1"/>
+		<ingredient name="Encyclopedia Volume J" count="1"/>
+		<ingredient name="Encyclopedia Volume K" count="1"/>
+		<ingredient name="Encyclopedia Volume L" count="1"/>
+		<ingredient name="Encyclopedia Volume M" count="1"/>
+		<ingredient name="Encyclopedia Volume N" count="1"/>
+		<ingredient name="Encyclopedia Volume O" count="1"/>
+		<ingredient name="Encyclopedia Volume P" count="1"/>
+		<ingredient name="Encyclopedia Volume Q" count="1"/>
+		<ingredient name="Encyclopedia Volume R" count="1"/>
+		<ingredient name="Encyclopedia Volume S" count="1"/>
+		<ingredient name="Encyclopedia Volume T" count="1"/>
+		<ingredient name="Encyclopedia Volume U" count="1"/>
+		<ingredient name="Encyclopedia Volume V" count="1"/>
+		<ingredient name="Encyclopedia Volume W" count="1"/>
+		<ingredient name="Encyclopedia Volume X" count="1"/>
+		<ingredient name="Encyclopedia Volume Y" count="1"/>
+		<ingredient name="Encyclopedia Volume Z" count="1"/>
+	</recipe>
+
+	<recipe name="Chess Set" count="1" craft_time="5"  craft_exp_gain="1110" > <!-- experience="1000"  learn_exp_gain="1000" -->
+
+		<ingredient name="resourceWood" count="2" />
+		<ingredient name="resourcePaint" count="1" />
+		<ingredient name="Pewter Chess Piece - Pawn"    count="8"  /> 
+		<ingredient name="Pewter Chess Piece - Rook"    count="2"  /> 
+		<ingredient name="Pewter Chess Piece - Queen"   count="1"  /> 
+		<ingredient name="Pewter Chess Piece - King"    count="1"  /> 
+		<ingredient name="Pewter Chess Piece - Knight"  count="2"  /> 
+		<ingredient name="Pewter Chess Piece - Bishop"  count="2"  /> 
+		<ingredient name="Brass Chess Piece - Pawn"     count="8"  /> 
+		<ingredient name="Brass Chess Piece - Rook"     count="2"  /> 
+		<ingredient name="Brass Chess Piece - Queen"    count="1"  /> 
+		<ingredient name="Brass Chess Piece - King"     count="1"  /> 
+		<ingredient name="Brass Chess Piece - Knight"   count="2"  /> 
+		<ingredient name="Brass Chess Piece - Bishop"   count="2"  /> 
+	</recipe>
+	
+</append>
+
+
+</configs>

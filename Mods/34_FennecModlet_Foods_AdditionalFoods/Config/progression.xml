@@ -1,0 +1,16 @@
+<configs>
+	<!-- Adds a dependency tag to the start of the XML -->
+	<insertBefore xpath="/*/*[1]">
+		<!-- DEPENDENCY: FennecModlet - Foods - Additional Foods -->
+	</insertBefore>
+	
+	<!-- Adds the crop seeds in this mod to the 'Living Off The Land' perk. -->
+	<append xpath="//perk[@name='perkLivingOffTheLand']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='1,5']/@tags">,treePlantedApple0FM,treePlantedPear0FM,plantedSoybean1FM,plantedTomato1FM,plantedWheat1FM</append>
+	
+	<!-- Adds the different food recipes from this mod into the 'Master Chef' perk. -->
+	<append xpath="//perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='1,5']/@tags">,foodBoiledPotatoFM,foodBreadFM,foodBurgerBunFM,foodButterFM,foodCheeseFM,foodDoughFM,foodCanAnchoviesFM,foodFriesFM,foodScrambledEggsFM,foodSnakeStripsFM,drinkJarVegetableOilFM,foodTortillaFM</append>
+	<append xpath="//perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='2,5']/@tags">,foodCakeMixtureFM,foodApplePieFM,foodBlueberryCakeFM,foodCheeseDoughballsFM,foodChickenPieFM,foodChocolateCakeFM,foodHoneyChickenKabobsFM,foodHoneyYuccaPieFM,foodPotatoPastaSaladFM,foodShepherdsPieFM,foodSmokedSalmonFM,foodSummerFruitSaladFM,foodVenisonWellingtonFM,foodWinterFruitSaladFM,foodYoghurtFM,foodYoghurtBlueberryFM,foodYoghurtMixedFruitFM,foodYoghurtYuccaFM</append>
+	<append xpath="//perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='3,5']/@tags">,foodBatteredFishFM,foodAnchovyPizzaFM,foodCheesePizzaFM,foodChickenCheeseburgerFM,foodChickenMushroomPastaFM,foodHogRoastBurgerFM,foodHunterStewFM,foodGelatinFM,foodGummyBearsBlueFM,foodGummyBearsBlackFM,foodGummyBearsRedFM,foodMacaroniCheeseFM,foodPastaShamFM,foodVenisonFeastPizzaFM</append>
+	<append xpath="//perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='4,5']/@tags">,drinkJarAppleCiderFM,drinkJarBloodyMaryFM,drinkJarBlueberryWineFM,foodChickenSweetcornSoupFM,foodChickenMushroomSoupFM,foodBeefStewFM,foodChickenStewFM,foodLambStewFM,foodMushroomSoupFM,foodPeaHamSoupFM,foodSnakeSoupFM,foodSpicyHashFM,foodVegetableSoupFM</append>
+	<append xpath="//perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='5,5']/@tags">,foodBritishBreakfastFM,foodDoggyDooFM,foodKittyCasseroleFM,foodSpaghettiVenisonMeatballsFM,foodWolfiesMeatloafFM</append>
+</configs>

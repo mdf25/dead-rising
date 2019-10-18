@@ -1,0 +1,267 @@
+<configs>
+
+<!-- Remove all mod schematics in trader inventory. Mod crafting is now loot only. -->
+<remove xpath="//trader_item_group[contains(@name, 'Books')]/item[contains(@name, 'Schematic')]" />
+
+<!-- Remove all Gunny Guides that are no longer used -->
+<remove xpath="//item[contains(@name, 'Guide: Pistols')]" />
+<remove xpath="//item[contains(@name, 'Guide: Hunting Rifles')]" />
+<remove xpath="//item[contains(@name, 'Guide: Shotguns')]" />
+<remove xpath="//item[contains(@name, 'Guide: 44 Magnum')]" />
+<remove xpath="//item[contains(@name, 'Guide: AK-47')]" />
+<remove xpath="//item[contains(@name, 'Guide: SMG')]" />
+<remove xpath="//item[contains(@name, 'MR-10')]" />
+<remove xpath="//item[contains(@name, 'Rocket Launcher')]" />
+
+<!-- add the new Gunny, Toolmaking and Fox Guides to the trader inventory -->
+<append xpath="//trader_item_group[@name='commonBooks']">
+    <item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+	<item name="Fox's Guide: Cooking Appliances" />
+	<item name="Fox's Guide: Fences and Railings" />
+	<item name="Fox's Guide: Lighting Your Home" />
+	<item name="Fox's Guide: Kitchen Upgrades" />
+	<item name="Toolmaking Today: Small Hand Tools" />
+	<item name="Toolmaking Today: Looting Tools" />
+	<item name="Toolmaking Today: Weapons of the Dark Ages" />
+	<item name="Toolmaking Today: Defensive Shields" />
+	<item name="Cookbook: How To Boil A Spud" />
+	<item name="Cookbook: Scrambling Your Eggs, Not Your Brain" />
+	<item name="Cookbook: Oil Is Important" />
+	<item name="Cookbook: The Dairy Edition" />
+	<item name="Cookbook: Working with Dough" />
+	<item name="Cookbook: Battering Your Fishy Snake and Doughballs" />
+	<item name="Cookbook: Have Your Cake... And Eat It Too" />
+	<item name="Cookbook: Salads Sweet and Savoury" />
+</append>
+
+<append xpath="//trader_item_group[@name='rareBooks']">
+	<item name="Fox's Guide: Wireless Power Systems" />
+	<item name="Fox's Guide: How To Trap A Zombie" />
+	<item name="Fox's Guide: How To Blow Shit Up" />
+	<item name="Cookbook: Soups, Vol I: For the Meat Lovers" />
+	<item name="Cookbook: Soups, Vol II: Suitable for Vegetarians" />
+	<item name="Cookbook: Pies, Vol I: Sweet Treats" />
+	<item name="Cookbook: Pies, Vol II: Make Meat Pies, Not Cream Pies" />
+	<item name="Cookbook: The Fishy Edition" />
+	<item name="Cookbook: The Burger King" />
+	<item name="Cookbook: Drown Your Sorrows... Temporarily" />
+	<item name="Cookbook: Pizza Is Life" />
+	<item name="Cookbook: Pasta Italia" />
+	<item name="Cookbook: Stewing Over Everything" />
+	<item name="Cookbook: Gummy Gelatin" />
+	<item name="Cookbook: The Rich Eat Well" />
+	<item name="Cookbook: Pets Love It, You Hate It" />
+	<item name="Cookbook: Meatloaf, the Wolfie Way" />
+</append>
+
+
+<!-- This one is set by JSS -->
+<append xpath="//trader_item_group[@name='perkMagazines']">
+	<item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+	<item name="Fox's Guide: Cooking Appliances" />
+	<item name="Fox's Guide: Fences and Railings" />
+	<item name="Fox's Guide: Lighting Your Home" />
+	<item name="Fox's Guide: Kitchen Upgrades" />
+	<item name="Fox's Guide: Wireless Power Systems" />
+	<item name="Fox's Guide: How To Trap A Zombie" />
+	<item name="Fox's Guide: How To Blow Shit Up" />
+	<item name="Toolmaking Today: Small Hand Tools" />
+	<item name="Toolmaking Today: Looting Tools" />
+	<item name="Toolmaking Today: Weapons of the Dark Ages" />
+	<item name="Toolmaking Today: Defensive Shields" />
+	<item name="Cookbook: How To Boil A Spud" />
+	<item name="Cookbook: Scrambling Your Eggs, Not Your Brain" />
+	<item name="Cookbook: Oil Is Important" />
+	<item name="Cookbook: The Dairy Edition" />
+	<item name="Cookbook: Working with Dough" />
+	<item name="Cookbook: Battering Your Fishy Snake and Doughballs" />
+	<item name="Cookbook: Have Your Cake... And Eat It Too" />
+	<item name="Cookbook: Salads Sweet and Savoury" />
+	<item name="Cookbook: Soups, Vol I: For the Meat Lovers" />
+	<item name="Cookbook: Soups, Vol II: Suitable for Vegetarians" />
+	<item name="Cookbook: Pies, Vol I: Sweet Treats" />
+	<item name="Cookbook: Pies, Vol II: Make Meat Pies, Not Cream Pies" />
+	<item name="Cookbook: The Fishy Edition" />
+	<item name="Cookbook: The Burger King" />
+	<item name="Cookbook: Drown Your Sorrows... Temporarily" />
+	<item name="Cookbook: Pizza Is Life" />
+	<item name="Cookbook: Pasta Italia" />
+	<item name="Cookbook: Stewing Over Everything" />
+	<item name="Cookbook: Gummy Gelatin" />
+	<item name="Cookbook: The Rich Eat Well" />
+	<item name="Cookbook: Pets Love It, You Hate It" />
+	<item name="Cookbook: Meatloaf, the Wolfie Way" />
+</append>
+
+<!-- Add the Melee weapon mods and Power Tools mods into the trader inventory so they can actually be purchased. -->
+<append xpath="//trader_item_group[@name='modMeleeT1']">
+	<item name="Spike Mod" />
+	<item name="Smoke Blade" />
+	<item name="Fire Blade" />
+	<item name="Fire" />
+	<item name="Water" />
+	<item name="Smoke" />
+	<item name="Tempered Casement" />
+	<item name="modReserveGasTank1"/>
+	<item name="modGasTank1"/>
+	<item name="modBetterHandles"/>	
+	<item name="modEngineTurbo1"/>		
+	<item name="modDiamondTip1"/>
+	<item name="modChainsawTemperedFrame1"/>			
+</append>
+
+<append xpath="//trader_item_group[@name='modMeleeT2']">
+	<item name="Saw Mod" />
+	<item name="Electric Blade" />
+	<item name="Blood Drip" />
+	<item name="Lava Drip" />
+	<item name="Ice" />
+	<item name="Poison" />
+	<item name="Electric" />
+	<item name="Poison Casement" />
+	<item name="Electric Casement" />
+	<item name="modEngineTurbo2"/>
+	<item name="modGasTank2"/>		
+	<item name="modReserveGasTank2"/>		
+	<item name="modMotorToolExtension1"/>
+	<item name="modMotorToolExtension2"/>		
+	<item name="modDiamondTip2"/>	
+	<item name="modMotorToolSilencer"/>
+	<item name="modChainsawTemperedFrame2"/>		
+</append>
+
+<append xpath="//trader_item_group[@name='modMeleeT3']">
+	<item name="Shuriken Mod" />
+	<item name="Death Blade" />
+	<item name="Soul Ripper" />
+	<item name="Holy Blade" />
+	<item name="Star" />
+	<item name="Death" />
+	<item name="Hellfire" />
+	<item name="Golden Casement" />
+	<item name="Magma Casement" />
+	<item name="modEngineTurbo3"/>
+	<item name="modGasTank3"/>
+	<item name="modReserveGasTank3"/>
+	<item name="modMotorToolExtension3"/>
+	<item name="modDiamondTip3"/>
+	<item name="modChainsawTemperedFrame3"/>
+</append>
+
+
+<!-- Make all weapon mods more plentiful on trader lists -->
+<set xpath="//trader_items/item[@group='modAllT1SecretStash']/@count">6,12</set>
+<set xpath="//trader_items/item[@group='modAllT1SecretStash']/@count">6,12</set>
+<set xpath="//trader_items/item[@group='modAllT1SecretStash']/@count">8,16</set>
+<set xpath="//trader_items/item[@group='modAllT1SecretStash']/@count">10,20</set>
+<set xpath="//trader_items/item[@group='modAllT1SecretStash']/@count">10,20</set>
+
+
+<!-- Adds remaining guns from Custom Firearms into vending machine -->
+<append xpath="//trader_info[@id='6']/trader_items">
+	<item name="Luger"	 					count="1" />
+	<item name="38 Snubnose"				count="1" />
+	<item name="Glock 40"					count="1" />
+	<item name="1911"						count="1" />
+	<item name="Desert Eagle"				count="1" />
+	<item name="Klob"						count="1" />
+	<item name="Mac 10"						count="1" />
+	<item name="MP 40"						count="1" />
+	<item name="MP5"						count="1" />
+	<item name="M1A1 Thompson"				count="1" />
+	<item name="Double Barrel Shotgun" 		count="1" />
+	<item name="Mossberg 590A1"				count="1" />
+	<item name="Spaz12"						count="1" />
+	<item name="FN FAL"						count="1" />
+	<item name="Rust AK"					count="1" />
+	<item name="AR15"						count="1" />
+	<item name="M16"						count="1" />
+	<item name="M4A1"						count="1" />
+	<item name="SCAR"						count="1" />
+	<item name="M1"							count="1" />
+</append>
+
+<!-- Adds remaining melee weapons from Melee mod into vending machine -->
+<append xpath="//trader_info[@id='7']/trader_items">
+	<item name="Rusty Iron" 				count="1" />
+	<item name="Old Wooden Bat" 			count="1" />
+	<item name="Bone Club" 					count="1" />
+	<item name="Heavy Spiked Mace" 			count="1" />
+	<item name="Worn Flail" 				count="1" />
+	<item name="Old Warhammer" 				count="1" />
+	<item name="Thors Hammer" 				count="1" />
+	<item name="Punisher" 					count="1" />
+	<item name="Sharp Skinner" 				count="1" />
+	<item name="Dull Sword" 				count="1" />
+	<item name="Dull Axe" 					count="1" />
+	<item name="Battle Sword" 				count="1" />
+	<item name="Rusty Dagger" 				count="1" />
+	<item name="Rusty Katana" 				count="1" />
+	<item name="Fine Sword" 				count="1" />
+	<item name="Battle Spear" 				count="1" />
+	<item name="Gutter" 					count="1" />
+	<item name="Worn Bayonet" 				count="1" />
+	<item name="Soul Harvest" 				count="1" />
+	<item name="Sword of Valor" 			count="1" />
+	<item name="Halo Sword" 				count="1" />
+	<item name="HellSlayer" 				count="1" />
+	<item name="Sturdy Crowbar" 			count="1" />
+	<item name="Salvaged Axe" 				count="1" />
+	<item name="Hatchet" 					count="1" />
+	<item name="Golden Axe" 				count="1" />
+	<item name="Purple Lightsaber" 			count="1" />
+	<item name="Green Lightsaber" 			count="1" />
+	<item name="Blue Lightsaber" 			count="1" />
+	<item name="Red Lightsaber"	 			count="1" />
+	<item name="Pink Lightsaber" 			count="1" />
+	<item name="Black Lightsaber" 			count="1" />
+	<item name="Orange Lightsaber" 			count="1" />
+</append>
+
+<!-- Adds remaining ammo from Custom Firearms into vending machine -->
+<append xpath="//trader_info[@id='8']/trader_items">
+	<item name="10mm Bullet"				count="400,800"	/>
+	<item name="5.56mm Bullet"				count="300,600"	/>
+</append>
+
+<!-- Adds remaining food from JSS and FennecModlet - Additional Foods into vending machine -->
+<append xpath="//trader_info[@id='9']/trader_items">
+	<item name="foodBeefStewFM" 				count="1"		 />
+	<item name="foodBritishBreakfastFM" 		count="1"		 />
+	<item name="foodChickenMushroomPastaFM" 	count="1,2"		 />
+	<item name="foodChickenMushroomSoupFM" 		count="1,2"		 />
+	<item name="foodChickenPieFM" 				count="1,2"		 />
+	<item name="foodChickenStewFM" 				count="1"		 />
+	<item name="foodChickenSweetcornSoupFM" 	count="1,2"		 />
+	<item name="foodDoggyDooFM" 				count="1,2"		 />
+	<item name="foodGummyBearsBlueFM" 			count="1,3"		 />
+	<item name="foodGummyBearsRedFM" 			count="1,3"		 />
+	<item name="foodGummyBearsBlackFM" 			count="1,3"		 />
+	<item name="foodHunterStewFM" 				count="1,2"		 />
+	<item name="foodKittyCasseroleFM" 			count="1,2"		 />
+	<item name="foodLambStewFM"					count="1"		 />
+	<item name="foodMushroomSoupFM" 			count="1,2"		 />
+	<item name="foodPastaShamFM" 				count="1,3"		 />
+	<item name="foodPeaHamSoupFM" 				count="1,2"		 />
+	<item name="foodPotatoPastaSaladFM" 		count="2,5"		 />
+	<item name="foodShepherdsPieFM" 			count="1,3"		 />
+	<item name="foodSnakeSoupFM" 				count="1"		 />
+	<item name="foodSpicyHashFM" 				count="1,3"		 />
+	<item name="foodSummerFruitSaladFM" 		count="1,3"		 />
+	<item name="foodVegetableSoupFM" 			count="1,3"		 />
+	<item name="foodVenisonFeastPizzaFM" 		count="1,3"		 />
+	<item name="foodVenisonWellingtonFM" 		count="1"		 />
+	<item name="foodWinterFruitSaladFM" 		count="1,3"		 />
+	<item name="foodWolfiesMeatloafFM" 			count="1"		 />
+	<item name="drinkJarAloeJuiceFM" 			count="1,2"		 />
+	<item name="drinkJarAppleCiderFM" 			count="1"		 />
+	<item name="drinkJarAppleJuiceFM" 			count="1,3"		 />
+	<item name="drinkJarBloodyMaryFM" 			count="1"		 />
+	<item name="drinkJarBlueberryJuiceFM" 		count="1,3"		 />
+	<item name="drinkJarBlueberryWineFM" 		count="1"		 />
+	<item name="drinkJarTomatoJuiceFM" 			count="1,3"		 />
+	<item name="drinkCartonMilkFM" 				count="1,2"		 />
+	<item name="drinkCartonSoyaMilkFM" 			count="1,2"		 />
+</append>
+
+</configs>

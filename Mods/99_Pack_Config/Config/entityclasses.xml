@@ -1,0 +1,438 @@
+<configs>
+
+<!-- Sets the baby bears to drop bear meat instead of raw meat -->
+<set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyBear']/drop[@name='foodRawMeat']/@name">Bear Meat</set>
+
+<!-- Sets the pigs to have raw pork instead of raw meat -->
+<set xpath="/entity_classes/entity_class[@name='animalPig']/drop[@name='foodRawMeat']/@name">Raw Pork</set>
+
+<!-- Sets the baby wolves to drop wolf meat instead of raw meat -->
+<set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyWolf']/drop[@name='foodRawMeat']/@name">Wolf Meat</set>
+
+<!-- Increases the health of baby bears from Khelldons mod. -->
+<set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyBear']/effect_group[@name='Base Effects']/passive_effect[@name='HealthMax' and @operation='base_set']/@value">500</set>
+
+<!-- Adjust the size of baby bears so they are slightly larger than in Khelldons mod. -->
+<set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyBear']/property[@name='SizeScale']/@value">0.6</set>
+
+<!-- Adjust the size of baby wolves so they are slightly larger than in Khelldons mod. -->
+<set xpath="/entity_classes/entity_class[@name='khelldonAnimalBabyWolf']/property[@name='SizeScale']/@value">0.7</set>
+
+<!-- Sets the HandItem for all UMA zombies from Bad Company (should reduce block damage by a lot) -->
+<append xpath="/entity_classes/entity_class[@name='badZombieUMA']">
+	<property name="HandItem" value="meleeHandZombie01" />
+</append>
+
+<!-- FOR ARENA -->
+<!-- Increases probability of bag drop -->
+<setattribute xpath="//property[@name='LootDropProb' and @value='0.02']" name="value">0.4</setattribute>
+<setattribute xpath="//entity_class[contains(@name, 'Feral')]/property[@name='LootDropProb']" name="value">0.6</setattribute>
+<setattribute xpath="//entity_class[contains(@name, 'Radiated')]/property[@name='LootDropProb']" name="value">0.8</setattribute>
+
+<!-- Sets the zombies to drop loot crates based on their strength -->
+<setattribute xpath="//entity_class[@name='EntityLootContainerRegular']/property[@name='LootListOnDeath']" name="value">161</setattribute>
+<setattribute xpath="//entity_class[@name='EntityLootContainerStrong']/property[@name='LootListOnDeath']" name="value">162</setattribute>
+<setattribute xpath="//entity_class[@name='EntityLootContainerBoss']/property[@name='LootListOnDeath']" name="value">163</setattribute>
+
+
+<!-- Boss zombies -->
+<append xpath="/entity_classes">
+	<!-- Adds boss animals -->
+	<entity_class name="animalZombieDogBoss"	extends="animalZombieDog">
+		<property name="SizeScale" value="2.5" />
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="1000" />
+			<passive_effect name="HealthMax" operation="perc_set" value="1" />
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="animalZombieBearBoss"	extends="animalZombieBear">
+		<property name="SizeScale" value="2.5" />
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="3000" />
+			<passive_effect name="HealthMax" operation="perc_set" value="1" />
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="animalZombieVultureBoss"	extends="animalZombieVulture">
+		<property name="SizeScale" value="3" />
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="5000" />
+			<passive_effect name="HealthMax" operation="perc_set" value="1" />
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="animalWolfBoss"	extends="animalDireWolf">
+		<property name="SizeScale" value="2.5" />
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="2500" />
+			<passive_effect name="HealthMax" operation="perc_set" value="1" />
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="zombieWightBoss"	extends="zombieWightFeral">
+		<property name="SizeScale" value="1.5" />
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="2000" />
+			<passive_effect name="HealthMax" operation="perc_set" value="1" />
+		</effect_group>
+	</entity_class>
+</append>
+
+<!-- Adds invisible spawns for the arena zombies -->
+<append xpath="/entity_classes">
+	<!-- EASY -->
+	<entity_class name="arenaSpawnerEasyZombies1 [27]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieBoe,zombieJoe,zombieSteve,zombieMoe,zombieYo,zombieBusinessMan,zombieSkateboarder,zombieOldTimer,zombieFarmer" param1="3" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaSpawnerEasyZombies2 [28]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieArlene,zombieDarlene,zombieMarlene,zombieCheerleader,zombieStripper,zombieNurse,zombieLab" param1="4"/>  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaSpawnerEasyZombies3 [28]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieBiker,zombieUtilityWorker,zombieFatHawaiian,zombieFemaleFat,zombieSpider,zombieSoldier,zombieFatCop" param1="4"/>  
+		</property>
+	</entity_class>
+	
+	<!-- MEDIUM -->
+	<entity_class name="arenaSpawnerMediumZombies1 [32]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieBoe,zombieJoe,zombieSteve,zombieMoe,zombieYo,zombieBusinessMan,zombieSkateboarder,zombieOldTimer,zombieFarmer,,zombieBoeFeral,zombieJoeFeral,zombieSteveFeral,zombieMoeFeral,zombieYoFeral,zombieBusinessManFeral,zombieSkateboarderFeral" param1="2"/>  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaSpawnerMediumZombies2 [36]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieArlene,zombieDarlene,zombieMarlene,zombieCheerleader,zombieStripper,zombieNurse,zombieLab,zombieArleneFeral,zombieDarleneFeral,zombieMarleneFeral,zombieNurseFeral,zombieStripperFeral" param1="3" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaSpawnerMediumZombies3 [30]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieBiker,zombieUtilityWorker,zombieFatHawaiian,zombieFemaleFat,zombieSpider,zombieSoldier,zombieFatCop,zombieFatHawaiianFeral,zombieFemaleFatFeral,zombieBikerFeral,zombieUtilityWorkerFeral,zombieSpiderFeral,zombieSoldierFeral,zombieFatCopFeral,zombieWightFeral" param1="2"/>  
+		</property>
+	</entity_class>
+	
+	<!-- OUTRAGEOUS -->
+	<entity_class name="arenaSpawnerOutrageousZombies [39]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieBoeFeral,zombieJoeFeral,zombieSteveFeral,zombieMoeFeral,zombieYoFeral,zombieBusinessManFeral,zombieArleneFeral,zombieDarleneFeral,zombieMarleneFeral,zombieNurseFeral,zombieFatHawaiianFeral,zombieFemaleFatFeral,zombieBikerFeral,zombieSkateboarderFeral,zombieStripperFeral,zombieUtilityWorkerFeral,zombieSpiderFeral,zombieSoldierFeral,zombieFatCopFeral,zombieWightFeral,zombieWightRadiated,zombieBoeRadiated,zombieFemaleFatRadiated,zombieJoeRadiated,zombieMoeRadiated,zombieArleneRadiated,zombieLabRadiated,zombieScreamerRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSpiderRadiated,zombieFatCopRadiated,zombieSoldierRadiated,zombieSkateboarderRadiated,zombieCheerleaderRadiated,zombieOldTimerRadiated,zombieBikerRadiated" />  
+		</property>
+	</entity_class>
+	
+	<!-- RADIATED -->
+	<entity_class name="arenaSpawnerRadiatedZombies [38]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="invisibleAnimal" /> 
+			<property name="Followers" value="zombieWightRadiated,zombieBoeRadiated,zombieFemaleFatRadiated,zombieJoeRadiated,zombieMoeRadiated,zombieArleneRadiated,zombieLabRadiated,zombieScreamerRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSpiderRadiated,zombieFatCopRadiated,zombieSoldierRadiated,zombieSkateboarderRadiated,zombieCheerleaderRadiated,zombieOldTimerRadiated,zombieBikerRadiated" param1="2"/>  
+		</property>
+	</entity_class>
+	
+	<!-- SPECIALIZED GROUPS: WILL BE HARD! -->
+	<entity_class name="arenaZombieGroupBears [20]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="animalZombieBearBoss" /> 
+			<property name="Followers" value="animalZombieBear" param1="19" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupDogs [30]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="animalZombieDogBoss" /> 
+			<property name="Followers" value="animalZombieDog" param1="29" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupFatties [31]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieFatCopRadiated" /> 
+			<property name="Followers" value="zombieFatCop,zombieFatCopFeral,zombieFatHawaiian,zombieFatHawaiianFeral,zombieFemaleFat,zombieFemaleFatFeral" param1="5" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupLaboratory [31]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieLabRadiated" /> 
+			<property name="Followers" value="zombieLab,zombieLabFeral,zombieNurse,zombieNurseFeral,zombieMaleHazmat" param1="6" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupMilitary [29]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieSoldier" /> 
+			<property name="Followers" value="zombieSoldier,zombieSoldier,zombieSoldier,animalZombieDog" param1="7" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupMixedAnimals [26]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="animalZombieBearBoss" /> 
+			<property name="Followers" value="animalZombieDog,animalZombieDogBoss,animalZombieBear,animalZombieVulture,animalZombieVultureRadiated" param1="5" />
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupPolice [33]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieFatCopRadiated" /> 
+			<property name="Followers" value="zombieFatCop,zombieFatCop,zombieFatCopFeral,animalZombieDog" param1="8" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupPutridGirls [31]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieArleneRadiated" /> 
+			<property name="Followers" value="zombieArleneFeral,zombieArlene" param1="15" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupScreamers [29]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieScreamerRadiated" /> 
+			<property name="Followers" value="zombieScreamerFeral,zombieScreamer" param1="14" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupStripClub [31]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieStripperFeral" /> 
+			<property name="Followers" value="zombieStripper,zombieStripper,zombieStripperFeral" param1="10" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupWights [21]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="zombieWightBoss" /> 
+			<property name="Followers" value="zombieWightRadiated,zombieWightFeral,zombieWightFeral" param1="10" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupWolves [31]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="animalWolfBoss" /> 
+			<property name="Followers" value="animalDireWolf,animalWolf,animalWolf,animalWolf,khelldonAnimalBabyWolf" param1="6" />  
+		</property>
+	</entity_class>
+	
+	<entity_class name="arenaZombieGroupVultures [33]"> 
+		<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+		<property name="ModelType" value="Custom"/>
+		<property name="Prefab" value="Backpack"/>
+		<property name="Class" value="EntityAliveEventSpawnerSDX, Mods"/>
+		<property name="Parent" value="Animals"/>
+		<property name="TimeStayAfterDeath" value="1"/>
+		<property name="IsEnemyEntity" value="false"/>
+		<property name="LootListOnDeath" value="4"/> 
+		<property name="Faction" value="animals"/>
+		<property class="SpawnSettings" >
+			<property name="Leader" value="animalZombieVultureBoss" /> 
+			<property name="Followers" value="animalZombieVulture,animalZombieVulture,animalZombieVulture,animalZombieVultureRadiated" param1="8" />  
+		</property>
+	</entity_class>
+	
+</append>
+
+
+
+
+
+
+
+
+
+
+
+
+</configs>

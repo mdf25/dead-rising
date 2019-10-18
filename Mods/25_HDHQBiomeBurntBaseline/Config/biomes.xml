@@ -1,0 +1,20 @@
+<configs>
+  <!-- Second Subbiome: Thick Grass and Shrubs -->
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/subbiome[2]/decorations/decoration[@blockname='treeDeadShrub']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/subbiome[2]/decorations/decoration[@blockname='treeDeadTree02']"/>
+
+    <!-- Burnt Forest Decorations -->
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations/decoration[@blockname='treeBurntMaple01']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations/decoration[@blockname='treeBurntMaple02']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations/decoration[@blockname='treeBurntMaple03']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations/decoration[@blockname='treeDeadShrub']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations/decoration[@blockname='treeDeadTree01']"/>
+    <remove xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations/decoration[@blockname='treeDeadTree02']"/>
+
+    <append xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations">
+        <decoration type="block" blockname="HDHQ_BurntB1Prefab" prob ="0.1" rotatemax="3"/>
+        <decoration type="block" blockname="HDHQ_BurntB2Prefab" prob ="0.05" rotatemax="3"/>
+        <decoration type="block" blockname="HDHQ_BurntB3Prefab" prob ="0.05" rotatemax="3"/>
+        <decoration type="block" blockname="HDHQ_BurntB4Prefab" prob ="0.05" rotatemax="3"/>
+    </append>
+</configs>

@@ -1,8 +1,0 @@
-Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
-halDisplayCase,blocks,Block,New,Display Case,,,,,
-halDisplayCaseExtraX,blocks,Block,New,Display Case Extra X,,,,,
-halDisplayCaseExtraY,blocks,Block,New,Display Case Extra Y,,,,,
-halDisplayCaseExtraZ,blocks,Block,New,Display Case Extra Z,,,,,
-halDisplayCaseExtraXY,blocks,Block,New,Display Case Extra XY,,,,,
-displayCaseGroupDesc,blocks,Block,New,Display case for your items,,,,,
-displayCaseExtraGroupDesc,blocks,Block,New,Display case for your items with extra rotation,,,,,

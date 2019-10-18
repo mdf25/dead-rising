@@ -1,0 +1,37 @@
+<configs>
+  <!-- Pine Forest Decorations <decoration type="block" blockname="HDHQ_PineFlower1Prefab" prob ="0.005" rotatemax="3"/>-->
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeDeadShrub']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeJuniper4m']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeMountainPine12m']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeMountainPine19m']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeMountainPine27m']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeMountainPine31m']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeMountainPineDry21m']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeMountainPine41m']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeOakLrg01']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeOakMed01']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeOakMed02']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeOakSml01']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeFirLrg01']"/>
+  <remove xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@blockname='treeMountainPine48m']"/>
+  
+  <append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations">
+    <decoration type="block" blockname="HDHQ_PineTall1Prefab" prob="0.1" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineTall2Prefab" prob="0.1" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineTall3Prefab" prob="0.1" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineTall4Prefab" prob="0.1" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineTall5Prefab" prob="0.1" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineTall6Prefab" prob="0.1" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineSmall1Prefab" prob="0.04" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineSmall2Prefab" prob="0.04" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineMed1Prefab" prob="0.05" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineMed2Prefab" prob="0.02" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineDead1Prefab" prob="0.005" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineDead2Prefab" prob="0.005" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineDead3Prefab" prob="0.005" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineDead4Prefab" prob="0.005" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_PineDead5Prefab" prob="0.005" rotatemax="3"/>
+    
+  </append>
+ 
+</configs>

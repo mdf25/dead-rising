@@ -1,0 +1,10 @@
+<configs>
+
+	<!-- Nailgun/Hammer Speed and upgrade click reduction																			Default			New -->
+	<set xpath="/items/item[@name='gunToolNailgun']/property[@class='Action1']/property[@name='Delay' 						and @value='0.73']/@value">0.25</set>	<!-- Nailgun Speed -->
+	<set xpath="/items/item[@name='gunToolNailgun']/property[@class='Action1']/property[@name='Upgrade_hit_offset' 			and @value='-5']/@value">-5</set>		<!-- Nailgun Upgrade Clicks -->
+	
+	<set xpath="/items/item[@name='meleeToolClawHammer']/property[@class='Action1']/property[@name='Delay' 					and @value='.64']/@value">0.50</set>	<!-- Hammer Speed -->
+	<set xpath="/items/item[@name='meleeToolClawHammer']/property[@class='Action1']/property[@name='Upgrade_hit_offset' 	and @value='-3']/@value">-3</set>		<!-- Hammer Upgrade Clicks -->
+
+</configs>

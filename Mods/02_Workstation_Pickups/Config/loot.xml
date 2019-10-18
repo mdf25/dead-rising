@@ -1,0 +1,68 @@
+<configs>
+	
+	<!-- Adds the workstation parts to different loot lists -->
+	<!-- All can be found rarely in junk -->
+	<append xpath="//lootgroup[@name='junk']">
+		<item name="resourceForgeParts"				count="1,2"		prob="0.03" />
+		<item name="resourceWorkbenchParts"			count="1,2"		prob="0.02" />
+		<item name="resourceTableSawParts"			count="1,2"		prob="0.02" />
+		<item name="resourceCementMixerParts"		count="1,2"		prob="0.02" />
+		<item name="resourceChemistryStationParts"	count="1,2"		prob="0.01" />
+	</append>
+	
+	<!-- All non-science can be found in working stiff loot -->
+	<append xpath="//lootgroup[@name='workingStiffs']">
+		<item name="resourceForgeParts"				count="2,4"		prob="0.25" />
+		<item name="resourceWorkbenchParts"			count="2,4"		prob="0.15" />
+		<item name="resourceTableSawParts"			count="2,4"		prob="0.15" />
+		<item name="resourceCementMixerParts"		count="2,4"		prob="0.15" />
+	</append>
+	
+	<!-- Lab equipment has chem station parts -->
+	<append xpath="//lootgroup[@name='labEquipment']">
+		<item name="resourceChemistryStationParts"	count="3,5"		prob="0.3" />
+	</append>
+	
+	
+	<!-- LOOTCONTAINERS -->
+	<!-- Garage storage boxes have chance of workbench and forge -->
+	<append xpath="//lootcontainer[@id='22']">
+		<item name="resourceForgeParts"				count="2,4"		prob="0.1" />
+		<item name="resourceWorkbenchParts"			count="2,4"		prob="0.05" />
+	</append>
+	
+	<!-- Zombie bags can drop all parts equally -->
+	<append xpath="//lootcontainer[@id='70']">
+		<item name="resourceForgeParts"				count="1,2"		prob="0.1" />
+		<item name="resourceWorkbenchParts"			count="1,2"		prob="0.1" />
+		<item name="resourceTableSawParts"			count="1,2"		prob="0.1" />
+		<item name="resourceCementMixerParts"		count="1,2"		prob="0.1" />
+		<item name="resourceChemistryStationParts"	count="1,2"		prob="0.1" />
+	</append>
+	
+	<append xpath="//lootcontainer[@id='71']">
+		<item name="resourceForgeParts"				count="2,5"		prob="0.1" />
+		<item name="resourceWorkbenchParts"			count="2,5"		prob="0.1" />
+		<item name="resourceTableSawParts"			count="2,5"		prob="0.1" />
+		<item name="resourceCementMixerParts"		count="2,5"		prob="0.1" />
+		<item name="resourceChemistryStationParts"	count="2,5"		prob="0.1" />
+	</append>
+	
+	<!-- Destroyable med piles have good chance of chem station parts -->
+	<append xpath="//lootcontainer[@id='107']">
+		<item name="resourceChemistryStationParts"	count="3,5"		prob="0.3" />
+	</append>
+	
+	<append xpath="//lootcontainer[@id='114']">
+		<item name="resourceChemistryStationParts"	count="3,5"		prob="0.3" />
+	</append>
+	
+	<append xpath="//lootcontainer[@id='115']">
+		<item name="resourceChemistryStationParts"	count="3,5"		prob="0.3" />
+	</append>
+	
+	<append xpath="//lootcontainer[@id='116']">
+		<item name="resourceChemistryStationParts"	count="3,5"		prob="0.3" />
+	</append>
+	
+</configs>

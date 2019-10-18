@@ -1,0 +1,545 @@
+<configs>
+	<!-- Adds a dependency tag to the start of the XML -->
+	<insertBefore xpath="/*/*[1]">
+		<!-- DEPENDENCY: FennecModlet - Foods - Additional Foods -->
+	</insertBefore>
+
+	<!-- Allow rock salt to be harvested from stone -->
+	<append xpath="/blocks/block[@name='terrStone']">
+		<drop event="Harvest"							name="resourceRockSaltFM"	count="10"	prob="0.1"	tag="oreWoodHarvest" />
+	</append>	
+		
+		
+	<!-- Allow worker bees, queen bees and raw honey to be harvested from tree stumps. -->
+	<set xpath="/blocks/block[@name='treeStump']/drop[@name='foodHoney']/@count">1,2</set>
+	<set xpath="/blocks/block[@name='treeStump']/drop[@name='foodHoney']/@prob">0.65</set>
+	<set xpath="/blocks/block[@name='treeStump']/drop[@name='foodHoney']/@name">resourceRawHoneycombFM</set>
+	<append xpath="/blocks/block[@name='treeStump']">
+		<drop event="Destroy" 							name="resourceQueenBeeFM" 	count="1" 	prob="0.2"/>
+		<drop event="Destroy" 							name="resourceWorkerBeeFM" 	count="2,8" prob="0.3"/>
+	</append>
+		
+		
+	<!-- Allow apples to be obtained rarely from wild oak trees, more common for player planted ones -->
+	<append xpath="/blocks/block[contains(@name,'OakMed')]">
+		<drop event="Destroy"							name="foodCropAppleFM"		count="1"	prob="0.02" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'OakLrg')]">
+		<drop event="Destroy"							name="foodCropAppleFM"		count="1"	prob="0.1" />
+		<drop event="Destroy"							name="foodCropAppleFM"		count="1"	prob="0.05" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'PlantedOak')]/property[@name='Material' and @value='MtreeWoodMedium']/..">
+		<drop event="Destroy"							name="foodCropAppleFM"		count="1"	prob="0.05" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'PlantedOak')]/property[@name='Material' and @value='MtreeWoodLarge']/..">
+		<drop event="Destroy"							name="foodCropAppleFM"		count="1"	prob="0.15" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'PlantedOak')]/property[@name='Material' and @value='MtreeWoodFull']/..">
+		<drop event="Destroy"							name="foodCropAppleFM"		count="1"	prob="0.25" />
+		<drop event="Destroy"							name="foodCropAppleFM"		count="1"	prob="0.12" />
+	</append>
+
+	<!-- Allow pears to be obtained rarely from wild pine trees, more common for player planted ones -->
+	<append xpath="/blocks/block[contains(@name,'treeMountainPine')]/property[@name='Material' and @value='MtreeWoodMedium']/..">
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.02" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'treeMountainPine')]/property[@name='Material' and @value='MtreeWoodLarge']/..">
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.05" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'treeMountainPine')]/property[@name='Material' and @value='MtreeWoodFull']/..">
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.1" />
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.05" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'PlantedMountainPine')]/property[@name='Material' and @value='MtreeWoodMedium']/..">
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.05" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'PlantedMountainPine')]/property[@name='Material' and @value='MtreeWoodLarge']/..">
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.15" />
+	</append>
+
+	<append xpath="/blocks/block[contains(@name,'PlantedMountainPine')]/property[@name='Material' and @value='MtreeWoodFull']/..">
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.25" />
+		<drop event="Destroy"							name="foodCropPearFM"		count="1"	prob="0.12" />
+	</append>
+
+	<!-- New Blocks -->
+	<append xpath="/blocks">
+
+		<!-- TREES -->
+		<!-- Adds trees for apple and pear -->
+		<block name="treePlantedApple0FM">
+			<property name="Extends" 					value="treeMasterGrowing" />
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="MaxDamage" 					value="10"/>
+			<property name="Material" 					value="Mplants"/>
+			<property name="StabilitySupport" 			value="false"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?AppleTree0"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="IsDistantDecoration" 		value="false"/>
+			<property name="Collide" 					value="melee"/>
+			<property name="FallOver" 					value="false"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedApple1FM"/>
+			<drop event="Destroy" 						name="treePlantedApple0FM" 	count="1"/>
+			<property name="EconomicValue" 				value="12"/>
+			<property name="EconomicBundleSize" 		value="5"/>
+			<property name="SellableToTrader" 			value="false"/>
+			<property name="Group" 						value="Resources"/>
+			<property name="ParticleOnDeath" 			value="treeGib_sapling"/>
+			<property name="SortOrder2" 				value="0350"/> <!-- SortTree -->
+			<property name="ActivationDistance" 		value="4"/>
+		</block>
+
+		<block name="treePlantedApple1FM">
+			<property name="Extends" 					value="treeMasterGrowing"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?AppleTree1"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,4,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedApple2FM"/>
+			<drop event="Harvest" 						name="resourceWood" 		count="30" tag="oreWoodHarvest"/>
+			<drop event="Destroy" 						name="treePlantedApple0FM" 	count="1"/>
+			<property name="SortOrder2" 				value="0455"/> <!-- SortTree -->
+		</block>
+
+		<block name="treePlantedApple2FM">
+			<property name="Extends" 					value="treeMasterGrowing"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Material" 					value="MtreeWoodMedium"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?AppleTree2"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,8,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedApple3FM"/>
+			<drop event="Harvest" 						name="resourceWood" 		count="70" tag="oreWoodHarvest"/>
+			<drop event="Destroy" 						name="treePlantedApple0FM" 	count="2"/>
+			<property name="SortOrder2" 				value="0460"/> <!-- SortTree -->
+		</block>
+
+		<block name="treePlantedApple3FM">
+			<property name="Extends" 					value="treeMasterGrowing"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Material" 					value="MtreeWoodLarge"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?AppleTree3"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,12,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedApple4FM"/>
+			<drop event="Harvest" 						name="resourceWood" 	count="110" tag="oreWoodHarvest"/>
+			<drop event="Destroy" 						name="treePlantedApple0FM" 	count="2"/>
+			<property name="SortOrder2" 				value="0465"/> <!-- SortTree -->
+		</block>
+		
+		<block name="treePlantedApple4FM">
+			<property name="Extends" 					value="treeMaster"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Material" 					value="Mplants"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?AppleTree4"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,12,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="FallOver"					value="false" />
+			<property name="DowngradeBlock"				value="treePlantedApple3FM" />
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<drop event="Destroy" 						name="foodCropAppleFM" 	count="4"	tag="cropHarvest"/>
+			<property name="SortOrder2" 				value="0465"/> <!-- SortTree -->
+		</block>
+		
+		
+		<block name="treePlantedPear0FM">
+			<property name="Extends" 					value="treeMasterGrowing" />
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="MaxDamage" 					value="10"/>
+			<property name="Material" 					value="Mplants"/>
+			<property name="StabilitySupport" 			value="false"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?PearTree0"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="IsDistantDecoration" 		value="false"/>
+			<property name="Collide" 					value="melee"/>
+			<property name="FallOver" 					value="false"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedPear1FM"/>
+			<drop event="Destroy" 						name="treePlantedPear0FM" 	count="1"/>
+			<property name="EconomicValue" 				value="12"/>
+			<property name="EconomicBundleSize" 		value="5"/>
+			<property name="SellableToTrader" 			value="false"/>
+			<property name="Group" 						value="Resources"/>
+			<property name="ParticleOnDeath" 			value="treeGib_sapling"/>
+			<property name="SortOrder2" 				value="0350"/> <!-- SortTree -->
+			<property name="ActivationDistance" 		value="4"/>
+		</block>
+
+		<block name="treePlantedPear1FM">
+			<property name="Extends" 					value="treeMasterGrowing"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?PearTree1"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,4,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedPear2FM"/>
+			<drop event="Harvest" 						name="resourceWood" 		count="30" tag="oreWoodHarvest"/>
+			<drop event="Destroy" 						name="treePlantedPear0FM" 	count="1"/>
+			<property name="SortOrder2" 				value="0455"/> <!-- SortTree -->
+		</block>
+
+		<block name="treePlantedPear2FM">
+			<property name="Extends" 					value="treeMasterGrowing"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Material" 					value="MtreeWoodMedium"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?PearTree2"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,8,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedPear3FM"/>
+			<drop event="Harvest" 						name="resourceWood" 		count="70" tag="oreWoodHarvest"/>
+			<drop event="Destroy" 						name="treePlantedPear0FM" 	count="2"/>
+			<property name="SortOrder2" 				value="0460"/> <!-- SortTree -->
+		</block>
+
+		<block name="treePlantedPear3FM">
+			<property name="Extends" 					value="treeMasterGrowing"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Material" 					value="MtreeWoodLarge"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?PearTree3"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,12,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="PlantGrowing.Next" 			value="treePlantedPear4FM" />
+			<drop event="Harvest" 						name="resourceWood" 		count="110" tag="oreWoodHarvest"/>
+			<drop event="Destroy" 						name="treePlantedPear0FM" 	count="4"	tag="cropHarvest"/>
+			<property name="SortOrder2" 				value="0465"/> <!-- SortTree -->
+		</block>
+		
+		<block name="treePlantedPear4FM">
+			<property name="Extends" 					value="treeMaster"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Material" 					value="Mplants"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?PearTree4"/>
+			<property name="ModelOffset" 				value="0,-0.2,0"/>
+			<property name="MultiBlockDim" 				value="1,12,1"/>
+			<property name="BigDecorationRadius" 		value="3"/>
+			<property name="FallOver"					value="false" />
+			<property name="DowngradeBlock"				value="treePlantedPear3FM" />
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<drop event="Destroy" 						name="foodCropPearFM" 	count="4"	tag="cropHarvest"/>
+			<property name="SortOrder2" 				value="0465"/> <!-- SortTree -->
+		</block>
+		
+		
+		<!-- CROPS -->
+		<!-- Adds crops for soybeans, tomatoes, wheat -->
+		<block name="plantedSoybean1FM">
+			<property name="Extends" 					value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?SoybeanHDStage1"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<property name="PlantGrowing.Next" 			value="plantedSoybean2FM"/>
+			<property name="Group" 						value="Food/Cooking"/>
+			<drop event="Destroy" 						name="plantedSoybean1FM" count="1"/>
+		</block>
+
+		<block name="plantedSoybean2FM">
+			<property name="Extends" 					value="cropsGrowingMaster"/>
+			<property name="CreativeMode" 				value="None"/>
+			<property name="CustomIcon" 				value="plantedSoybean1FM"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?SoybeanHDStage2"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<property name="PlantGrowing.Next" 			value="plantedSoybean3HarvestPlayerFM"/>
+			<drop event="Destroy" 						name="plantedSoybean1FM" count="1"/>
+		</block>
+
+		<block name="plantedSoybean3HarvestFM">
+			<property name="Extends"	 				value="cropsHarvestableMaster"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?SoybeanHDStage3Harvest"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<drop event="Harvest" 						name="foodCropSoybeanFM" count="1" tag="wildCropsHarvest"/>
+		</block>
+
+		<block name="plantedSoybean3HarvestPlayerFM">
+			<property name="Extends" 					value="plantedSoybean3HarvestFM"/>
+			<property name="CustomIcon" 				value="plantedSoybean1FM"/>
+			<property name="CreativeMode" 				value="None"/>
+			<drop event="Harvest" 						name="foodCropSoybeanFM" count="1" tag="cropHarvest"/>
+			<property name="DowngradeBlock" 			value="plantedSoybean1FM"/>
+		</block>
+		
+		
+		<block name="plantedTomato1FM">
+			<property name="Extends" 					value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?TomatoHDStage1"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<property name="PlantGrowing.Next" 			value="plantedTomato2FM"/>
+			<property name="Group" 						value="Food/Cooking"/>
+			<drop event="Destroy" 						name="plantedTomato1FM" count="1"/>
+		</block>
+
+		<block name="plantedTomato2FM">
+			<property name="Extends" 					value="cropsGrowingMaster"/>
+			<property name="CreativeMode" 				value="None"/>
+			<property name="CustomIcon" 				value="plantedTomato1FM"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?TomatoHDStage2"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<property name="PlantGrowing.Next" 			value="plantedTomato3HarvestPlayerFM"/>
+			<drop event="Destroy" 						name="plantedTomato1FM" count="1"/>
+		</block>
+
+		<block name="plantedTomato3HarvestFM">
+			<property name="Extends" 					value="cropsHarvestableMaster"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?TomatoHDStage3Harvest"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<drop event="Harvest" 						name="foodCropTomatoFM" count="1" tag="wildCropsHarvest"/>
+		</block>
+
+		<block name="plantedTomato3HarvestPlayerFM">
+			<property name="Extends" 					value="plantedTomato3HarvestFM"/>
+			<property name="CustomIcon" 				value="plantedTomato1FM"/>
+			<property name="CreativeMode" 				value="None"/>
+			<drop event="Harvest" 						name="foodCropTomatoFM" count="1" tag="cropHarvest"/>
+			<property name="DowngradeBlock" 			value="plantedTomato1FM"/>
+		</block>
+		
+		
+		<block name="plantedWheat1FM">
+			<property name="Extends" 					value="cropsGrowingMaster" param1="CustomIcon,DescriptionKey"/>
+			<property name="CreativeMode" 				value="Player"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?WheatHDStage1"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<property name="PlantGrowing.Next" 			value="plantedWheat2FM"/>
+			<property name="Group" 						value="Food/Cooking"/>
+			<drop event="Destroy" 						name="plantedWheat1FM" count="1"/>
+		</block>
+
+		<block name="plantedWheat2FM">
+			<property name="Extends" 					value="cropsGrowingMaster"/>
+			<property name="CreativeMode" 				value="None"/>
+			<property name="CustomIcon" 				value="plantedWheat1FM"/>
+			<property name="Shape"						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?WheatHDStage2"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<property name="PlantGrowing.Next" 			value="plantedWheat3HarvestPlayerFM"/>
+			<drop event="Destroy" 						name="plantedWheat1FM" count="1"/>
+		</block>
+
+		<block name="plantedWheat3HarvestFM">
+			<property name="Extends" 					value="cropsHarvestableMaster"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Crops.unity3d?WheatHDStage3Harvest"/>
+			<property name="ModelOffset"				value="0,-0.2,0" />
+			<drop event="Harvest" 						name="foodCropWheatFM" count="1" tag="wildCropsHarvest"/>
+		</block>
+
+		<block name="plantedWheat3HarvestPlayerFM">
+			<property name="Extends" 					value="plantedWheat3HarvestFM"/>
+			<property name="CustomIcon" 				value="plantedWheat1FM"/>
+			<property name="CreativeMode" 				value="None"/>
+			<drop event="Harvest" 						name="foodCropWheatFM" count="1" tag="cropHarvest"/>
+			<property name="DowngradeBlock" 			value="plantedWheat1FM"/>
+		</block>
+		
+		
+		<!-- OPENABLE BLOCKS CRAFTED OR LOOTED -->
+		<!-- Adds grocery bag blocks -->
+		<block name="cntGroceryBagPlaceableFM">
+			<property name="CustomIcon"					value="cntGroceryBagFM" />
+			<property name="DescriptionKey"				value="cntGroceryBagFMDesc" />
+			<property name="Class" 						value="PlantGrowing" />
+			<property name="LightOpacity" 				value="0"/>
+			<property name="StabilitySupport" 			value="false"/>
+			<property name="Material" 					value="Mtrash"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Blocks.unity3d?GroceryBag"/>
+			<property name="ModelOffset"				value="0,-0.1,0" />
+			<property name="Collide" 					value="melee,bullet,arrow,rocket"/>
+			<property name="IsTerrainDecoration" 		value="true"/>
+			<property name="PlantGrowing.FertileLevel" 	value="0"/>
+			<property name="PlantGrowing.Next" 			value="cntGroceryBagFM"/>
+			<property name="PlantGrowing.GrowthRate" 	value="0.0001"/>
+			<property name="PlantGrowing.IsRandom" 		value="false"/>
+			<property name="PlantGrowing.LightLevelStay" value="0"/>
+			<drop event="Destroy" 						name="" count="0"/>
+		</block>
+		
+		<block name="cntGroceryBagFM">
+			<property name="Extends"					value="cntGroceryBagPlaceableFM" />
+			<property name="Class" 						value="Loot"/>
+			<property name="LootList" 					value="201"/>
+		</block>
+		
+		
+		
+		<!-- Adds aquarium blocks -->
+		<block name="cntAquariumBaseFM">
+			<property name="CreativeMode"				value="None" />
+			<property name="LightOpacity" 				value="0"/>
+			<property name="StabilitySupport" 			value="false"/>
+			<property name="Material" 					value="Mmetal_weak"/>
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Blocks.unity3d?FishTank"/>
+			<property name="ModelOffset"				value="0,0.5,0" />
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="EconomicValue"				value="4000" />
+			<drop event="Destroy" 						name="resourceScrapPolymers" count="10"/>
+			<drop event="Destroy"						name="resourceBrokenGlass"	 count="2" />
+		</block>
+		
+		<block name="cntAquariumEmptyFM">
+			<property name="Extends"					value="cntAquariumBaseFM" />
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 					value="cntAquariumGrowingFM"/>
+				<property name="Item" 						value="resourceBagFishFM"/>
+				<property name="ItemCount" 					value="1"/>
+				<property name="UpgradeHitCount" 			value="1"/>
+			</property>
+		</block>
+		
+		<block name="cntAquariumGrowingFM">
+			<property name="Extends"					value="cntAquariumBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntAquariumEmptyFM" />
+			<property name="Model" 						value="#@modfolder:Resources/Blocks.unity3d?FishTankGrowing"/>
+			<property name="Class" 						value="UpgradeRated"/>
+			<property name="UpgradeRated.ToBlock" 		value="cntAquariumHarvestableFM"/>
+			<property name="UpgradeRated.Rate" 			value="10"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 					value="cntAquariumGrowing2FM"/>
+				<property name="Item" 						value="resourceFishFoodFM"/>
+				<property name="ItemCount" 					value="2"/>
+				<property name="UpgradeHitCount" 			value="1"/>
+			</property>
+		</block>
+		
+		<block name="cntAquariumGrowing2FM">
+			<property name="Extends"					value="cntAquariumBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntAquariumEmptyFM" />
+			<property name="Model" 						value="#@modfolder:Resources/Blocks.unity3d?FishTankGrowing"/>
+			<property name="Class" 						value="UpgradeRated"/>
+			<property name="UpgradeRated.ToBlock" 		value="cntAquariumHarvestableFM"/>
+			<property name="UpgradeRated.Rate" 			value="7"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 					value="cntAquariumGrowing3FM"/>
+				<property name="Item" 						value="resourceFishFoodFM"/>
+				<property name="ItemCount" 					value="2"/>
+				<property name="UpgradeHitCount" 			value="1"/>
+			</property>
+		</block>
+		
+		<block name="cntAquariumGrowing3FM">
+			<property name="Extends"					value="cntAquariumBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntAquariumEmptyFM" />
+			<property name="Model" 						value="#@modfolder:Resources/Blocks.unity3d?FishTankGrowing"/>
+			<property name="Class" 						value="UpgradeRated"/>
+			<property name="UpgradeRated.ToBlock" 		value="cntAquariumHarvestableFM"/>
+			<property name="UpgradeRated.Rate" 			value="4"/>
+		</block>
+		
+		<block name="cntAquariumHarvestableFM">
+			<property name="Extends"					value="cntAquariumBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntAquariumEmptyFM" />
+			<property name="DowngradeBlock"				value="cntAquariumEmptyFM" />
+			<property name="Model" 						value="#@modfolder:Resources/Blocks.unity3d?FishTankReady"/>
+			<property name="Class"						value="Loot" />
+			<property name="LootList"					value="202" />
+		</block>
+		
+		
+		<!-- Adds beehive blocks -->
+		<block name="cntBeehiveBaseFM">
+			<property name="CreativeMode"				value="None" />
+			<property name="LightOpacity" 				value="0"/>
+			<property name="StabilitySupport" 			value="false"/>
+			<property name="Material" 					value="MtreeWoodMedium" />
+			<property name="Shape" 						value="ModelEntity"/>
+			<property name="Model" 						value="#@modfolder:Resources/Blocks.unity3d?Beehive"/>
+			<property name="ModelOffset"				value="0,0.5,0" />
+			<property name="Collide" 					value="movement,melee,bullet,arrow,rocket"/>
+			<property name="EconomicValue"				value="300" />
+			<drop event="Destroy" 						name="resourceWood" 		 count="20"/>
+			<drop event="Destroy"						name="resourceScrapPolymers" count="5" />
+		</block>
+		
+		<block name="cntBeehiveEmptyFM">
+			<property name="Extends"					value="cntBeehiveBaseFM" />
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 					value="cntBeehiveGrowingFM"/>
+				<property name="Item" 						value="resourceQueenBeeFM"/>
+				<property name="ItemCount" 					value="1"/>
+				<property name="UpgradeHitCount" 			value="1"/>
+			</property>
+		</block>
+		
+		<block name="cntBeehiveGrowingFM">
+			<property name="Extends"					value="cntBeehiveBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntBeehiveEmptyFM" />
+			<property name="Class" 						value="UpgradeRated"/>
+			<property name="UpgradeRated.ToBlock" 		value="cntBeehiveHarvestableFM"/>
+			<property name="UpgradeRated.Rate" 			value="7"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 					value="cntBeehiveGrowing2FM"/>
+				<property name="Item" 						value="resourceWorkerBeeFM"/>
+				<property name="ItemCount" 					value="10"/>
+				<property name="UpgradeHitCount" 			value="1"/>
+			</property>
+		</block>
+		
+		<block name="cntBeehiveGrowing2FM">
+			<property name="Extends"					value="cntBeehiveBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntBeehiveEmptyFM" />
+			<property name="Class" 						value="UpgradeRated"/>
+			<property name="UpgradeRated.ToBlock" 		value="cntBeehiveHarvestableFM"/>
+			<property name="UpgradeRated.Rate" 			value="5"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 					value="cntBeehiveGrowing3FM"/>
+				<property name="Item" 						value="resourceWorkerBeeFM"/>
+				<property name="ItemCount" 					value="10"/>
+				<property name="UpgradeHitCount" 			value="1"/>
+			</property>
+		</block>
+		
+		<block name="cntBeehiveGrowing3FM">
+			<property name="Extends"					value="cntBeehiveBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntBeehiveEmptyFM" />
+			<property name="Class" 						value="UpgradeRated"/>
+			<property name="UpgradeRated.ToBlock" 		value="cntBeehiveHarvestableFM"/>
+			<property name="UpgradeRated.Rate" 			value="3"/>
+		</block>
+		
+		<block name="cntBeehiveHarvestableFM">
+			<property name="Extends"					value="cntBeehiveBaseFM" />
+			<property name="CreativeMode"				value="None" />
+			<property name="CustomIcon"					value="cntBeehiveEmptyFM" />
+			<property name="DowngradeBlock"				value="cntBeehiveGrowingFM" />
+			<property name="Class"						value="Loot" />
+			<property name="LootList"					value="203" />
+		</block>
+		
+	</append>
+</configs>

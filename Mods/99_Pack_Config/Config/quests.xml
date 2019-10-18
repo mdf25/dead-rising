@@ -1,0 +1,211 @@
+<configs>
+	<!-- Set wood quests to use sticks -->
+	<set xpath="/quests/quest[@id='quest_BasicSurvival2']/objective[@id='resourceWood']/@value">1</set>
+	<set xpath="/quests/quest[@id='quest_BasicSurvival2']/objective[@id='resourceWood']/@id">resourceStick</set>
+	
+	<!-- JSS tweak to set quest 5 to use sticks, and to give other quests. -->
+	<remove xpath="/quests/quest[@id='quest_BasicSurvival5']"/>
+	<remove xpath="/quests/quest[@id='quest_BasicSurvival6']"/>
+	<insertBefore xpath="/quests/quest[@id='quest_BasicSurvival7']">
+		<!-- Basic Survival 5 - Craft a Wooden Club and bow and arrows /> -->
+		<quest id="quest_BasicSurvival5">
+			<property name="group_name_key" value="quest_BasicSurvival" />
+			<property name="name" value="Basic Survival" />
+			<property name="subtitle_key" value="Make weapons" />
+			<property name="description" value="Gather wood, stone, plant fibers and feathers found in bird nests on the ground. \n\nOnce you have the ingredients, access the Basics category of the Crafting window. Craft a Club, Wooden Bow, and Arrows." />
+			<property name="icon" value="ui_game_symbol_club" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />
+
+			<objective type="FetchKeep" id="resourceYuccaFibers" value="3" phase="1" />
+			<objective type="FetchKeep" id="resourceFeather" value="2" phase="1"/>
+			<objective type="FetchKeep" id="resourceRockSmall" value="2" phase="1" />
+			<objective type="FetchKeep" id="resourceWood" value="5" phase="1" />
+			<objective type="FetchKeep" id="resourceStick" value="6" phase="1" />
+			<objective type="Craft" id="meleeClubWood" value="1" phase="2" />
+			<objective type="Craft" id="gunWoodenBow" value="1" phase="2" />
+			<objective type="Craft" id="ammoArrowStone" value="2" phase="2" />
+
+			<reward type="Exp" value="500" />
+			<!-- <reward type="Quest" id="quest_BasicSurvival7" /> -->
+			<reward type="Quest" id="quest_whiteRiverCitizen1" stage="aftercomplete">
+				<property name="chainquest" value="false" />
+			</reward>
+			<reward type="SkillPoints" value="4" chainreward="true" />
+			<reward type="Item" id="Note from Enid" stage="aftercomplete">
+				<property name="chainquest" value="false" />
+			</reward>
+			<reward type="Quest" id="quest_meleeWeapons1" stage="aftercomplete">
+				<property name="chainquest" value="true" />
+			</reward>
+		</quest>
+	</insertBefore>
+	
+	
+	<!-- Quests to guide the player through the Melee mod -->
+	<insertBefore xpath="/quests/quest[@id='quest_whiteRiverCitizen1']">
+		<quest id="quest_meleeWeapons1">
+			<property name="group_name_key" value="quest_meleeWeapons" />
+			<property name="name_key" value="quest_meleeWeapons1" />
+			<property name="subtitle_key" value="quest_meleeWeapons1_subtitle" />
+			<property name="description_key" value="quest_meleeWeapons1_description" />
+			<property name="icon" value="ui_game_symbol_club" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />
+
+			<objective type="FetchKeep" id="resourceWood" value="150" phase="1" />
+			<objective type="Craft" id="Old Wooden Bat" value="1" phase="2" />
+
+			<reward type="Exp" value="300" />
+
+			<reward type="Quest" id="quest_meleeWeapons2" />
+			<reward type="Quest" id="quest_scrapAmmo1" />
+		</quest>
+		
+		<quest id="quest_meleeWeapons2">
+			<property name="group_name_key" value="quest_meleeWeapons" />
+			<property name="name_key" value="quest_meleeWeapons2" />
+			<property name="subtitle_key" value="quest_meleeWeapons2_subtitle" />
+			<property name="description_key" value="quest_meleeWeapons2_description" />
+			<property name="icon" value="ui_game_symbol_club" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />
+
+			<objective type="FetchKeep" id="resourceFemur" value="1" phase="1" />
+			<objective type="FetchKeep" id="resourceAnimalFat" value="2" phase="1" />
+			<objective type="FetchKeep" id="resourceLeather" value="5" phase="1" />
+			<objective type="Craft" id="Bone Club" value="1" phase="2" />
+
+			<reward type="Exp" value="300" />
+
+			<reward type="Quest" id="quest_meleeWeapons3" />
+			<reward type="Quest" id="quest_workstationAssembly1" stage="aftercomplete">
+				<property name="chainquest" value="true" />
+			</reward>
+		</quest>
+		
+		<quest id="quest_meleeWeapons3">
+			<property name="group_name_key" value="quest_meleeWeapons" />
+			<property name="name_key" value="quest_meleeWeapons3" />
+			<property name="subtitle_key" value="quest_meleeWeapons3_subtitle" />
+			<property name="description_key" value="quest_meleeWeapons3_description" />
+			<property name="icon" value="ui_game_symbol_club" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />			
+			
+			<objective type="FetchKeep" id="resourceScrapIron" 	value="100" phase="1" />
+			<objective type="FetchKeep" id="resourceLeather" 	value="10" 	phase="1" />
+			<objective type="FetchKeep" id="resourceCloth" 		value="10"  phase="1" />
+			<objective type="Craft" 	id="Rusty Dagger" 		value="1" 	phase="2" />
+
+			<reward type="Quest" id="quest_meleeWeapons4" />
+		</quest>
+		
+		<quest id="quest_meleeWeapons4">
+			<property name="group_name_key" value="quest_meleeWeapons" />
+			<property name="name_key" value="quest_meleeWeapons4" />
+			<property name="subtitle_key" value="quest_meleeWeapons4_subtitle" />
+			<property name="description_key" value="quest_meleeWeapons4_description" />
+			<property name="icon" value="ui_game_symbol_club" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />			
+			
+			<objective type="FetchKeep" id="toolAnvil" 			value="1" 	phase="1" />
+			<objective type="FetchKeep" id="resourceNail" 		value="20" 	phase="1" />
+			<objective type="FetchKeep" id="resourceWood" 		value="100" phase="1" />
+			<objective type="FetchKeep" id="resourceMetalPipe" 	value="4" 	phase="1" />
+			<objective type="Craft" 	id="Weapon Anvil" 		value="1" 	phase="2" />
+
+			<reward type="Exp" value="1000" />
+			<reward type="SkillPoints" value="2" chainreward="true" />
+		</quest>
+	</insertBefore>
+	
+	
+	<!-- Quests to guide the player through Advanced Firearms scrapping ammo -->
+	<insertBefore xpath="/quests/quest[@id='quest_whiteRiverCitizen1']">
+		<quest id="quest_scrapAmmo1">
+			<property name="group_name_key" value="quest_scrapAmmo" />
+			<property name="name_key" value="quest_scrapAmmo1" />
+			<property name="subtitle_key" value="quest_scrapAmmo1_subtitle" />
+			<property name="description_key" value="quest_scrapAmmo1_description" />
+			<property name="icon" value="ui_game_symbol_pistol" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />
+
+			<objective type="Craft" id="ScrapAmmo" value="10" phase="1" />
+
+			<reward type="Exp" value="100" />
+			<reward type="SkillPoints" value="1" chainreward="true" />
+		</quest>
+	</insertBefore>
+	
+	
+	<!-- Workstation Assembly -->
+	<insertBefore xpath="/quests/quest[@id='quest_whiteRiverCitizen1']">
+		<quest id="quest_workstationAssembly1">
+			<property name="group_name_key" value="quest_workstationAssembly" />
+			<property name="name_key" value="quest_workstationAssembly1" />
+			<property name="subtitle_key" value="quest_workstationAssembly1_subtitle" />
+			<property name="description_key" value="quest_workstationAssembly1_description" />
+			<property name="icon" value="ui_game_symbol_workbench" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />
+
+			<objective type="FetchKeep" id="resourceWorkbenchParts" value="25" phase="1" />
+
+			<reward type="Exp" value="2500" />
+			<reward type="Quest" id="quest_workstationAssembly2" />
+			<reward type="Quest" id="quest_shoppingCart1" />
+		</quest>
+		
+		<quest id="quest_workstationAssembly2">
+			<property name="group_name_key" value="quest_workstationAssembly" />
+			<property name="name_key" value="quest_workstationAssembly2" />
+			<property name="subtitle_key" value="quest_workstationAssembly2_subtitle" />
+			<property name="description_key" value="quest_workstationAssembly2_description" />
+			<property name="icon" value="ui_game_symbol_workbench" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />
+
+			<objective type="Craft" id="workbench" value="1" phase="1" />
+
+			<reward type="Exp" value="500" />
+			<reward type="SkillPoints" value="1" chainreward="true" />
+		</quest>
+	</insertBefore>
+	
+	
+	<!-- Shopping Cart Vehicle quests -->
+	<insertBefore xpath="/quests/quest[@id='quest_whiteRiverCitizen1']">
+		<quest id="quest_shoppingCart1">
+			<property name="group_name_key" value="quest_shoppingCart" />
+			<property name="name_key" value="quest_shoppingCart1" />
+			<property name="subtitle_key" value="quest_shoppingCart1_subtitle" />
+			<property name="description_key" value="quest_shoppingCart1_description" />
+			<property name="icon" value="ui_game_symbol_workbench" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="veryeasy" />
+			<property name="shareable" value="false" />
+
+			<objective type="FetchKeep" id="shoppingCartEmpty" 					value="1" 	phase="1" />
+			<objective type="FetchKeep" id="smallEngine" 						value="1" 	phase="1" />
+			<objective type="FetchKeep" id="resourceLeather"					value="15" 	phase="1" />
+			<objective type="FetchKeep" id="resourceMechanicalParts"			value="4" 	phase="1" />
+			<objective type="FetchKeep" id="vehicleWheels" 						value="4" 	phase="1" />
+			<objective type="Craft" 	id="vehicleGuppyShoppingCartPlaceable" 	value="1" 	phase="2" />
+
+			<reward type="Exp" value="1500" />
+			<reward type="SkillPoints" value="1" chainreward="true" />
+		</quest>
+	</insertBefore>
+	
+</configs>

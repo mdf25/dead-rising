@@ -1,0 +1,22 @@
+<configs>
+	
+	<append xpath="/blockplaceholders">
+		<placeholder name="adminArenaAmmoHelper">
+			<block name="adminArenaRespawnAmmoPileSmall" 	prob="0.6" />
+			<block name="adminArenaRespawnAmmoPileMed"		prob="0.3" />
+			<block name="adminArenaRespawnAmmoPileLarge"	prob="0.1" />
+		</placeholder>
+		
+		<placeholder name="adminArenaMedicalHelper">
+			<block name="adminArenaRespawnMedicalPileSmall" prob="0.7" />
+			<block name="adminArenaRespawnMedicalPileLarge"	prob="0.3" />
+		</placeholder>
+		
+		<placeholder name="adminArenaDungeonCrateHelper">
+			<block name="adminShippingCrateShamway"			prob="0.5" />
+			<block name="adminShippingCrateShotgunMessiah"	prob="0.3" />
+			<block name="adminShippingCrateLabEquipment"	prob="0.2" />
+		</placeholder>
+		
+	</append>
+</configs>

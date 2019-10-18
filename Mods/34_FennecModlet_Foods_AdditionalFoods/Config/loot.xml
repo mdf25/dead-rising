@@ -1,0 +1,211 @@
+<configs>
+	<!-- Adds a dependency tag to the start of the XML -->
+	<insertBefore xpath="/*/*[1]">
+		<!-- DEPENDENCY: FennecModlet - Foods - Additional Foods -->
+	</insertBefore>
+
+	<!-- Grocery Bags -->
+
+	<insertBefore xpath="//lootgroup[@name='coldfood']">
+		
+		<!-- Baked and Baking Supplies -->
+		<lootgroup name="bakingSupplies">
+			<item name="foodBreadFM" 				count="1,2" 	prob="3" 	/>
+			<item name="foodButterFM"				count="1,3"		prob="0.8" 	/>
+			<item name="foodCheeseFM"				count="1,3"		prob="0.5" 	/>
+			<item name="foodFlourFM"				count="1"		prob="0.4"	/>
+			<item name="foodChocolateFM"			count="1,2"		prob="0.3"  />
+			<item name="foodCakeMixtureFM"			count="1"		prob="0.1" 	/>
+		</lootgroup>
+		
+		<!-- Milk and Soya -->
+		<lootgroup name="milkAndSoya">
+			<item name="drinkCartonMilkFM"			count="1,2"		prob="3"	/>
+			<item name="drinkCartonSoyaMilkFM"		count="1,2"		prob="1"	/>
+		</lootgroup>
+		
+		<!-- Sandwiches -->
+		<lootgroup name="sandwiches">
+			<item name="foodChickenSandwichFM"		count="1" 		prob="1" 	/>
+			<item name="foodCheeseSandwichFM"		count="1"		prob="1"	/>
+			<item name="foodEggSandwichFM"			count="1"		prob="1"	/>
+		</lootgroup>
+		
+		<!-- Yoghurts -->
+		<lootgroup name="yoghurts">
+			<item name="foodYoghurtFM"				count="1,2"		prob="0.7"	/>
+			<item name="foodYoghurtBlueberryFM"		count="1"		prob="0.35"	/>
+			<item name="foodYoghurtMixedFruitFM"	count="1"		prob="0.1"	/>
+			<item name="foodYoghurtYuccaFM"			count="1"		prob="0.35" />
+		</lootgroup>
+		
+		<!-- Soft Drinks -->
+		<lootgroup name="softDrinks">
+			<!-- FennecMod -->
+			<item name="drinkJarAppleJuiceFM"		count="1,2"		prob="2"	/>
+			<item name="drinkJarBlueberryJuiceFM"	count="1,2"		prob="0.5"	/>
+			<item name="drinkJarPotatoJuiceFM"		count="1"		prob="0.5"	/>
+			<item name="drinkJarTomatoJuiceFM"		count="1"		prob="1"	/>
+			<!-- Vanilla -->
+			<item name="drinkCanMegaCrush" 			count="1"		prob="0.05"	/>
+			<item name="drinkJarBoiledWater" 		count="1,2" 	prob="4"	/>
+			<item name="drinkJarCoffee" 			count="1,2"		prob="1"	/>
+			<item name="drinkJarGoldenRodTea" 		count="1,2"		prob="0.5"	/>
+			<item name="drinkJarRedTea" 			count="1,2"		prob="0.5"	/>
+			<item name="drinkJarYuccaJuice" 		count="1,2"		prob="0.5"	/>
+		</lootgroup>
+		
+		<!-- Alcohols -->
+		<lootgroup name="alcohols">
+			<item name="drinkJarAppleCiderFM"		count="1"		prob="0.4" 	/>
+			<item name="drinkJarBloodyMaryFM"		count="1"		prob="0.4"	/>
+			<item name="drinkJarBlueberryWineFM"	count="1"		prob="0.2"	/>
+			<item name="drinkJarBeer" 				count="1,2"		prob="4"	/>
+		</lootgroup>
+		
+		
+		<!-- Grocery Bags Loot -->
+		<!-- Fruit, Veggies -->
+		<lootgroup name="groceryBagFruits">
+			<!-- FennecMod -->
+			<item name="foodCropAppleFM"			count="2,4"		prob="1" 	/>
+			<item name="foodCropPearFM"				count="2,4"		prob="1"	/>
+			<item name="foodCropSoybeanFM"			count="3,5"		prob="1"	/>
+			<item name="foodCropTomatoFM"			count="2,4"		prob="1"	/>
+			<!-- Vanilla -->
+			<item name="foodCropCorn"				count="1,3"		prob="1"	/>
+			<item name="foodCropPotato"				count="1,4"		prob="1"	/>
+			<item name="foodCropBlueberries"		count="5,10"	prob="1"	/>
+		</lootgroup>
+		
+		<!-- Meat Products -->
+		<lootgroup name="groceryBagMeats">
+			<!-- FennecMod -->
+			<item name="foodFreshFishFM"			count="1,2"		prob="1"	/>
+			<item name="foodFreshSalmonFM"			count="1"		prob="0.3"	/>
+			<!-- Vanilla -->
+			<item name="foodEgg" 					count="3,6"		prob="1"	/>
+			<item name="foodRawMeat" 				count="5,10"	prob="3"	/>
+		</lootgroup>
+		
+		<!-- Bread, Sandwiches, Dairy -->
+		<lootgroup name="groceryBagGrainDairy">
+			<!-- FennecMod -->
+			<item group="bakingSupplies"			count="1"		prob="4"	/>
+			<item group="milkAndSoya"				count="1"		prob="4"	/>
+			<item group="sandwiches"				count="1"		prob="1"	/>
+			<item group="yoghurts"					count="1"		prob="1"	/>
+		</lootgroup>
+		
+		<!-- Beverages -->
+		<lootgroup name="groceryBagBeverages">
+			<item group="softDrinks"				count="1"		prob="3"	/>
+			<item group="alcohols"					count="1"		prob="1"	/>
+		</lootgroup>	
+		
+		<!-- All combined grocery bag loot -->
+		<lootgroup name="groceryBagLoot"	count="all">
+			<item group="groceryBagBeverages"		count="1" />
+			<item group="groceryBagMeats"			count="1" />
+			<item group="groceryBagGrainDairy"		count="1" />
+			<item group="groceryBagFruits"			count="1,2" />
+			<item group="cannedfood"				count="1,2" />
+		</lootgroup>
+		
+		
+		<!-- Beehive loot -->
+		<lootgroup name="beehiveLoot"		count="all">
+			<item name="resourceQueenBeeFM" 		count="0,2" />
+			<item name="resourceWorkerBeeFM"		count="10,20" />
+			<item name="resourceRawHoneycombFM"		count="8,16" />
+		</lootgroup>
+		
+	</insertBefore>
+
+
+	<!-- JUNK ITEMS -->
+	<!-- Adds tin foil and vegetable oil to cupboard loot -->
+	<append xpath="//lootgroup[@name='cupboard']">
+		<item name="resourceTinFoilFM"		count="4,12"		prob="0.5" />
+		<item name="drinkJarVegetableOilFM"	count="1,3"			prob="0.5" />
+	</append>
+
+	<!-- Adds empty cartons to anywhere that contains cans -->
+	<append xpath="//lootgroup/item[@name='drinkCanEmpty']/..">
+		<item name="resourceCartonEmptyFM"	count="1,3"			prob="0.5" />
+	</append>
+
+
+	<!-- COLD / CANNED FOOD -->
+	<!-- Adds canned anchovies to the canned food loot table -->
+	<append xpath="//lootgroup[@name='cannedfood']">
+		<item name="foodCanAnchoviesFM"	/>
+	</append>
+
+	<!-- Adds the cold food items into the cold foods loot list -->
+	<append xpath="//lootgroup[@name='coldfood']">
+		<item group="yoghurts"			count="1"	/>
+		<item group="sandwiches"		count="1"	/>
+		<item name="foodFreshFishFM"	count="1"	/>
+		<item name="foodFreshSalmonFM"	count="1"	/>
+	</append>
+
+
+	<!-- FARMING -->
+	<!-- Adds the seeds from the new FennecMod crops into the seeds loot -->
+	<append xpath="//lootgroup[@name='seeds']">
+		<item name="plantedSoybean1FM" 		/>
+		<item name="plantedTomato1FM" 		/>
+		<item name="plantedWheat1FM"		/>
+		<item name="treePlantedApple0FM"	/>
+		<item name="treePlantedPear0FM"		/>
+	</append>
+
+	<!-- Adds the crops from FennecMod into crops loot -->
+	<append xpath="//lootgroup[@name='farmCrops']">
+		<item name="foodCropAppleFM"	/>
+		<item name="foodCropPearFM"		/>
+		<item name="foodCropSoybeanFM"	/>
+		<item name="foodCropTomatoFM"	/>
+		<item name="foodCropWheatFM"	/>
+	</append>
+
+
+	<!-- GROCERY BAGS -->
+	<!-- Adds bags of groceries to cupboards (you know, some people are lazy and don't unpack groceries...) -->
+	<append xpath="//lootcontainer[@id='17']">
+		<item name="cntGroceryBagPlaceableFM"		count="1"		prob="0.03" />
+	</append>
+
+	<!-- Adds bags of groceries to cars, very rare -->
+	<append xpath="//lootcontainer[@id='19']">
+		<item name="cntGroceryBagPlaceableFM"		count="1"		prob="0.02" />
+	</append>
+
+	<!-- Adds bags of groceries and vegetable oil to shopping carts and shopping baskets -->
+	<append xpath="//lootcontainer[@id='54' or @id='58']">
+		<item name="cntGroceryBagPlaceableFM"		count="1,2"		prob="0.4" />
+		<item name="drinkJarVegetableOilFM"			count="1,2"		prob="0.7" />
+	</append>
+
+
+	<!-- LOOTCONTAINERS -->
+
+	<insertAfter xpath="//lootcontainer[last()]">
+		<!-- Adds a loot container for the grocery bags -->
+		<lootcontainer id="201" count="1" size="8,9" destroy_on_close="true" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" loot_quality_template="baseTemplate">
+			<item group="groceryBagLoot" 			count="1" />
+		</lootcontainer>
+		
+		<!-- Adds a loot container for the aquarium -->
+		<lootcontainer id="202" count="1" size="8,9" destroy_on_close="true" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate">
+			<item name="resourceBagFishFM" 			count="3,6" />
+		</lootcontainer>
+		
+		<!-- Adds a loot container for the beehives -->
+		<lootcontainer id="203" count="1" size="8,9" destroy_on_close="true" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate">
+			<item group="beehiveLoot"				count="1" />
+		</lootcontainer>
+	</insertAfter>
+
+</configs>

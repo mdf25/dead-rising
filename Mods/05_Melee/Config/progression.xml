@@ -1,0 +1,52 @@
+<configs>
+<append xpath="progression/attributes">
+<attribute name="Melee Mod" name_key="Melee Mod Perks" desc_key="Advanced Perks for Melee Mod" icon="ui_game_symbol_star">
+		<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="5" desc_key="Level 5"/></level_requirements>
+		<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="10" desc_key="Level 10"/></level_requirements>
+		<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="15" desc_key="Level 15"/></level_requirements>
+		<level_requirements level="4"><requirement name="PlayerLevel" target="self" operation="GTE" value="20" desc_key="Level 20"/></level_requirements>
+		<level_requirements level="5"><requirement name="PlayerLevel" target="self" operation="GTE" value="40" desc_key="Level 40"/></level_requirements>
+		<level_requirements level="6"><requirement name="PlayerLevel" target="self" operation="GTE" value="70" desc_key="Level 70"/></level_requirements>
+		<level_requirements level="7"><requirement name="PlayerLevel" target="self" operation="GTE" value="80" desc_key="Level 80"/></level_requirements>
+		<level_requirements level="8"><requirement name="PlayerLevel" target="self" operation="GTE" value="100" desc_key="Level 100"/></level_requirements>
+		<level_requirements level="9"><requirement name="PlayerLevel" target="self" operation="GTE" value="120" desc_key="Level 120"/></level_requirements>
+		<level_requirements level="10"><requirement name="PlayerLevel" target="self" operation="GTE" value="150" desc_key="Level 150"/></level_requirements>
+		
+		
+		<effect_group>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,10" tags="Sharp Ice Pick,Worn Handaxe"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="Weapon Anvil"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,10" tags="Salvaged Axe,Sturdy Crowbar,Sharp Skinner"/>
+					
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="Dull Sword,Dull Axe,Rusty Iron,Khopesh"/>
+					
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="2" level="5,10" tags="Weapon Mod Workbench,Golden Casement,Tempered Casement,Electric Casement,Poison Casement,Magma Casement"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="2" level="5,10" tags="Old Warhammer,Heavy Spiked Mace,Bone Club,Old Wooden Bat,Battle Sword,Rusty Dagger,"/>
+					
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="2" level="6,10" tags="Gutter,Rusty Katana,Battle Spear,Soul Harvest,Golden Axe,Worn Flail,Thors Hammer,Worn Bayonet"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="2" level="6,10" tags="Spike Mod,Saw Mod,Shuriken Mod,"/>
+					
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="2" level="7,10" tags="Soul Ripper,Holy Blade,Blood Drip,Lava Drip,Electric Blade,Death Blade,Fire Blade,Smoke Blade,Fire,Ice,Star,Water,Electric,Death,Poison,Hellfire,Smoke"/>
+					
+					
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="3" level="8,10" tags="Riot Shield,Shield Plate"/>
+				
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="4" level="9,10" tags="Halo Sword,HellSlayer,Punisher,Sword of Valor"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" value="5" level="10" tags="Red Lightsaber,Purple Lightsaber,Green Lightsaber,Blue Lightsaber,Pink Lightsaber,Black Lightsaber,Orange Lightsaber"/>
+					</effect_group>
+				
+	<effect_group>
+			<effect_description level="1" desc_key="MeleeMod1E" desc_base="1pt: Unlocks Handaxe, Ice Pick"/>
+			<effect_description level="2" desc_key="MeleeMod2E" desc_base="1pt: Unlocks Melee Weapon Workbench"/>
+			<effect_description level="3" desc_key="MeleeMod3E" desc_base="1pt: Unlocks Advanced Tools"/>
+			<effect_description level="4" desc_key="MeleeMod4E" desc_base="1pt: Unlocks Novelty tier weapons"/>
+			<effect_description level="5" desc_key="MeleeMod5E" desc_base="2pt: Unlocks Advanced Weapons and Weapon Casings"/>
+			<effect_description level="6" desc_key="MeleeMod6E" desc_base="2pt: Unlocks Physical Mods High Class Weapons"/>
+			<effect_description level="7" desc_key="MeleeMod7E" desc_base="2pt: Unlocks Elemental Mods"/>
+			<effect_description level="8" desc_key="MeleeMod8E" desc_base="3pt: Unlocks Riot Shield"/>
+			<effect_description level="9" desc_key="MeleeMod9E" desc_base="4pt: Unlocks Fun Weapons."/>
+			<effect_description level="10" desc_key="MeleeMod10E" desc_base="5pt: Unlocks Lightsabers."/>
+		</effect_group>
+		</attribute>
+</append>
+</configs>

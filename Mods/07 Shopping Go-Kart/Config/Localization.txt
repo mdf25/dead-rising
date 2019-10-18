@@ -1,3 +1,0 @@
-Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
-vehicleGuppyShoppingCartPlaceable,items,Vehicle,New,Shopping Go-Kart,,,,,
-shoppingCartEmpty,blocks,Block,New,Empty Shopping Cart,,,,,

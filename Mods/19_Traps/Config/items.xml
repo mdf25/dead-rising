@@ -1,0 +1,298 @@
+<configs>
+
+      <!-- <remove xpath="/items/item[@name='meleeToolClawHammer']/property[@class='Action1']"/> -->
+<append xpath="/items/item[@name='meleeToolStoneAxe' or @name='meleeToolClawHammer' or @name='meleeToolWrench' or @name='gunToolNailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceAcid,thrownAmmoMolotovCocktail</append>
+
+<!-- <append xpath="/items/item[@name='meleeToolClawHammer']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceAcid,thrownAmmoMolotovCocktail</append> -->
+<!-- <append xpath="/items/item[@name='meleeToolWrench']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceAcid,thrownAmmoMolotovCocktail</append> -->
+<!-- <append xpath="/items/item[@name='gunToolNailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceAcid,thrownAmmoMolotovCocktail</append> -->
+<!-- <append xpath="/items/item[@name='meleeToolStoneAxe']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceAcid,thrownAmmoMolotovCocktail</append> -->
+
+
+      <!-- <append xpath="/items/item[@name='meleeToolClawHammer']"> -->
+	<!-- <property class="Action1">  -->
+		<!-- <property name="Class" value="Repair"/> -->
+		<!-- <property name="Delay" value=".64"/>  -->
+		<!-- <property name="Repair_amount" value="250"/> -->
+		<!-- <property name="Upgrade_hit_offset" value="-3"/> -->
+		<!-- <property name="Sound_start" value="repair_block"/> -->
+		<!-- <property name="Allowed_upgrade_items" value="resourceAcid,thrownAmmoMolotovCocktail,resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceNail"/> -->
+		<!-- <property name="UsePowerAttackAnimation" value="false"/> -->
+	<!-- </property> -->
+    <!-- </append> -->
+	
+	<append xpath="/items">	
+	
+	
+<item name="rotot">
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="HoldType" value="25"/>
+	<property name="Meshfile" value="Items/Weapons/Ranged/Dynamite/dynamitePrefab"/>
+	<property name="DropScale" value="3"/>
+	<property name="Material" value="MDynamite"/>
+	<property name="CustomIcon" value="tnt"/>
+	<property name="Stacknumber" value="40"/> <!-- STK explosives -->
+	<property name="EconomicValue" value="71"/>
+	<property name="Weight" value="0"/>
+			<property name="IsSticky" value="true"/>
+	<property name="StickyOffset" value="0.5"/>
+	<property name="Explosion.ParticleIndex" value="1"/>
+	<property name="Explosion.RadiusBlocks" value="3"/>
+	<property name="Explosion.RadiusEntities" value="6"/>
+	<!--<property name="Explosion.DamageBonus.stone" value="0"/><property name="Explosion.DamageBonus.metal" value="0"/><property name="Explosion.DamageBonus.earth" value="0"/><property name="Explosion.DamageBonus.cloth" value="5"/><property name="Explosion.DamageBonus.wood" value="0"/><property name="Explosion.DamageBonus.water" value="0"/>-->
+	<property name="FuseTime" value="4"/> <!-- End: Needed for  time in sec, max 6 -->
+	<property class="Action0">
+		<property name="Class" value="ThrowAway"/>
+		<property name="Delay" value="1.2"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Throw_strength_default" value="8"/>
+		<property name="Throw_strength_max" value="30"/>
+		<property name="Max_strain_time" value="1.5"/>
+		<property name="Sound_start" value="swoosh"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+	</property>
+	<property class="Action1"> <!-- UseAction -->
+		<property name="Class" value="Activate"/>
+		<property name="Delay" value="1"/> <!-- obsolete if rounds per minute exists -->
+	</property>
+	<property name="ThrowableDecoy" value="true"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="900"/><display_value name="dExDamageBlock" value="900" />
+		<passive_effect name="EntityDamage" operation="base_set" value="680"/><display_value name="dExDamageEntity" value="680" />
+		<display_value name="dExRadius" value="6" />
+					<passive_effect name="ProjectileStickChance" operation="perc_set" value="1.0"/>
+	</effect_group>
+</item>
+
+<item name="testplosive">
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="Meshfile" value="#@modfolder:Resources/trap.unity3d?trigger.prefab"/>
+		<property name="StickyMeshFile" value="Items/Weapons/Ranged/Bows/WoodenBow/bodkinArrowPrefab"/>
+	<property name="HoldType" value="25"/>
+	<property name="DropScale" value="1"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="40"/> <!-- STK explosives -->
+	<property name="EconomicValue" value="41"/>
+	<property name="Weight" value="0"/>
+	<property name="AlwaysActive" value="true"/>
+	<property name="Active" value="true"/>
+	<property name="ExplodeOnHit" value="true"/>
+	<property name="Explosion.ParticleIndex" value="3"/>
+	<property name="Explosion.RadiusBlocks" value="3"/>
+	<property name="Explosion.RadiusEntities" value="5"/>
+	<property name="Explosion.DamageBonus.stone" value="1"/>
+	<property name="Explosion.DamageBonus.metal" value="1"/>
+	<property name="Explosion.DamageBonus.earth" value="1"/> <!-- should work? -->
+	<property name="Explosion.DamageBonus.wood" value="1"/>
+	<property name="Explosion.DamageBonus.water" value="0"/>
+	<property name="Explosion.BlastPower" value="75"/> <!-- (int,100) how far ragdolls and such are flung -->
+	<property name="FuseTime" value="1"/> <!-- End: Needed for  time in sec, max 6 -->
+	<property name="ThrowableDecoy" value="false"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="5"/><display_value name="dExDamageBlock" value="10" />
+		<passive_effect name="EntityDamage" operation="base_set" value="550"/><display_value name="dExDamageEntity" value="550" />
+		<display_value name="dExRadius" value="5"/>
+
+	</effect_group>
+</item>
+
+<item name="cleanplosive">
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="Meshfile" value="#@modfolder:Resources/trap.unity3d?trigger.prefab"/>
+	<property name="HoldType" value="25"/>
+	<property name="DropScale" value="0"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="40"/> <!-- STK explosives -->
+	<property name="EconomicValue" value="41"/>
+	<property name="Weight" value="0"/>
+	<property name="AlwaysActive" value="true"/>
+	<property name="Active" value="true"/>
+	<property name="ExplodeOnHit" value="true"/>
+	<property name="Explosion.ParticleIndex" value="0"/>
+	<property name="Explosion.RadiusBlocks" value="6"/>
+	<property name="Explosion.RadiusEntities" value="1"/>
+	<property name="Explosion.DamageBonus.stone" value="1"/>
+	<property name="Explosion.DamageBonus.metal" value="1"/>
+	<property name="Explosion.DamageBonus.earth" value="1"/> <!-- should work? -->
+	<property name="Explosion.DamageBonus.wood" value="1"/>
+	<property name="Explosion.DamageBonus.water" value="0"/>
+	<property name="Explosion.BlastPower" value="0"/> <!-- (int,100) how far ragdolls and such are flung -->
+	<property name="FuseTime" value="1"/> <!-- End: Needed for  time in sec, max 6 -->
+	<property name="ThrowableDecoy" value="false"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="5"/><display_value name="dExDamageBlock" value="10" />
+		<passive_effect name="EntityDamage" operation="base_set" value="0"/><display_value name="dExDamageEntity" value="550" />
+		<display_value name="dExRadius" value="6"/>
+	</effect_group>
+</item>
+
+<item name="testo">
+	<property name="Tags" value="satchel"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="HoldType" value="25"/>
+	<property name="DropScale" value="1"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="40"/> <!-- STK explosives -->
+	<property name="EconomicValue" value="41"/>
+	<property name="Weight" value="0"/>
+	<property name="AlwaysActive" value="true"/>
+	<property name="Active" value="true"/>
+	<property name="FuseTime" value="1"/> <!-- End: Needed for  time in sec, max 6 -->
+	<property name="ThrowableDecoy" value="false"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="50"/><display_value name="dExDamageBlock" value="10" />
+		<passive_effect name="EntityDamage" operation="base_set" value="0"/><display_value name="dExDamageEntity" value="550" />
+		<display_value name="dExRadius" value="5"/>
+	</effect_group>
+</item>
+
+<item name="transformtest">
+	<property name="HoldType" value="34"/>
+	<property name="Meshfile" value="Items/Crafting/Metal/IronBucketWaterPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="EconomicValue" value="88"/>
+	<property class="Action1"> <!-- UseAction -->
+        <property name="Class" value="ExchangeItem"/>
+        <property name="Delay" value="0.5"/>
+        <property name="Change_item_to" value="bucketEmpty"/>
+	</property>
+	<property name="Group" value="Tools/Traps"/>
+</item>
+
+<item name="C4 Bomb">
+	<property name="HoldType" value="25"/>
+	<property name="CustomIcon" value="c4trap"/>
+		<property name="Meshfile" value="#@modfolder:Resources/trap.unity3d?cono.prefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="EconomicValue" value="88"/>
+	<property class="Action1"> <!-- UseAction -->
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Delay" value="0.5"/>
+		<property name="Blockname" value="bombgrow"/>
+		<property name="Change_item_to" value="C4 Remote"/>
+		<property name="Sound_start" value="beartrapresetsound"/>
+	</property>
+	
+	<property name="Group" value="Tools/Traps"/>
+</item>
+
+<item name="C4 Bomb ">
+	<property name="HoldType" value="25"/>
+	<property name="CustomIcon" value="c4trap"/>
+		<property name="Meshfile" value="#@modfolder:Resources/trap.unity3d?cono.prefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="EconomicValue" value="88"/>
+	<property class="Action1"> <!-- UseAction -->
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Delay" value="0.5"/>
+		<property name="Blockname" value="bombgrow"/>
+		<property name="Sound_start" value="beartrapresetsound"/>
+	</property>
+	<property name="Group" value="Tools/Traps"/>
+</item>
+
+
+
+<item name="C4 Remote">
+<property name="CustomIcon" value="3remote"/>
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="HoldType" value="25"/>
+	<!-- 16 GOOD -->
+	<property name="Meshfile" value="#@modfolder:Resources/trap.unity3d?remote.prefab"/>
+	<property name="DropScale" value="1"/>
+	<property name="Material" value="Msatchel"/>
+	<property name="Stacknumber" value="40"/> <!-- STK explosives -->
+	<property name="EconomicValue" value="41"/>
+	<property name="Weight" value="0"/>
+	<property name="Explosion.ParticleIndex" value="0"/>
+	<property name="Explosion.RadiusBlocks" value="0"/>
+	<property name="Explosion.RadiusEntities" value="40"/>
+	<property name="Explosion.DamageBonus.stone" value="0"/>
+	<property name="Explosion.DamageBonus.metal" value="0"/>
+	<property name="Explosion.DamageBonus.earth" value="0"/> <!-- should work? -->
+	<property name="Explosion.DamageBonus.wood" value="0"/>
+	<property name="Explosion.DamageBonus.water" value="0"/>
+	<property name="Explosion.BlastPower" value="0"/> <!-- (int,100) how far ragdolls and such are flung -->
+	<property name="FuseTime" value="1"/> <!-- End: Needed for  time in sec, max 6 -->
+	<property class="Action0"> <!-- UseAction -->
+		<property name="Class" value="Activate"/>
+		<property name="Delay" value="1"/> <!-- obsolete if rounds per minute exists -->
+	</property>
+	<property name="ThrowableDecoy" value="true"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="0"/><display_value name="dExDamageBlock" value="0" />
+		<passive_effect name="EntityDamage" operation="base_set" value="0"/><display_value name="dExDamageEntity" value="0" />
+		<display_value name="dExRadius" value="2"/>
+	</effect_group>
+		<effect_group tiered="false">
+		<requirement name="NotHasBuff" target="self" buff="bufftimer"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" target="self" sound="remotebutton"/>
+<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="bufftimer"/>
+	</effect_group>
+</item>
+
+
+<item name="satcheltrigger">
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="Meshfile" value="#@modfolder:Resources/trap.unity3d?pickupinv.prefab"/>
+	<property name="HoldType" value="25"/>
+	<property name="DropScale" value="0"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="40"/> <!-- STK explosives -->
+	<property name="EconomicValue" value="41"/>
+	<property name="Weight" value="0"/>
+	<property name="AlwaysActive" value="true"/>
+	<property name="Active" value="true"/>
+	<property name="ExplodeOnHit" value="false"/>
+	<property name="Explosion.ParticleIndex" value="0"/>
+	<property name="Explosion.RadiusBlocks" value="13"/>
+	<property name="Explosion.RadiusEntities" value="0"/>
+	<property name="Explosion.DamageBonus.stone" value="0"/>
+	<property name="Explosion.DamageBonus.metal" value="0"/>
+	<property name="Explosion.DamageBonus.earth" value="0"/> <!-- should work? -->
+	<property name="Explosion.DamageBonus.wood" value="0"/>
+	<property name="Explosion.DamageBonus.water" value="2"/>
+	<property name="Explosion.BlastPower" value="0"/> <!-- (int,100) how far ragdolls and such are flung -->
+	<property name="FuseTime" value="1"/> <!-- End: Needed for  time in sec, max 6 -->
+	<property name="ThrowableDecoy" value="false"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="2"/><display_value name="dExDamageBlock" value="0" />
+		<passive_effect name="EntityDamage" operation="base_set" value="0"/><display_value name="dExDamageEntity" value="0" />
+		<display_value name="dExRadius" value="6"/>
+	</effect_group>
+</item>
+
+
+
+ </append>
+
+</configs>

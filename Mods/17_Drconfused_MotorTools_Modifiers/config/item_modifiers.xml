@@ -1,0 +1,315 @@
+<Drconfused_MotorTools_Upgrade>
+
+<append xpath="/item_modifiers">
+
+<!-- By changing the type="attachment" to type="mod" we can make some of these permanent, once put in to the slot they are bound to it? -->
+
+<!-- perc_add is addition by percentage, base_add is addition by real numbers, opposite for subtract -->
+
+
+
+<!-- ENGINE TURBO -->
+	<item_modifier name="modEngineTurbo1" installable_tags="motorTools1" modifier_tags="speed" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsTurboCharger"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".1"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modEngineTurbo2" installable_tags="motorTools1" modifier_tags="speed" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsTurboCharger"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".25"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	
+	<item_modifier name="modEngineTurbo3" installable_tags="motorTools1" modifier_tags="speed" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsTurboCharger"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".5"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	
+<!-- GAS TANK -->	
+	<item_modifier name="modGasTank1" installable_tags="gasTank1" modifier_tags="magazine" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsJerryCans1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="perc_add" value=".25"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modGasTank2" installable_tags="gasTank1" modifier_tags="magazine" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsJerryCans1"/>
+		<property name="CustomIconTint" value="5C797F"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modGasTank3" installable_tags="gasTank1" modifier_tags="magazine" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsJerryCans1"/>
+		<property name="CustomIconTint" value="b3efe3"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	
+<!-- 	RESERVE GAS TANK	-->
+	<item_modifier name="modReserveGasTank1" installable_tags="gasTank1" modifier_tags="backtank" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsReserveGasTank"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="perc_add" value=".25"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modReserveGasTank2" installable_tags="gasTank1" modifier_tags="backtank" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsReserveGasTank"/>
+		<property name="CustomIconTint" value="5C797F"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modReserveGasTank3" installable_tags="gasTank1" modifier_tags="backtank" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsReserveGasTank"/>
+		<property name="CustomIconTint" value="b3efe3"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	
+<!-- BARREL EXTENDER -->
+	<item_modifier name="modMotorToolExtension1" installable_tags="motorToolReach" modifier_tags="shaft" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerBlade1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MaxRange" operation="perc_add" value=".1"/>
+			<passive_effect name="BlockRange" operation="perc_add" value=".1"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modMotorToolExtension2" installable_tags="motorToolReach" modifier_tags="shaft" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerBlade1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MaxRange" operation="perc_add" value=".25"/>
+			<passive_effect name="BlockRange" operation="perc_add" value=".25"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modMotorToolExtension3" installable_tags="motorToolReach" modifier_tags="shaft" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerBlade1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="MaxRange" operation="perc_add" value=".5"/>
+			<passive_effect name="BlockRange" operation="perc_add" value=".5"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>	
+
+<!-- DIAMOND TIP increases damage AUGER -->
+	<item_modifier name="modDiamondTip1" installable_tags="diamondBlade1" modifier_tags="shafttip" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerBlade1"/>
+		<property name="CustomIconTint" value="5C797F"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+				<!-- <passive_effect name="EntityDamage" operation="perc_add" value="3.5"/> -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-1" tags="wood"/>	
+				<!-- <passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/> -->
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>	
+
+	<item_modifier name="modDiamondTip2" installable_tags="diamondBlade1" modifier_tags="shafttip" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerBlade1"/>
+		<property name="CustomIconTint" value="7C9398"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+				<!-- <passive_effect name="EntityDamage" operation="perc_add" value="3.5"/> -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".25"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-1" tags="wood"/>	
+				<!-- <passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/> -->
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>	
+	
+	<item_modifier name="modDiamondTip3" installable_tags="diamondBlade1" modifier_tags="shafttip" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerBlade1"/>
+		<property name="CustomIconTint" value="b9f2ff"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+				<!-- <passive_effect name="EntityDamage" operation="perc_add" value="3.5"/> -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".5"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-1" tags="wood"/>	
+				<!-- <passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/> -->
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>	
+
+<!-- BETTER HANDLES (Makes the handling better) -->
+		<!-- Testing the different modifiers that affect handling to see what should be added into this attachment or taken out of it and what can be added in others to help this all balance out -->
+		
+	<item_modifier name="modBetterHandles" installable_tags="motorTools1" modifier_tags="grips" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerHandles1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="KickDegreesVertical" operation="base_set" value="-0.05, 0.05"/>
+			<passive_effect name="KickDegreesHorizontal" operation="base_set" value="-0.05, 0.05"/>
+			<display_value name="dRecoil" value="0" />
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	
+<!-- TESTING the IncrementalSpreadMultiplier 	
+	<item_modifier name="modBetterHandlesISM1" installable_tags="motorTools1" modifier_tags="grips" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerHandles1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="KickDegreesVertical" operation="base_set" value="-0.25,0.25"/>
+			<passive_effect name="KickDegreesHorizontal" operation="base_set" value="-0.25,0.25"/>
+			<display_value name="dRecoil" value="1" />
+			<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value=".9"/>
+			<passive_effect name="WeaponHandling" operation="base_set" value="1"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	
+	<item_modifier name="modBetterHandlesISM2" installable_tags="motorTools1" modifier_tags="grips" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerHandles1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="KickDegreesVertical" operation="base_set" value="-0.25,0.25"/>
+			<passive_effect name="KickDegreesHorizontal" operation="base_set" value="-0.25,0.25"/>
+			<display_value name="dRecoil" value="1" />
+			<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value=".5"/>
+			<passive_effect name="WeaponHandling" operation="base_set" value="5"/>		
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modBetterHandlesISM3" installable_tags="motorTools1" modifier_tags="grips" type="attachment" rarity="0.5">
+		<property name="CustomIcon" value="DrsAugerHandles1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="KickDegreesVertical" operation="base_set" value="-1,1"/>
+			<passive_effect name="KickDegreesHorizontal" operation="base_set" value="-1,1"/>
+			<display_value name="dRecoil" value="100" />
+			<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.2"/>
+			<passive_effect name="WeaponHandling" operation="base_set" value="0.01"/>		
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+-->
+
+<!-- ENGINE SILENCER -->
+		
+	<item_modifier name="modMotorToolSilencer" installable_tags="motorTools1" modifier_tags="stealth" type="attachment">
+		<property name="CustomIcon" value="DrsSoundDampnerField1"/>
+		<property name="Stacknumber" value="1"/>
+		<item_property_overrides name="*">
+			<property name="Sound_start" value="silenced_fire"/>
+			<property name="Sound_end" value=""/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolAuger">
+			<property name="Sound_start" value="Auger_s_Fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolChainsaw">
+			<property name="Sound_start" value="Chainsaw_s_Fire"/>
+		</item_property_overrides>
+		
+		<effect_group tiered="false">
+			<passive_effect name="EntityDamage" operation="perc_add" value="-.2">
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,100" operation="LTE" value="80"/>
+			</passive_effect>
+			<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.25">
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,100" operation="LTE" value="80"/>
+			</passive_effect>
+			<passive_effect name="MaxRange" operation="perc_add" value="-.25">
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,100" operation="LTE" value="80"/>
+			</passive_effect>
+			<!-- Ideally we would have an attachment that would work and be viewable by the player and execute the following command =
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="Items/Mods/Barrels/SilencerPrefab" parent_transform="Attachments/Barrel"/> -->
+			<!-- stealth/noise stuff here -->
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>	
+		
+<!-- CHAINSAW TEMPERED FRAME -->
+	<item_modifier name="modChainsawTemperedFrame1" installable_tags="Chainsaw" modifier_tags="frame" type="mod" rarity="0.5">
+		<property name="CustomIcon" value="DrsChainsawBody1"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value=".25"/>
+			<passive_effect name="DegradationPerUse" operation="base_subtract" value=".5"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modChainsawTemperedFrame2" installable_tags="Chainsaw" modifier_tags="frame" type="mod" rarity="0.5">
+		<property name="CustomIcon" value="DrsChainsawBody1"/>
+		<property name="CustomIconTint" value="e05141"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value=".5"/>
+			<passive_effect name="DegradationPerUse" operation="base_subtract" value=".75"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
+	<item_modifier name="modChainsawTemperedFrame3" installable_tags="Chainsaw" modifier_tags="frame" type="mod" rarity="0.5">
+		<property name="CustomIcon" value="DrsChainsawBody1"/>
+		<property name="CustomIconTint" value="f71d04"/>
+		<property name="Stacknumber" value="1"/>
+		<effect_group tiered="false">
+			<passive_effect name="DegradationMax" operation="perc_add" value=".75"/>
+			<passive_effect name="DegradationPerUse" operation="base_subtract" value="1"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>	
+		<!--
+			<passive_effect name="DegradationMax" operation="base_set" value="3000,6000" tier="1,6"/>
+			<passive_effect name="DegradationPerUse" operation="base_set" value="3"/>			
+		-->
+		
+<!-- WIDER AUGER -->
+		<!--	Not sure on how to make a wider blade.. ideally this would be a much harder to aquire and would  eliminate roughly a 2x2 or 3x3 area centred on the crosshairs.
+			<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0.5"/>
+			<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0.5"/>	
+		-->
+		
+<!--	Lawn Mower	-->
+		<!-- What holding value is the best for the typical push behind lawnmower? 
+				Can the ring of fire code be utilized to have a lawnmower effect by gathering any ground vegetation within its radius when the buff is active?
+		-->
+
+<!-- NAILGUN MODS -->
+	
+
+-->
+	
+	
+</append>
+</Drconfused_MotorTools_Upgrade>

@@ -1,0 +1,1509 @@
+<configs>	
+	<!-- Adds a dependency tag to the start of the XML -->
+	<insertBefore xpath="/*/*[1]">
+		<!-- DEPENDENCY: FennecModlet - Foods - Additional Foods -->
+	</insertBefore>
+	
+	<!-- Alter the buffs on foods that trigger food poisoning so that you get stomach cramps first. -->
+	<set xpath="/items/item/effect_group/triggered_effect[@buff='buffIllFoodPoisoning0']/@buff">buffIllStomachCrampsFM</set>
+	
+	<!-- Set coffee so that it hydrates you less. It will give more stamina regeneration now, however. -->
+	<set xpath="/items/item[@name='drinkJarCoffee']/effect_group/triggered_effect[@cvar='$waterAmountAdd']/@value">15</set>
+	<set xpath="/items/item[@name='drinkJarCoffee']/effect_group/display_value[@name='staminaAmount']/@value">0.35</set>
+	
+	
+	<!-- Add the new food items -->
+	<append xpath="/items">
+		
+		<!-- JUNK ITEMS -->
+		<!-- Adds empty cartons for milk and yoghurt foods to return -->
+		<item name="resourceCartonEmptyFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Mplastics"/>
+			<property name="Stacknumber" value="500"/> <!-- STK resource -->
+			<property name="Weight" value="10"/>
+			<property name="EconomicValue" value="6"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds tin foil for cooking breads etc on the campfire. -->
+		<item name="resourceTinFoilFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="500"/> <!-- STK resource -->
+			<property name="Weight" value="10"/>
+			<property name="EconomicValue" value="6"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		
+		<!-- INGREDIENT ITEMS -->
+		<!-- Adds rock salt that can be harvested from stone -->
+		<item name="resourceRockSaltFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_Prefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="6000"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="12"/>
+			<property name="EconomicBundleSize" value="50" />
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds salt that can be refined from rock salt. -->
+		<item name="resourceSaltFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_Prefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="6000"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="12"/>
+			<property name="EconomicBundleSize" value="50" />
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds a fishing net that you can use to fill a fish tank with a bag of fish -->
+		<item name="toolFishingNetFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Mcloth"/>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Repair"/>
+				<property name="Delay" value=".64"/> <!-- Repair actions still need the delay amount -->
+				<property name="Repair_amount" value="100"/>
+				<property name="Upgrade_hit_offset" value="0"/>
+				<property name="Sound_start" value="repair_block"/>
+				<property name="Allowed_upgrade_items" value="resourceBagFishFM,resourceFishFoodFM"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="DegradationMax" operation="base_set" value="20,120" tier="1,6"/>
+			</effect_group>
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="40"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds a bag of fish that you can buy from the traders to fill your aquarium -->
+		<item name="resourceBagFishFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="10"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="40"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds fish food that you can use to allow fish tanks to produce offspring faster -->
+		<item name="resourceFishFoodFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="500"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds beekeeping forceps -->
+		<item name="toolBeekeepingForcepsFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Mmetal"/>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Repair"/>
+				<property name="Delay" value=".64"/> <!-- Repair actions still need the delay amount -->
+				<property name="Repair_amount" value="100"/>
+				<property name="Upgrade_hit_offset" value="0"/>
+				<property name="Sound_start" value="repair_block"/>
+				<property name="Allowed_upgrade_items" value="resourceQueenBeeFM,resourceWorkerBeeFM"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="DegradationMax" operation="base_set" value="50,320" tier="1,6"/>
+			</effect_group>
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="40"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds a queen bee to be used in beehives. -->
+		<item name="resourceQueenBeeFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="10"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="40"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds a worker bee to be used in beehives. -->
+		<item name="resourceWorkerBeeFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="500"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!-- Adds raw honeycombs that can be produced into honey -->
+		<item name="resourceRawHoneycombFM">
+			<property name="HoldType" value="3"/>
+			<property name="Meshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="500"/> <!-- STK resource -->
+			<property name="Weight" value="1"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="CraftingIngredientTime" value="3"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		
+		<!-- BASE ITEMS -->
+		<!-- Base item for all other food items to extend from -->
+		<item name="foodFennecModBase">
+			<property name="HoldType" 		value="31" />
+			<property name="DisplayType" 	value="foodWater" />
+			<property name="Meshfile" 		value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" 	value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" 		value="Mglass" />
+			<property name="Group" 			value="Food/Cooking" />
+			<property name="Stacknumber" 	value="50" /> 
+			<property name="EconomicValue" 	value="0" />
+			
+			<property class="Action0">
+				<property name="Class" 			value="Eat" />
+				<property name="Delay" 			value="2.1" />
+				<property name="Use_time" 		value="..." />
+				<property name="Sound_start" 	value="player_eating" />
+			</property>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<!-- Food that should return empty cans -->
+		<item name="foodCanFennecModBase">
+			<property name="HoldType" 		value="3" />
+			<property name="DisplayType" 	value="foodWater" />
+			<property name="Meshfile" 		value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" 	value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" 		value="Mmetal" />
+			<property name="Group" 			value="Food/Cooking" />
+			<property name="Weight"			value="5" />
+			<property name="Stacknumber" 	value="50" /> 
+			<property name="EconomicValue" 	value="0" />
+			
+			<property class="Action0">
+				<property name="Class" 			value="Eat" />
+				<property name="Delay" 			value="2.1" />
+				<property name="Use_time" 		value="..." />
+				<property name="Sound_start" 	value="player_eating" />
+				<property name="Create_item"	value="drinkCanEmpty" />
+			</property>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<!-- Food that should return empty cartons -->
+		<item name="foodCartonFennecModBase">
+			<property name="HoldType" 		value="3" />
+			<property name="DisplayType" 	value="foodWater" />
+			<property name="Meshfile" 		value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" 	value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" 		value="Mplastics" />
+			<property name="Group" 			value="Food/Cooking" />
+			<property name="Weight"			value="5" />
+			<property name="Stacknumber" 	value="50" /> 
+			<property name="EconomicValue" 	value="0" />
+			
+			<property class="Action0">
+				<property name="Class" 			value="Eat" />
+				<property name="Delay" 			value="2.1" />
+				<property name="Use_time" 		value="..." />
+				<property name="Sound_start" 	value="player_eating" />
+				<property name="Create_item"	value="resourceCartonEmptyFM" />
+			</property>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<!-- Food that should play a drinking sound, such as soup -->
+		<item name="foodDrinkSoundFennecModBase">
+			<property name="HoldType" 		value="3" />
+			<property name="DisplayType" 	value="foodWater" />
+			<property name="Meshfile" 		value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" 	value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" 		value="Mplastics" />
+			<property name="Group" 			value="Food/Cooking" />
+			<property name="Weight"			value="5" />
+			<property name="Stacknumber" 	value="50" /> 
+			<property name="EconomicValue" 	value="0" />
+			
+			<property class="Action0">
+				<property name="Class" 			value="Eat" />
+				<property name="Delay" 			value="2.1" />
+				<property name="Use_time" 		value="..." />
+				<property name="Sound_start" 	value="player_drinking" />
+			</property>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<!-- Food that should play a drinking sound and return a carton -->
+		<item name="foodDrinkSoundCartonFennecModBase">
+			<property name="HoldType" 		value="3" />
+			<property name="DisplayType" 	value="foodWater" />
+			<property name="Meshfile" 		value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" 	value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" 		value="Mplastics" />
+			<property name="Group" 			value="Food/Cooking" />
+			<property name="Weight"			value="5" />
+			<property name="Stacknumber" 	value="50" /> 
+			<property name="EconomicValue" 	value="0" />
+			
+			<property class="Action0">
+				<property name="Class" 			value="Eat" />
+				<property name="Delay" 			value="2.1" />
+				<property name="Use_time" 		value="..." />
+				<property name="Sound_start" 	value="player_drinking" />
+				<property name="Create_item"	value="resourceCartonEmptyFM" />
+			</property>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		
+		<!-- Base item for all other drink items to extend from -->
+		<item name="drinkJarFennecModBase">
+			<property name="HoldType" 		value="3" />
+			<property name="DisplayType" 	value="foodWater" />
+			<property name="Meshfile" 		value="Items/Misc/parcelPrefab" />
+			<property name="DropMeshfile" 	value="Items/Misc/sack_droppedPrefab" />
+			<property name="Material" 		value="Morganic" />
+			<property name="Group" 			value="Food/Cooking" />
+			<property name="Weight"			value="5" />
+			<property name="Stacknumber" 	value="15" /> 
+			<property name="EconomicValue" 	value="0" />
+			
+			<property class="Action0">
+				<property name="Class" 			value="Eat" />
+				<property name="Delay" 			value="2.1" />
+				<property name="Use_time" 		value="..." />
+				<property name="Sound_start" 	value="player_drinking" />
+				<property name="Create_item" 	value="drinkJarEmpty" />
+			</property>
+
+			<effect_group tiered="false">
+				<requirement name="NotHasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+			
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffExtinguishFire" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkCartonFennecModBase">
+			<property name="HoldType" 		value="31" />
+			<property name="DisplayType" 	value="foodWater" />
+			<property name="Meshfile" 		value="Items/Food/emptyJarPrefab"/>
+			<property name="DropMeshfile" 	value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" 		value="Mplastics" />
+			<property name="Group" 			value="Food/Cooking" />
+			<property name="Weight"			value="5" />
+			<property name="Stacknumber" 	value="50" /> 
+			<property name="EconomicValue" 	value="0" />
+			
+			<property class="Action0">
+				<property name="Class" 			value="Eat" />
+				<property name="Delay" 			value="2.1" />
+				<property name="Use_time" 		value="..." />
+				<property name="Sound_start" 	value="player_eating" />
+				<property name="Create_item"	value="resourceCartonEmptyFM" />
+			</property>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		
+		<!-- FOOD ITEMS -->
+		<!-- Heated Canned Foods: Keeps you warmer in cold places! -->
+		<item name="foodCanBeefHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanChickenHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanLambHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanChiliHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanTunaHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanHamHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanPastaHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanSalmonHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanMisoHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="60"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="8" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanPeasHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="20"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="8" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="8" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanSoupHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="40"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="4" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM" />
+			</effect_group>
+		</item>
+
+		<item name="foodCanStockHotFM">
+			<property name="Extends" value="foodCanFennecModBase" />
+			<property name="EconomicValue" value="40"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" operation="add" value="12"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="4"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" buff="buffProcessConsumables"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" buff="buffHotMealFM"/>
+			</effect_group>
+		</item>
+		
+		
+		<!-- Other Foods -->
+		<item name="foodAnchovyPizzaFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="95" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="35" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="6" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodApplePieFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="35" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="28" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBatteredFishFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="20" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="7" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBeefStewFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="205" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="60" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffKnockdownFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBlueberryCakeFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="95" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBoiledPotatoFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="5" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBreadFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="10" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBreadSliceFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="1" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBritishBreakfastFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="240" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="65" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="35" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHeartyMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodBurgerBunFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="3" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodButterFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="15" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCakeMixtureFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="12" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="8" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="6" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffIllStomachCrampsFM">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30" />
+				</triggered_effect>
+			</effect_group>
+		</item>
+		
+		<item name="foodCanAnchoviesFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="40" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCheeseFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="10" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCheeseDoughballsFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="20" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCheesePizzaFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="55" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="23" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="6" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCheeseSandwichFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="40" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodChickenCheeseburgerFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="60" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodChickenMushroomPastaFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffQuickHandsFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodChickenMushroomSoupFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodChickenPieFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="95" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="35" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHeartyMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodChickenSandwichFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="40" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodChickenStewFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="205" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="60" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffVigorousPowerFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodChickenSweetcornSoupFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHotMealFM"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodChocolateFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="10" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodChocolateCakeFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="80" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCookedFishFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="20" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCookedSalmonFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="55" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="32" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCropAppleFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="1" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCropPearFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="1" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+
+		<item name="foodCropSoybeanFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="1" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffIllStomachCrampsFM">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="10"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+		
+		<item name="foodCropTomatoFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="1" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodCropWheatFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="1" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodDoggyDooFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="240" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffDoglikeAggressionFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodDoughFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="3" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="6" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodEggSandwichFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="40" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodFishAndChipsFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodFlourFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="2" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="7" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodFreshAnchovyFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="4" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodFreshFishFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="12" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="9" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodFreshSalmonFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="35" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodFriesFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="25" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodGelatinFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="55" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodGrilledCheeseFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="45" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="14" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodGroundHerbsFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="2" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodGummyBearsBlueFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="55" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffGummyPowerBlueFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodGummyBearsRedFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="55" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffGummyPowerRedFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodGummyBearsBlackFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="55" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffGummyPowerBlackFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodHogRoastBurgerFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="60" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="40" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodHoneyChickenKabobsFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="95" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"	cvar="$waterAmountAdd"	operation="add" value="0" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodHoneyYuccaPieFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="95" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"	cvar="$waterAmountAdd"	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodHunterStewFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="140" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="60" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHuntersEyeFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodKittyCasseroleFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="45" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffCatlikeReflexesFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodLambStewFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="205" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="60" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffQuickLearnerFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodMacaroniCheeseFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="90" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodMushroomSoupFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffStrongArmsFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodPastaShamFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffMeleeSpeedFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodPeaHamSoupFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffStrongJointsFM" />
+			</effect_group>
+		</item>
+				
+		<item name="foodPotatoPastaSaladFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="90" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffRefreshingMealFM" />
+			</effect_group>
+		</item>
+				
+		<item name="foodRottingFleshCharredFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="5" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffIllStomachCrampsFM">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30" />
+				</triggered_effect>
+				<display_value name="FoodPoisoningRisk" value="0.3" />
+			</effect_group>
+		</item>
+		
+		<item name="foodShamSandwichCharredFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="5" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="28"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="12"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffIllStomachCrampsFM">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
+				</triggered_effect>
+				<display_value name="FoodPoisoningRisk" value="0.2" />
+			</effect_group>
+		</item>
+		
+		<item name="foodScrambledEggsFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="85" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodShepherdsPieFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="175" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="40" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHeartyMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodSmokedSalmonFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="42" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHeartyMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodSnakeSoupFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="205" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffDetoxFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodSnakeStripsFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="30" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodSpaghettiVenisonMeatballsFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="165" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodSpicyHashFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="205" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="subtract" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHealthRegenFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodSummerFruitSaladFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="240" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="40" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffDetoxFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodToastFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="25" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodTortillaFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="1" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodVegetableSoupFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffKeenEyesFM"/>
+			</effect_group>
+		</item>
+		
+		<item name="foodVenisonFeastPizzaFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="43" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHeartyMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodVenisonWellingtonFM">
+			<property name="Extends" 		value="foodFennecModBase" />
+			<property name="EconomicValue" 	value="85" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHeartyMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodWinterFruitSaladFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="240" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="30" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="40" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffIceVeinsFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodWolfiesMeatloafFM">
+			<property name="Extends" 		value="foodDrinkSoundFennecModBase" />
+			<property name="EconomicValue" 	value="380" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="70" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="50" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffHealthRegen2FM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodYoghurtFM">
+			<property name="Extends" 		value="foodDrinkSoundCartonFennecModBase" />
+			<property name="EconomicValue" 	value="30" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="foodYoghurtBlueberryFM">
+			<property name="Extends" 		value="foodDrinkSoundCartonFennecModBase" />
+			<property name="EconomicValue" 	value="45" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffRefreshingMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodYoghurtMixedFruitFM">
+			<property name="Extends" 		value="foodDrinkSoundCartonFennecModBase" />
+			<property name="EconomicValue" 	value="85" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="20" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffRefreshingMealFM" />
+			</effect_group>
+		</item>
+		
+		<item name="foodYoghurtYuccaFM">
+			<property name="Extends" 		value="foodDrinkSoundCartonFennecModBase" />
+			<property name="EconomicValue" 	value="45" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$foodAmountAdd" 	operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="10" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="15" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffRefreshingMealFM" />
+			</effect_group>
+		</item>
+		
+		
+		<!-- DRINK ITEMS -->
+		<item name="drinkJarAloeJuiceFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="16" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffDetoxFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarAppleCiderFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffAppleCiderFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarAppleJuiceFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="28" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffAppleJuiceFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarBloodyMaryFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffBloodyMaryFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarBlueberryJuiceFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="28" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="3" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffBlueberryJuiceFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarBlueberryWineFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="125" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffBlueberryWineFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarPotatoJuiceFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="12" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarTomatoJuiceFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="add" value="5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffTomatoJuiceFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkJarVegetableOilFM">
+			<property name="Extends" 		value="drinkJarFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="6" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="foodHealthAmount" operation="subtract" value="2" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkCartonMilkFM">
+			<property name="Extends" 		value="drinkCartonFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffMilkFM" />
+			</effect_group>
+		</item>
+		
+		<item name="drinkCartonSoyaMilkFM">
+			<property name="Extends" 		value="drinkCartonFennecModBase" />
+			<property name="EconomicValue" 	value="65" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" 	cvar="$waterAmountAdd" 	operation="add" value="18" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" 	target="self" 			buff="buffSoyaMilkFM" />
+			</effect_group>
+		</item>
+		
+		
+		
+	</append>
+</configs>

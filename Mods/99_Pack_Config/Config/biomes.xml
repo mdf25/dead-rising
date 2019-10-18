@@ -1,0 +1,10 @@
+<configs>
+	
+	<!-- Make apple and pear trees available in forest biome, but make them rare -->
+	<append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations">
+		<decoration type="block" blockname="treePlantedApple4FM" prob="0.002" rotatemax="3"/>
+		<decoration type="block" blockname="treePlantedPear4FM" prob="0.002" rotatemax="3"/>
+	</append>
+	
+	
+</configs>

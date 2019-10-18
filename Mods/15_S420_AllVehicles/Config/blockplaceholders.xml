@@ -1,0 +1,32 @@
+<configs>
+	<append xpath="/blockplaceholders/placeholder[@name='carsRandomHelper']">
+		<block name="S420_BustedBus" prob="0.02"/>
+		<block name="S420_CombatJeep01" prob="0.008"/>
+		<block name="S420_CombatJeep02" prob="0.008"/>
+		<block name="S420_CombatJeep03" prob="0.008"/>
+		<block name="S420_CombatJeep04" prob="0.008"/>
+		<block name="S420_CombatJeep05" prob="0.008"/>
+		<block name="S420_damagedCarD0" prob="0.05"/>
+		<block name="S420_damagedCarD1" prob="0.1"/>
+		<block name="S420_damagedCarD2" prob="0.5"/>
+		<block name="S420_damagedVanD0" prob="0.05"/>
+		<block name="S420_damagedVanD1" prob="0.1"/>
+		<block name="S420_damagedVanD2" prob="0.5"/>
+		<block name="S420_FireTruck" prob="0.01"/>
+		<block name="S420_SemiTruck01" prob="0.009"/>
+		<block name="S420_SemiTruck01r" prob="0.009"/>
+		<block name="S420_SemiTruck01w" prob="0.009"/>
+		<block name="S420_SemiTruck02" prob="0.009"/>
+		<block name="S420_SemiTruck02r" prob="0.009"/>
+		<block name="S420_SemiTruck02w" prob="0.009"/>
+		<block name="S420_SemiTruck03" prob="0.009"/>
+		<block name="S420_SemiTruck03r" prob="0.009"/>
+		<block name="S420_SemiTruck03w" prob="0.009"/>
+		<block name="S420_TransportTankerD0" prob="0.008"/>
+		<block name="S420_TransportTankerD1" prob="0.01"/>
+		<block name="S420_TransportTankerD2" prob="0.02"/>
+		<block name="S420_TransportTruckD0" prob="0.008"/>
+		<block name="S420_TransportTruckD1" prob="0.01"/>
+		<block name="S420_TransportTruckD2" prob="0.02"/>
+	</append>
+</configs>

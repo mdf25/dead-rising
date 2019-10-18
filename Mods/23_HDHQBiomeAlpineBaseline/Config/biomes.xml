@@ -1,0 +1,13 @@
+<configs>
+  <!-- Snow Decorations -->
+   <remove xpath="/worldgeneration/biomes/biome[@name='snow']/decorations/decoration[@blockname='treeWinterEverGreen']"/>
+   <remove xpath="/worldgeneration/biomes/biome[@name='snow']/decorations/decoration[@blockname='treeWinterPine13m']"/>
+   <remove xpath="/worldgeneration/biomes/biome[@name='snow']/decorations/decoration[@blockname='treeWinterPine19m']"/>
+   <remove xpath="/worldgeneration/biomes/biome[@name='snow']/decorations/decoration[@blockname='treeWinterPine28m']"/>
+
+   <append xpath="/worldgeneration/biomes/biome[@name='snow']/decorations">
+    <decoration type="block" blockname="HDHQ_AlpineC1Prefab" prob ="0.004" rotatemax="3"/>
+    <decoration type="block" blockname="HDHQ_AlpineC2Prefab" prob ="0.2" rotatemax="3"/>
+   </append>
+ 
+</configs>

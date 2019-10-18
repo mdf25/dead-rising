@@ -1,0 +1,614 @@
+<configs>
+
+<!-- Remove all mod schematics in loot containers. Mod crafting is now loot only. -->
+<remove xpath="/lootcontainers/lootgroup[contains(@name, 'Books')]/item[contains(@name, 'Schematic')]" />
+
+<!-- Remove rare books specifically so that the schematics don't spawn in randomly -->
+<remove xpath="/lootcontainers/lootgroup[@name='rareBooks']" />
+<insertAfter xpath="/lootcontainers/lootgroup[@name='commonBooks']">
+	<lootgroup name="rareBooks" count="1">
+		<item name="resourcePaper" count="5,15" prob="20"/>
+		<item group="questChallenge" count="1"/>
+	</lootgroup>
+</insertAfter>
+
+
+<!-- Remove all the Gunny Guides that are no longer needed in game. -->
+<remove xpath="//item[contains(@name, 'Guide: Pistols')]" />
+<remove xpath="//item[contains(@name, 'Guide: Hunting Rifles')]" />
+<remove xpath="//item[contains(@name, 'Guide: Shotguns')]" />
+<remove xpath="//item[contains(@name, 'Guide: 44 Magnum')]" />
+<remove xpath="//item[contains(@name, 'Guide: AK-47')]" />
+<remove xpath="//item[contains(@name, 'Guide: SMG')]" />
+<remove xpath="//item[contains(@name, 'MR-10')]" />
+<remove xpath="//item[contains(@name, 'Rocket Launcher')]" />
+
+
+<!-- Remove Melee weapons in loot containers that may clutter up other loot, like guns in gun safes. -->
+
+<!-- LootContainer 11: Safes -->
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='salvagedAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='sturdyCrowbar']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='soulHarvest']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='goldenAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='wornFlail']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='thorsHammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='11']/item[@group='riotShield']" />
+
+<!-- LootContainer 24: Metal Desks -->
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='wornFlail']" />
+
+<!-- LootContainer 36: Suitcase -->
+<remove xpath="/lootcontainers/lootcontainer[@id='36']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='36']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='36']/item[@group='khopesh']" />
+
+<!-- LootContainer 41: Fancy Chest -->
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='salvagedAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='sturdyCrowbar']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='41']/item[@group='rustyKatana']" />
+
+<!-- LootContainer 42: Gun Safe -->
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='soulHarvest']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='goldenAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='wornFlail']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='thorsHammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='42']/item[@group='riotShield']" />
+
+<!-- LootContainer 48: Purse -->
+<remove xpath="/lootcontainers/lootcontainer[@id='48']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='48']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='48']/item[@group='boneClub']" />
+
+<!-- LootContainer 50: Shotgun Messiah Crates -->
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='goldenAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='wornFlail']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='50']/item[@group='thorsHammer']" />
+
+
+
+<!-- LootContainer 61: Treasure Chest -->
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='sharpIcePick']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='wornHandaxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='salvagedAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='sturdyCrowbar']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='dullSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='dullAxe']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='rustyIron']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='khopesh']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='wornBayonet']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='rustyDagger']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='battleSword']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='oldWoodenBat']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='boneClub']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='heavySpikedMace']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='oldWarhammer']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='gutter']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='rustyKatana']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='battleSpear']" />
+<remove xpath="/lootcontainers/lootcontainer[@id='61']/item[@group='wornFlail']" />
+
+
+<!-- Adjust loot for ammo in custom firearms packs to streamline it for gameplay purposes. -->
+<set xpath="//item[@name='9x19mm Bullet']/@name">ammo9mmBullet</set>
+<set xpath="//item[@name='38 Bullet']/@name">ammo9mmBullet</set>
+<set xpath="//item[@name='45ACP Bullet']/@name">ammo44MagnumBullet</set>
+<set xpath="//item[@name='40cal Bullet']/@name">ammo44MagnumBullet</set>
+<set xpath="//item[@name='50AE Bullet']/@name">ammo44MagnumBullet</set>
+<set xpath="//item[@name='10mm Bullet']/@name">ammo9mmBullet</set>
+<set xpath="//item[@name='7.62x51mm Bullet']/@name">ammo762mmBulletFMJ</set>
+<set xpath="//item[@name='7.62x39mm Bullet']/@name">ammo762mmBulletFMJ</set>
+<set xpath="//item[@name='5.56x45mm Bullet']/@name">5.56mm Bullet</set>
+<set xpath="//item[@name='223 Bullet']/@name">ammo762mmBulletFMJ</set>
+<set xpath="//item[@name='30-06 Bullet']/@name">ammo762mmBulletFMJ</set>
+<set xpath="//item[@name='50cal Bullet']/@name">ammo44MagnumBullet</set>
+<set xpath="//item[@name='40mm Explosive']/@name">Explosive Bullet</set>
+<set xpath="//item[@name='5mm Bullet']/@name">5.56mm Bullet</set>
+
+
+<!-- Replace tortillas, wheat, flour etc with FennecModlet equivalent -->
+<remove xpath="//item[@name='Wheat Seeds']" />
+<set xpath="//item[@name='Wheat']/@name">foodCropWheatFM</set>
+<set xpath="//item[@name='Flour']/@name">foodFlourFM</set>
+<set xpath="//item[@name='Tortillas']/@name">foodTortillaFM</set>
+
+
+<!-- Adding loot -->
+<insertBefore xpath="/lootcontainers/lootgroup[@name='questTier2SkillRewards']">
+
+<!-- Add the lootgroup for Fox Guides -->
+<lootgroup name="FoxsGuides">
+    <item name="Fox's Guide: Cooking Appliances" />
+	<item name="Fox's Guide: Fences and Railings" />
+	<item name="Fox's Guide: Lighting Your Home" />
+	<item name="Fox's Guide: Kitchen Upgrades" />
+	<item name="Fox's Guide: Wireless Power Systems" />
+	<item name="Fox's Guide: How To Trap A Zombie" />
+	<item name="Fox's Guide: How To Blow Shit Up" />
+</lootgroup>
+
+</insertBefore>
+
+
+<!-- Add the new Gunny Guide for ammunition -->
+<append xpath="/lootcontainers/lootgroup[@name='WeaponsBooksLootGroupLevel3']">
+	<item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='questTier3SkillRewards']">
+	<item name="Gunny's Guide: Bullet Crafting for Dumbasses" />
+</append>
+
+<!-- Add the Fox Guides -->
+<append xpath="/lootcontainers/lootgroup[@name='questTier2SkillRewards']">
+	<item group="FoxsGuides" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='books']" >
+	<item group="FoxsGuides" prob=".05" /> 
+</append>
+
+<append xpath="/lootcontainers/lootcontainer[@id='11']" >
+    <item group="FoxsGuides" prob="0.03" />
+</append>
+
+<!-- Adds the new cookbooks for FennecModlet - Foods - Additional Foods to the loot table -->
+<append xpath="/lootcontainers/lootgroup[@name='magazineCookingLevel1Recipes']">
+	<item name="Cookbook: How To Boil A Spud" />
+	<item name="Cookbook: Scrambling Your Eggs, Not Your Brain" />
+	<item name="Cookbook: Oil Is Important" />
+</append>
+	
+<append xpath="/lootcontainers/lootgroup[@name='magazineCookingLevel2Recipes']">	
+	<item name="Cookbook: The Dairy Edition" />
+	<item name="Cookbook: Working with Dough" />
+	<item name="Cookbook: Battering Your Fishy Snake and Doughballs" />
+	<item name="Cookbook: Have Your Cake... And Eat It Too" />
+	<item name="Cookbook: Salads Sweet and Savoury" />
+</append>
+	
+<append xpath="/lootcontainers/lootgroup[@name='magazineCookingLevel3Recipes']">
+	<item name="Cookbook: Soups, Vol I: For the Meat Lovers" />
+	<item name="Cookbook: Soups, Vol II: Suitable for Vegetarians" />
+	<item name="Cookbook: Pies, Vol I: Sweet Treats" />
+	<item name="Cookbook: Pies, Vol II: Make Meat Pies, Not Cream Pies" />
+	<item name="Cookbook: The Fishy Edition" />
+	<item name="Cookbook: The Burger King" />
+</append>
+	
+<append xpath="/lootcontainers/lootgroup[@name='magazineCookingLevel4Recipes']">
+	<item name="Cookbook: Drown Your Sorrows... Temporarily" />
+	<item name="Cookbook: Pizza Is Life" />
+	<item name="Cookbook: Pasta Italia" />
+	<item name="Cookbook: Stewing Over Everything" />
+	<item name="Cookbook: Gummy Gelatin" />
+</append>
+	
+<append xpath="/lootcontainers/lootgroup[@name='magazineCookingLevel5Recipes']">
+	<item name="Cookbook: The Rich Eat Well" />
+	<item name="Cookbook: Pets Love It, You Hate It" />
+	<item name="Cookbook: Meatloaf, the Wolfie Way" />
+</append>
+
+
+
+<!-- Add the Melee books for Toolmaking Today -->
+<append xpath="/lootcontainers/lootgroup[@name='ToolmakingToday']" >
+	<item name="Toolmaking Today: Small Hand Tools" 		prob="0.5" />
+	<item name="Toolmaking Today: Looting Tools" 			prob="0.3" />
+	<item name="Toolmaking Today: Weapons of the Dark Ages" prob="0.2" />
+	<item name="Toolmaking Today: Defensive Shields" 		prob="0.2" />
+</append>
+
+<!-- Decrease probability of Toolmaking Today books from appearing in Working Stiff boxes - we want more tools, not books! -->
+<setattribute xpath="//lootcontainer[@id='53']/item[@group='ToolmakingToday']" name="prob">0.35</setattribute>
+
+<!-- Decrease probability of Medical Journals in Pop'n'Pills containers - we want more meds instead! -->
+<setattribute xpath="//lootcontainer[@id='51']/item[@group='medicalJournals']" name="prob">0.2</setattribute>
+
+<!-- Increase probability of finding the forge book within the Toolmaking Today guides -->
+<set xpath="//lootgroup[@name='ToolmakingToday']/item[@name='Toolmaking Today: Forges']/@prob">0.18</set>
+
+
+<!-- Add all the Melee weapon mods into loot so they can be found in their respective areas. -->
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT1']" >
+	<item name="Spike Mod" />
+	<item name="Smoke Blade" />
+	<item name="Fire Blade" />
+	<item name="Fire" />
+	<item name="Water" />
+	<item name="Smoke" />
+	<item name="Tempered Casement" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT2']" >
+	<item name="Saw Mod" />
+	<item name="Electric Blade" />
+	<item name="Blood Drip" />
+	<item name="Lava Drip" />
+	<item name="Ice" />
+	<item name="Poison" />
+	<item name="Electric" />
+	<item name="Poison Casement" />
+	<item name="Electric Casement" />
+</append>
+
+<append xpath="/lootcontainers/lootgroup[@name='modMeleeT3']" >
+	<item name="Shuriken Mod" />
+	<item name="Death Blade" />
+	<item name="Soul Ripper" />
+	<item name="Holy Blade" />
+	<item name="Star" />
+	<item name="Death" />
+	<item name="Hellfire" />
+	<item name="Golden Casement" />
+	<item name="Magma Casement" />
+</append>
+
+
+
+<!-- Adds Custom Firearms ammo types to the ammo lootgroup -->
+<append xpath="//lootgroup[@name='ammo']">
+	<item name="5.56mm Bullet"	count="10,30"		prob="0.4" />
+</append>
+
+
+<!-- Add separate lootgroup for the lootable pallet boxes -->
+<insertAfter xpath="/lootcontainers/lootcontainer[last()]">
+	
+	<lootcontainer id="122" count="0,2" size="5,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate">
+		<item group="junk" 							count="1"		prob="2.5" />
+		<item group="automotive"					count="1"		prob="1.0" />
+		<item group="ammo" 							count="1"		prob="0.5" />
+		<item group="electricalDevices" 			count="1"		prob="0.1" />
+		<item name="resourceForgeParts"				count="1,2"		prob="0.05" />
+		<item name="resourceWorkbenchParts"			count="1,2"		prob="0.03" />
+		<item name="resourceTableSawParts"			count="1,2"		prob="0.03" />
+		<item name="resourceCementMixerParts"		count="1,2"		prob="0.02" />
+		<item name="resourceChemistryStationParts"	count="1,2"		prob="0.02" />
+		<item name="resourcePaint" 					count="50,150" 	prob="0.01"/>
+		<item name="resourceAcid" 					count="1,4" 	prob="0.01"/>
+		<item group="dyes" 							count="1"		prob="0.008"/>
+		<item name="meleeToolPaintTool" 			count="1"		prob="0.005"/>
+	</lootcontainer>
+	
+</insertAfter>
+
+
+<!-- Adds loot for the Admin Arena blocks -->
+<!-- Add Custom Firearms guns and ammo to guns loot table -->
+<insertAfter xpath="//comment()[self::node() = ' Arena: Non-vanilla guns and ammo here ']">
+	<lootgroup name="arenaLugerAmmo"					count="all">
+		<item name="Luger"	 					count="1" />
+		<item name="ammo9mmBullet"				count="60" />
+	</lootgroup>
+	
+	<lootgroup name="arena38SnubnoseAmmo"				count="all">
+		<item name="38 Snubnose"				count="1" />
+		<item name="ammo9mmBullet"				count="60" />
+	</lootgroup>
+	
+	<lootgroup name="arenaGlock40Ammo"					count="all">
+		<item name="Glock 40"					count="1" />
+		<item name="ammo44MagnumBullet"			count="40" />
+	</lootgroup>
+	
+	<lootgroup name="arena1911Ammo"						count="all">
+		<item name="1911"						count="1" />
+		<item name="ammo44MagnumBullet"			count="40" />
+	</lootgroup>
+	
+	<lootgroup name="arenaDesertEagleAmmo"				count="all">
+		<item name="Desert Eagle"				count="1" />
+		<item name="ammo44MagnumBullet" 		count="30" />
+	</lootgroup>
+	
+	<lootgroup name="arenaKlobAmmo"						count="all">
+		<item name="Klob"						count="1" />
+		<item name="ammo9mmBullet"				count="100" />
+	</lootgroup>
+	
+	<lootgroup name="arenaMac10Ammo"					count="all">
+		<item name="Mac 10"						count="1" />
+		<item name="ammo9mmBullet"				count="100" />
+	</lootgroup>
+	
+	<lootgroup name="arenaMP40Ammo"						count="all">
+		<item name="MP 40"						count="1" />
+		<item name="ammo9mmBullet"				count="100" />
+	</lootgroup>
+	
+	<lootgroup name="arenaMP5Ammo"						count="all">
+		<item name="MP5"						count="1" />
+		<item name="10mm Bullet"				count="60" />
+	</lootgroup>
+	
+	<lootgroup name="arenaM1A1ThompsonAmmo"				count="all">
+		<item name="M1A1 Thompson"				count="1" />
+		<item name="10mm Bullet"				count="60" />
+	</lootgroup>
+	
+	<lootgroup name="arenaDoubleBarrelShotgunAmmo"		count="all">
+		<item name="Double Barrel Shotgun" 		count="1" />
+		<item name="ammoShotgunShell"			count="40" />
+	</lootgroup>
+	
+	<lootgroup name="arenaMossberg590A1Ammo"			count="all">
+		<item name="Mossberg 590A1"				count="1" />
+		<item name="ammoShotgunShell"			count="50" />
+	</lootgroup>
+	
+	<lootgroup name="arenaSpaz12Ammo"					count="all">
+		<item name="Spaz12"						count="1" />
+		<item name="ammoShotgunShell"			count="40" />
+	</lootgroup>
+	
+	<lootgroup name="arenaFNFALAmmo"					count="all">
+		<item name="FN FAL"						count="1" />
+		<item name="ammo762mmBulletFMJ"			count="80" />
+	</lootgroup>
+	
+	<lootgroup name="arenaRustAKAmmo"					count="all">
+		<item name="Rust AK"					count="1" />
+		<item name="ammo762mmBulletFMJ"			count="120" /> 
+	</lootgroup>
+	
+	<lootgroup name="arenaAR15Ammo"						count="all">
+		<item name="AR15"						count="1" />
+		<item name="ammo762mmBulletFMJ"			count="120" />
+	</lootgroup>
+	
+	<lootgroup name="arenaM16Ammo"						count="all">
+		<item name="M16"						count="1" />
+		<item name="ammo762mmBulletFMJ"			count="90" />
+	</lootgroup>
+	
+	<lootgroup name="arenaM4A1Ammo"						count="all">
+		<item name="M4A1"						count="1" />
+		<item name="ammo762mmBulletFMJ"			count="60" />
+	</lootgroup>
+	
+	<lootgroup name="arenaSCARAmmo"						count="all">
+		<item name="SCAR"						count="1" />
+		<item name="ammo762mmBulletFMJ"			count="90" />
+	</lootgroup>
+	
+	<lootgroup name="arenaM1Ammo"						count="all">
+		<item name="M1"							count="1" />
+		<item name="ammo762mmBulletFMJ"			count="40" />
+	</lootgroup>
+</insertAfter>
+
+<append xpath="//lootgroup[@name='arenaAmmo']">
+	<item name="10mm Bullet"	count="40,80"	prob="1" />
+	<item name="5.56mm Bullet"	count="30,60"	prob="1.5" />
+</append>
+
+<!-- Balances out probability so you get an equal chance of getting ammo as well as guns -->
+<setattribute xpath="//lootgroup[@name='arenaGunsAmmo']/item[@group='arenaAmmo']" name="prob">26.5</setattribute>
+
+<append xpath="//lootgroup[@name='arenaGunsAmmo']">
+	<item group="arenaLugerAmmo"				prob="2" />
+	<item group="arena38SnubnoseAmmo"			prob="2" />
+	<item group="arenaGlock40Ammo"				prob="1" />
+	<item group="arena1911Ammo"					prob="1" />
+	<item group="arenaDesertEagleAmmo"			prob="0.2" />
+	<item group="arenaKlobAmmo"					prob="2" />
+	<item group="arenaMac10Ammo"				prob="2" />
+	<item group="arenaMP40Ammo"					prob="0.5" />
+	<item group="arenaMP5Ammo"					prob="0.5" />
+	<item group="arenaM1A1ThompsonAmmo"			prob="0.5" />
+	<item group="arenaDoubleBarrelShotgunAmmo"	prob="2" />
+	<item group="arenaMossberg590A1Ammo"		prob="1" />
+	<item group="arenaSpaz12Ammo"				prob="0.5" />
+	<item group="arenaFNFALAmmo"				prob="0.5" />
+	<item group="arenaRustAKAmmo"				prob="0.3" />
+	<item group="arenaAR15Ammo"					prob="0.3" />
+	<item group="arenaM16Ammo"					prob="0.2" />
+	<item group="arenaM4A1Ammo"					prob="0.1" />
+	<item group="arenaSCARAmmo"					prob="0.1" />
+	<item group="arenaM1Ammo"					prob="0.8" />
+</append>
+
+<!-- Adds the Melee weapons into the loot crates -->
+<append xpath="//lootgroup[@name='arenaBluntWeapons']">
+	<item name="Rusty Iron" 		count="1"	prob="2" />
+	<item name="Old Wooden Bat" 	count="1"	prob="1.5" />
+	<item name="Bone Club" 			count="1"	prob="1.5" />
+	<item name="Heavy Spiked Mace" 	count="1"	prob="0.5" />
+	<item name="Worn Flail" 		count="1"	prob="1" />
+	<item name="Old Warhammer" 		count="1"	prob="0.5" />
+	<item name="Thors Hammer" 		count="1"	prob="0.2" />
+	<item name="Punisher" 			count="1"	prob="0.1" />
+</append>
+
+<append xpath="//lootgroup[@name='arenaBladeWeapons']">
+	<item name="Sharp Skinner" 		count="1"	prob="2" />
+	<item name="Dull Sword" 		count="1"	prob="1.5" />
+	<item name="Dull Axe" 			count="1"	prob="1" />
+	<item name="Battle Sword" 		count="1"	prob="1" />
+	<item name="Rusty Dagger" 		count="1"	prob="2" />
+	<item name="Rusty Katana" 		count="1"	prob="1.5" />
+	<item name="Fine Sword" 		count="1"	prob="0.5" />
+	<item name="Battle Spear" 		count="1"	prob="1" />
+	<item name="Gutter" 			count="1"	prob="1" />
+	<item name="Worn Bayonet" 		count="1"	prob="1.5" />
+	<item name="Soul Harvest" 		count="1"	prob="0.3" />
+	<item name="Sword of Valor" 	count="1"	prob="0.5" />
+	<item name="Halo Sword" 		count="1"	prob="0.1" />
+	<item name="HellSlayer" 		count="1"	prob="0.2" />
+</append>
+
+<append xpath="//lootgroup[@name='arenaTools']">
+	<item name="Salvaged Axe" 		count="1"	prob="1" />
+	<item name="Sturdy Crowbar" 	count="1"	prob="1" />
+	<item name="Hatchet" 			count="1"	prob="1" />
+	<item name="Golden Axe" 		count="1"	prob="0.05" />
+</append>
+
+<!-- Adds lightsaber loot group -->
+<insertAfter xpath="//comment()[self::node() = ' Arena: Non-vanilla weapon groups here ']">
+	<lootgroup name="arenaLightSabers"	count="1">
+		<item name="Purple Lightsaber" />
+		<item name="Green Lightsaber" />
+		<item name="Blue Lightsaber" />
+		<item name="Red Lightsaber" />
+		<item name="Pink Lightsaber" />
+		<item name="Black Lightsaber" />
+		<item name="Orange Lightsaber" />
+	</lootgroup>
+</insertAfter>
+
+<append xpath="//lootgroup[@name='arenaMeleeWeapons']">
+	<item group="arenaLightSabers"		count="1"	prob="0.01" />
+</append>
+
+
+<!-- Adds some of the FennecModlet Foods -->
+<append xpath="//lootgroup[@name='arenaFood']">
+	<item name="foodBeefStewFM" 				count="1"		prob="0.2" />
+	<item name="foodBritishBreakfastFM" 		count="1"		prob="0.2" />
+	<item name="foodChickenMushroomPastaFM" 	count="1,2"		prob="0.5" />
+	<item name="foodChickenMushroomSoupFM" 		count="1,2"		prob="0.5" />
+	<item name="foodChickenPieFM" 				count="1,2"		prob="0.5" />
+	<item name="foodChickenStewFM" 				count="1"		prob="0.2" />
+	<item name="foodChickenSweetcornSoupFM" 	count="1,2"		prob="0.5" />
+	<item name="foodDoggyDooFM" 				count="1,2"		prob="0.8" />
+	<item name="foodGummyBearsBlueFM" 			count="1,3"		prob="0.8" />
+	<item name="foodGummyBearsRedFM" 			count="1,3"		prob="0.8" />
+	<item name="foodGummyBearsBlackFM" 			count="1,3"		prob="0.8" />
+	<item name="foodHunterStewFM" 				count="1,2"		prob="0.2" />
+	<item name="foodKittyCasseroleFM" 			count="1,2"		prob="0.8" />
+	<item name="foodLambStewFM"					count="1"		prob="0.2" />
+	<item name="foodMushroomSoupFM" 			count="1,2"		prob="0.5" />
+	<item name="foodPastaShamFM" 				count="1,3"		prob="0.8" />
+	<item name="foodPeaHamSoupFM" 				count="1,2"		prob="0.5" />
+	<item name="foodPotatoPastaSaladFM" 		count="2,5"		prob="1" />
+	<item name="foodShepherdsPieFM" 			count="1,3"		prob="0.8" />
+	<item name="foodSnakeSoupFM" 				count="1"		prob="0.2" />
+	<item name="foodSpicyHashFM" 				count="1,3"		prob="0.8" />
+	<item name="foodSummerFruitSaladFM" 		count="1,3"		prob="0.8" />
+	<item name="foodVegetableSoupFM" 			count="1,3"		prob="0.8" />
+	<item name="foodVenisonFeastPizzaFM" 		count="1,3"		prob="0.8" />
+	<item name="foodVenisonWellingtonFM" 		count="1"		prob="0.2" />
+	<item name="foodWinterFruitSaladFM" 		count="1,3"		prob="0.8" />
+	<item name="foodWolfiesMeatloafFM" 			count="1"		prob="0.1" />
+</append>
+
+<append xpath="//lootgroup[@name='arenaDrink']">
+	<item name="drinkJarAloeJuiceFM" 			count="1,2"		prob="1" />
+	<item name="drinkJarAppleCiderFM" 			count="1"		prob="0.2" />
+	<item name="drinkJarAppleJuiceFM" 			count="1,3"		prob="0.7" />
+	<item name="drinkJarBloodyMaryFM" 			count="1"		prob="0.2" />
+	<item name="drinkJarBlueberryJuiceFM" 		count="1,3"		prob="0.7" />
+	<item name="drinkJarBlueberryWineFM" 		count="1"		prob="0.2" />
+	<item name="drinkJarTomatoJuiceFM" 			count="1,3"		prob="0.7" />
+	<item name="drinkCartonMilkFM" 				count="1,2"		prob="0.5" />
+	<item name="drinkCartonSoyaMilkFM" 			count="1,2"		prob="0.8" />
+</append>
+
+
+<!-- Adds the melee weapon mods -->
+<insertAfter xpath="//comment()[self::node() = ' Arena: Non-vanilla melee attachment groups here ']">
+	<lootgroup name="arenaMeleeModAttachments"	count="1">
+		<item name="Shuriken Mod" />
+		<item name="Saw Mod" />
+		<item name="Spike Mod" />
+		<item name="Soul Ripper" />
+		<item name="Holy Blade" />
+		<item name="Blood Drip" />
+		<item name="Lava Drip" />
+		<item name="Electric Blade" />
+		<item name="Death Blade" />
+		<item name="Fire Blade" />
+		<item name="Smoke Blade" />
+		<item name="Fire" />
+		<item name="Ice" />
+		<item name="Star" />
+		<item name="Water" />
+		<item name="Electric" />
+		<item name="Death" />
+		<item name="Poison" />
+		<item name="Hellfire" />
+		<item name="Smoke" />
+		<item name="Golden Casement" />
+		<item name="Poison Casement" />
+		<item name="Electric Casement" />
+		<item name="Tempered Casement" />
+		<item name="Magma Casement" />
+	</lootgroup>
+</insertAfter>
+
+<append xpath="//lootgroup[@name='arenaMeleeAttchments']">
+	<item group="arenaMeleeModAttachments"		count="1" />
+</append>
+
+
+
+
+
+
+
+</configs>

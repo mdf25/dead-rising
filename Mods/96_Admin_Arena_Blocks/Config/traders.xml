@@ -1,0 +1,102 @@
+<configs>
+	
+	<!-- Adds items to a vending machine for players to get ammo -->
+	<insertAfter xpath="//trader_info[last()]">
+		
+		<!-- Guns vending machine -->
+		<trader_info id="6" reset_interval="1" override_buy_markup="1.0" allow_sell="false" min_inventory="100" max_inventory="100" min_items_swapped="100" max_items_swapped="100">
+			<trader_items count="1,2">
+				<item name="gunCompoundBow" 				count="1,3" />
+				<item name="gunCrossbow"					count="1,3" />
+				<item name="gunPistol" 						count="1,3" />
+				<item name="gunSMG5"						count="1,2" />
+				<item name="gunPumpShotgun"					count="1,2" />
+				<item name="gunHuntingRifle"				count="1,2" />
+				<item name="gunMR10"						count="1" />
+				<item name="gunAK47"						count="1" />
+				<!-- NV -->
+			</trader_items>
+		</trader_info>
+		
+		<!-- Melee weapons vending machine -->
+		<trader_info id="7" reset_interval="1" override_buy_markup="1.0" allow_sell="false" min_inventory="100" max_inventory="100" min_items_swapped="100" max_items_swapped="100">
+			<trader_items count="1">
+				<item name="meleeClubWood"					count="1" />
+				<item name="meleeClubIron"					count="1" />
+				<item name="meleeToolClawHammer"			count="1" />
+				<item name="meleeToolSledgehammer"			count="1" />
+				<item name="meleeBoneShiv"					count="1" />
+				<item name="meleeToolHuntingKnife"			count="1" />
+				<item name="meleeToolMachete"				count="1" />
+				<item name="meleeToolPickaxeIron"			count="1" />
+				<item name="meleeToolPickaxeSteel"			count="1" />
+				<item name="meleeToolShovelIron"			count="1" />
+				<item name="meleeToolShovelSteel"			count="1" />
+				<item name="meleeToolFireaxeIron"			count="1" />
+				<item name="meleeToolFireaxeSteel"			count="1" />
+				<!-- NV -->
+			</trader_items>
+		</trader_info>
+		
+		<!-- Ammo Vending Machine -->
+		<trader_info id="8" reset_interval="1" override_buy_markup="1.0" allow_sell="false" min_inventory="100" max_inventory="100" min_items_swapped="100" max_items_swapped="100">
+			<trader_items count="1">
+				<item name="ammoArrowStone"					count="500,1000" />
+				<item name="ammoArrowIron"					count="300,600" />
+				<item name="ammoArrowSteelAP"				count="250,500" />
+				<item name="ammoCrossbowBoltStone"			count="400,800" />
+				<item name="ammoCrossbowBoltIron"			count="200,400" />
+				<item name="ammoCrossbowBoltSteelAP"		count="100,200" />
+				<item name="ammo9mmBullet"					count="500,1000" />
+				<item name="ammo44MagnumBullet"				count="300,600" />
+				<item name="ammoShotgunShell"				count="400,800" />
+				<item name="ammoShotgunSlug"				count="240,400" />
+				<item name="ammo762mmBulletFMJ"				count="300,600" />
+				<!-- NV -->
+			</trader_items>
+		</trader_info>
+		
+		<!-- Food and Meds Vending Machine -->
+		<trader_info id="9" reset_interval="1" override_buy_markup="1.0" allow_sell="false" min_inventory="100" max_inventory="100" min_items_swapped="100" max_items_swapped="100">
+			<trader_items count="1">
+				<item name="foodBaconAndEggs"				count="2,4"		prob="2" />
+				<item name="foodBlueberryPie"				count="2,4"		prob="1.5" />
+				<item name="foodSteakAndPotato"				count="2,4"		prob="1.5" />
+				<item name="foodVegetableStew"				count="1,2"		prob="1" />
+				<item name="foodMeatStew"					count="1,2"		prob="1" />
+				<item name="foodHoboStew"					count="1,2"		prob="1" />
+				<item name="foodShamChowder"				count="1"		prob="0.5" />
+				<item name="foodFishTacos"					count="1"		prob="0.5" />
+				<item name="foodChiliDog"					count="1"		prob="0.25" />
+				<item name="drinkJarGoldenRodTea"			count="3,6"		prob="2" />
+				<item name="drinkJarRedTea"					count="3,6"		prob="2" />
+				<item name="drinkJarYuccaJuice"				count="2,4"		prob="1.5" />
+				<item name="drinkJarCoffee"					count="2,3"		prob="1" />
+				<item name="drinkJarSnowberryJuice"			count="2,3"		prob="1" />
+				<item name="drinkYuccaJuiceSmoothie"		count="1,2"		prob="0.5" />
+				<item name="drinkCanMegaCrush"				count="1,2"		prob="0.5" />
+				<item name="medicalBandage"					count="10"		prob="2" />
+				<item name="medicalAloeCream"				count="5"		prob="1" />
+				<item name="medicalFirstAidBandage"			count="5"		prob="0.5" />
+				<item name="medicalFirstAidKit"				count="3"		prob="0.25" />
+				<item name="medicalSplint"					count="2"		prob="1" />
+				<item name="medicalPlasterCast"				count="2"		prob="1" />
+				<item name="drugPainkillers"				count="4"		prob="4" />
+				<item name="drugVitamins"					count="2"		prob="1" />
+				<item name="drugSteroids"					count="1"		prob="0.5" />
+				<item name="drugRecog"						count="1"		prob="0.5" />
+				<item name="drugFortBites"					count="1"		prob="0.5" />
+				<!-- NV -->
+			</trader_items>
+		</trader_info>
+		
+		<!-- Selling Vending Machine -->
+		<trader_info id="10" reset_interval="1" override_buy_markup="1.0" allow_sell="true" min_inventory="0" max_inventory="0" min_items_swapped="0" max_items_swapped="0">
+			<trader_items count="1">
+				
+			</trader_items>
+		</trader_info>
+		
+	</insertAfter>
+	
+</configs>

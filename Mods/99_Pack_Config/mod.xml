@@ -1,0 +1,10 @@
+<mod>
+	<info>
+		<author>MaxFox Gaming</author>
+		<name>99 The Fox's Expansion Modpack Config</name>
+		<description>Integrates all previously loaded mods together so they work nicely together.</description>
+		<mod_version>1.0</mod_version>
+		<game_version>17.4</game_version>
+		<launcher_version>0.0.0</launcher_version>
+	</info>
+</mod>

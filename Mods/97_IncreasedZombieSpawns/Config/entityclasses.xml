@@ -1,0 +1,4 @@
+<configs>
+	<!-- SETS SIGHT RANGE OF ZOMBIES. DEFAULT: 30 -->
+	<set xpath="/entity_classes/entity_class[contains(@name, 'ombie')]/property[@name='SightRange']/@value">70</set>
+</configs>

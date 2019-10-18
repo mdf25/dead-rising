@@ -1,0 +1,6 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+resourceStick,items,Resources,kgNone,Stick,,,,,
+resourceStickDesc,items,Resources,kgNone,Sticks can be picked up and scrapped for wood.,,,,,
+statueWolf,blocks,Block,KgNone,"Wolf Statue",,,,,
+statueWolfNoStone,blocks,Block,KgNone,"Wolf Statue",,,,,
+statueWolfDesc,blocks,Block,KgNone,"A wolf statue. It is loved by a certain individual.",,,,,
