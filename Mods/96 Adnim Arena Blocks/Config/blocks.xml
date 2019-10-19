@@ -738,6 +738,7 @@
 			<property name="PlantGrowing.GrowthRate" value="0.8" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
 			<property name="Shape" 				value="Invisible" />
 			<property name="Texture"			value="250" />
 			<property name="FilterTags" 		value="fbuilding,fconcrete"/>
@@ -780,6 +781,7 @@
 			<property name="PlantGrowing.GrowthRate" value="0.8" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
 			<property name="Shape" 				value="Invisible" />
 			<property name="Texture"			value="250" />
 			<property name="FilterTags" 		value="fbuilding,fconcrete"/>
@@ -823,6 +825,7 @@
 			<property name="PlantGrowing.GrowthRate" value="0.4" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
 			<property name="Shape" 				value="Invisible" />
 			<property name="Texture"			value="250" />
 			<property name="FilterTags" 		value="fbuilding,fconcrete"/>
@@ -910,6 +913,7 @@
 			<property name="PlantGrowing.GrowthRate" value="0.4" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
 			<property name="Shape" 				value="Invisible" />
 			<property name="Texture"			value="250" />
 			<property name="FilterTags" 		value="fbuilding,fconcrete"/>
@@ -995,6 +999,7 @@
 			<property name="PlantGrowing.GrowthRate" value="0.4" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
 			<property name="Shape" 				value="Invisible" />
 			<property name="Texture"			value="250" />
 			<property name="FilterTags" 		value="fbuilding,fconcrete"/>
