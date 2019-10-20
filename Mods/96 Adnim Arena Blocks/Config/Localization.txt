@@ -68,6 +68,9 @@ adminArenaFloatFrameDesc,blocks,Block,New,"Looking to make some floating platfor
 adminArenaFloatBlock,blocks,Block,New,"Admin Floating Block",,,,,
 adminArenaFloatBlockDesc,blocks,Block,New,"An invisible block that can be walked through, but will support additional stuff on the top of it."
 
+adminArenaHeatBlock,blocks,Block,New,"Horde Block",,,,,
+adminArenaHeatBlockDesc,blocks,Block,New,"Summons a screamer when placed down. Place more for faster summons.",,,,,
+
 adminArenaRespawnCrate1Air,blocks,Block,New,"Admin Loot Crate Placeholder (Respawn)",,,,,
 adminArenaRespawnCrate1AirDesc,blocks,Block,New,"A placeholder block that will spawn a crate containing loot for your arena battles.",,,,,
 adminArenaRespawnCrate1,blocks,Block,New,"Loot Crate",,,,,

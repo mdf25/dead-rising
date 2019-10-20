@@ -1,0 +1,24 @@
+<configs>
+	<append xpath="//entitygroup[@name='ZombieScouts']">
+		<entity name="zombieBoe"/>
+		<entity name="zombieJoe"/>
+		<entity name="zombieSteve"/>
+		<entity name="zombieMoe"/>
+		<entity name="zombieYo"/>
+		<entity name="zombieBusinessMan"/>
+		<entity name="zombieArlene"/>
+		<entity name="zombieDarlene"/>
+		<entity name="zombieMarlene"/>
+		<entity name="zombieSkateboarder"/>
+		<entity name="zombieCheerleader" prob="0.3"/>
+		<entity name="zombieOldTimer" prob="0.3"/>
+		<entity name="zombieBiker" prob="0.3"/>
+		<entity name="zombieFarmer" prob="0.3"/>
+		<entity name="zombieStripper" prob="0.3"/>
+		<entity name="zombieUtilityWorker" prob="0.3"/>
+		<entity name="zombieNurse" prob="0.3"/>
+		<entity name="zombieSteveCrawler"/>
+		<entity name="zombieFatHawaiian" prob="0.3"/>
+	</append>
+</configs>
+

@@ -725,6 +725,24 @@
 		</block>
 		
 		
+		<!-- Heat Block -->
+		<!-- This block can summon screamers very quickly -->
+		<block name="adminArenaHeatBlock">
+			<property name="Extends" 			value="forge"/>
+			<property name="CreativeMode"		value="Player" />
+			<property name="CustomIcon" 		value="forge"/>
+			<property name="CustomIconTint"		value="00ffff" />
+			<property name="Material"			value="Mbedrock" />
+			<property name="HeatMapStrength" 	value="100"/>
+			<property name="HeatMapTime" 		value="1200"/>
+			<property name="HeatMapFrequency" 	value="1"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" 		 	value="woodFrameBlock" />
+				<property name="Item" 			 	value="resourceAdminBlockRemover" />
+				<property name="ItemCount" 		 	value="1" />
+				<property name="UpgradeHitCount"	value="1" />
+			</property>
+		</block>
 		
 		<!-- Respawning loot crate blocks -->
 		<!-- This crate will be for the inside of the arena, containing random loot. -->
@@ -735,7 +753,7 @@
 			<property name="Class" 				value="PlantGrowing" />
 			<property name="PlantGrowing.FertileLevel" value="0" />
 			<property name="PlantGrowing.Next" 	value="adminArenaRespawnCrate1" />
-			<property name="PlantGrowing.GrowthRate" value="0.8" />
+			<property name="PlantGrowing.GrowthRate" value="2" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
 			<property name="PlantGrowing.LightLevelGrow" value="0"/>
@@ -778,7 +796,7 @@
 			<property name="Class" 				value="PlantGrowing" />
 			<property name="PlantGrowing.FertileLevel" value="0" />
 			<property name="PlantGrowing.Next" 	value="adminArenaRespawnCrate2" />
-			<property name="PlantGrowing.GrowthRate" value="0.8" />
+			<property name="PlantGrowing.GrowthRate" value="3" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
 			<property name="PlantGrowing.LightLevelGrow" value="0"/>
@@ -822,7 +840,7 @@
 			<property name="Class" 				value="PlantGrowing" />
 			<property name="PlantGrowing.FertileLevel" value="0" />
 			<property name="PlantGrowing.Next"	value="adminArenaDungeonCrateHelper" />
-			<property name="PlantGrowing.GrowthRate" value="0.4" />
+			<property name="PlantGrowing.GrowthRate" value="2.5" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
 			<property name="PlantGrowing.LightLevelGrow" value="0"/>
@@ -910,7 +928,7 @@
 			<property name="Class" 				value="PlantGrowing" />
 			<property name="PlantGrowing.FertileLevel" value="0" />
 			<property name="PlantGrowing.Next"	value="adminArenaAmmoHelper" />
-			<property name="PlantGrowing.GrowthRate" value="0.4" />
+			<property name="PlantGrowing.GrowthRate" value="1.5" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
 			<property name="PlantGrowing.LightLevelGrow" value="0"/>
@@ -996,7 +1014,7 @@
 			<property name="Class" 				value="PlantGrowing" />
 			<property name="PlantGrowing.FertileLevel" value="0" />
 			<property name="PlantGrowing.Next" 	value="adminArenaMedicalHelper" />
-			<property name="PlantGrowing.GrowthRate" value="0.4" />
+			<property name="PlantGrowing.GrowthRate" value="1.2" />
 			<property name="PlantGrowing.IsRandom" value="false" />
 			<property name="PlantGrowing.LightLevelStay" value="0" />
 			<property name="PlantGrowing.LightLevelGrow" value="0"/>

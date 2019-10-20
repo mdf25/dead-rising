@@ -6,6 +6,7 @@
 		<!-- Guns vending machine -->
 		<trader_info id="6" reset_interval="1" override_buy_markup="1.0" allow_sell="false" min_inventory="100" max_inventory="100" min_items_swapped="100" max_items_swapped="100">
 			<trader_items count="1,2">
+				<item name="gunWoodenBow"					count="2,4" />
 				<item name="gunCompoundBow" 				count="1,3" />
 				<item name="gunCrossbow"					count="1,3" />
 				<item name="gunPistol" 						count="1,3" />
@@ -14,6 +15,25 @@
 				<item name="gunHuntingRifle"				count="1,2" />
 				<item name="gunMR10"						count="1" />
 				<item name="gunAK47"						count="1" />
+				<item name="modGunBarrelExtender"			count="1" />
+				<item name="modGunMuzzleBrake"				count="1" />
+				<item name="modGunLaserSight"				count="1" />
+				<item name="modGunScopeSmall"				count="1" />
+				<item name="modGunScopeMedium"				count="1" />
+				<item name="modGunScopeMedium"				count="1" />
+				<item name="modGunReflexSight"				count="1" />
+				<item name="modGunTriggerGroupAutomatic"	count="1" />
+				<item name="modGunRodAndSpring"				count="1" />
+				<item name="modGunBipod"					count="1" />
+				<item name="modGunForegrip"					count="1" />
+				<item name="modGunRetractingStock"			count="1" />
+				<item name="modGunDuckbill"					count="1" />
+				<item name="modGunChoke"					count="1" />
+				<item name="modGunMagazineExtender"			count="1" />
+				<item name="modShotgunSawedOffBarrel"		count="1" />
+				<item name="modGunCrippleEm"				count="1" />
+				<item name="modGunMeleeTheHunter"			count="1" />
+				<item name="modGunMeleeRadRemover"			count="1" />
 				<!-- NV -->
 			</trader_items>
 		</trader_info>
@@ -34,6 +54,15 @@
 				<item name="meleeToolShovelSteel"			count="1" />
 				<item name="meleeToolFireaxeIron"			count="1" />
 				<item name="meleeToolFireaxeSteel"			count="1" />
+				<item name="modMeleeWeightedHead" 			count="1"/>
+				<item name="modMeleeStructuralBrace" 		count="1"/>
+				<item name="modMeleeErgonomicGrip" 			count="1"/>
+				<item name="modMeleeFortifyingGrip" 		count="1"/>
+				<item name="modMeleeClubBarbedWire" 		count="1"/>
+				<item name="modMeleeClubMetalSpikes" 		count="1"/>
+				<item name="modMeleeClubBurningShaft" 		count="1"/>
+				<item name="modMeleeTemperedBlade" 			count="1"/>
+				<item name="modMeleeSerratedBlade" 			count="1"/>
 				<!-- NV -->
 			</trader_items>
 		</trader_info>
@@ -57,7 +86,7 @@
 		</trader_info>
 		
 		<!-- Food and Meds Vending Machine -->
-		<trader_info id="9" reset_interval="1" override_buy_markup="1.0" allow_sell="false" min_inventory="100" max_inventory="100" min_items_swapped="100" max_items_swapped="100">
+		<trader_info id="9" reset_interval="1" override_buy_markup="1.0" allow_sell="false" min_inventory="100" max_inventory="100" min_items_swapped="200" max_items_swapped="200">
 			<trader_items count="1">
 				<item name="foodBaconAndEggs"				count="2,4"		prob="2" />
 				<item name="foodBlueberryPie"				count="2,4"		prob="1.5" />

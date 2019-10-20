@@ -385,8 +385,8 @@
 			<item group="arenaMeleeWeapons"				count="1"		prob="1" />
 			<item group="arenaFoodDrink"				count="1"		prob="1" />
 			<item group="arenaMedical"					count="1"		prob="1" />
-			<item group="arenaMeleeAttchments"			count="1,2"		prob="0.1" />
-			<item group="arenaWeaponAttachments"		count="1,2"		prob="0.3" />
+			<item group="arenaMeleeAttchments"			count="1,2"		prob="0.3" />
+			<item group="arenaWeaponAttachments"		count="1,2"		prob="0.6" />
 			<item group="arenaArmorAttachments"			count="1,2"		prob="0.1" />
 		</lootgroup>
 		
@@ -396,8 +396,8 @@
 			<item group="arenaMeleeWeapons"				count="1"		prob="1.5" />
 			<item group="arenaFoodDrink"				count="1"		prob="0.5" />
 			<item group="arenaMedical"					count="1"		prob="1.5" />
-			<item group="arenaMeleeAttchments"			count="2,3"		prob="0.2" />
-			<item group="arenaWeaponAttachments"		count="2,3"		prob="0.2" />
+			<item group="arenaMeleeAttchments"			count="2,3"		prob="0.4" />
+			<item group="arenaWeaponAttachments"		count="2,3"		prob="0.7" />
 			<item group="arenaArmorAttachments"			count="2,3"		prob="0.2" />
 		</lootgroup>
 		
@@ -426,7 +426,7 @@
 			<item group="arenaCrateLootLucky"			count="1"		prob="0.2" />
 		</lootgroup>
 		
-		<lootgroup name="arenaCrateLootTreasure"	count="2,5">
+		<lootgroup name="arenaCrateLootTreasure"	count="2,3">
 			<item group="arenaCrateLootTreasure1"		count="1" />
 			<item group="arenaCrateLootTreasure2"		count="1" />
 			<item group="arenaCrateLootTreasure3"		count="1" />
@@ -467,23 +467,23 @@
 		
 		<!-- Zombie Strength Drops -->
 		<lootgroup name="arenaZombieDropsWeak"		count="1">
-			<item group="arenaZombieDropsCoins1"		count="1,15"	prob="15" />
-			<item group="arenaZombieDropsCoins2"		count="1,15"	prob="11" />
+			<item group="arenaZombieDropsCoins1"		count="3,15"	prob="15" />
+			<item group="arenaZombieDropsCoins2"		count="3,15"	prob="11" />
 			<item group="arenaZombieDropsAmmo"			count="1,2"		prob="2" />
 			<item group="arenaZombieDropsMedical"		count="1"		prob="1" />
 		</lootgroup>
 		
 		<lootgroup name="arenaZombieDropsMed"		count="1">
-			<item group="arenaZombieDropsCoins1"		count="1,15"	prob="11" />
-			<item group="arenaZombieDropsCoins2"		count="1,15"	prob="14" />
-			<item group="arenaZombieDropsCoins3"		count="1,15"	prob="11" />
+			<item group="arenaZombieDropsCoins1"		count="8,15"	prob="11" />
+			<item group="arenaZombieDropsCoins2"		count="8,15"	prob="14" />
+			<item group="arenaZombieDropsCoins3"		count="8,15"	prob="11" />
 			<item group="arenaZombieDropsAmmo"			count="1,2"		prob="2" />
 			<item group="arenaZombieDropsMedical"		count="1"		prob="1" />
 		</lootgroup>
 		
 		<lootgroup name="arenaZombieDropsStrong"	count="1">
-			<item group="arenaZombieDropsCoins2"		count="5,25"	prob="11" />
-			<item group="arenaZombieDropsCoins3"		count="5,25"	prob="13" />
+			<item group="arenaZombieDropsCoins2"		count="15,25"	prob="11" />
+			<item group="arenaZombieDropsCoins3"		count="15,25"	prob="13" />
 			<item group="arenaZombieDropsAmmo"			count="1,2"		prob="3" />
 			<item group="arenaZombieDropsMedical"		count="1"		prob="2" />
 		</lootgroup>
@@ -508,17 +508,17 @@
 		<!-- Arena Ammo piles small, med, large -->
 		<lootcontainer id="153" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
 			<item group="arenaAmmo"				count="1" 	prob="3" />
-			<item group="arenaAmmo"				count="2"	prob="1" />
-		</lootcontainer>
-		
-		<lootcontainer id="154" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
-			<item group="arenaAmmo"				count="2" 	prob="3" />
 			<item group="arenaAmmo"				count="3"	prob="1" />
 		</lootcontainer>
 		
-		<lootcontainer id="155" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+		<lootcontainer id="154" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
 			<item group="arenaAmmo"				count="3" 	prob="3" />
-			<item group="arenaAmmo"				count="4"	prob="1" />
+			<item group="arenaAmmo"				count="5"	prob="1" />
+		</lootcontainer>
+		
+		<lootcontainer id="155" count="1" size="5,5" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate" destroy_on_close="true" open_time="0.1">
+			<item group="arenaAmmo"				count="5" 	prob="3" />
+			<item group="arenaAmmo"				count="7"	prob="1" />
 		</lootcontainer>
 		
 		<!-- Small and large medical piles -->

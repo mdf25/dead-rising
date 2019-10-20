@@ -7743,6 +7743,8 @@ adminArenaFloatFrame,blocks,Block,New,Admin Floating Frame Placeholder,,,,,
 adminArenaFloatFrameDesc,blocks,Block,New,"Looking to make some floating platforms? Place these down, build your floating structure, then upgrade them. WARNING: ONCE UPGRADED, THEY CAN NEVER BE REMOVED BY TOOLS OR WEAPONS!",,,,,
 adminArenaFloatBlock,blocks,Block,New,Admin Floating Block,,,,,
 
+adminArenaHeatBlock,blocks,Block,New,Horde Block,,,,,
+adminArenaHeatBlockDesc,blocks,Block,New,Summons a screamer when placed down. Place more for faster summons.,,,,,
 adminArenaRespawnCrate1Air,blocks,Block,New,Admin Loot Crate Placeholder (Respawn),,,,,
 adminArenaRespawnCrate1AirDesc,blocks,Block,New,A placeholder block that will spawn a crate containing loot for your arena battles.,,,,,
 adminArenaRespawnCrate1,blocks,Block,New,Loot Crate,,,,,

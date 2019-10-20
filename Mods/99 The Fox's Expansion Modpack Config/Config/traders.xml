@@ -216,12 +216,38 @@
 	<item name="Pink Lightsaber" 			count="1" />
 	<item name="Black Lightsaber" 			count="1" />
 	<item name="Orange Lightsaber" 			count="1" />
+	<item name="Saw Mod" 					count="1" />
+	<item name="Spike Mod" 					count="1" />
+	<item name="Shuriken Mod" 				count="1" />
+	<item name="Death Blade" 				count="1" />
+	<item name="Holy Blade" 				count="1" />
+	<item name="Blood Drip" 				count="1" />
+	<item name="Lava Drip" 					count="1" />
+	<item name="Soul Ripper" 				count="1" />
+	<item name="Electric Blade" 			count="1" />
+	<item name="Smoke Blade" 				count="1" />
+	<item name="Fire Blade" 				count="1" />
+	<item name="Ice" 						count="1" />
+	<item name="Fire" 						count="1" />
+	<item name="Star" 						count="1" />
+	<item name="Death" 						count="1" />
+	<item name="Water" 						count="1" />
+	<item name="Smoke" 						count="1" />
+	<item name="Poison" 					count="1" />
+	<item name="Electric" 					count="1" />
+	<item name="Hellfire" 					count="1" />
+	<item name="Magma Casement" 			count="1" />
+	<item name="Golden Casement" 			count="1" />
+	<item name="Poison Casement" 			count="1" />
+	<item name="Electric Casement" 			count="1" />
+	<item name="Tempered Casement" 			count="1" />
 </append>
 
 <!-- Adds remaining ammo from Custom Firearms into vending machine -->
 <append xpath="//trader_info[@id='8']/trader_items">
 	<item name="10mm Bullet"				count="400,800"	/>
 	<item name="5.56mm Bullet"				count="300,600"	/>
+	<item name="20 Gauge Shell"				count="200,300" />
 </append>
 
 <!-- Adds remaining food from JSS and FennecModlet - Additional Foods into vending machine -->
